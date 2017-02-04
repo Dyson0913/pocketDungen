@@ -4,6 +4,9 @@
 	var Text    = Laya.Text;
 	var Browser = Laya.Browser;
 	var WebGL   = Laya.WebGL;
+
+	var Handler = Laya.Handler;
+	var Loader  = Laya.Loader;
 	var _model;
 
 	(function()
@@ -17,13 +20,40 @@
 		Laya.stage.scaleMode = "showall";
 		Laya.stage.bgColor = "#232628";
 
-		setup();
+		//setup();
 		
 		_model = model.getInstance();
 		_model.socket = socket.getInstance();
+
+		//event listen
+		_model.login_ok.add(onStarted);
+
 		_model.start();
 		
+		
 	})();
+
+	function onStarted()
+	{
+    	trace("get onStarted ")
+		
+		var assets = [];
+		assets.push(
+		{
+			url: "res/atlas/assets.json",
+			type: Loader.ATLAS
+		});
+		Laya.loader.load(assets, Handler.create(this, onAssetsLoaded));
+  	}
+
+	function onAssetsLoaded()
+	{
+		trace(" onAssetsLoaded ")
+		var robotData = Loader.getRes("res/atlas/assets.json");
+		trace(" onAssetsLoaded "+robotData)
+		Laya.stage.addChild(robotData);
+		//this.stage.addChild(robotData);
+	}
 
 	function setup()
 	{

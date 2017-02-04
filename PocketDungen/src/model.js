@@ -5,6 +5,7 @@ var model = function ()
 {
     this.instance = undefined;
     this.eventDispatch  =  new signals.Signal();
+    this.login_ok  =  new signals.Signal();
     this.socket = undefined;
 }
 
@@ -25,4 +26,13 @@ model.prototype.registEvent = function ()
 model.prototype.start = function ()
 {
     this.socket.Connect();
+};
+
+model.prototype.eventHandle = function (name)
+{
+   if(name == "login_ok") 
+   {
+        trace("eventHandle = "+name)
+       this.login_ok.dispatch();
+   }
 };
