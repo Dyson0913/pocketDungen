@@ -25,14 +25,14 @@ socket.prototype.Connect = function ()
     // var url = "wss://www.didusoftgaming.com:8001/gamesocket/token/"+token;
 
    
-    var url = "ws://52.68.210.98:58299/gamesocket/"+token;
+    var url = "ws:/45.76.97.239:58299/gamesocket/"+token;
     this.ws = new WebSocket(url);
    
 
     this.ws.onmessage = this.onMessage.bind(this);
     this.ws.onerror = this.displayError.bind(this);
     this.ws.onopen = this.connectionOpen.bind(this);
-    this.ws.onclose = this.connectionOpen.bind(this);
+    this.ws.onclose = this.socketclose.bind(this);
 };
 
 
@@ -75,4 +75,9 @@ socket.prototype.sendMessage = function (msg)
 {
     if(this.ws != null)
      this.ws.send(msg);
+}
+
+socket.prototype.socketclose = function(msg)
+{
+    trace('Websocket onclose: ' + msg);
 }
