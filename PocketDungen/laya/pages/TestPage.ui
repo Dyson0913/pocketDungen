@@ -42,7 +42,7 @@
         {
             "x":15,
             "type":"Image",
-            "props":{"y":243,"x":142,"skin":"chip_1.png"},
+            "props":{"y":243,"x":142,"skin":"res/loading/chip_1.png"},
             "nodeParent":1,
             "label":"Image",
             "isDirectory":false,

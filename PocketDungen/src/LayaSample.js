@@ -42,7 +42,7 @@
 		var assets = [];
 		assets.push(
 		{
-			url: "res/atlas/assets.json",
+			url: "res/atlas/loading.json",
 			type: Loader.ATLAS
 		});
 		Laya.loader.load(assets, Handler.create(this, onAssetsLoaded));
