@@ -7,11 +7,13 @@
 
 	var Handler = Laya.Handler;
 	var Loader  = Laya.Loader;
+	var _classUtils  = laya.utils.ClassUtils;
 	var _model;
 
 	(function()
 	{
 		// 不支持WebGL时自动切换至Canvas
+		
 		Laya.init(800, 600, WebGL);
 		trace("layasimple")
 		Laya.stage.alignV = Stage.ALIGN_MIDDLE;
@@ -49,9 +51,11 @@
 	function onAssetsLoaded()
 	{
 		trace(" onAssetsLoaded ")
-		var robotData = Loader.getRes("res/atlas/assets.json");
-		trace(" onAssetsLoaded "+robotData)
-		Laya.stage.addChild(robotData);
+		//var robotData = Laya.Loader.getRes("res/atlas/assets.json");
+		
+	//	view = _classUtils.getInstance("res/atlas/assets.json");
+		//Laya.stage.addChild(view);
+		Laya.stage.addChild(new TestUI());
 		//this.stage.addChild(robotData);
 	}
 
