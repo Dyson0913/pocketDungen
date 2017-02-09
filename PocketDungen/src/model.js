@@ -28,10 +28,16 @@ model.prototype.start = function ()
     this.socket.Connect();
 };
 
-model.prototype.eventHandle = function (name)
+model.prototype.eventHandle = function (name,data)
 {
-   if(name == "login_ok") 
+   switch(name) 
    {
+       case "login_ok":
        this.login_ok.dispatch();
+       break;
+       case "login":
+       this.start();
+       break;
    }
+
 };

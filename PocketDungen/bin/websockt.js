@@ -58,11 +58,8 @@ socket.prototype.onMessage = function (message)
     trace("data = "+data)
     trace("data id = "+data["state"]);
     trace("data id = "+data["game"]);
-    // if(data.hasOwnProperty(WebSocketNameTag.MessageType))
-    //     if(data[WebSocketNameTag.GameType] == "Lobby" && (data[WebSocketNameTag.MessageType] == MessageNameTag.MsgKeepLive))
-    //         return;
     // this.callback.call(this.callbackContext, data);
-   _model.eventHandle(data["state"]);
+   _model.eventHandle(data["state"],[]);
    
 };
 

@@ -24,25 +24,20 @@
 		_model.socket = socket.getInstance();
 
 		//event listen
-		_model.login_ok.add(onStarted);
 
-		_model.start();
-		
-		
-	})();
-
-	function onStarted()
-	{
-    	trace("get onStarted ")
-		
+		//res load
 		var assets = [];
 		assets.push(
 		{
-			url: "res/atlas/loading.json",
-			type: Loader.ATLAS
+			url: "res/atlas/loading.json",type: Loader.ATLAS
 		});
 		Laya.loader.load(assets, Handler.create(this, onAssetsLoaded));
-  	}
+
+
+		_model.login_ok.add(onlogok);
+		
+		
+	})();
 
 	function onAssetsLoaded()
 	{
@@ -51,10 +46,17 @@
 		
 	//	view = _classUtils.getInstance("res/atlas/assets.json");
 		//Laya.stage.addChild(view);
-		Laya.stage.addChild(new TestUI());
+		//Laya.stage.addChild(new TestUI());
+		Laya.stage.addChild(new logingUI());
 		//this.stage.addChild(robotData);
 	}
 
+
+	function onlogok()
+	{
+    	trace("get onlogok ")
+		Laya.stage.addChild(new TestUI());
+  	}
 	
 	
 })();
