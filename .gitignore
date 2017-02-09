@@ -1,6 +1,5 @@
 # Build and Release Folders
 release/
-bin/
 bin-release/
 
 # Other files and folders
