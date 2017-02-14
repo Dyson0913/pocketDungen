@@ -10,6 +10,9 @@
 	var _classUtils  = laya.utils.ClassUtils;
 	var _model;
 
+	var _loging;
+	var _test;
+
 	(function()
 	{
 		// 不支持WebGL时自动切换至Canvas	
@@ -47,7 +50,8 @@
 	//	view = _classUtils.getInstance("res/atlas/assets.json");
 		//Laya.stage.addChild(view);
 		//Laya.stage.addChild(new TestUI());
-		Laya.stage.addChild(new logingUI());
+		_model.pushView("login",new logingUI());
+		Laya.stage.addChild(_model.getView("login"));
 		//this.stage.addChild(robotData);
 	}
 
@@ -55,7 +59,10 @@
 	function onlogok()
 	{
     	trace("get onlogok ")
-		Laya.stage.addChild(new TestUI());
+		Laya.stage.removeChild(_model.getView("login"));
+		//Laya.stage.destroy(_loging);
+		_model.pushView("test",new TestUI());
+		Laya.stage.addChild(_model.getView("test"));
   	}
 	
 	

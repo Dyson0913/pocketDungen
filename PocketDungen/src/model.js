@@ -1,4 +1,6 @@
 
+var Scene={};
+
 //model 最先建立
 
 var model = function ()
@@ -41,3 +43,13 @@ model.prototype.eventHandle = function (name,data)
    }
 
 };
+
+model.prototype.pushView = function (name,view)
+{
+    Scene[name] = view;
+}
+
+model.prototype.getView = function (name)
+{
+    return Scene[name];
+}
