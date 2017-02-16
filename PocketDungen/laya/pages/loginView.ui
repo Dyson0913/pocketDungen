@@ -22,7 +22,7 @@
         {
             "x":15,
             "type":"Label",
-            "props":{"y":67,"x":189,"width":238,"text":"9198棋牌","height":118,"fontSize":50,"color":"#0f0e0e"},
+            "props":{"y":54,"x":111,"width":374,"text":"DysonCasino","height":118,"fontSize":50,"color":"#0f0e0e","align":"center"},
             "nodeParent":1,
             "label":"Label",
             "isDirectory":false,
