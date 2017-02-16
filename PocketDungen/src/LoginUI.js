@@ -16,7 +16,10 @@ function logingUI()
 	{
 		trace("login ="+this.name.text + "---"+ this.password.text);
 		
-		_model.eventHandle("login",[this.name,this.password]);
+		_model.login_name = this.name.text;
+		_model.login_pw = this.password.text;
+
+		_model.eventHandle("login",[]);
 	}
 
 	function onBtnClick2()
