@@ -27,6 +27,7 @@
 		_model.socket = socket.getInstance();
 
 		//event listen
+		trace("111");
 
 		//res load
 		var assets = [];
