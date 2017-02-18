@@ -25,8 +25,8 @@ socket.prototype.Connect = function ()
     //var url = "ws://52.197.7.184:8001/gamesocket/token/"+token;
     // var url = "wss://www.didusoftgaming.com:8001/gamesocket/token/"+token;
     _model = model.getInstance();
-    var token = _model.login_name +"_"+ model.login_pw;
-
+    var token = _model.login_name +"_"+ _model.login_pw;
+    trace("token = "+token);
     var url = "ws://45.76.97.239:7000/gamesocket/"+token;
     this.ws = new WebSocket(url);
    
@@ -55,9 +55,9 @@ socket.prototype.onMessage = function (message)
     //trace("message = "+message)
 
     var data = JSON.parse(message.data);
-    trace("message = "+data);        
+    trace("message = ",data);        
     // this.callback.call(this.callbackContext, data);
-   _model.eventHandle(data["state"],[]);
+   _model.eventHandle(data["state"],[data]);
    
 };
 

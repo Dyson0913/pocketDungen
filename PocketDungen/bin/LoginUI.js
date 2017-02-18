@@ -18,7 +18,7 @@ function logingUI()
 		
 		_model.login_name = this.name.text;
 		_model.login_pw = this.password.text;
-
+		trace("model  ="+_model.login_name + "---"+ _model.login_pw);
 		_model.eventHandle("login",[]);
 	}
 

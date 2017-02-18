@@ -15,6 +15,9 @@ function TestUI()
 	{
 		trace("1111");
 		this.showText.text = "111";
+
+
+		//_model.eventHandle("l",[]);
 	}
 
 	function onBtnClick2()
