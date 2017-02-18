@@ -37,6 +37,7 @@ model.prototype.eventHandle = function (name,data)
    switch(name) 
    {
        case "login_ok":
+       trace("data ="+data)
        this.login_ok.dispatch();
        break;
        case "login":

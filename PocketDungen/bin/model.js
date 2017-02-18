@@ -1,6 +1,8 @@
 
 var Scene={};
 
+var login_name;
+var login_pw;
 //model 最先建立
 
 var model = function ()
@@ -35,10 +37,11 @@ model.prototype.eventHandle = function (name,data)
    switch(name) 
    {
        case "login_ok":
+       trace("data ="+data)
        this.login_ok.dispatch();
        break;
        case "login":
-       this.start();
+       this.start(data);
        break;
    }
 

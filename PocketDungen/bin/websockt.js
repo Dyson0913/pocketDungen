@@ -20,14 +20,14 @@ socket.getInstance = function ()
 
 socket.prototype.Connect = function ()
 {
-    //var token = "e4da3b7fbbce2345d7772b0674a318d5";
-    //var token = "a4a042cf4fd6bfb47701cbc8a1653ada";
-    var token = "11111";
+    
+   
     //var url = "ws://52.197.7.184:8001/gamesocket/token/"+token;
     // var url = "wss://www.didusoftgaming.com:8001/gamesocket/token/"+token;
     _model = model.getInstance();
-    
-    var url = "ws://45.76.97.239:58299/gamesocket/"+token;
+    var token = _model.login_name +"_"+ model.login_pw;
+
+    var url = "ws://45.76.97.239:7000/gamesocket/"+token;
     this.ws = new WebSocket(url);
    
     this.ws.onopen = this.connectionOpen.bind(this);
@@ -41,23 +41,21 @@ socket.prototype.connectionOpen = function ()
 {
     trace('connected\n');
     var ret = {};
-    ret['game_type'] = -1;
-    ret['message_type'] = -1;
+    //ret['cmd'] = "login";
+    //ret['module'] = "auth";
     
-    var retjson = JSON.stringify(ret);
-    this.ws.send(retjson)
+    //var retjson = JSON.stringify(ret);
+    //this.ws.send(retjson)
            
     //trace(retjson);
 };
 
 socket.prototype.onMessage = function (message)
 {
-    trace("message = "+message)
+    //trace("message = "+message)
 
     var data = JSON.parse(message.data);
-    trace("data = "+data)
-    trace("data id = "+data["state"]);
-    trace("data id = "+data["game"]);
+    trace("message = "+data);        
     // this.callback.call(this.callbackContext, data);
    _model.eventHandle(data["state"],[]);
    
