@@ -2,8 +2,8 @@
     "x":0,
     "type":"View",
     "selectedBox":1,
-    "selecteID":6,
-    "props":{"width":600,"sceneColor":"#000000","height":400},
+    "selecteID":4,
+    "props":{"width":600,"sceneColor":"#000000","height":800},
     "nodeParent":-1,
     "label":"View",
     "isOpen":true,
@@ -13,7 +13,7 @@
     "frames":[
         {
             "type":1,
-            "props":{"width":600,"sceneColor":"#000000","height":400},
+            "props":{"width":600,"sceneColor":"#000000","height":800},
             "frame":0,
             "__InPool":false
         }],
@@ -22,9 +22,9 @@
         {
             "x":15,
             "type":"Label",
-            "props":{"y":124,"x":162,"width":137,"var":"showText","text":"loading","height":87,"color":"#f1e1e1"},
+            "props":{"y":39,"x":181,"width":226,"text":"this is lobby","height":106,"fontSize":50,"color":"#f6f1f1"},
             "nodeParent":1,
-            "label":"Label(showText)",
+            "label":"Label",
             "isDirectory":false,
             "isAniNode":true,
             "hasChild":false,
@@ -41,17 +41,17 @@
         },
         {
             "x":15,
-            "type":"Image",
-            "props":{"y":243,"x":142,"skin":"res/loading/chip_1.png"},
+            "type":"Button",
+            "props":{"y":156,"x":56,"var":"game1","skin":"res/loading/Btn_bg.png","label":"game1"},
             "nodeParent":1,
-            "label":"Image",
+            "label":"Button(game1)",
             "isDirectory":false,
             "isAniNode":true,
             "hasChild":false,
             "frames":[
                 {
                     "type":1,
-                    "props":{"y":314,"x":264,"skin":"chip_1.png"},
+                    "props":{"label":"label"},
                     "frame":0,
                     "__InPool":false
                 }],
@@ -62,9 +62,9 @@
         {
             "x":15,
             "type":"Button",
-            "props":{"y":23,"x":41,"var":"btn_ok","skin":"res/loading/Btn_bg.png","labelStrokeColor":"#f6f6f6","label":"test"},
+            "props":{"y":162,"x":306,"var":"game2","skin":"res/loading/Btn_bg.png","label":"game1"},
             "nodeParent":1,
-            "label":"Button(btn_ok)",
+            "label":"Button(game2)",
             "isDirectory":false,
             "isAniNode":true,
             "hasChild":false,
@@ -75,27 +75,7 @@
                     "frame":0,
                     "__InPool":false
                 }],
-            "compId":5,
-            "child":[
-                ]
-        },
-        {
-            "x":15,
-            "type":"Button",
-            "props":{"y":25,"x":220,"var":"btn_cancel","skin":"res/loading/Btn_bg.png","labelStrokeColor":"#f6f6f6","label":"cancel"},
-            "nodeParent":1,
-            "label":"Button(btn_cancel)",
-            "isDirectory":false,
-            "isAniNode":true,
-            "hasChild":false,
-            "frames":[
-                {
-                    "type":1,
-                    "props":{"label":"label"},
-                    "frame":0,
-                    "__InPool":false
-                }],
-            "compId":6,
+            "compId":4,
             "child":[
                 ]
         }],

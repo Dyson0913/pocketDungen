@@ -42,7 +42,7 @@
         {
             "x":15,
             "type":"TextInput",
-            "props":{"y":328.99999999999994,"x":166.00000000000006,"width":283,"var":"password","promptColor":"#f6eeee","prompt":"password","height":47,"fontSize":20,"color":"#f4ecec"},
+            "props":{"y":328.99999999999994,"x":166.00000000000006,"width":283,"var":"password","text":"22","promptColor":"#f6eeee","prompt":"password","height":47,"fontSize":20,"color":"#f4ecec"},
             "nodeParent":1,
             "label":"TextInput(password)",
             "isDirectory":false,
@@ -62,7 +62,7 @@
         {
             "x":15,
             "type":"TextInput",
-            "props":{"y":251,"x":162,"width":283,"var":"name","promptColor":"#f6eeee","prompt":"TextInput","height":47,"fontSize":20,"color":"#f4ecec"},
+            "props":{"y":251,"x":162,"width":283,"var":"name","text":"11","promptColor":"#f6eeee","prompt":"TextInput","height":47,"fontSize":20,"color":"#f4ecec"},
             "nodeParent":1,
             "label":"TextInput(name)",
             "isDirectory":false,

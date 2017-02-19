@@ -4,6 +4,8 @@ var Scene={};
 var login_name;
 var login_pw;
 var uuid;
+var game_list;
+var join_game;
 //model 最先建立
 
 var model = function ()
@@ -41,6 +43,7 @@ model.prototype.start = function ()
 
 model.prototype.eventHandle = function (name,data)
 {
+     trace("CMD = "+name)
    switch(name) 
    {
        case "login":
@@ -48,7 +51,7 @@ model.prototype.eventHandle = function (name,data)
        break;
        case "login_ok":
         uuid = data[0].uuid;
-        //trace("uuid = "+uuid)
+       
         this.login_ok.dispatch();
        break;
        case "query_lobby_list":
@@ -57,9 +60,25 @@ model.prototype.eventHandle = function (name,data)
        break;
        case "lobby_waitting":
         trace("lobby info=",data[0].gamelist)
+        game_list = data[0].gamelist
+         this.lobbylist_getok.dispatch();
         //var msg = {  "uuid": uuid,"module":"lobby","cmd":"request_gamelist"};
         //this.socket.sendMessage(msg);
        break;
+       case "join_game":
+        //trace("list ="+game_list)
+        //trace("join ="+this.join_game)
+       //  trace("join ="+game_list[this.join_game]);
+       var msg = {"uuid": uuid,"module":game_list[this.join_game],"room":"1","cmd":"request_join"};
+        this.socket.sendMessage(JSON.stringify(msg));
+       break;
+       case "game_join_fail":
+       trace("reason = "+data[0].error_code)
+       break;
+        case "game_join_ok":
+      // trace("reason = "+data[0].error_code)
+       break;
+       
    }
 
 };
