@@ -21,7 +21,7 @@ function lobbyUI()
 	function onBtnClick2()
 	{
 		trace("2222");
-		
+		_model.eventHandle("leave_game",[]);
 	}
 
 
