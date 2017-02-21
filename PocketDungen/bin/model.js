@@ -6,6 +6,7 @@ var login_pw;
 var uuid;
 var game_list;
 var join_game;
+var game_id;
 //model 最先建立
 
 var model = function ()
@@ -76,9 +77,20 @@ model.prototype.eventHandle = function (name,data)
        trace("reason = "+data[0].error_code)
        break;
         case "game_join_ok":
+        this.game_id = data[0].game_id;
       // trace("reason = "+data[0].error_code)
        break;
+        case "leave_game":
+         var msg = {"uuid": uuid,"module":game_list[this.join_game],"room":"1","cmd":"leave_game","game_id":this.game_id};
+         this.socket.sendMessage(JSON.stringify(msg));
+       break;
        
+        case "idle_kick":
+      
+             var msg = {"uuid": uuid,"module":game_list[this.join_game],"room":"1","cmd":"leave_game","game_id":this.game_id};
+               trace("idel_kick",msg);
+         this.socket.sendMessage(JSON.stringify(msg));
+       break;
    }
 
 };

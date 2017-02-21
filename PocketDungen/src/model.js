@@ -82,10 +82,15 @@ model.prototype.eventHandle = function (name,data)
        break;
         case "leave_game":
          var msg = {"uuid": uuid,"module":game_list[this.join_game],"room":"1","cmd":"leave_game","game_id":this.game_id};
-      // trace("reason = "+data[0].error_code)
+         this.socket.sendMessage(JSON.stringify(msg));
        break;
        
-       
+        case "idle_kick":
+      
+             var msg = {"uuid": uuid,"module":game_list[this.join_game],"room":"1","cmd":"leave_game","game_id":this.game_id};
+               trace("idel_kick",msg);
+         this.socket.sendMessage(JSON.stringify(msg));
+       break;
    }
 
 };
