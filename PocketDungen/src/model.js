@@ -1,12 +1,30 @@
 
 var Scene={};
 
+//loging & lobby
 var login_name;
 var login_pw;
 var uuid;
 var game_list;
 var join_game;
 var game_id;
+
+//TODO total_point
+
+//game command
+var take_in_gamePoint;
+
+//eash game
+var line;  //幾輪幾線的線
+var symbol_num; //總symbol 數量
+var odds;  //賠率表 symbol_N{N0~NM):[中1格倍率,2格,3格,4格,5格] 
+                   //(W= wild card):[0,20,200,500,1000] 
+                   //(F= free game):[0,0,5,10,15] (免費轉動次數)
+                   //(B=bouns game):[0,0,1,2,3] (bounds game 種類)
+//顥示賠率表用,不計算
+
+
+
 //model 最先建立
 
 var model = function ()
@@ -16,6 +34,7 @@ var model = function ()
     this.login_ok  =  new signals.Signal();
     this.lobbylist_getok  =  new signals.Signal();
     this.socket = undefined;
+    this.odds = [];
 }
 
 model.getInstance = function ()
@@ -74,11 +93,27 @@ model.prototype.eventHandle = function (name,data)
         this.socket.sendMessage(JSON.stringify(msg));
        break;
        case "game_join_fail":
-       trace("reason = "+data[0].error_code)
+        trace("reason = "+data[0].error_code)
        break;
         case "game_join_ok":
         this.game_id = data[0].game_id;
-      // trace("reason = "+data[0].error_code)
+        this.take_in_gamePoint = data[0].UserPoint
+         this.line = data[0].Line
+        this.symbol_num = data[0].Symbol_Num
+        var dat = data[0].odds
+         this.odds.push(dat.N0)
+         this.odds.push(dat.N1)
+         this.odds.push(dat.N2)
+         this.odds.push(dat.N3)
+         this.odds.push(dat.N4)
+         this.odds.push(dat.N5)
+         this.odds.push(dat.N6)
+         this.odds.push(dat.N7)
+         this.odds.push(dat.W)
+         this.odds.push(dat.S)
+       
+
+     
        break;
         case "leave_game":
          var msg = {"uuid": uuid,"module":game_list[this.join_game],"room":"1","cmd":"leave_game","game_id":this.game_id};
@@ -86,7 +121,6 @@ model.prototype.eventHandle = function (name,data)
        break;
        
         case "idle_kick":
-      
              var msg = {"uuid": uuid,"module":game_list[this.join_game],"room":"1","cmd":"leave_game","game_id":this.game_id};
                trace("idel_kick",msg);
          this.socket.sendMessage(JSON.stringify(msg));
