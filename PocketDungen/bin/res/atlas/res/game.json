@@ -1,0 +1,138 @@
+{
+    "frames": {
+        "king.png": {
+            "frame": {
+                "x": 0,
+                "y": 0,
+                "w": 219,
+                "h": 666,
+                "idx": 0
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 219,
+                "h": 666
+            },
+            "sourceSize": {
+                "w": 219,
+                "h": 666
+            },
+            "rotated": false,
+            "trimed": false
+        },
+        "home.png": {
+            "frame": {
+                "x": 221,
+                "y": 0,
+                "w": 219,
+                "h": 657,
+                "idx": 0
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 219,
+                "h": 657
+            },
+            "sourceSize": {
+                "w": 219,
+                "h": 657
+            },
+            "rotated": false,
+            "trimed": false
+        },
+        "pairate.png": {
+            "frame": {
+                "x": 442,
+                "y": 0,
+                "w": 218,
+                "h": 660,
+                "idx": 0
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 218,
+                "h": 660
+            },
+            "sourceSize": {
+                "w": 218,
+                "h": 660
+            },
+            "rotated": false,
+            "trimed": false
+        },
+        "money.png": {
+            "frame": {
+                "x": 662,
+                "y": 0,
+                "w": 217,
+                "h": 654,
+                "idx": 0
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 217,
+                "h": 654
+            },
+            "sourceSize": {
+                "w": 217,
+                "h": 654
+            },
+            "rotated": false,
+            "trimed": false
+        },
+        "arc.png": {
+            "frame": {
+                "x": 881,
+                "y": 0,
+                "w": 215,
+                "h": 657,
+                "idx": 0
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 215,
+                "h": 657
+            },
+            "sourceSize": {
+                "w": 215,
+                "h": 657
+            },
+            "rotated": false,
+            "trimed": false
+        },
+        "gold.png": {
+            "frame": {
+                "x": 221,
+                "y": 659,
+                "w": 218,
+                "h": 642,
+                "idx": 0
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 218,
+                "h": 642
+            },
+            "sourceSize": {
+                "w": 218,
+                "h": 642
+            },
+            "rotated": false,
+            "trimed": false
+        }
+    },
+    "meta": {
+        "app": "http:\/\/www.layabox.com",
+        "version": "0.1.0 alpha",
+        "format": "json",
+        "scale": 1,
+        "image": "game.png",
+        "prefix": "res\/game\/"
+    }
+}

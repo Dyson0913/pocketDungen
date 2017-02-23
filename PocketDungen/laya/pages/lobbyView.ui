@@ -2,8 +2,8 @@
     "x":0,
     "type":"View",
     "selectedBox":1,
-    "selecteID":4,
-    "props":{"width":600,"sceneColor":"#000000","height":800},
+    "selecteID":14,
+    "props":{"width":1280,"sceneColor":"#000000","height":720},
     "nodeParent":-1,
     "label":"View",
     "isOpen":true,
@@ -21,28 +21,28 @@
     "child":[
         {
             "x":15,
-            "type":"Label",
-            "props":{"y":39,"x":181,"width":226,"text":"this is lobby","height":106,"fontSize":50,"color":"#f6f1f1"},
+            "type":"Image",
+            "props":{"y":65,"x":415,"var":"Icon","skin":"res/lobby/lobbyIcon.png"},
             "nodeParent":1,
-            "label":"Label",
+            "label":"Image(Icon)",
             "isDirectory":false,
             "isAniNode":true,
             "hasChild":false,
             "frames":[
                 {
                     "type":1,
-                    "props":{"text":"label"},
+                    "props":{"y":436,"x":386,"skin":"res/lobby/lobbyIcon.png"},
                     "frame":0,
                     "__InPool":false
                 }],
-            "compId":2,
+            "compId":5,
             "child":[
                 ]
         },
         {
             "x":15,
             "type":"Button",
-            "props":{"y":156,"x":56,"var":"game1","skin":"res/loading/Btn_bg.png","label":"game1"},
+            "props":{"y":6,"x":8,"var":"game1","skin":"res/game/money.png"},
             "nodeParent":1,
             "label":"Button(game1)",
             "isDirectory":false,
@@ -55,14 +55,14 @@
                     "frame":0,
                     "__InPool":false
                 }],
-            "compId":3,
+            "compId":9,
             "child":[
                 ]
         },
         {
             "x":15,
             "type":"Button",
-            "props":{"y":162,"x":306,"var":"game2","skin":"res/loading/Btn_bg.png","label":"game1"},
+            "props":{"y":9,"x":1045,"var":"game2","skin":"res/game/home.png"},
             "nodeParent":1,
             "label":"Button(game2)",
             "isDirectory":false,
@@ -75,7 +75,87 @@
                     "frame":0,
                     "__InPool":false
                 }],
-            "compId":4,
+            "compId":10,
+            "child":[
+                ]
+        },
+        {
+            "x":15,
+            "type":"Button",
+            "props":{"y":477,"x":8,"var":"priate","skin":"res/game/pairate.png"},
+            "nodeParent":1,
+            "label":"Button(priate)",
+            "isDirectory":false,
+            "isAniNode":true,
+            "hasChild":false,
+            "frames":[
+                {
+                    "type":1,
+                    "props":{"label":"label"},
+                    "frame":0,
+                    "__InPool":false
+                }],
+            "compId":11,
+            "child":[
+                ]
+        },
+        {
+            "x":15,
+            "type":"Button",
+            "props":{"y":476,"x":1037,"var":"warcraft","skin":"res/game/king.png"},
+            "nodeParent":1,
+            "label":"Button(warcraft)",
+            "isDirectory":false,
+            "isAniNode":true,
+            "hasChild":false,
+            "frames":[
+                {
+                    "type":1,
+                    "props":{"label":"label"},
+                    "frame":0,
+                    "__InPool":false
+                }],
+            "compId":12,
+            "child":[
+                ]
+        },
+        {
+            "x":15,
+            "type":"Button",
+            "props":{"y":244,"x":917,"var":"gold","skin":"res/game/gold.png"},
+            "nodeParent":1,
+            "label":"Button(gold)",
+            "isDirectory":false,
+            "isAniNode":true,
+            "hasChild":false,
+            "frames":[
+                {
+                    "type":1,
+                    "props":{"label":"label"},
+                    "frame":0,
+                    "__InPool":false
+                }],
+            "compId":13,
+            "child":[
+                ]
+        },
+        {
+            "x":15,
+            "type":"Button",
+            "props":{"y":236,"x":132,"skin":"res/game/arc.png"},
+            "nodeParent":1,
+            "label":"Button",
+            "isDirectory":false,
+            "isAniNode":true,
+            "hasChild":false,
+            "frames":[
+                {
+                    "type":1,
+                    "props":{"label":"label"},
+                    "frame":0,
+                    "__InPool":false
+                }],
+            "compId":14,
             "child":[
                 ]
         }],

@@ -5,8 +5,12 @@ var Dialog=laya.ui.Dialog;
 var lobbyViewUI=(function(_super){
 		function lobbyViewUI(){
 			
+		    this.Icon=null;
 		    this.game1=null;
 		    this.game2=null;
+		    this.priate=null;
+		    this.warcraft=null;
+		    this.gold=null;
 
 			lobbyViewUI.__super.call(this);
 		}
@@ -20,17 +24,20 @@ var lobbyViewUI=(function(_super){
 		}
 
 		STATICATTR$(lobbyViewUI,
-		['uiView',function(){return this.uiView={"type":"View","props":{"width":600,"height":800},"child":[{"type":"Label","props":{"y":39,"x":181,"width":226,"text":"this is lobby","height":106,"fontSize":50,"color":"#f6f1f1"}},{"type":"Button","props":{"y":156,"x":56,"var":"game1","skin":"res/loading/Btn_bg.png","label":"game1"}},{"type":"Button","props":{"y":162,"x":306,"var":"game2","skin":"res/loading/Btn_bg.png","label":"game1"}}]};}
+		['uiView',function(){return this.uiView={"type":"View","props":{"width":1280,"height":720},"child":[{"type":"Image","props":{"y":65,"x":415,"var":"Icon","skin":"res/lobby/lobbyIcon.png"}},{"type":"Button","props":{"y":6,"x":8,"var":"game1","skin":"res/game/money.png"}},{"type":"Button","props":{"y":9,"x":1045,"var":"game2","skin":"res/game/home.png"}},{"type":"Button","props":{"y":477,"x":8,"var":"priate","skin":"res/game/pairate.png"}},{"type":"Button","props":{"y":476,"x":1037,"var":"warcraft","skin":"res/game/king.png"}},{"type":"Button","props":{"y":244,"x":917,"var":"gold","skin":"res/game/gold.png"}},{"type":"Button","props":{"y":236,"x":132,"skin":"res/game/arc.png"}}]};}
 		]);
 		return lobbyViewUI;
 	})(View);
 var loginViewUI=(function(_super){
 		function loginViewUI(){
 			
+		    this.title=null;
+		    this.oneTouch_btn=null;
+		    this.casino=null;
+		    this.loginZone=null;
 		    this.password=null;
 		    this.name=null;
 		    this.Login_btn=null;
-		    this.oneTouch_btn=null;
 
 			loginViewUI.__super.call(this);
 		}
@@ -44,7 +51,7 @@ var loginViewUI=(function(_super){
 		}
 
 		STATICATTR$(loginViewUI,
-		['uiView',function(){return this.uiView={"type":"View","props":{"width":600,"height":800},"child":[{"type":"Label","props":{"y":54,"x":111,"width":374,"text":"DysonCasino","height":118,"fontSize":50,"color":"#0f0e0e","align":"center"}},{"type":"TextInput","props":{"y":328.99999999999994,"x":166.00000000000006,"width":283,"var":"password","text":"22","promptColor":"#f6eeee","prompt":"password","height":47,"fontSize":20,"color":"#f4ecec"}},{"type":"TextInput","props":{"y":251,"x":162,"width":283,"var":"name","text":"11","promptColor":"#f6eeee","prompt":"TextInput","height":47,"fontSize":20,"color":"#f4ecec"}},{"type":"Button","props":{"y":408,"x":143,"width":342,"var":"Login_btn","skin":"res/loading/Btn_bg.png","height":85},"child":[{"type":"Label","props":{"y":14,"x":48.00000000000006,"width":238,"text":"登入","height":118,"fontSize":50,"color":"#f6eaea","align":"center"}}]},{"type":"Button","props":{"y":551,"x":147,"width":342,"var":"oneTouch_btn","skin":"res/loading/Btn_bg.png","height":85},"child":[{"type":"Label","props":{"y":11.999999999999886,"x":54.00000000000006,"width":238,"text":"一鍵登入","height":118,"fontSize":50,"color":"#f6eaea","align":"center"}}]}]};}
+		['uiView',function(){return this.uiView={"type":"View","props":{"width":1280,"height":720},"child":[{"type":"Image","props":{"y":0,"x":186,"width":947,"skin":"res/share/logo.png","height":723,"sizeGrid":"5,5,5,5"}},{"type":"Label","props":{"y":57,"x":91,"width":423,"var":"title","text":"Dyson","height":118,"fontSize":50,"color":"#d1cccc","align":"center"}},{"type":"Button","props":{"y":605,"x":939,"width":342,"var":"oneTouch_btn","skin":"res/loading/Btn_bg.png","height":85},"child":[{"type":"Label","props":{"y":11.999999999999886,"x":54.00000000000006,"width":238,"text":"一鍵登入","height":118,"fontSize":50,"color":"#f6eaea","align":"center"}}]},{"type":"Label","props":{"y":62,"x":805,"width":423,"var":"casino","text":"Casino","height":118,"fontSize":50,"color":"#d1cccc","align":"center"}},{"type":"Box","props":{"y":456,"x":12,"var":"loginZone"},"child":[{"type":"TextInput","props":{"x":37,"width":283,"var":"password","text":"22","promptColor":"#f6eeee","prompt":"password","height":47,"fontSize":20,"color":"#f4ecec"}},{"type":"TextInput","props":{"y":65,"x":36,"width":283,"var":"name","text":"11","promptColor":"#f6eeee","prompt":"TextInput","height":47,"fontSize":20,"color":"#f4ecec"}},{"type":"Button","props":{"y":147,"width":342,"var":"Login_btn","skin":"res/loading/Btn_bg.png","height":85},"child":[{"type":"Label","props":{"y":14,"x":48.00000000000006,"width":238,"text":"登入","height":118,"fontSize":50,"color":"#f6eaea","align":"center"}}]}]},{"type":"FillTexture","props":{"y":0,"x":0,"width":1280,"skin":"res/loading/wall.png","height":720}}]};}
 		]);
 		return loginViewUI;
 	})(View);
