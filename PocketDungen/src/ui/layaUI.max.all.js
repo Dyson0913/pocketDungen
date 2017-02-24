@@ -24,7 +24,7 @@ var lobbyViewUI=(function(_super){
 		}
 
 		STATICATTR$(lobbyViewUI,
-		['uiView',function(){return this.uiView={"type":"View","props":{"width":1280,"height":720},"child":[{"type":"Image","props":{"y":65,"x":415,"var":"Icon","skin":"res/lobby/lobbyIcon.png"}},{"type":"Button","props":{"y":6,"x":8,"var":"game1","skin":"res/game/money.png"}},{"type":"Button","props":{"y":9,"x":1045,"var":"game2","skin":"res/game/home.png"}},{"type":"Button","props":{"y":477,"x":8,"var":"priate","skin":"res/game/pairate.png"}},{"type":"Button","props":{"y":476,"x":1037,"var":"warcraft","skin":"res/game/king.png"}},{"type":"Button","props":{"y":244,"x":917,"var":"gold","skin":"res/game/gold.png"}},{"type":"Button","props":{"y":236,"x":132,"skin":"res/game/arc.png"}}]};}
+		['uiView',function(){return this.uiView={"type":"View","props":{"width":1280,"height":720},"child":[{"type":"Image","props":{"y":65,"x":415,"var":"Icon","skin":"res/lobby/lobbyIcon.png"}},{"type":"Button","props":{"y":6,"x":8,"var":"game1","skin":"res/lobby/money.png"}},{"type":"Button","props":{"y":9,"x":1045,"var":"game2","skin":"res/lobby/home.png"}},{"type":"Button","props":{"y":477,"x":8,"var":"priate","skin":"res/lobby/pairate.png"}},{"type":"Button","props":{"y":476,"x":1037,"var":"warcraft","skin":"res/lobby/king.png"}},{"type":"Button","props":{"y":244,"x":917,"var":"gold","skin":"res/lobby/gold.png"}},{"type":"Button","props":{"y":236,"x":132,"skin":"res/lobby/arc.png"}}]};}
 		]);
 		return lobbyViewUI;
 	})(View);
@@ -55,26 +55,27 @@ var loginViewUI=(function(_super){
 		]);
 		return loginViewUI;
 	})(View);
-var TestPageUI=(function(_super){
-		function TestPageUI(){
+var warcraftViewUI=(function(_super){
+		function warcraftViewUI(){
 			
-		    this.showText=null;
-		    this.btn_ok=null;
-		    this.btn_cancel=null;
+		    this.point=null;
+		    this.bet=null;
+		    this.Coin=null;
+		    this.cash=null;
 
-			TestPageUI.__super.call(this);
+			warcraftViewUI.__super.call(this);
 		}
 
-		CLASS$(TestPageUI,'ui.TestPageUI',_super);
-		var __proto__=TestPageUI.prototype;
+		CLASS$(warcraftViewUI,'ui.warcraftViewUI',_super);
+		var __proto__=warcraftViewUI.prototype;
 		__proto__.createChildren=function(){
 		    
 			laya.ui.Component.prototype.createChildren.call(this);
-			this.createView(TestPageUI.uiView);
+			this.createView(warcraftViewUI.uiView);
 		}
 
-		STATICATTR$(TestPageUI,
-		['uiView',function(){return this.uiView={"type":"View","props":{"width":600,"height":400},"child":[{"type":"Label","props":{"y":124,"x":162,"width":137,"var":"showText","text":"loading","height":87,"color":"#f1e1e1"}},{"type":"Image","props":{"y":243,"x":142,"skin":"res/loading/chip_1.png"}},{"type":"Button","props":{"y":23,"x":41,"var":"btn_ok","skin":"res/loading/Btn_bg.png","labelStrokeColor":"#f6f6f6","label":"test"}},{"type":"Button","props":{"y":25,"x":220,"var":"btn_cancel","skin":"res/loading/Btn_bg.png","labelStrokeColor":"#f6f6f6","label":"cancel"}}]};}
+		STATICATTR$(warcraftViewUI,
+		['uiView',function(){return this.uiView={"type":"View","props":{"width":1280,"height":720},"child":[{"type":"Image","props":{"y":0,"x":0,"skin":"res/game/0.png"}},{"type":"Label","props":{"y":665,"x":707,"width":206,"var":"point","text":"123,456,789","height":55,"fontSize":30,"color":"#ecdede","align":"center"}},{"type":"Label","props":{"y":667,"x":232,"width":101,"var":"bet","text":"99","height":55,"fontSize":30,"color":"#ecdede","align":"center"}},{"type":"Label","props":{"y":17,"x":1096,"width":173,"var":"Coin","text":"999,999,999","height":34,"fontSize":30,"color":"#ecdede","align":"center"}},{"type":"Label","props":{"y":57,"x":1083,"width":193,"var":"cash","text":"999,999,999","height":33,"fontSize":30,"color":"#ecdede","align":"center"}}]};}
 		]);
-		return TestPageUI;
+		return warcraftViewUI;
 	})(View);

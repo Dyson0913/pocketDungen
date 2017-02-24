@@ -33,6 +33,7 @@ var model = function ()
     this.eventDispatch  =  new signals.Signal();
     this.login_ok  =  new signals.Signal();
     this.lobbylist_getok  =  new signals.Signal();
+    this.in_game =  new signals.Signal();
     this.socket = undefined;
     this.odds = [];
 }
@@ -112,7 +113,7 @@ model.prototype.eventHandle = function (name,data)
          this.odds.push(dat.W)
          this.odds.push(dat.S)
        
-
+         this.in_game.dispatch();
      
        break;
         case "leave_game":

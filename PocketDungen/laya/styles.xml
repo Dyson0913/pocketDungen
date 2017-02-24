@@ -8,4 +8,10 @@
    <item name="res/game/king.png" type="Image" compress="0" pack="1" quality="80" props="" picType="0"/>
    <item name="res/game/money.png" type="Image" compress="0" pack="1" quality="80" props="" picType="0"/>
    <item name="res/game/pairate.png" type="Image" compress="0" pack="1" quality="80" props="" picType="0"/>
+   <item name="res/lobby/arc.png" type="Image" compress="0" pack="1" quality="80" props="" picType="0"/>
+   <item name="res/lobby/gold.png" type="Image" compress="0" pack="1" quality="80" props="" picType="0"/>
+   <item name="res/lobby/home.png" type="Image" compress="0" pack="1" quality="80" props="" picType="0"/>
+   <item name="res/lobby/king.png" type="Image" compress="0" pack="1" quality="80" props="" picType="0"/>
+   <item name="res/lobby/money.png" type="Image" compress="0" pack="1" quality="80" props="" picType="0"/>
+   <item name="res/lobby/pairate.png" type="Image" compress="0" pack="1" quality="80" props="" picType="0"/>
 </res>

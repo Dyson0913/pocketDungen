@@ -9,3 +9,10 @@ SET To_ui_path=C:\Users\dyson\Downloads\D\game_dev\laya\pocketDungen\PocketDunge
 
 xcopy /y %ui_path%\*.js /s %To_ui_path%\*.js
 xcopy /y %ui_path%\ui\*.* /s %To_ui_path%\ui\*.*
+
+@REM ---------altes
+
+SET altas_path=C:\Users\dyson\Downloads\D\game_dev\laya\pocketDungen\PocketDungen\bin\res\atlas\res
+SET To_altas_path=C:\Users\dyson\Downloads\D\game_dev\laya\pocketDungen\PocketDungen\bin\res\atlas
+
+xcopy /y %altas_path%\*.* /s %To_altas_path%\*.*

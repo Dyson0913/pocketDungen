@@ -33,6 +33,7 @@ var model = function ()
     this.eventDispatch  =  new signals.Signal();
     this.login_ok  =  new signals.Signal();
     this.lobbylist_getok  =  new signals.Signal();
+    this.in_game =  new signals.Signal();
     this.socket = undefined;
     this.odds = [];
 }
@@ -97,9 +98,7 @@ model.prototype.eventHandle = function (name,data)
        break;
         case "game_join_ok":
         this.game_id = data[0].game_id;
-        
         this.take_in_gamePoint = data[0].UserPoint
-        trace("CMD = ",data)
          this.line = data[0].Line
         this.symbol_num = data[0].Symbol_Num
         var dat = data[0].odds
@@ -113,8 +112,8 @@ model.prototype.eventHandle = function (name,data)
          this.odds.push(dat.N7)
          this.odds.push(dat.W)
          this.odds.push(dat.S)
-        trace("reason = "+this.odds[0])
-
+       
+         this.in_game.dispatch();
      
        break;
         case "leave_game":
