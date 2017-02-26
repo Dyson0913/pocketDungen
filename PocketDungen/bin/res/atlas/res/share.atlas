@@ -1,29 +1,8 @@
 {
     "frames": {
-        "logo.png": {
-            "frame": {
-                "x": 0,
-                "y": 0,
-                "w": 295,
-                "h": 301,
-                "idx": 0
-            },
-            "spriteSourceSize": {
-                "x": 0,
-                "y": 0,
-                "w": 295,
-                "h": 301
-            },
-            "sourceSize": {
-                "w": 295,
-                "h": 301
-            },
-            "rotated": false,
-            "trimed": false
-        },
         "backLobbyBtn.png": {
             "frame": {
-                "x": 297,
+                "x": 0,
                 "y": 0,
                 "w": 89,
                 "h": 267,

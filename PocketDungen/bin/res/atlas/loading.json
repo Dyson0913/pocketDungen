@@ -21,10 +21,31 @@
             "rotated": false,
             "trimed": false
         },
-        "Btn_bg.png": {
+        "logo.png": {
             "frame": {
                 "x": 702,
                 "y": 0,
+                "w": 295,
+                "h": 301,
+                "idx": 0
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 295,
+                "h": 301
+            },
+            "sourceSize": {
+                "w": 295,
+                "h": 301
+            },
+            "rotated": false,
+            "trimed": false
+        },
+        "Btn_bg.png": {
+            "frame": {
+                "x": 702,
+                "y": 303,
                 "w": 147,
                 "h": 147,
                 "idx": 0
@@ -38,27 +59,6 @@
             "sourceSize": {
                 "w": 147,
                 "h": 147
-            },
-            "rotated": false,
-            "trimed": false
-        },
-        "chip_1.png": {
-            "frame": {
-                "x": 702,
-                "y": 149,
-                "w": 76,
-                "h": 81,
-                "idx": 0
-            },
-            "spriteSourceSize": {
-                "x": 0,
-                "y": 0,
-                "w": 76,
-                "h": 81
-            },
-            "sourceSize": {
-                "w": 76,
-                "h": 81
             },
             "rotated": false,
             "trimed": false

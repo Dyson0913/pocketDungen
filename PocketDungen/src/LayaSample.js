@@ -50,14 +50,15 @@
 
 
 		_model.login_ok.add(onlogok);
-		_model.lobbylist_getok.add(onlobby);
-		_model.in_game.add(onIntoGame);
+		_model.lobbylist_getok.add(onloadlobby);
+		_model.in_game.add(unloadlobby);
 		
 	})();
 
 	function onAssetsLoaded()
 	{
 		trace(" onAssetsLoaded ")
+		
 		//var robotData = Laya.Loader.getRes("res/atlas/assets.json");
 		
 	//	view = _classUtils.getInstance("res/atlas/assets.json");
@@ -75,16 +76,29 @@
 		_model.eventHandle("query_lobby_list",[]);
   	}
 	
+	function onloadlobby()
+	{
+		Laya.stage.removeChild(_model.getView(_model.current_view_name));
+		_model.removeView(_model.current_view_name)
+		if( _model.current_view_name =="login") 
+		{
+			Loader.clearRes("res/atlas/loading.json")
+			onlobby()
+		} 
+		else
+		{
+			//del game res
+			Loader.clearRes("res/atlas/game.json") 
+			Laya.loader.load([{url: "res/atlas/lobby.json",type: Loader.ATLAS}], Handler.create(this, onlobby));
+		}
+	}
+
 	function onlobby()
 	{
-		//清上一個場景
-		Laya.stage.removeChild(_model.getView(_model.current_view_name));
-		//Laya.stage.destroy(_model.getView(_model.current_view_name));
-		//_model.getView(_model.current_view_name).destroy()
-
-		//不會再用到login remove 掉
-		_model.removeView(_model.current_view_name)
 		
+		//清上一個場景
+		//Laya.stage.removeChild(_model.getView(_model.current_view_name));
+		//Loader.clearRes("res/atlas/loading.json");
 		
 		if(_model.getView("lobby") == undefined )
 		{
@@ -98,11 +112,19 @@
 		
 	}
 	
-	function onIntoGame()
+	function unloadlobby()
 	{
 		Laya.stage.removeChild(_model.getView(_model.current_view_name));
-		//Laya.stage.destroy(_model.getView(_model.current_view_name));
-		//_model.getView(_model.current_view_name).destroy()
+		_model.removeView(_model.current_view_name)
+		Loader.clearRes("res/atlas/lobby.json"); 
+		onIntoGame()
+	}
+
+	function onIntoGame()
+	{
+		//Laya.stage.removeChild(_model.getView(_model.current_view_name));
+		//_model.removeView(_model.current_view_name)
+		
 
 		if(_model.getView("warcraft") == undefined )
 		{
