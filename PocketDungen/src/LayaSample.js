@@ -10,8 +10,7 @@
 	var _classUtils  = laya.utils.ClassUtils;
 	var _model;
 
-	var _loging;
-	var _test;
+	var Stat    = Laya.Stat;
 
 	(function()
 	{
@@ -23,11 +22,10 @@
 		Laya.stage.scaleMode = "showall";
 		Laya.stage.bgColor = "#232628";
 		
+		Stat.show(10,10);
+
 		_model = model.getInstance();
 		_model.socket = socket.getInstance();
-
-		//event listen
-		trace("111");
 
 		//res load
 		var assets = [];
@@ -63,10 +61,10 @@
 		//var robotData = Laya.Loader.getRes("res/atlas/assets.json");
 		
 	//	view = _classUtils.getInstance("res/atlas/assets.json");
-		//Laya.stage.addChild(view);
-		//Laya.stage.addChild(new TestUI());
 		_model.pushView("login",new logingUI());
+		_model.current_view_name ="login";
 		Laya.stage.addChild(_model.getView("login"));
+
 		//this.stage.addChild(robotData);
 	}
 
@@ -79,17 +77,40 @@
 	
 	function onlobby()
 	{
+		//清上一個場景
+		Laya.stage.removeChild(_model.getView(_model.current_view_name));
+		//Laya.stage.destroy(_model.getView(_model.current_view_name));
+		//_model.getView(_model.current_view_name).destroy()
 
-		Laya.stage.removeChild(_model.getView("login"));
-		//Laya.stage.destroy(_loging);
-		_model.pushView("lobby",new lobbyUI());
+		//不會再用到login remove 掉
+		_model.removeView(_model.current_view_name)
+		
+		
+		if(_model.getView("lobby") == undefined )
+		{
+			trace("first create lobby")
+			_model.pushView("lobby",new lobbyUI());
+		} 
+		
+		_model.current_view_name = "lobby";
 		Laya.stage.addChild(_model.getView("lobby"));
+
+		
 	}
 	
 	function onIntoGame()
 	{
-		Laya.stage.removeChild(_model.getView("lobby"));
-		_model.pushView("warcraft",new warcraftUI());
+		Laya.stage.removeChild(_model.getView(_model.current_view_name));
+		//Laya.stage.destroy(_model.getView(_model.current_view_name));
+		//_model.getView(_model.current_view_name).destroy()
+
+		if(_model.getView("warcraft") == undefined )
+		{
+			trace("first create warcraft")
+			_model.pushView("warcraft",new warcraftUI());
+		}
+		
+		_model.current_view_name = "warcraft";
 		Laya.stage.addChild(_model.getView("warcraft"));
 	}
 	

@@ -1,6 +1,7 @@
 
 var Scene={};
 
+var current_view_name;
 //loging & lobby
 var login_name;
 var login_pw;
@@ -122,9 +123,10 @@ model.prototype.eventHandle = function (name,data)
        break;
        
         case "idle_kick":
-             var msg = {"uuid": uuid,"module":game_list[this.join_game],"room":"1","cmd":"leave_game","game_id":this.game_id};
-               trace("idel_kick",msg);
-         this.socket.sendMessage(JSON.stringify(msg));
+             //pop hint ,click and go back
+            // var msg = {"uuid": uuid,"module":game_list[this.join_game],"room":"1","cmd":"leave_game","game_id":this.game_id};
+            // trace("idel_kick",msg);
+            //this.socket.sendMessage(JSON.stringify(msg));
        break;
    }
 
@@ -133,6 +135,11 @@ model.prototype.eventHandle = function (name,data)
 model.prototype.pushView = function (name,view)
 {
     Scene[name] = view;
+}
+
+model.prototype.removeView = function (name)
+{
+    if(name in Scene)  delete  Scene[name]
 }
 
 model.prototype.getView = function (name)

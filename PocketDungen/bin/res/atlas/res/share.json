@@ -20,6 +20,27 @@
             },
             "rotated": false,
             "trimed": false
+        },
+        "backLobbyBtn.png": {
+            "frame": {
+                "x": 297,
+                "y": 0,
+                "w": 89,
+                "h": 267,
+                "idx": 0
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 89,
+                "h": 267
+            },
+            "sourceSize": {
+                "w": 89,
+                "h": 267
+            },
+            "rotated": false,
+            "trimed": false
         }
     },
     "meta": {

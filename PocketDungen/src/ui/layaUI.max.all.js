@@ -62,6 +62,7 @@ var warcraftViewUI=(function(_super){
 		    this.bet=null;
 		    this.Coin=null;
 		    this.cash=null;
+		    this.back_to_lobby=null;
 
 			warcraftViewUI.__super.call(this);
 		}
@@ -75,7 +76,7 @@ var warcraftViewUI=(function(_super){
 		}
 
 		STATICATTR$(warcraftViewUI,
-		['uiView',function(){return this.uiView={"type":"View","props":{"width":1280,"height":720},"child":[{"type":"Image","props":{"y":0,"x":0,"skin":"res/game/0.png"}},{"type":"Label","props":{"y":665,"x":707,"width":206,"var":"point","text":"123,456,789","height":55,"fontSize":30,"color":"#ecdede","align":"center"}},{"type":"Label","props":{"y":667,"x":232,"width":101,"var":"bet","text":"99","height":55,"fontSize":30,"color":"#ecdede","align":"center"}},{"type":"Label","props":{"y":17,"x":1096,"width":173,"var":"Coin","text":"999,999,999","height":34,"fontSize":30,"color":"#ecdede","align":"center"}},{"type":"Label","props":{"y":57,"x":1083,"width":193,"var":"cash","text":"999,999,999","height":33,"fontSize":30,"color":"#ecdede","align":"center"}}]};}
+		['uiView',function(){return this.uiView={"type":"View","props":{"width":1280,"height":720},"child":[{"type":"Image","props":{"y":0,"x":0,"skin":"res/game/0.png"}},{"type":"Label","props":{"y":665,"x":707,"width":206,"var":"point","text":"123,456,789","height":55,"fontSize":30,"color":"#ecdede","align":"center"}},{"type":"Label","props":{"y":667,"x":232,"width":101,"var":"bet","text":"99","height":55,"fontSize":30,"color":"#ecdede","align":"center"}},{"type":"Label","props":{"y":17,"x":1096,"width":173,"var":"Coin","text":"999,999,999","height":34,"fontSize":30,"color":"#ecdede","align":"center"}},{"type":"Label","props":{"y":57,"x":1083,"width":193,"var":"cash","text":"999,999,999","height":33,"fontSize":30,"color":"#ecdede","align":"center"}},{"type":"Button","props":{"y":118,"x":20,"var":"back_to_lobby","skin":"res/share/backLobbyBtn.png"}}]};}
 		]);
 		return warcraftViewUI;
 	})(View);
