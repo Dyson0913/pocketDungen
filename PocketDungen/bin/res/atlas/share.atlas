@@ -20,6 +20,90 @@
             },
             "rotated": false,
             "trimed": false
+        },
+        "Btn_bg.png": {
+            "frame": {
+                "x": 91,
+                "y": 0,
+                "w": 147,
+                "h": 147,
+                "idx": 0
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 147,
+                "h": 147
+            },
+            "sourceSize": {
+                "w": 147,
+                "h": 147
+            },
+            "rotated": false,
+            "trimed": false
+        },
+        "helpBtn.png": {
+            "frame": {
+                "x": 240,
+                "y": 0,
+                "w": 65,
+                "h": 204,
+                "idx": 0
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 65,
+                "h": 204
+            },
+            "sourceSize": {
+                "w": 65,
+                "h": 204
+            },
+            "rotated": false,
+            "trimed": false
+        },
+        "CarryIn.png": {
+            "frame": {
+                "x": 91,
+                "y": 149,
+                "w": 52,
+                "h": 147,
+                "idx": 0
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 52,
+                "h": 147
+            },
+            "sourceSize": {
+                "w": 52,
+                "h": 147
+            },
+            "rotated": false,
+            "trimed": false
+        },
+        "PlayerListCloseBtn.png": {
+            "frame": {
+                "x": 145,
+                "y": 149,
+                "w": 41,
+                "h": 129,
+                "idx": 0
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 41,
+                "h": 129
+            },
+            "sourceSize": {
+                "w": 41,
+                "h": 129
+            },
+            "rotated": false,
+            "trimed": false
         }
     },
     "meta": {

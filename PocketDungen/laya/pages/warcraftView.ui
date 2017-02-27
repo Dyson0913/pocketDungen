@@ -2,7 +2,7 @@
     "x":0,
     "type":"View",
     "selectedBox":1,
-    "selecteID":11,
+    "selecteID":10,
     "props":{"width":1280,"var":"bg","sceneColor":"#000000","height":720},
     "nodeParent":-1,
     "label":"View(bg)",
@@ -42,9 +42,9 @@
         {
             "x":15,
             "type":"Label",
-            "props":{"y":665,"x":707,"width":206,"var":"point","text":"123,456,789","height":55,"fontSize":30,"color":"#ecdede","align":"center"},
+            "props":{"y":665,"x":707,"width":206,"var":"Winpoint","text":"123,456,789","height":55,"fontSize":30,"color":"#ecdede","align":"center"},
             "nodeParent":1,
-            "label":"Label(point)",
+            "label":"Label(Winpoint)",
             "isDirectory":false,
             "isAniNode":true,
             "hasChild":false,
@@ -62,9 +62,9 @@
         {
             "x":15,
             "type":"Label",
-            "props":{"y":667,"x":232,"width":101,"var":"bet","text":"99","height":55,"fontSize":30,"color":"#ecdede","align":"center"},
+            "props":{"y":667,"x":232,"width":101,"var":"betScore","text":"1","height":55,"fontSize":30,"color":"#ecdede","align":"center"},
             "nodeParent":1,
-            "label":"Label(bet)",
+            "label":"Label(betScore)",
             "isDirectory":false,
             "isAniNode":true,
             "hasChild":false,
@@ -82,9 +82,9 @@
         {
             "x":15,
             "type":"Label",
-            "props":{"y":17,"x":1096,"width":173,"var":"Coin","text":"999,999,999","height":34,"fontSize":30,"color":"#ecdede","align":"center"},
+            "props":{"y":20,"x":1089,"width":173,"var":"myCoin","text":"999,999,999","height":34,"fontSize":30,"color":"#ecdede","align":"center"},
             "nodeParent":1,
-            "label":"Label(Coin)",
+            "label":"Label(myCoin)",
             "isDirectory":false,
             "isAniNode":true,
             "hasChild":false,
@@ -102,9 +102,9 @@
         {
             "x":15,
             "type":"Label",
-            "props":{"y":57,"x":1083,"width":193,"var":"cash","text":"999,999,999","height":33,"fontSize":30,"color":"#ecdede","align":"center"},
+            "props":{"y":57,"x":1083,"width":193,"var":"mycash","text":"999,999,999","height":33,"fontSize":30,"color":"#ecdede","align":"center"},
             "nodeParent":1,
-            "label":"Label(cash)",
+            "label":"Label(mycash)",
             "isDirectory":false,
             "isAniNode":true,
             "hasChild":false,
@@ -136,6 +136,86 @@
                     "__InPool":false
                 }],
             "compId":11,
+            "child":[
+                ]
+        },
+        {
+            "x":15,
+            "type":"Button",
+            "props":{"y":632,"x":950,"width":215,"var":"spinBtn","skin":"res/share/Btn_bg.png","height":82},
+            "nodeParent":1,
+            "label":"Button(spinBtn)",
+            "isOpen":true,
+            "isDirectory":true,
+            "isAniNode":true,
+            "hasChild":true,
+            "frames":[
+                {
+                    "type":1,
+                    "props":{"label":"label"},
+                    "frame":0,
+                    "__InPool":false
+                }],
+            "compId":12,
+            "child":[
+                {
+                    "x":30,
+                    "type":"Label",
+                    "props":{"y":26,"x":78,"text":"開始","fontSize":30,"color":"#fbe6e5"},
+                    "nodeParent":12,
+                    "label":"Label",
+                    "isDirectory":false,
+                    "isAniNode":true,
+                    "hasChild":false,
+                    "frames":[
+                        {
+                            "type":1,
+                            "props":{"text":"label"},
+                            "frame":0,
+                            "__InPool":false
+                        }],
+                    "compId":13,
+                    "child":[
+                        ]
+                }]
+        },
+        {
+            "x":15,
+            "type":"Button",
+            "props":{"y":661,"x":353,"var":"betAddBtn","skin":"res/share/CarryIn.png"},
+            "nodeParent":1,
+            "label":"Button(betAddBtn)",
+            "isDirectory":false,
+            "isAniNode":true,
+            "hasChild":false,
+            "frames":[
+                {
+                    "type":1,
+                    "props":{"label":"label"},
+                    "frame":0,
+                    "__InPool":false
+                }],
+            "compId":14,
+            "child":[
+                ]
+        },
+        {
+            "x":15,
+            "type":"Button",
+            "props":{"y":646,"x":120,"var":"paytableBtn","skin":"res/share/helpBtn.png"},
+            "nodeParent":1,
+            "label":"Button(paytableBtn)",
+            "isDirectory":false,
+            "isAniNode":true,
+            "hasChild":false,
+            "frames":[
+                {
+                    "type":1,
+                    "props":{"label":"label"},
+                    "frame":0,
+                    "__InPool":false
+                }],
+            "compId":15,
             "child":[
                 ]
         }],

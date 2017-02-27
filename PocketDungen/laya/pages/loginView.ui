@@ -62,7 +62,7 @@
         {
             "x":15,
             "type":"Button",
-            "props":{"y":605,"x":939,"width":342,"var":"oneTouch_btn","skin":"res/loading/Btn_bg.png","height":85},
+            "props":{"y":605,"x":939,"width":342,"var":"oneTouch_btn","skin":"res/share/Btn_bg.png","height":85},
             "nodeParent":1,
             "label":"Button(oneTouch_btn)",
             "isOpen":false,
@@ -177,7 +177,7 @@
                 },
                 {
                     "type":"Button",
-                    "props":{"y":147,"width":342,"var":"Login_btn","skin":"res/loading/Btn_bg.png","height":85},
+                    "props":{"y":147,"width":342,"var":"Login_btn","skin":"res/share/Btn_bg.png","height":85},
                     "nodeParent":14,
                     "label":"Button(Login_btn)",
                     "isOpen":true,

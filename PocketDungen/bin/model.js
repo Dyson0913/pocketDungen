@@ -13,7 +13,7 @@ var game_id;
 //TODO total_point
 
 //game command
-var take_in_gamePoint;
+var take_in_gamePoint =2000;
 
 //eash game
 var line;  //幾輪幾線的線
@@ -25,6 +25,7 @@ var odds;  //賠率表 symbol_N{N0~NM):[中1格倍率,2格,3格,4格,5格]
 //顥示賠率表用,不計算
 
 
+var betamount;
 
 //model 最先建立
 
@@ -35,6 +36,9 @@ var model = function ()
     this.login_ok  =  new signals.Signal();
     this.lobbylist_getok  =  new signals.Signal();
     this.in_game =  new signals.Signal();
+    this.cashin =  new signals.Signal();
+    this.winMoney =  new signals.Signal();
+
     this.socket = undefined;
     this.odds = [];
 }
@@ -87,6 +91,10 @@ model.prototype.eventHandle = function (name,data)
         //var msg = {  "uuid": uuid,"module":"lobby","cmd":"request_gamelist"};
         //this.socket.sendMessage(msg);
        break;
+        case "leave_game":
+         var msg = {"uuid": uuid,"module":game_list[this.join_game],"room":"1","cmd":"leave_game","game_id":this.game_id};
+         this.socket.sendMessage(JSON.stringify(msg));
+       break;
        case "join_game":
         //trace("list ="+game_list)
         //trace("join ="+this.join_game)
@@ -115,19 +123,23 @@ model.prototype.eventHandle = function (name,data)
          this.odds.push(dat.S)
        
          this.in_game.dispatch();
-     
+
+        
        break;
-        case "leave_game":
-         var msg = {"uuid": uuid,"module":game_list[this.join_game],"room":"1","cmd":"leave_game","game_id":this.game_id};
-         this.socket.sendMessage(JSON.stringify(msg));
-       break;
+       
        
         case "idle_kick":
              //pop hint ,click and go back
             // var msg = {"uuid": uuid,"module":game_list[this.join_game],"room":"1","cmd":"leave_game","game_id":this.game_id};
             // trace("idel_kick",msg);
             //this.socket.sendMessage(JSON.stringify(msg));
-       break;
+        break;
+
+       //game action
+        case "spin":
+         var msg = {"uuid": uuid,"module":game_list[this.join_game],"cmd":"gamespin","Line":25,"Bet":betamount};
+        this.socket.sendMessage(JSON.stringify(msg));
+        break;
    }
 
 };

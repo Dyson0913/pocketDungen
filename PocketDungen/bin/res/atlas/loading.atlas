@@ -41,27 +41,6 @@
             },
             "rotated": false,
             "trimed": false
-        },
-        "Btn_bg.png": {
-            "frame": {
-                "x": 702,
-                "y": 303,
-                "w": 147,
-                "h": 147,
-                "idx": 0
-            },
-            "spriteSourceSize": {
-                "x": 0,
-                "y": 0,
-                "w": 147,
-                "h": 147
-            },
-            "sourceSize": {
-                "w": 147,
-                "h": 147
-            },
-            "rotated": false,
-            "trimed": false
         }
     },
     "meta": {

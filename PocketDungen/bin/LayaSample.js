@@ -141,6 +141,9 @@
 		
 		_model.current_view_name = "warcraft";
 		Laya.stage.addChild(_model.getView("warcraft"));
+
+		 //TODO 實際帶入
+         _model.cashin.dispatch(1000,2000);
 	}
 	
 
