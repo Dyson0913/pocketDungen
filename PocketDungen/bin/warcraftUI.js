@@ -4,8 +4,10 @@ var Event = Laya.Event;
 var _model;
 var my;
 
+
 function warcraftUI()
 {
+	var self = this
 	warcraftUI.super(this);
 	_model = model.getInstance();
 
@@ -18,8 +20,8 @@ function warcraftUI()
 	
 	(function()
 	{
-		trace("war init");
-		my =this;
+		//建構式
+		_model.betamount =1
 		_model.winMoney.add(onwin);
 	})();
 
@@ -44,14 +46,10 @@ function warcraftUI()
 
 	}
 
-	function oncarrying(mycoin,mycash)
+	function oncarrying(coin,cash)
 	{
-		trace("oncarrying"+this)
-		trace("oncarrying"+mycoin + " " +mycash)
-		trace("oncarrying"+	my.warcraftUI.myCoin + " " +my.mycash)
-		
-		;
-		// this.cash.Text = cash
+		self.coin_amount.text = coin
+		self.cash_amount.text = cash
 	}
 
 	function onwin(winpoint)

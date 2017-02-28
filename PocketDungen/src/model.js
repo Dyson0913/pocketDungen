@@ -137,8 +137,23 @@ model.prototype.eventHandle = function (name,data)
 
        //game action
         case "spin":
-         var msg = {"uuid": uuid,"module":game_list[this.join_game],"cmd":"gamespin","Line":25,"Bet":betamount};
-        this.socket.sendMessage(JSON.stringify(msg));
+        trace("betamount = "+this.betamount);
+         var msg = {"uuid": uuid,"module":game_list[this.join_game],"cmd":"gamespin","Line":25,"Bet":this.betamount};
+         this.socket.sendMessage(JSON.stringify(msg));
+        break;
+        case "spin_result":
+         var result = data[0].gameResult
+         trace("result.state "+ result.state);
+         trace("result.grid "+ result.grid);
+         trace("result.winLine "+ result.winLine);
+          trace("result.bonusWin "+ result.bonusWin);
+          trace("result.freeMode "+ result.freeMode);
+           trace("result.freeCount "+ result.freeCount);
+           trace("result.freeTotalCount "+ result.freeTotalCount);
+           trace("result.freeTotalPoint "+ result.freeTotalPoint);
+           trace("result.userPoint "+ result.userPoint);
+           trace("result.nowJackPot "+ result.nowJackPot);
+           trace("result.winJackPotPoint "+ result.winJackPotPoint);
         break;
    }
 
