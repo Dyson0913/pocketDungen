@@ -3,6 +3,7 @@ var Event = Laya.Event;
 
 var _model;
 var my;
+	var BlurFilter = Laya.BlurFilter;
 
 
 function warcraftUI()
@@ -23,6 +24,11 @@ function warcraftUI()
 		//建構式
 		_model.betamount =1
 		_model.winMoney.add(onwin);
+
+		var blurFilter = new BlurFilter();
+		blurFilter.strength = 5;
+		self.pic.filters = [blurFilter];
+
 	})();
 
 	function onBtnClick()
@@ -39,6 +45,7 @@ function warcraftUI()
 	function onaddScore()
 	{
 		this.betScore.text = parseInt(this.betScore.text)+1;
+		
 	}
 
 	function onpatyTable()

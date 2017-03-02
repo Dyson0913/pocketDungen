@@ -65,6 +65,8 @@ var warcraftViewUI=(function(_super){
 		    this.spinBtn=null;
 		    this.betAddBtn=null;
 		    this.paytableBtn=null;
+		    this.list=null;
+		    this.pic=null;
 
 			warcraftViewUI.__super.call(this);
 		}
@@ -78,7 +80,7 @@ var warcraftViewUI=(function(_super){
 		}
 
 		STATICATTR$(warcraftViewUI,
-		['uiView',function(){return this.uiView={"type":"View","props":{"width":1280,"height":720},"child":[{"type":"Image","props":{"y":0,"x":0,"skin":"res/game/0.png"}},{"type":"Label","props":{"y":665,"x":707,"width":206,"var":"Winpoint","text":"123,456,789","height":55,"fontSize":30,"color":"#ecdede","align":"center"}},{"type":"Label","props":{"y":667,"x":232,"width":101,"var":"betScore","text":"1","height":55,"fontSize":30,"color":"#ecdede","align":"center"}},{"type":"Label","props":{"y":20,"x":1089,"width":173,"var":"coin_amount","text":"999,999,999","height":34,"fontSize":30,"color":"#ecdede","align":"center"}},{"type":"Label","props":{"y":57,"x":1083,"width":193,"var":"cash_amount","text":"999,999,999","height":33,"fontSize":30,"color":"#ecdede","align":"center"}},{"type":"Button","props":{"y":118,"x":20,"var":"back_to_lobby","skin":"res/share/backLobbyBtn.png"}},{"type":"Button","props":{"y":632,"x":950,"width":215,"var":"spinBtn","skin":"res/share/Btn_bg.png","height":82},"child":[{"type":"Label","props":{"y":26,"x":78,"text":"開始","fontSize":30,"color":"#fbe6e5"}}]},{"type":"Button","props":{"y":661,"x":353,"var":"betAddBtn","skin":"res/share/CarryIn.png"}},{"type":"Button","props":{"y":646,"x":120,"var":"paytableBtn","skin":"res/share/helpBtn.png"}}]};}
+		['uiView',function(){return this.uiView={"type":"View","props":{"width":1280,"height":720},"child":[{"type":"Image","props":{"y":0,"x":0,"skin":"res/game/0.png"}},{"type":"Label","props":{"y":665,"x":707,"width":206,"var":"Winpoint","text":"123,456,789","height":55,"fontSize":30,"color":"#ecdede","align":"center"}},{"type":"Label","props":{"y":667,"x":232,"width":101,"var":"betScore","text":"1","height":55,"fontSize":30,"color":"#ecdede","align":"center"}},{"type":"Label","props":{"y":20,"x":1089,"width":173,"var":"coin_amount","text":"999,999,999","height":34,"fontSize":30,"color":"#ecdede","align":"center"}},{"type":"Label","props":{"y":57,"x":1083,"width":193,"var":"cash_amount","text":"999,999,999","height":33,"fontSize":30,"color":"#ecdede","align":"center"}},{"type":"Button","props":{"y":118,"x":20,"var":"back_to_lobby","skin":"res/share/backLobbyBtn.png"}},{"type":"Button","props":{"y":632,"x":950,"width":215,"var":"spinBtn","skin":"res/share/Btn_bg.png","height":82},"child":[{"type":"Label","props":{"y":26,"x":78,"text":"開始","fontSize":30,"color":"#fbe6e5"}}]},{"type":"Button","props":{"y":661,"x":353,"var":"betAddBtn","skin":"res/share/CarryIn.png"}},{"type":"Button","props":{"y":646,"x":120,"var":"paytableBtn","skin":"res/share/helpBtn.png"}},{"type":"List","props":{"width":100,"var":"list","height":100}},{"type":"Box","props":{},"child":[{"type":"Animation","props":{"y":0,"x":0,"source":"res/game/1.jpg,res/game/2.jpg,res/game/3.jpg,res/game/4.jpg,res/game/5.jpg,res/game/6.jpg,res/game/7.jpg,res/game/8.jpg,res/game/9.jpg"}}]},{"type":"Image","props":{"y":198,"x":372,"var":"pic","skin":"res/game/1.jpg"}}]};}
 		]);
 		return warcraftViewUI;
 	})(View);
