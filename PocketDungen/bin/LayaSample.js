@@ -41,6 +41,10 @@
 		{
 			url: "res/atlas/lobby.json",type: Loader.ATLAS
 		});
+		assets.push(
+		{
+			url: "res/atlas/comp.json",type: Loader.ATLAS
+		});
 		// assets.push(
 		// {
 		// 	url: "res/atlas/game.json",type: Loader.ATLAS

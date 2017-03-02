@@ -1,9 +1,13 @@
 
 var Event = Laya.Event;
+var Handler = Laya.Handler;
 
 var _model;
-var my;
-	var BlurFilter = Laya.BlurFilter;
+var BlurFilter = Laya.BlurFilter;
+var Item = Item;
+// 项渲染器
+var Box   = Laya.Box;
+var animation = Laya.animation;
 
 
 function warcraftUI()
@@ -19,6 +23,20 @@ function warcraftUI()
 
 	_model.cashin.add(oncarrying);
 	
+	function Item()
+	{
+		Item.__super.call(this);
+		this.size(140, 140);
+		 this.img = new animation();
+		 this.addChild(this.img);
+
+		this.setImg = function(src)
+		{
+			trace("item src"+src);
+		}
+	}
+	Laya.class(Item, "Item", Box);
+
 	(function()
 	{
 		//建構式
@@ -29,7 +47,17 @@ function warcraftUI()
 		blurFilter.strength = 5;
 		self.pic.filters = [blurFilter];
 
+		self.list.itemRender = Item;
+		self.list.renderHandler = new Handler(this, updateItem);
+		self.list.array = [1,2,3,4];
 	})();
+
+	function updateItem(cell, index)
+	{
+		trace(""+cell);
+		trace("cell.dataSource ="+cell.dataSource);
+		cell.setImg(cell.dataSource);
+	}
 
 	function onBtnClick()
 	{
