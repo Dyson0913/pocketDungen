@@ -36,8 +36,10 @@ var model = function ()
     this.login_ok  =  new signals.Signal();
     this.lobbylist_getok  =  new signals.Signal();
     this.in_game =  new signals.Signal();
+
     this.cashin =  new signals.Signal();
     this.winMoney =  new signals.Signal();
+    this.spinResult =  new signals.Signal();
 
     this.socket = undefined;
     this.odds = [];
@@ -154,6 +156,8 @@ model.prototype.eventHandle = function (name,data)
            trace("result.userPoint "+ result.userPoint);
            trace("result.nowJackPot "+ result.nowJackPot);
            trace("result.winJackPotPoint "+ result.winJackPotPoint);
+
+           this.spinResult.dispatch(); 
         break;
    }
 

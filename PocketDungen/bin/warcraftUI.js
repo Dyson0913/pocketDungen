@@ -21,6 +21,7 @@ function warcraftUI()
 	this.paytableBtn.on(Event.CLICK, this, onpatyTable);
 
 	_model.cashin.add(oncarrying);
+	_model.spinResult.add(onresult);
 	var blurFilter = new BlurFilter();
 	(function()
 	{
@@ -54,14 +55,17 @@ function warcraftUI()
 
 	function onspin()
 	{
-		_model.betamount = this.betScore.text;
+		self.spinBtn.off(Event.CLICK, this, onspin);
+		_model.betamount = self.betScore.text;
 		_model.eventHandle("spin",[]);
 
 		for( i =0;i< rollerNum ;i++)
 		{
+			//APK 不支持filter
 			//self["roller_"+i].list.renderHandler = new Handler(this, fuzzyItem);
 			//self["roller_"+i].list.array = [0,1,2,3,4,5,6,7,8,0,1,2,3,4,5,6,7,8,0,1,2,3,4,5,6,7,8,0];
 			self["roller_"+i].list.tweenTo(9,2000,new Handler(this,comp,[i]));
+			
 		}
 		
 	}
@@ -75,6 +79,7 @@ function warcraftUI()
 	function comp(idx )
 	{  
 		self["roller_"+idx].list.scrollTo(0);
+		if( idx == 14) self.spinBtn.on(Event.CLICK, this, onspin);
 	}
 
 	function onaddScore()
@@ -93,6 +98,13 @@ function warcraftUI()
 		self.coin_amount.text = coin
 		self.cash_amount.text = cash
 	}
+
+	function onresult()
+	{
+		trace("on result");
+		
+	}
+
 
 	function onwin(winpoint)
 	{
