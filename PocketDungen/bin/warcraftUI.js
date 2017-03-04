@@ -5,6 +5,7 @@ var Handler = Laya.Handler;
 var _model;
 var BlurFilter = Laya.BlurFilter;
 
+var rollerNum =15;
 
 
 
@@ -32,26 +33,20 @@ function warcraftUI()
 		self.pic.filters = [blurFilter];
 
 		//self.list.getChildByName('scrollBar').rollRatio = 0.5;
+		for( i =0;i< rollerNum ;i++)
+		{
+			self["roller_"+i].list.renderHandler = new Handler(this, updateItem);
+			self["roller_"+i].list.array = [0,1,2,3,4,5,6,7,8,0,1,2,3,4,5,6,7,8,0,1,2,3,4,5,6,7,8,0];
+		}
+	
 
-		self.list_0.renderHandler = new Handler(this, updateItem);
-		self.list_0.array = [0,1,2,3,4,5,6,7,8,0,1,2,3,4,5,6,7,8,0,1,2,3,4,5,6,7,8,0];
-
-		self.list_1.renderHandler = new Handler(this, updateItem1);
-		self.list_1.array = [0,1,2,3,4,5,6,7,8,0,1,2,3,4,5,6,7,8,0,1,2,3,4,5,6,7,8,0];
 	})();
 
 	function updateItem(cell, idx)
 	{
-		var mya = cell.getChildByName('myani_0');
+		var mya = cell.getChildByName('myani');
 		mya.index = idx % 9;
 	}
-
-	function updateItem1(cell, idx)
-	{
-		var mya = cell.getChildByName('myani_1');
-		mya.index = idx % 9;
-	}
-
 
 	function onBtnClick()
 	{
@@ -63,35 +58,25 @@ function warcraftUI()
 		_model.betamount = this.betScore.text;
 		_model.eventHandle("spin",[]);
 
-		self.list_0.renderHandler = new Handler(this, fuzzyItem);
-		self.list_0.array = [0,1,2,3,4,5,6,7,8,0,1,2,3,4,5,6,7,8,0,1,2,3,4,5,6,7,8,0];
-		self.list_0.tweenTo(9,2000,new Handler(this,comp));
-
-		self.list_1.renderHandler = new Handler(this, fuzzyItem2);
-		self.list_1.array = [0,1,2,3,4,5,6,7,8,0,1,2,3,4,5,6,7,8,0,1,2,3,4,5,6,7,8,0];
-		self.list_1.tweenTo(9,2000,new Handler(this,comp2));
+		for( i =0;i< rollerNum ;i++)
+		{
+			self["roller_"+i].list.renderHandler = new Handler(this, fuzzyItem);
+			self["roller_"+i].list.array = [0,1,2,3,4,5,6,7,8,0,1,2,3,4,5,6,7,8,0,1,2,3,4,5,6,7,8,0];
+			self["roller_"+i].list.tweenTo(9,2000,new Handler(this,comp,[i]));
+		}
+		
 	}
 
 	function fuzzyItem(cell, idx)
 	{
-		var mya = cell.getChildByName('myani_0');
+		var mya = cell.getChildByName('myani');
 		mya.filters = [blurFilter];
 	}
 
-	function fuzzyItem2(cell, idx)
-	{
-		var mya = cell.getChildByName('myani_1');
-		mya.filters = [blurFilter];
-	}
-
-	function comp()
+	function comp(idx )
 	{  
-		self.list_0.scrollTo(0);
-	}
-
-		function comp2()
-	{  
-		self.list_1.scrollTo(0);
+		trace("  i " +idx);
+		self["roller_"+idx].list.scrollTo(0);
 	}
 
 	function onaddScore()
