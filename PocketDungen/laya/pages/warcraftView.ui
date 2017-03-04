@@ -2,7 +2,7 @@
     "x":0,
     "type":"View",
     "selectedBox":1,
-    "selecteID":19,
+    "selecteID":8,
     "props":{"width":1280,"var":"bg","sceneColor":"#000000","height":720},
     "nodeParent":-1,
     "label":"View(bg)",
@@ -22,7 +22,7 @@
         {
             "x":15,
             "type":"Image",
-            "props":{"y":15,"x":8,"skin":"res/game/0.png"},
+            "props":{"y":0,"x":0,"skin":"res/game/0.png"},
             "nodeParent":1,
             "label":"Image",
             "isDirectory":false,
@@ -62,7 +62,7 @@
         {
             "x":15,
             "type":"Label",
-            "props":{"y":667,"x":232,"width":101,"var":"betScore","text":"1","height":55,"fontSize":30,"color":"#ecdede","align":"center"},
+            "props":{"y":668,"x":233,"width":101,"var":"betScore","text":"1","height":55,"fontSize":30,"color":"#ecdede","align":"center"},
             "nodeParent":1,
             "label":"Label(betScore)",
             "isDirectory":false,
@@ -181,7 +181,7 @@
         {
             "x":15,
             "type":"Button",
-            "props":{"y":661,"x":353,"var":"betAddBtn","skin":"res/share/CarryIn.png"},
+            "props":{"y":660,"x":354,"var":"betAddBtn","skin":"res/share/CarryIn.png"},
             "nodeParent":1,
             "label":"Button(betAddBtn)",
             "isDirectory":false,
@@ -201,7 +201,7 @@
         {
             "x":15,
             "type":"Button",
-            "props":{"y":646,"x":120,"var":"paytableBtn","skin":"res/share/helpBtn.png"},
+            "props":{"y":646,"x":124,"var":"paytableBtn","skin":"res/share/helpBtn.png"},
             "nodeParent":1,
             "label":"Button(paytableBtn)",
             "isDirectory":false,
