@@ -4,10 +4,8 @@ var Handler = Laya.Handler;
 
 var _model;
 var BlurFilter = Laya.BlurFilter;
-var Item = Item;
-// 项渲染器
-var Box   = Laya.Box;
-var animation = Laya.animation;
+
+
 
 
 function warcraftUI()
@@ -22,42 +20,38 @@ function warcraftUI()
 	this.paytableBtn.on(Event.CLICK, this, onpatyTable);
 
 	_model.cashin.add(oncarrying);
-	
-	function Item()
-	{
-		Item.__super.call(this);
-		this.size(140, 140);
-		 this.img = new animation();
-		 this.addChild(this.img);
-
-		this.setImg = function(src)
-		{
-			trace("item src"+src);
-		}
-	}
-	Laya.class(Item, "Item", Box);
-
+	var blurFilter = new BlurFilter();
 	(function()
 	{
 		//建構式
 		_model.betamount =1
 		_model.winMoney.add(onwin);
 
-		var blurFilter = new BlurFilter();
-		blurFilter.strength = 5;
+		
+		blurFilter.strength = 2;
 		self.pic.filters = [blurFilter];
 
-		self.list.itemRender = Item;
-		self.list.renderHandler = new Handler(this, updateItem);
-		self.list.array = [1,2,3,4];
+		//self.list.getChildByName('scrollBar').rollRatio = 0.5;
+
+		self.list_0.renderHandler = new Handler(this, updateItem);
+		self.list_0.array = [0,1,2,3,4,5,6,7,8,0,1,2,3,4,5,6,7,8,0,1,2,3,4,5,6,7,8,0];
+
+		self.list_1.renderHandler = new Handler(this, updateItem1);
+		self.list_1.array = [0,1,2,3,4,5,6,7,8,0,1,2,3,4,5,6,7,8,0,1,2,3,4,5,6,7,8,0];
 	})();
 
-	function updateItem(cell, index)
+	function updateItem(cell, idx)
 	{
-		trace(""+cell);
-		trace("cell.dataSource ="+cell.dataSource);
-		cell.setImg(cell.dataSource);
+		var mya = cell.getChildByName('myani_0');
+		mya.index = idx % 9;
 	}
+
+	function updateItem1(cell, idx)
+	{
+		var mya = cell.getChildByName('myani_1');
+		mya.index = idx % 9;
+	}
+
 
 	function onBtnClick()
 	{
@@ -68,6 +62,36 @@ function warcraftUI()
 	{
 		_model.betamount = this.betScore.text;
 		_model.eventHandle("spin",[]);
+
+		self.list_0.renderHandler = new Handler(this, fuzzyItem);
+		self.list_0.array = [0,1,2,3,4,5,6,7,8,0,1,2,3,4,5,6,7,8,0,1,2,3,4,5,6,7,8,0];
+		self.list_0.tweenTo(9,2000,new Handler(this,comp));
+
+		self.list_1.renderHandler = new Handler(this, fuzzyItem2);
+		self.list_1.array = [0,1,2,3,4,5,6,7,8,0,1,2,3,4,5,6,7,8,0,1,2,3,4,5,6,7,8,0];
+		self.list_1.tweenTo(9,2000,new Handler(this,comp2));
+	}
+
+	function fuzzyItem(cell, idx)
+	{
+		var mya = cell.getChildByName('myani_0');
+		mya.filters = [blurFilter];
+	}
+
+	function fuzzyItem2(cell, idx)
+	{
+		var mya = cell.getChildByName('myani_1');
+		mya.filters = [blurFilter];
+	}
+
+	function comp()
+	{  
+		self.list_0.scrollTo(0);
+	}
+
+		function comp2()
+	{  
+		self.list_1.scrollTo(0);
 	}
 
 	function onaddScore()
