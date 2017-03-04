@@ -2,7 +2,7 @@
     "x":0,
     "type":"View",
     "selectedBox":1,
-    "selecteID":40,
+    "selecteID":19,
     "props":{"width":1280,"var":"bg","sceneColor":"#000000","height":720},
     "nodeParent":-1,
     "label":"View(bg)",
@@ -215,26 +215,6 @@
                     "__InPool":false
                 }],
             "compId":15,
-            "child":[
-                ]
-        },
-        {
-            "x":15,
-            "type":"Image",
-            "props":{"y":120,"x":1086,"var":"pic","skin":"res/game/1.jpg"},
-            "nodeParent":1,
-            "label":"Image(pic)",
-            "isDirectory":false,
-            "isAniNode":true,
-            "hasChild":false,
-            "frames":[
-                {
-                    "type":1,
-                    "props":{"y":198,"x":372,"skin":"res/game/1.jpg"},
-                    "frame":0,
-                    "__InPool":false
-                }],
-            "compId":19,
             "child":[
                 ]
         },

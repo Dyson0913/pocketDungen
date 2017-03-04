@@ -87,7 +87,7 @@
 		if( _model.current_view_name =="login") 
 		{
 			trace(Laya.loader.getRes("res/atlas/loading.json"));
-			Loader.clearRes("res/atlas/loading.json")
+			//Loader.clearRes("res/atlas/loading.json")
 			trace(Laya.loader.getRes("res/atlas/loading.json"));
 			onlobby()
 		} 
@@ -95,7 +95,7 @@
 		{
 			//del game res
 			trace(Laya.loader.getRes("res/atlas/game.json"));
-			Loader.clearRes("res/atlas/game.json") 
+			//Loader.clearRes("res/atlas/game.json") 
 			trace(Laya.loader.getRes("res/atlas/game.json"));
 			Laya.loader.load([{url: "res/atlas/lobby.json",type: Loader.ATLAS}], Handler.create(this, onlobby));
 		}
@@ -125,7 +125,7 @@
 		Laya.stage.removeChild(_model.getView(_model.current_view_name));
 		_model.removeView(_model.current_view_name)
 		trace(Laya.loader.getRes("res/atlas/lobby.json"));
-		Loader.clearRes("res/atlas/lobby.json"); 
+		//Loader.clearRes("res/atlas/lobby.json"); 
 		trace(Laya.loader.getRes("res/atlas/lobby.json"));
 		Laya.loader.load([{url: "res/atlas/game.json",type: Loader.ATLAS}], Handler.create(this, onIntoGame));
 		//onIntoGame()

@@ -30,7 +30,6 @@ function warcraftUI()
 
 		
 		blurFilter.strength = 2;
-		self.pic.filters = [blurFilter];
 
 		//self.list.getChildByName('scrollBar').rollRatio = 0.5;
 		for( i =0;i< rollerNum ;i++)
@@ -60,8 +59,8 @@ function warcraftUI()
 
 		for( i =0;i< rollerNum ;i++)
 		{
-			self["roller_"+i].list.renderHandler = new Handler(this, fuzzyItem);
-			self["roller_"+i].list.array = [0,1,2,3,4,5,6,7,8,0,1,2,3,4,5,6,7,8,0,1,2,3,4,5,6,7,8,0];
+			//self["roller_"+i].list.renderHandler = new Handler(this, fuzzyItem);
+			//self["roller_"+i].list.array = [0,1,2,3,4,5,6,7,8,0,1,2,3,4,5,6,7,8,0,1,2,3,4,5,6,7,8,0];
 			self["roller_"+i].list.tweenTo(9,2000,new Handler(this,comp,[i]));
 		}
 		
@@ -75,7 +74,6 @@ function warcraftUI()
 
 	function comp(idx )
 	{  
-		trace("  i " +idx);
 		self["roller_"+idx].list.scrollTo(0);
 	}
 
