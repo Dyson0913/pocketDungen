@@ -1,30 +1,9 @@
 {
     "frames": {
-        "lobbyIcon.png": {
-            "frame": {
-                "x": 0,
-                "y": 0,
-                "w": 430,
-                "h": 611,
-                "idx": 0
-            },
-            "spriteSourceSize": {
-                "x": 0,
-                "y": 0,
-                "w": 430,
-                "h": 611
-            },
-            "sourceSize": {
-                "w": 430,
-                "h": 611
-            },
-            "rotated": false,
-            "trimed": false
-        },
         "king.png": {
             "frame": {
                 "x": 0,
-                "y": 613,
+                "y": 0,
                 "w": 219,
                 "h": 666,
                 "idx": 0
@@ -45,7 +24,7 @@
         "home.png": {
             "frame": {
                 "x": 221,
-                "y": 613,
+                "y": 0,
                 "w": 219,
                 "h": 657,
                 "idx": 0
@@ -128,7 +107,7 @@
         },
         "gold.png": {
             "frame": {
-                "x": 662,
+                "x": 221,
                 "y": 659,
                 "w": 218,
                 "h": 642,

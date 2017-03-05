@@ -1,29 +1,8 @@
 {
     "frames": {
-        "wall.png": {
-            "frame": {
-                "x": 0,
-                "y": 0,
-                "w": 700,
-                "h": 700,
-                "idx": 0
-            },
-            "spriteSourceSize": {
-                "x": 0,
-                "y": 0,
-                "w": 700,
-                "h": 700
-            },
-            "sourceSize": {
-                "w": 700,
-                "h": 700
-            },
-            "rotated": false,
-            "trimed": false
-        },
         "logo.png": {
             "frame": {
-                "x": 702,
+                "x": 0,
                 "y": 0,
                 "w": 295,
                 "h": 301,

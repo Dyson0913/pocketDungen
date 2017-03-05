@@ -1,11 +1,11 @@
-mv *.js ../static
-mv index.html ../templates
+mv *.js ../static/
+mv index.html ../templates/
 
 rm -rf ../static/res/
-mv res/ ../static
+mv res/ ../static/
 
 rm -rf ../static/libs/
-mv libs/ ../static
+mv libs/ ../static/
 
 rm -rf ../static/ui/
-mv ui/ ../static
+mv ui/ ../static/

@@ -21,26 +21,6 @@
     "child":[
         {
             "x":15,
-            "type":"Image",
-            "props":{"y":0,"x":0,"skin":"res/game/0.png"},
-            "nodeParent":1,
-            "label":"Image",
-            "isDirectory":false,
-            "isAniNode":true,
-            "hasChild":false,
-            "frames":[
-                {
-                    "type":1,
-                    "props":{"y":444,"x":441,"skin":"res/game/0.png"},
-                    "frame":0,
-                    "__InPool":false
-                }],
-            "compId":6,
-            "child":[
-                ]
-        },
-        {
-            "x":15,
             "type":"Label",
             "props":{"y":665,"x":707,"width":206,"var":"Winpoint","text":"123,456,789","height":55,"fontSize":30,"color":"#ecdede","align":"center"},
             "nodeParent":1,
