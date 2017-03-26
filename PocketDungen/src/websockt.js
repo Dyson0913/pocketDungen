@@ -1,10 +1,12 @@
 
 var _model;
 
+var self;
+
 var socket = function ()
 {
     this.instance = undefined;
-    
+    self =this
 }
 
 socket.getInstance = function ()
@@ -21,19 +23,26 @@ socket.getInstance = function ()
 socket.prototype.Connect = function ()
 {
     
-   
-    //var url = "ws://52.197.7.184:8001/gamesocket/token/"+token;
-    // var url = "wss://www.didusoftgaming.com:8001/gamesocket/token/"+token;
     _model = model.getInstance();
     var token = _model.login_name +"_"+ _model.login_pw;
     trace("token = "+token);
+
+    if(self.ws != undefined)
+    {
+        //no more create
+         var msg = {"client_id": _model.uuid,"module":"auth","cmd":"try_login","token":token};
+        self.sendMessage(JSON.stringify(msg));
+        return
+    }
+
+    //create  socket
     var url = "ws://45.76.97.239:7000/gamesocket/"+token;
-    this.ws = new WebSocket(url);
+    self.ws = new WebSocket(url);
    
-    this.ws.onopen = this.connectionOpen.bind(this);
-    this.ws.onmessage = this.onMessage.bind(this);
-    this.ws.onerror = this.displayError.bind(this);
-    this.ws.onclose = this.socketclose.bind(this);
+    self.ws.onopen = self.connectionOpen.bind(self);
+    self.ws.onmessage = self.onMessage.bind(self);
+    self.ws.onerror = self.displayError.bind(self);
+    self.ws.onclose = self.socketclose.bind(self);
 };
 
 
@@ -41,13 +50,10 @@ socket.prototype.connectionOpen = function ()
 {
     trace('connected\n');
     var ret = {};
-    //ret['cmd'] = "login";
-    //ret['module'] = "auth";
     
     //var retjson = JSON.stringify(ret);
     //this.ws.send(retjson)
            
-    //trace(retjson);
 };
 
 socket.prototype.onMessage = function (message)
@@ -69,8 +75,8 @@ socket.prototype.displayError = function (err)
 
 socket.prototype.sendMessage = function (msg)
 {
-    if(this.ws != null)
-     this.ws.send(msg);
+    if(self.ws != null)
+     self.ws.send(msg);
 }
 
 socket.prototype.socketclose = function(msg)

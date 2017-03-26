@@ -25,6 +25,7 @@ var odds;  //賠率表 symbol_N{N0~NM):[中1格倍率,2格,3格,4格,5格]
 //顥示賠率表用,不計算
 
 
+var hint_msg;
 var betamount;
 
 //model 最先建立
@@ -40,6 +41,10 @@ var model = function ()
     this.cashin =  new signals.Signal();
     this.winMoney =  new signals.Signal();
     this.spinResult =  new signals.Signal();
+
+    this.hint =  new signals.Signal();
+    this.closeHint =  new signals.Signal();
+    this.comfirmHint =  new signals.Signal();
 
     this.socket = undefined;
     this.odds = [];
@@ -64,11 +69,6 @@ model.prototype.start = function ()
     this.socket.Connect();
 };
 
-model.prototype.start = function ()
-{
-    this.socket.Connect();
-};
-
 model.prototype.eventHandle = function (name,data)
 {
      trace("CMD = "+name)
@@ -77,8 +77,13 @@ model.prototype.eventHandle = function (name,data)
        case "login":
         this.start();
        break;
+       case "login_fail":
+        this.hint_msg = data[0].reason
+        this.uuid = data[0].client_id;
+        this.hint.dispatch();
+       break;
        case "login_ok":
-        uuid = data[0].uuid;
+        this.uuid = data[0].uuid;
        
         this.login_ok.dispatch();
        break;

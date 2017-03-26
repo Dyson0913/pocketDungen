@@ -14,13 +14,11 @@ function logingUI()
 
 	function onBtnClick()
 	{
-		trace("login ="+this.name.text + "---"+ this.password.text);
-		hash = md5(this.password.text);
-		trace("model  ="+hash);
-		return;
-		_model.login_name = this.name.text;
-		_model.login_pw = this.password.text;
-		trace("model  ="+_model.login_name + "---"+ _model.login_pw);
+		namehash = this.name.text;
+		pwhash = md5(this.password.text);
+
+		_model.login_name = namehash;
+		_model.login_pw =pwhash;
 		_model.eventHandle("login",[]);
 	}
 

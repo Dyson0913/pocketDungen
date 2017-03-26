@@ -16,4 +16,5 @@
    <item name="res/lobby/pairate.png" type="Image" compress="0" pack="1" quality="80" props="" picType="0"/>
    <item name="res/game/0.png" type="Image" compress="0" pack="1" quality="80" props="" picType="0"/>
    <item name="res/game/1.jpg" type="Image" compress="0" pack="1" quality="80" props="" picType="0"/>
+   <item name="res/share/02.png" type="Image" compress="0" pack="0" quality="80" props="sizeGrid=0,1,0,1" picType="0"/>
 </res>

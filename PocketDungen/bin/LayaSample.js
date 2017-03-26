@@ -50,22 +50,31 @@
 		// 	url: "res/atlas/game.json",type: Loader.ATLAS
 		// });
 		
+		
+
 		Laya.loader.load(assets, Handler.create(this, onAssetsLoaded));
 
 
 		_model.login_ok.add(onlogok);
 		_model.lobbylist_getok.add(onloadlobby);
 		_model.in_game.add(unloadlobby);
+
+		//提示
+		_model.hint.add(onhint)
+		_model.closeHint.add(onhintok)
+    	_model.comfirmHint.add(onhintcancel)
+
 		
+
 	})();
 
 	function onAssetsLoaded()
 	{
 		trace(" onAssetsLoaded ")
-		
-		//var robotData = Laya.Loader.getRes("res/atlas/assets.json");
-		
-	//	view = _classUtils.getInstance("res/atlas/assets.json");
+
+		//先加載提示元件
+		_model.pushView("hint",new HintUI());
+
 		_model.pushView("login",new logingUI());
 		_model.current_view_name ="login";
 		Laya.stage.addChild(_model.getView("login"));
@@ -87,7 +96,7 @@
 		if( _model.current_view_name =="login") 
 		{
 			trace(Laya.loader.getRes("res/atlas/loading.json"));
-			//Loader.clearRes("res/atlas/loading.json")
+			Loader.clearRes("res/atlas/loading.json")
 			trace(Laya.loader.getRes("res/atlas/loading.json"));
 			onlobby()
 		} 
@@ -95,7 +104,7 @@
 		{
 			//del game res
 			trace(Laya.loader.getRes("res/atlas/game.json"));
-			//Loader.clearRes("res/atlas/game.json") 
+			Loader.clearRes("res/atlas/game.json") 
 			trace(Laya.loader.getRes("res/atlas/game.json"));
 			Laya.loader.load([{url: "res/atlas/lobby.json",type: Loader.ATLAS}], Handler.create(this, onlobby));
 		}
@@ -125,7 +134,7 @@
 		Laya.stage.removeChild(_model.getView(_model.current_view_name));
 		_model.removeView(_model.current_view_name)
 		trace(Laya.loader.getRes("res/atlas/lobby.json"));
-		//Loader.clearRes("res/atlas/lobby.json"); 
+		Loader.clearRes("res/atlas/lobby.json"); 
 		trace(Laya.loader.getRes("res/atlas/lobby.json"));
 		Laya.loader.load([{url: "res/atlas/game.json",type: Loader.ATLAS}], Handler.create(this, onIntoGame));
 		//onIntoGame()
@@ -150,5 +159,23 @@
          _model.cashin.dispatch(1000,2000);
 	}
 	
+	function onhint()
+	{
+		//hint windown
+		
+		Laya.stage.addChild(_model.getView("hint"));
+	}
+
+	function onhintok()
+	{
+		trace("ok");
+		Laya.stage.removeChild(_model.getView("hint"))
+	}
+	
+	function onhintcancel()
+	{
+		trace("fale");
+		Laya.stage.removeChild(_model.getView("hint"))
+	}
 
 })();
