@@ -79,7 +79,7 @@ model.prototype.eventHandle = function (name,data)
        break;
        case "login_fail":
         this.hint_msg = data[0].reason
-        this.uuid = data[0].client_id;
+        this.uuid = data[0].uuid;
         this.hint.dispatch();
        break;
        case "login_ok":
@@ -88,7 +88,7 @@ model.prototype.eventHandle = function (name,data)
         this.login_ok.dispatch();
        break;
        case "query_lobby_list":
-        var msg = {"uuid": uuid,"module":"lobby","cmd":"request_gamelist"};
+        var msg = {"uuid": this.uuid,"module":"lobby","cmd":"request_gamelist"};
         this.socket.sendMessage(JSON.stringify(msg));
        break;
        case "lobby_waitting":
@@ -99,14 +99,14 @@ model.prototype.eventHandle = function (name,data)
         //this.socket.sendMessage(msg);
        break;
         case "leave_game":
-         var msg = {"uuid": uuid,"module":game_list[this.join_game],"room":"1","cmd":"leave_game","game_id":this.game_id};
+         var msg = {"uuid": this.uuid,"module":game_list[this.join_game],"room":"1","cmd":"leave_game","game_id":this.game_id};
          this.socket.sendMessage(JSON.stringify(msg));
        break;
        case "join_game":
         //trace("list ="+game_list)
         //trace("join ="+this.join_game)
        //  trace("join ="+game_list[this.join_game]);
-       var msg = {"uuid": uuid,"module":game_list[this.join_game],"room":"1","cmd":"request_join"};
+       var msg = {"uuid": this.uuid,"module":game_list[this.join_game],"room":"1","cmd":"request_join"};
         this.socket.sendMessage(JSON.stringify(msg));
        break;
        case "game_join_fail":
@@ -145,7 +145,7 @@ model.prototype.eventHandle = function (name,data)
        //game action
         case "spin":
         trace("betamount = "+this.betamount);
-         var msg = {"uuid": uuid,"module":game_list[this.join_game],"cmd":"gamespin","Line":25,"Bet":this.betamount};
+         var msg = {"uuid": this.uuid,"module":game_list[this.join_game],"cmd":"gamespin","Line":25,"Bet":this.betamount};
          this.socket.sendMessage(JSON.stringify(msg));
         break;
         case "spin_result":
