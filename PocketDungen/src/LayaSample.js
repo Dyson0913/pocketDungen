@@ -161,8 +161,9 @@
 	
 	function onhint()
 	{
-		//hint windown
-		
+		//hint windown		
+		 _model.hint_pop.dispatch();
+		 
 		Laya.stage.addChild(_model.getView("hint"));
 	}
 
