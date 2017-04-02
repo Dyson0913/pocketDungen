@@ -83,6 +83,11 @@ model.prototype.eventHandle = function (name,data)
         this.uuid = data[0].uuid;
         this.hint.dispatch();
        break;
+        case "kickOtherDevice":
+         //要踢人,token 也要傳,驗證用
+         var token = this.login_name +"_"+ this.login_pw;
+         var msg = {"client_id": this.uuid,"module":"auth","cmd":"kickOtherDevice","token":token};
+        break;
        case "login_ok":
         this.uuid = data[0].uuid;
        
