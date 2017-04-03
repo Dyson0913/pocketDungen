@@ -167,10 +167,17 @@
 		Laya.stage.addChild(_model.getView("hint"));
 	}
 
+    
 	function onhintok()
 	{
 		trace("ok");
 		Laya.stage.removeChild(_model.getView("hint"))
+
+		//判定是什麼回調
+		//if(_model.hint_msg == "multilogin! want to kick another login?")
+		//{
+		//	_model.eventHandle("kickOtherDevice");
+		//}
 	}
 	
 	function onhintcancel()

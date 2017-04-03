@@ -5,6 +5,7 @@ var _model;
 
 function logingUI()
 {
+	var self = this
 	logingUI.super(this);
 	
 	_model = model.getInstance();
@@ -24,7 +25,9 @@ function logingUI()
 
 	function onBtnClick2()
 	{
-		trace("2222");
+		//run time bind call function
+		self["roller_"+0].__proto__.shift();
+		
 		
 	}
 

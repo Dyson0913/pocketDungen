@@ -20,6 +20,69 @@
             },
             "rotated": false,
             "trimed": false
+        },
+        "1.jpg": {
+            "frame": {
+                "x": 297,
+                "y": 0,
+                "w": 140,
+                "h": 140,
+                "idx": 0
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 140,
+                "h": 140
+            },
+            "sourceSize": {
+                "w": 140,
+                "h": 140
+            },
+            "rotated": false,
+            "trimed": false
+        },
+        "2.jpg": {
+            "frame": {
+                "x": 297,
+                "y": 142,
+                "w": 140,
+                "h": 140,
+                "idx": 0
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 140,
+                "h": 140
+            },
+            "sourceSize": {
+                "w": 140,
+                "h": 140
+            },
+            "rotated": false,
+            "trimed": false
+        },
+        "3.jpg": {
+            "frame": {
+                "x": 297,
+                "y": 284,
+                "w": 140,
+                "h": 140,
+                "idx": 0
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 140,
+                "h": 140
+            },
+            "sourceSize": {
+                "w": 140,
+                "h": 140
+            },
+            "rotated": false,
+            "trimed": false
         }
     },
     "meta": {

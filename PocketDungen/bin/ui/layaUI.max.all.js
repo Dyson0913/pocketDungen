@@ -59,6 +59,7 @@ var loginViewUI=(function(_super){
 		    this.password=null;
 		    this.name=null;
 		    this.Login_btn=null;
+		    this.roller_0=null;
 
 			loginViewUI.__super.call(this);
 		}
@@ -66,15 +67,40 @@ var loginViewUI=(function(_super){
 		CLASS$(loginViewUI,'ui.loginViewUI',_super);
 		var __proto__=loginViewUI.prototype;
 		__proto__.createChildren=function(){
-		    
+		    			View.regComponent("Roller",Roller);
+
 			laya.ui.Component.prototype.createChildren.call(this);
 			this.createView(loginViewUI.uiView);
 		}
 
 		STATICATTR$(loginViewUI,
-		['uiView',function(){return this.uiView={"type":"View","props":{"width":1280,"height":720},"child":[{"type":"Image","props":{"y":0,"x":186,"width":947,"skin":"res/loading/logo.png","height":723}},{"type":"Label","props":{"y":57,"x":91,"width":423,"var":"title","text":"Dyson","height":118,"fontSize":50,"color":"#d1cccc","align":"center"}},{"type":"Button","props":{"y":605,"x":939,"width":342,"var":"oneTouch_btn","skin":"res/share/Btn_bg.png","height":85},"child":[{"type":"Label","props":{"y":11.999999999999886,"x":54.00000000000006,"width":238,"text":"一鍵登入","height":118,"fontSize":50,"color":"#f6eaea","align":"center"}}]},{"type":"Label","props":{"y":62,"x":805,"width":423,"var":"casino","text":"Casino","height":118,"fontSize":50,"color":"#d1cccc","align":"center"}},{"type":"Box","props":{"y":456,"x":12,"var":"loginZone"},"child":[{"type":"TextInput","props":{"x":37,"width":283,"var":"password","text":"22","promptColor":"#f6eeee","prompt":"password","height":47,"fontSize":20,"color":"#f4ecec"}},{"type":"TextInput","props":{"y":65,"x":36,"width":283,"var":"name","text":"11","promptColor":"#f6eeee","prompt":"TextInput","height":47,"fontSize":20,"color":"#f4ecec"}},{"type":"Button","props":{"y":147,"width":342,"var":"Login_btn","skin":"res/share/Btn_bg.png","height":85},"child":[{"type":"Label","props":{"y":14,"x":48.00000000000006,"width":238,"text":"登入","height":118,"fontSize":50,"color":"#f6eaea","align":"center"}}]}]}]};}
+		['uiView',function(){return this.uiView={"type":"View","props":{"width":1280,"height":720},"child":[{"type":"Image","props":{"y":0,"x":186,"width":947,"skin":"res/loading/logo.png","height":723}},{"type":"Label","props":{"y":57,"x":91,"width":423,"var":"title","text":"Dyson","height":118,"fontSize":50,"color":"#d1cccc","align":"center"}},{"type":"Button","props":{"y":605,"x":939,"width":342,"var":"oneTouch_btn","skin":"res/share/Btn_bg.png","height":85},"child":[{"type":"Label","props":{"y":11.999999999999886,"x":54.00000000000006,"width":238,"text":"一鍵登入","height":118,"fontSize":50,"color":"#f6eaea","align":"center"}}]},{"type":"Label","props":{"y":62,"x":805,"width":423,"var":"casino","text":"Casino","height":118,"fontSize":50,"color":"#d1cccc","align":"center"}},{"type":"Box","props":{"y":456,"x":12,"var":"loginZone"},"child":[{"type":"TextInput","props":{"x":37,"width":283,"var":"password","text":"22","promptColor":"#f6eeee","prompt":"password","height":47,"fontSize":20,"color":"#f4ecec"}},{"type":"TextInput","props":{"y":65,"x":36,"width":283,"var":"name","text":"11","promptColor":"#f6eeee","prompt":"TextInput","height":47,"fontSize":20,"color":"#f4ecec"}},{"type":"Button","props":{"y":147,"width":342,"var":"Login_btn","skin":"res/share/Btn_bg.png","height":85},"child":[{"type":"Label","props":{"y":14,"x":48.00000000000006,"width":238,"text":"登入","height":118,"fontSize":50,"color":"#f6eaea","align":"center"}}]}]},{"type":"roller","props":{"y":96,"x":15,"var":"roller_0","runtime":"Roller"}}]};}
 		]);
 		return loginViewUI;
+	})(View);
+var rollerUI=(function(_super){
+		function rollerUI(){
+			
+		    this.imgItem=null;
+		    this.next=null;
+		    this.current=null;
+		    this.pre=null;
+
+			rollerUI.__super.call(this);
+		}
+
+		CLASS$(rollerUI,'ui.rollerUI',_super);
+		var __proto__=rollerUI.prototype;
+		__proto__.createChildren=function(){
+		    
+			laya.ui.Component.prototype.createChildren.call(this);
+			this.createView(rollerUI.uiView);
+		}
+
+		STATICATTR$(rollerUI,
+		['uiView',function(){return this.uiView={"type":"View","props":{"width":140,"height":140},"child":[{"type":"Image","props":{"y":0,"x":0,"width":0,"var":"imgItem","height":0},"child":[{"type":"Sprite","props":{"y":0,"x":0,"width":140,"renderType":"mask","height":141},"child":[{"type":"Rect","props":{"y":0,"x":0,"width":140,"lineWidth":1,"height":140,"fillColor":"#ff0000"}}]},{"type":"Image","props":{"y":140,"x":0,"var":"next","skin":"res/loading/2.jpg"}},{"type":"Image","props":{"y":0,"x":0,"var":"current","skin":"res/loading/1.jpg"}},{"type":"Image","props":{"y":-140,"x":0,"var":"pre","skin":"res/loading/3.jpg"}}]}]};}
+		]);
+		return rollerUI;
 	})(View);
 var roolerUI=(function(_super){
 		function roolerUI(){
