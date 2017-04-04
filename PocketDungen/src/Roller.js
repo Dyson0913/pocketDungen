@@ -67,8 +67,21 @@ Roller.prototype.shift = function ()
 	{
 		//find -140 0 140
 		var pulldis =0
-		if( self._mid ==0)  pulldis = self.pre.y;
-		if( self._mid ==1)  pulldis = self.pre.y;
+		if( self._mid ==0)  pulldis = self.current.y;
+		if( self._mid ==1)  pulldis = self.next.y;
+		if( self._mid ==2)  pulldis = self.pre.y;
+		trace("mid = " +self._mid);
+		trace("pullids = " +pulldis);
+		_tween.to(self.current,{y:self.current.y-pulldis},1000,Laya.Ease.backOut,new Handler(this,complet) )
+		_tween.to(self.pre,{y:self.pre.y-pulldis},1000,Laya.Ease.backOut,new Handler(this,complet) )
+		_tween.to(self.next,{y:self.next.y-pulldis},1000,Laya.Ease.backOut,new Handler(this,complet) )
+
+	}
+
+	function complet()
+	{
+	
+		trace("mid = ");
 	}
 
 }
