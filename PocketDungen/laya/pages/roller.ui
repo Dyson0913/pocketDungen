@@ -2,7 +2,7 @@
     "x":0,
     "type":"View",
     "selectedBox":2,
-    "selecteID":3,
+    "selecteID":6,
     "props":{"width":140,"sceneColor":"#000000","height":140},
     "nodeParent":-1,
     "label":"View",
@@ -121,7 +121,7 @@
                 {
                     "x":30,
                     "type":"Image",
-                    "props":{"y":-140,"x":0,"var":"pre","skin":"res/loading/3.jpg"},
+                    "props":{"y":-140,"x":0,"var":"pre","skin":"res/loading/9.jpg"},
                     "nodeParent":2,
                     "label":"Image(pre)",
                     "isDirectory":false,

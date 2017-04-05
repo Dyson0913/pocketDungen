@@ -13,6 +13,7 @@ var _speed = 10
 
 var _times = 8
 var _mid =1;
+var idxarr = [2,1,9]
 
 function Roller()
 {
@@ -40,6 +41,9 @@ Roller.prototype.shift = function ()
 			self.next.y = self.pre.y - _heigh;
 			self._mid =0;
 			this.times++;
+
+			idx = picchange()
+			self.next.source =  Laya.loader.getRes("res/loading/"+idx+".jpg");
 		}
 
 		if( self.current.y >141)
@@ -47,6 +51,8 @@ Roller.prototype.shift = function ()
 			self.current.y = self.next.y - _heigh;
 			self._mid =2;
 			this.times++;
+			idx = picchange()
+			self.current.source =  Laya.loader.getRes("res/loading/"+idx+".jpg");
 		}
 
 		if( self.pre.y >141)
@@ -54,6 +60,8 @@ Roller.prototype.shift = function ()
 			self.pre.y = self.current.y - _heigh;
 			self._mid =1;
 			this.times++;
+			idx = picchange()
+			self.pre.source =  Laya.loader.getRes("res/loading/"+idx+".jpg");
 		}
 
 		if( this.times ==8)
@@ -62,6 +70,19 @@ Roller.prototype.shift = function ()
 			pullback()
 		}
 	}
+
+	function picchange()
+	{
+		var value = ++idxarr[0] % 10
+		if( value ==0 ) value =1 
+		trace(idxarr)
+		idxarr.push(value)
+		idxarr.shift()
+		
+		return value
+	}
+
+	
 
 	function pullback()
 	{
@@ -72,9 +93,9 @@ Roller.prototype.shift = function ()
 		if( self._mid ==2)  pulldis = self.pre.y;
 		trace("mid = " +self._mid);
 		trace("pullids = " +pulldis);
-		_tween.to(self.current,{y:self.current.y-pulldis},1000,Laya.Ease.backOut,new Handler(this,complet) )
-		_tween.to(self.pre,{y:self.pre.y-pulldis},1000,Laya.Ease.backOut,new Handler(this,complet) )
-		_tween.to(self.next,{y:self.next.y-pulldis},1000,Laya.Ease.backOut,new Handler(this,complet) )
+		_tween.to(self.current,{y:self.current.y-pulldis},500,Laya.Ease.backOut,new Handler(this,complet) )
+		_tween.to(self.pre,{y:self.pre.y-pulldis},500,Laya.Ease.backOut,new Handler(this,complet) )
+		_tween.to(self.next,{y:self.next.y-pulldis},500,Laya.Ease.backOut,new Handler(this,complet) )
 
 	}
 

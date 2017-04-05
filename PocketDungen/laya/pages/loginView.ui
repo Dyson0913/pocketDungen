@@ -218,7 +218,7 @@
             "x":15,
             "type":"UIView",
             "source":"roller.ui",
-            "props":{"y":96,"x":15,"var":"roller_0","runtime":"Roller"},
+            "props":{"y":255,"x":218,"var":"roller_0","runtime":"Roller"},
             "nodeParent":1,
             "label":"UIView(roller_0)",
             "isDirectory":false,
