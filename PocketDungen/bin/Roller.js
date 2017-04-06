@@ -73,12 +73,12 @@ Roller.prototype.shift = function ()
 
 	function picchange()
 	{
-		var value = ++idxarr[0] % 10
-		if( value ==0 ) value =1 
-		trace(idxarr)
+		var value = idxarr[2]
+		value = ( value -1 ) 
+		if( value ==0 ) value =9 
 		idxarr.push(value)
 		idxarr.shift()
-		
+		trace(idxarr)
 		return value
 	}
 

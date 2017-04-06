@@ -98,7 +98,7 @@ var rollerUI=(function(_super){
 		}
 
 		STATICATTR$(rollerUI,
-		['uiView',function(){return this.uiView={"type":"View","props":{"width":140,"height":140},"child":[{"type":"Image","props":{"y":0,"x":0,"width":0,"var":"imgItem","height":0},"child":[{"type":"Sprite","props":{"y":0,"x":0,"width":140,"height":141},"child":[{"type":"Rect","props":{"y":0,"x":0,"width":140,"lineWidth":1,"height":140,"fillColor":"#ff0000"}}]},{"type":"Image","props":{"y":140,"x":0,"var":"next","skin":"res/loading/2.jpg"}},{"type":"Image","props":{"y":0,"x":0,"var":"current","skin":"res/loading/1.jpg"}},{"type":"Image","props":{"y":-140,"x":0,"var":"pre","skin":"res/loading/9.jpg"}}]}]};}
+		['uiView',function(){return this.uiView={"type":"View","props":{"width":140,"height":140},"child":[{"type":"Image","props":{"y":0,"x":0,"width":0,"var":"imgItem","height":0},"child":[{"type":"Sprite","props":{"y":0,"x":0,"width":140,"renderType":"mask","height":141},"child":[{"type":"Rect","props":{"y":0,"x":0,"width":140,"lineWidth":1,"height":140,"fillColor":"#ff0000"}}]},{"type":"Image","props":{"y":140,"x":0,"var":"next","skin":"res/loading/2.jpg"}},{"type":"Image","props":{"y":0,"x":0,"var":"current","skin":"res/loading/1.jpg"}},{"type":"Image","props":{"y":-140,"x":0,"var":"pre","skin":"res/loading/9.jpg"}}]}]};}
 		]);
 		return rollerUI;
 	})(View);
