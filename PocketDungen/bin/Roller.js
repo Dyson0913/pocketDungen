@@ -78,7 +78,7 @@ Roller.prototype.shift = function ()
 		if( value ==0 ) value =9 
 		idxarr.push(value)
 		idxarr.shift()
-		trace(idxarr)
+		//trace(idxarr)
 		return value
 	}
 

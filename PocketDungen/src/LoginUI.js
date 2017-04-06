@@ -26,7 +26,17 @@ function logingUI()
 	function onBtnClick2()
 	{
 		//run time bind call function
-		self["roller_"+0].__proto__.shift();
+		//self["roller_1"].__proto__.shift();
+		self["roller_1"].shift();
+			//self["roller_3"].__proto__.shift();
+
+		for( i =0;i< 1 ;i++)
+		{
+			trace("i= "+i)
+			//self["roller_"+1].__proto__.shift();
+			
+		}
+		
 		
 		
 	}
