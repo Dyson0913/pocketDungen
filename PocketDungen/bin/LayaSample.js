@@ -22,7 +22,7 @@
 		Laya.stage.scaleMode = "showall";
 		Laya.stage.bgColor = "#232628";
 		
-		//Stat.show(10,10);
+		Stat.show(10,10);
 
 		_model = model.getInstance();
 		_model.socket = socket.getInstance();

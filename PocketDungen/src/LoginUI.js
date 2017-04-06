@@ -27,14 +27,20 @@ function logingUI()
 	{
 		//run time bind call function
 		//self["roller_1"].__proto__.shift();
-		self["roller_1"].shift();
-			//self["roller_3"].__proto__.shift();
-
-		for( i =0;i< 1 ;i++)
-		{
-			trace("i= "+i)
-			//self["roller_"+1].__proto__.shift();
+		//self["roller_1"].shift();
+		//self["roller_1"].roll();
+		//	self["roller_3"].roller.roll();
+		// var ro = self["roller_0"];
+		// ro.shift();
+		
+		// var ro2 = self["roller_1"];
+		// 	ro2.shift();
+		// self["roller_1"].__proto__ = new Roller();
+		// self["roller_1"].__proto__.shift();
 			
+		for( i =0;i< 15 ;i++)
+		{
+			self["roller_"+i].shift();
 		}
 		
 		

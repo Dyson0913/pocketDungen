@@ -73,6 +73,7 @@ var loginViewUI=(function(_super){
 		    this.roller_11=null;
 		    this.roller_12=null;
 		    this.roller_13=null;
+		    this.roller_14=null;
 
 			loginViewUI.__super.call(this);
 		}
@@ -81,13 +82,27 @@ var loginViewUI=(function(_super){
 		var __proto__=loginViewUI.prototype;
 		__proto__.createChildren=function(){
 		    			View.regComponent("Roller",Roller);
+			View.regComponent("Roller14",Roller14);
+			View.regComponent("Roller2",Roller2);
+			View.regComponent("Roller3",Roller3);
+			View.regComponent("Roller4",Roller4);
+			View.regComponent("Roller5",Roller5);
+			View.regComponent("Roller6",Roller6);
+			View.regComponent("Roller1",Roller1);
+			View.regComponent("Roller8",Roller8);
+			View.regComponent("Roller9",Roller9);
+			View.regComponent("Roller10",Roller10);
+			View.regComponent("Roller11",Roller11);
+			View.regComponent("Roller12",Roller12);
+			View.regComponent("Roller13",Roller13);
+			View.regComponent("Roller7",Roller7);
 
 			laya.ui.Component.prototype.createChildren.call(this);
 			this.createView(loginViewUI.uiView);
 		}
 
 		STATICATTR$(loginViewUI,
-		['uiView',function(){return this.uiView={"type":"View","props":{"width":1280,"height":720},"child":[{"type":"Image","props":{"y":0,"x":186,"width":947,"skin":"res/loading/logo.png","height":723}},{"type":"Label","props":{"y":57,"x":91,"width":423,"var":"title","text":"Dyson","height":118,"fontSize":50,"color":"#d1cccc","align":"center"}},{"type":"Button","props":{"y":605,"x":939,"width":342,"var":"oneTouch_btn","skin":"res/share/Btn_bg.png","height":85},"child":[{"type":"Label","props":{"y":11.999999999999886,"x":54.00000000000006,"width":238,"text":"一鍵登入","height":118,"fontSize":50,"color":"#f6eaea","align":"center"}}]},{"type":"Label","props":{"y":62,"x":805,"width":423,"var":"casino","text":"Casino","height":118,"fontSize":50,"color":"#d1cccc","align":"center"}},{"type":"Box","props":{"y":456,"x":12,"var":"loginZone"},"child":[{"type":"TextInput","props":{"x":37,"width":283,"var":"password","text":"22","promptColor":"#f6eeee","prompt":"password","height":47,"fontSize":20,"color":"#f4ecec"}},{"type":"TextInput","props":{"y":65,"x":36,"width":283,"var":"name","text":"11","promptColor":"#f6eeee","prompt":"TextInput","height":47,"fontSize":20,"color":"#f4ecec"}},{"type":"Button","props":{"y":147,"width":342,"var":"Login_btn","skin":"res/share/Btn_bg.png","height":85},"child":[{"type":"Label","props":{"y":14,"x":48.00000000000006,"width":238,"text":"登入","height":118,"fontSize":50,"color":"#f6eaea","align":"center"}}]}]},{"type":"roller","props":{"y":7,"x":102,"var":"roller_0","runtime":"Roller"}},{"type":"roller","props":{"y":164,"x":105,"var":"roller_1","runtime":"Roller"}},{"type":"roller","props":{"y":310,"x":104,"var":"roller_2","runtime":"Roller"}},{"type":"roller","props":{"y":18,"x":259,"var":"roller_3","runtime":"Roller"}},{"type":"roller","props":{"y":168,"x":279,"var":"roller_4","runtime":"Roller"}},{"type":"roller","props":{"y":329,"x":259,"var":"roller_5","runtime":"Roller"}},{"type":"roller","props":{"y":7,"x":453,"var":"roller_6","runtime":"Roller"}},{"type":"roller","props":{"y":188,"x":445,"var":"roller_7","runtime":"Roller"}},{"type":"roller","props":{"y":359,"x":448,"var":"roller_8","runtime":"Roller"}},{"type":"roller","props":{"y":15,"x":627,"var":"roller_9","runtime":"Roller"}},{"type":"roller","props":{"y":192,"x":645,"var":"roller_10","runtime":"Roller"}},{"type":"roller","props":{"y":352,"x":641,"var":"roller_11","runtime":"Roller"}},{"type":"roller","props":{"y":19,"x":813,"var":"roller_12","runtime":"Roller"}},{"type":"roller","props":{"y":178,"x":819,"var":"roller_13","runtime":"Roller"}}]};}
+		['uiView',function(){return this.uiView={"type":"View","props":{"width":1280,"height":720},"child":[{"type":"Image","props":{"y":0,"x":186,"width":947,"skin":"res/loading/logo.png","height":723}},{"type":"Label","props":{"y":57,"x":91,"width":423,"var":"title","text":"Dyson","height":118,"fontSize":50,"color":"#d1cccc","align":"center"}},{"type":"Button","props":{"y":605,"x":939,"width":342,"var":"oneTouch_btn","skin":"res/share/Btn_bg.png","height":85},"child":[{"type":"Label","props":{"y":11.999999999999886,"x":54.00000000000006,"width":238,"text":"一鍵登入","height":118,"fontSize":50,"color":"#f6eaea","align":"center"}}]},{"type":"Label","props":{"y":62,"x":805,"width":423,"var":"casino","text":"Casino","height":118,"fontSize":50,"color":"#d1cccc","align":"center"}},{"type":"Box","props":{"y":456,"x":12,"var":"loginZone"},"child":[{"type":"TextInput","props":{"x":37,"width":283,"var":"password","text":"22","promptColor":"#f6eeee","prompt":"password","height":47,"fontSize":20,"color":"#f4ecec"}},{"type":"TextInput","props":{"y":65,"x":36,"width":283,"var":"name","text":"11","promptColor":"#f6eeee","prompt":"TextInput","height":47,"fontSize":20,"color":"#f4ecec"}},{"type":"Button","props":{"y":147,"width":342,"var":"Login_btn","skin":"res/share/Btn_bg.png","height":85},"child":[{"type":"Label","props":{"y":14,"x":48.00000000000006,"width":238,"text":"登入","height":118,"fontSize":50,"color":"#f6eaea","align":"center"}}]}]},{"type":"Box","props":{"y":7,"x":102},"child":[{"type":"roller","props":{"var":"roller_0","runtime":"Roller"}},{"type":"roller","props":{"y":157,"x":3,"var":"roller_1","runtime":"Roller1"}},{"type":"roller","props":{"y":302,"x":2,"var":"roller_2","runtime":"Roller2"}},{"type":"roller","props":{"y":11,"x":157,"var":"roller_3","runtime":"Roller3"}},{"type":"roller","props":{"y":163,"x":179,"var":"roller_4","runtime":"Roller4"}},{"type":"roller","props":{"y":322,"x":157,"var":"roller_5","runtime":"Roller5"}},{"type":"roller","props":{"x":351,"var":"roller_6","runtime":"Roller6"}},{"type":"roller","props":{"y":181,"x":343,"var":"roller_7","runtime":"Roller7"}},{"type":"roller","props":{"y":352,"x":346,"var":"roller_8","runtime":"Roller8"}},{"type":"roller","props":{"y":8,"x":525,"var":"roller_9","runtime":"Roller9"}},{"type":"roller","props":{"y":183,"x":543,"var":"roller_10","runtime":"Roller10"}},{"type":"roller","props":{"y":347,"x":539,"var":"roller_11","runtime":"Roller11"}},{"type":"roller","props":{"y":12,"x":711,"var":"roller_12","runtime":"Roller12"}},{"type":"roller","props":{"y":171,"x":717,"var":"roller_13","runtime":"Roller13"}},{"type":"roller","props":{"y":359,"x":714,"var":"roller_14","runtime":"Roller14"}}]}]};}
 		]);
 		return loginViewUI;
 	})(View);
