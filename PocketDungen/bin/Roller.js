@@ -1429,6 +1429,24 @@ function Roller14()
 	}
 }
 
+// function Roller15()
+// {
+// 	var self = this
+// 	Roller15.super(this);
+// 	var _mid =1;
+// 	var _times = 8
+// 	_model = model.getInstance();
+
+// 	(function()
+// 	{
+// 		//建構式
+// 		self.idxarr = [2,1,9]
+// 	})();
+// }
+
+// Roller15.prototype =  new Roller1(this)
+
+
 Laya.class(Roller1, "Roller1", rollerUI);
 Laya.class(Roller2, "Roller2", rollerUI);
 Laya.class(Roller3, "Roller3", rollerUI);
@@ -1443,4 +1461,5 @@ Laya.class(Roller11, "Roller11", rollerUI);
 Laya.class(Roller12, "Roller12", rollerUI);
 Laya.class(Roller13, "Roller13", rollerUI);
 Laya.class(Roller14, "Roller14", rollerUI);
+//Laya.class(Roller15, "Roller15", rollerUI);
 Laya.class(Roller, "Roller", rollerUI);
