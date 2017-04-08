@@ -41,6 +41,7 @@ var model = function ()
     this.cashin =  new signals.Signal();
     this.winMoney =  new signals.Signal();
     this.spinResult =  new signals.Signal();
+    this.rollercomplet =  new signals.Signal();
 
     this.hint =  new signals.Signal();
     this.hint_pop =  new signals.Signal();

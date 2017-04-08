@@ -529,27 +529,6 @@
             "compId":39,
             "child":[
                 ]
-        },
-        {
-            "x":15,
-            "type":"UIView",
-            "source":"roller.ui",
-            "props":{"y":364,"x":1003,"var":"roller_15"},
-            "nodeParent":1,
-            "label":"UIView(roller_15)",
-            "isDirectory":false,
-            "isAniNode":true,
-            "hasChild":false,
-            "frames":[
-                {
-                    "type":1,
-                    "props":{"y":104,"x":107},
-                    "frame":0,
-                    "__InPool":false
-                }],
-            "compId":40,
-            "child":[
-                ]
         }],
     "animations":[
         {

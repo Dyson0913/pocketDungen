@@ -10,7 +10,7 @@ var _width = 140
 var _heigh = 140
 var _movedis = 10
 var _speed = 10
-
+var _model = model.getInstance();
 
 // var Roller1 = function()
 function Roller()
@@ -1340,8 +1340,8 @@ function Roller14()
 	var self = this
 	Roller14.super(this);
 	var _mid =1;
-	var _times = 8
-	_model = model.getInstance();
+	var _times = 8;
+	
 
 	(function()
 	{
@@ -1391,11 +1391,11 @@ function Roller14()
 			self.pre.source =  Laya.loader.getRes("res/loading/"+idx+".jpg");
 		}
 
-		if( this.times ==8)
-		{
-			Timer.clear(this,this.move);
-			this.pullback()
-		}
+		// if( this.times ==8)
+		// {
+		// 	Timer.clear(this,this.move);
+		// 	this.pullback()
+		// }
 	}
 
     Roller14.prototype.picchange = function()
@@ -1426,6 +1426,18 @@ function Roller14()
 	Roller14.prototype.complet = function()
 	{
 		
+	}
+
+	Roller14.prototype.stop = function(mid)
+	{
+			Timer.clear(this,this.move);
+			this.pullback()
+			
+			if( self._mid ==0)  self.current.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
+			if( self._mid ==1)  self.next.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
+			if( self._mid ==2)  self.pre.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
+
+			_model.rollercomplet.dispatch(14);
 	}
 }
 
