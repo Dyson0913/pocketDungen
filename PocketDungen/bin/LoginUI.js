@@ -29,7 +29,7 @@ function logingUI()
 	function onBtnClick2()
 	{		
 		// self["roller_1"].__proto__.shift();
-			self["roller_"+15].shift();
+			self["roller_"+15].prototype.shift();
 			return;
 		for( i =0;i< 16 ;i++)
 		{

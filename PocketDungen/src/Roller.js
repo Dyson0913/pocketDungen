@@ -1465,12 +1465,12 @@ function Roller15()
 	(function()
 	{
 		//建構式
-
+		self.prototype = new Foo();
 		self.idxarr = [2,1,9]
 	})();
 }
 
-Roller15.prototype = Foo.prototype
+//Roller15.prototype = Foo.prototype
 
 
 
