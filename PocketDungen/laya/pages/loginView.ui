@@ -534,7 +534,7 @@
             "x":15,
             "type":"UIView",
             "source":"roller.ui",
-            "props":{"y":281,"x":1008,"var":"roller_15","runtime":"Roller15"},
+            "props":{"y":280,"x":1008,"var":"roller_15","runtime":"Roller15"},
             "nodeParent":1,
             "label":"UIView(roller_15)",
             "isDirectory":false,
