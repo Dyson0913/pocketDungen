@@ -29,8 +29,9 @@ function logingUI()
 	function onBtnClick2()
 	{		
 		// self["roller_1"].__proto__.shift();
-			
-		for( i =0;i< 15 ;i++)
+			self["roller_"+15].shift();
+			return;
+		for( i =0;i< 16 ;i++)
 		{
 			self["roller_"+i].shift();
 		}		

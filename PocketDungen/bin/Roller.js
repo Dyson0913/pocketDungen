@@ -1349,7 +1349,7 @@ function Roller14()
 		self.idxarr = [2,1,9]
 	})();
 
-	Roller14.prototype.shift = function ()
+Roller14.prototype.shift = function ()
 	{
 		this.times = 0;
 	//	_tween.to(self.pre,{y:200},1000,Laya.Ease.backOut,new Handler(this,complet) )
@@ -1439,24 +1439,42 @@ function Roller14()
 
 			_model.rollercomplet.dispatch(14);
 	}
+	
 }
 
-// function Roller15()
-// {
-// 	var self = this
-// 	Roller15.super(this);
-// 	var _mid =1;
-// 	var _times = 8
-// 	_model = model.getInstance();
+function Foo()
+{
+	(function()
+	{
+		//建構式
+		//self.idxarr = [2,1,9]
+	})();
+	Foo.prototype.shift = function ()
+	{
+	}
+}
 
-// 	(function()
-// 	{
-// 		//建構式
-// 		self.idxarr = [2,1,9]
-// 	})();
-// }
+function Roller15()
+{
+	var self = this
+	Roller15.super(this);
+	var _mid =1;
+	var _times = 8
+	_model = model.getInstance();
 
-// Roller15.prototype =  new Roller1(this)
+	(function()
+	{
+		//建構式
+
+		self.idxarr = [2,1,9]
+	})();
+}
+
+Roller15.prototype = Foo.prototype
+
+
+
+ //Roller15.prototype = Roller14.__proto__
 
 
 Laya.class(Roller1, "Roller1", rollerUI);
@@ -1473,5 +1491,5 @@ Laya.class(Roller11, "Roller11", rollerUI);
 Laya.class(Roller12, "Roller12", rollerUI);
 Laya.class(Roller13, "Roller13", rollerUI);
 Laya.class(Roller14, "Roller14", rollerUI);
-//Laya.class(Roller15, "Roller15", rollerUI);
+Laya.class(Roller15, "Roller15", rollerUI);
 Laya.class(Roller, "Roller", rollerUI);
