@@ -23,15 +23,14 @@ function logingUI()
 		// _model.login_pw =pwhash;
 		// _model.eventHandle("login",[]);
 
-		self["roller_"+14].stop(1);
+		self["roller_"+0].stop(1);
 	}
 
 	function onBtnClick2()
 	{		
 		// self["roller_1"].__proto__.shift();
-			self["roller_"+15].prototype.shift();
-			return;
-		for( i =0;i< 16 ;i++)
+		
+		for( i =0;i< 15 ;i++)
 		{
 			self["roller_"+i].shift();
 		}		
@@ -40,6 +39,10 @@ function logingUI()
 	function oncomplet(n)
 	{
 		trace("ok "+n)
+		if( n !=14)
+		{
+			self["roller_"+(n+1)].stop();
+		}
 	}
 
 

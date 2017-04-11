@@ -74,11 +74,7 @@ function Roller()
 			self.pre.source =  Laya.loader.getRes("res/loading/"+idx+".jpg");
 		}
 
-		if( this.times ==8)
-		{
-			Timer.clear(this,this.move);
-			this.pullback()
-		}
+		
 	}
 
     Roller.prototype.picchange = function()
@@ -87,8 +83,7 @@ function Roller()
 		value = ( value -1 ) 
 		if( value ==0 ) value =9 
 		self.idxarr.push(value)
-		self.idxarr.shift()
-		//trace(idxarr)
+		self.idxarr.shift()		
 		return value
 	}
 
@@ -99,8 +94,6 @@ function Roller()
 		if( self._mid ==0)  pulldis = self.current.y;
 		if( self._mid ==1)  pulldis = self.next.y;
 		if( self._mid ==2)  pulldis = self.pre.y;
-		trace("mid = " +self._mid);
-		trace("pullids = " +pulldis);
 		_tween.to(self.current,{y:self.current.y-pulldis},500,Laya.Ease.backOut,new Handler(this,this.complet) )
 		_tween.to(self.pre,{y:self.pre.y-pulldis},500,Laya.Ease.backOut,new Handler(this,this.complet) )
 		_tween.to(self.next,{y:self.next.y-pulldis},500,Laya.Ease.backOut,new Handler(this,this.complet) )
@@ -108,8 +101,19 @@ function Roller()
 
 	Roller.prototype.complet = function()
 	{
-		trace("Roller mid= " +self._mid);
 	
+	}
+
+	Roller.prototype.stop = function(mid)
+	{
+			Timer.clear(this,this.move);
+			this.pullback()
+			
+			if( self._mid ==0)  self.current.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
+			if( self._mid ==1)  self.next.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
+			if( self._mid ==2)  self.pre.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
+
+			_model.rollercomplet.dispatch(0);
 	}
 }
 
@@ -168,12 +172,7 @@ function Roller1()
 			idx = this.picchange()
 			self.pre.source =  Laya.loader.getRes("res/loading/"+idx+".jpg");
 		}
-
-		if( this.times ==8)
-		{
-			Timer.clear(this,this.move);
-			this.pullback()
-		}
+		
 	}
 
     Roller1.prototype.picchange = function()
@@ -183,7 +182,6 @@ function Roller1()
 		if( value ==0 ) value =9 
 		self.idxarr.push(value)
 		self.idxarr.shift()
-		//trace(idxarr)
 		return value
 	}
 
@@ -194,8 +192,6 @@ function Roller1()
 		if( self._mid ==0)  pulldis = self.current.y;
 		if( self._mid ==1)  pulldis = self.next.y;
 		if( self._mid ==2)  pulldis = self.pre.y;
-		trace("mid = " +self._mid);
-		trace("pullids = " +pulldis);
 		_tween.to(self.current,{y:self.current.y-pulldis},500,Laya.Ease.backOut,new Handler(this,this.complet) )
 		_tween.to(self.pre,{y:self.pre.y-pulldis},500,Laya.Ease.backOut,new Handler(this,this.complet) )
 		_tween.to(self.next,{y:self.next.y-pulldis},500,Laya.Ease.backOut,new Handler(this,this.complet) )
@@ -205,6 +201,19 @@ function Roller1()
 	{
 		
 	}
+
+	Roller1.prototype.stop = function(mid)
+	{
+			Timer.clear(this,this.move);
+			this.pullback()
+			
+			if( self._mid ==0)  self.current.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
+			if( self._mid ==1)  self.next.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
+			if( self._mid ==2)  self.pre.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
+
+			_model.rollercomplet.dispatch(1);
+	}
+	
 }
 
 function Roller2()
@@ -263,11 +272,6 @@ function Roller2()
 			self.pre.source =  Laya.loader.getRes("res/loading/"+idx+".jpg");
 		}
 
-		if( this.times ==8)
-		{
-			Timer.clear(this,this.move);
-			this.pullback()
-		}
 	}
 
     Roller2.prototype.picchange = function()
@@ -276,8 +280,7 @@ function Roller2()
 		value = ( value -1 ) 
 		if( value ==0 ) value =9 
 		self.idxarr.push(value)
-		self.idxarr.shift()
-		//trace(idxarr)
+		self.idxarr.shift()		
 		return value
 	}
 
@@ -287,9 +290,7 @@ function Roller2()
 		var pulldis =0
 		if( self._mid ==0)  pulldis = self.current.y;
 		if( self._mid ==1)  pulldis = self.next.y;
-		if( self._mid ==2)  pulldis = self.pre.y;
-		trace("mid = " +self._mid);
-		trace("pullids = " +pulldis);
+		if( self._mid ==2)  pulldis = self.pre.y;				
 		_tween.to(self.current,{y:self.current.y-pulldis},500,Laya.Ease.backOut,new Handler(this,this.complet) )
 		_tween.to(self.pre,{y:self.pre.y-pulldis},500,Laya.Ease.backOut,new Handler(this,this.complet) )
 		_tween.to(self.next,{y:self.next.y-pulldis},500,Laya.Ease.backOut,new Handler(this,this.complet) )
@@ -298,6 +299,18 @@ function Roller2()
 	Roller2.prototype.complet = function()
 	{
 		
+	}
+
+	Roller2.prototype.stop = function(mid)
+	{
+			Timer.clear(this,this.move);
+			this.pullback()
+			
+			if( self._mid ==0)  self.current.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
+			if( self._mid ==1)  self.next.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
+			if( self._mid ==2)  self.pre.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
+
+			_model.rollercomplet.dispatch(2);
 	}
 }
 
@@ -356,12 +369,7 @@ function Roller3()
 			idx = this.picchange()
 			self.pre.source =  Laya.loader.getRes("res/loading/"+idx+".jpg");
 		}
-
-		if( this.times ==8)
-		{
-			Timer.clear(this,this.move);
-			this.pullback()
-		}
+	
 	}
 
     Roller3.prototype.picchange = function()
@@ -370,8 +378,7 @@ function Roller3()
 		value = ( value -1 ) 
 		if( value ==0 ) value =9 
 		self.idxarr.push(value)
-		self.idxarr.shift()
-		//trace(idxarr)
+		self.idxarr.shift()		
 		return value
 	}
 
@@ -381,9 +388,7 @@ function Roller3()
 		var pulldis =0
 		if( self._mid ==0)  pulldis = self.current.y;
 		if( self._mid ==1)  pulldis = self.next.y;
-		if( self._mid ==2)  pulldis = self.pre.y;
-		trace("mid = " +self._mid);
-		trace("pullids = " +pulldis);
+		if( self._mid ==2)  pulldis = self.pre.y;	
 		_tween.to(self.current,{y:self.current.y-pulldis},500,Laya.Ease.backOut,new Handler(this,this.complet) )
 		_tween.to(self.pre,{y:self.pre.y-pulldis},500,Laya.Ease.backOut,new Handler(this,this.complet) )
 		_tween.to(self.next,{y:self.next.y-pulldis},500,Laya.Ease.backOut,new Handler(this,this.complet) )
@@ -392,6 +397,18 @@ function Roller3()
 	Roller3.prototype.complet = function()
 	{
 		
+	}
+
+	Roller3.prototype.stop = function(mid)
+	{
+			Timer.clear(this,this.move);
+			this.pullback()
+			
+			if( self._mid ==0)  self.current.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
+			if( self._mid ==1)  self.next.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
+			if( self._mid ==2)  self.pre.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
+
+			_model.rollercomplet.dispatch(3);
 	}
 }
 
@@ -450,12 +467,7 @@ function Roller4()
 			idx = this.picchange()
 			self.pre.source =  Laya.loader.getRes("res/loading/"+idx+".jpg");
 		}
-
-		if( this.times ==8)
-		{
-			Timer.clear(this,this.move);
-			this.pullback()
-		}
+	
 	}
 
     Roller4.prototype.picchange = function()
@@ -464,8 +476,7 @@ function Roller4()
 		value = ( value -1 ) 
 		if( value ==0 ) value =9 
 		self.idxarr.push(value)
-		self.idxarr.shift()
-		//trace(idxarr)
+		self.idxarr.shift()		
 		return value
 	}
 
@@ -476,8 +487,6 @@ function Roller4()
 		if( self._mid ==0)  pulldis = self.current.y;
 		if( self._mid ==1)  pulldis = self.next.y;
 		if( self._mid ==2)  pulldis = self.pre.y;
-		trace("mid = " +self._mid);
-		trace("pullids = " +pulldis);
 		_tween.to(self.current,{y:self.current.y-pulldis},500,Laya.Ease.backOut,new Handler(this,this.complet) )
 		_tween.to(self.pre,{y:self.pre.y-pulldis},500,Laya.Ease.backOut,new Handler(this,this.complet) )
 		_tween.to(self.next,{y:self.next.y-pulldis},500,Laya.Ease.backOut,new Handler(this,this.complet) )
@@ -486,6 +495,18 @@ function Roller4()
 	Roller4.prototype.complet = function()
 	{
 		
+	}
+
+	Roller4.prototype.stop = function(mid)
+	{
+			Timer.clear(this,this.move);
+			this.pullback()
+			
+			if( self._mid ==0)  self.current.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
+			if( self._mid ==1)  self.next.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
+			if( self._mid ==2)  self.pre.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
+
+			_model.rollercomplet.dispatch(4);
 	}
 }
 
@@ -545,11 +566,7 @@ function Roller5()
 			self.pre.source =  Laya.loader.getRes("res/loading/"+idx+".jpg");
 		}
 
-		if( this.times ==8)
-		{
-			Timer.clear(this,this.move);
-			this.pullback()
-		}
+		
 	}
 
     Roller5.prototype.picchange = function()
@@ -558,8 +575,7 @@ function Roller5()
 		value = ( value -1 ) 
 		if( value ==0 ) value =9 
 		self.idxarr.push(value)
-		self.idxarr.shift()
-		//trace(idxarr)
+		self.idxarr.shift()		
 		return value
 	}
 
@@ -570,8 +586,6 @@ function Roller5()
 		if( self._mid ==0)  pulldis = self.current.y;
 		if( self._mid ==1)  pulldis = self.next.y;
 		if( self._mid ==2)  pulldis = self.pre.y;
-		trace("mid = " +self._mid);
-		trace("pullids = " +pulldis);
 		_tween.to(self.current,{y:self.current.y-pulldis},500,Laya.Ease.backOut,new Handler(this,this.complet) )
 		_tween.to(self.pre,{y:self.pre.y-pulldis},500,Laya.Ease.backOut,new Handler(this,this.complet) )
 		_tween.to(self.next,{y:self.next.y-pulldis},500,Laya.Ease.backOut,new Handler(this,this.complet) )
@@ -580,6 +594,18 @@ function Roller5()
 	Roller5.prototype.complet = function()
 	{
 		
+	}
+
+	Roller5.prototype.stop = function(mid)
+	{
+			Timer.clear(this,this.move);
+			this.pullback()
+			
+			if( self._mid ==0)  self.current.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
+			if( self._mid ==1)  self.next.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
+			if( self._mid ==2)  self.pre.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
+
+			_model.rollercomplet.dispatch(5);
 	}
 }
 
@@ -675,6 +701,18 @@ function Roller6()
 	{
 		
 	}
+
+	Roller6.prototype.stop = function(mid)
+	{
+			Timer.clear(this,this.move);
+			this.pullback()
+			
+			if( self._mid ==0)  self.current.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
+			if( self._mid ==1)  self.next.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
+			if( self._mid ==2)  self.pre.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
+
+			_model.rollercomplet.dispatch(6);
+	}
 }
 
 function Roller7()
@@ -733,11 +771,6 @@ function Roller7()
 			self.pre.source =  Laya.loader.getRes("res/loading/"+idx+".jpg");
 		}
 
-		if( this.times ==8)
-		{
-			Timer.clear(this,this.move);
-			this.pullback()
-		}
 	}
 
     Roller7.prototype.picchange = function()
@@ -746,8 +779,7 @@ function Roller7()
 		value = ( value -1 ) 
 		if( value ==0 ) value =9 
 		self.idxarr.push(value)
-		self.idxarr.shift()
-		//trace(idxarr)
+		self.idxarr.shift()		
 		return value
 	}
 
@@ -758,8 +790,6 @@ function Roller7()
 		if( self._mid ==0)  pulldis = self.current.y;
 		if( self._mid ==1)  pulldis = self.next.y;
 		if( self._mid ==2)  pulldis = self.pre.y;
-		trace("mid = " +self._mid);
-		trace("pullids = " +pulldis);
 		_tween.to(self.current,{y:self.current.y-pulldis},500,Laya.Ease.backOut,new Handler(this,this.complet) )
 		_tween.to(self.pre,{y:self.pre.y-pulldis},500,Laya.Ease.backOut,new Handler(this,this.complet) )
 		_tween.to(self.next,{y:self.next.y-pulldis},500,Laya.Ease.backOut,new Handler(this,this.complet) )
@@ -769,6 +799,19 @@ function Roller7()
 	{
 		
 	}
+
+	Roller7.prototype.stop = function(mid)
+	{
+			Timer.clear(this,this.move);
+			this.pullback()
+			
+			if( self._mid ==0)  self.current.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
+			if( self._mid ==1)  self.next.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
+			if( self._mid ==2)  self.pre.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
+
+			_model.rollercomplet.dispatch(7);
+	}
+	
 }
 
 function Roller8()
@@ -827,11 +870,7 @@ function Roller8()
 			self.pre.source =  Laya.loader.getRes("res/loading/"+idx+".jpg");
 		}
 
-		if( this.times ==8)
-		{
-			Timer.clear(this,this.move);
-			this.pullback()
-		}
+	
 	}
 
     Roller8.prototype.picchange = function()
@@ -852,8 +891,6 @@ function Roller8()
 		if( self._mid ==0)  pulldis = self.current.y;
 		if( self._mid ==1)  pulldis = self.next.y;
 		if( self._mid ==2)  pulldis = self.pre.y;
-		trace("mid = " +self._mid);
-		trace("pullids = " +pulldis);
 		_tween.to(self.current,{y:self.current.y-pulldis},500,Laya.Ease.backOut,new Handler(this,this.complet) )
 		_tween.to(self.pre,{y:self.pre.y-pulldis},500,Laya.Ease.backOut,new Handler(this,this.complet) )
 		_tween.to(self.next,{y:self.next.y-pulldis},500,Laya.Ease.backOut,new Handler(this,this.complet) )
@@ -862,6 +899,18 @@ function Roller8()
 	Roller8.prototype.complet = function()
 	{
 		
+	}
+
+	Roller8.prototype.stop = function(mid)
+	{
+			Timer.clear(this,this.move);
+			this.pullback()
+			
+			if( self._mid ==0)  self.current.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
+			if( self._mid ==1)  self.next.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
+			if( self._mid ==2)  self.pre.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
+
+			_model.rollercomplet.dispatch(8);
 	}
 }
 
@@ -921,11 +970,6 @@ function Roller9()
 			self.pre.source =  Laya.loader.getRes("res/loading/"+idx+".jpg");
 		}
 
-		if( this.times ==8)
-		{
-			Timer.clear(this,this.move);
-			this.pullback()
-		}
 	}
 
     Roller9.prototype.picchange = function()
@@ -934,8 +978,7 @@ function Roller9()
 		value = ( value -1 ) 
 		if( value ==0 ) value =9 
 		self.idxarr.push(value)
-		self.idxarr.shift()
-		//trace(idxarr)
+		self.idxarr.shift()		
 		return value
 	}
 
@@ -946,8 +989,6 @@ function Roller9()
 		if( self._mid ==0)  pulldis = self.current.y;
 		if( self._mid ==1)  pulldis = self.next.y;
 		if( self._mid ==2)  pulldis = self.pre.y;
-		trace("mid = " +self._mid);
-		trace("pullids = " +pulldis);
 		_tween.to(self.current,{y:self.current.y-pulldis},500,Laya.Ease.backOut,new Handler(this,this.complet) )
 		_tween.to(self.pre,{y:self.pre.y-pulldis},500,Laya.Ease.backOut,new Handler(this,this.complet) )
 		_tween.to(self.next,{y:self.next.y-pulldis},500,Laya.Ease.backOut,new Handler(this,this.complet) )
@@ -956,6 +997,18 @@ function Roller9()
 	Roller9.prototype.complet = function()
 	{
 		
+	}
+
+	Roller9.prototype.stop = function(mid)
+	{
+			Timer.clear(this,this.move);
+			this.pullback()
+			
+			if( self._mid ==0)  self.current.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
+			if( self._mid ==1)  self.next.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
+			if( self._mid ==2)  self.pre.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
+
+			_model.rollercomplet.dispatch(9);
 	}
 }
 
@@ -1015,11 +1068,6 @@ function Roller10()
 			self.pre.source =  Laya.loader.getRes("res/loading/"+idx+".jpg");
 		}
 
-		if( this.times ==8)
-		{
-			Timer.clear(this,this.move);
-			this.pullback()
-		}
 	}
 
     Roller10.prototype.picchange = function()
@@ -1029,7 +1077,6 @@ function Roller10()
 		if( value ==0 ) value =9 
 		self.idxarr.push(value)
 		self.idxarr.shift()
-		//trace(idxarr)
 		return value
 	}
 
@@ -1040,8 +1087,6 @@ function Roller10()
 		if( self._mid ==0)  pulldis = self.current.y;
 		if( self._mid ==1)  pulldis = self.next.y;
 		if( self._mid ==2)  pulldis = self.pre.y;
-		trace("mid = " +self._mid);
-		trace("pullids = " +pulldis);
 		_tween.to(self.current,{y:self.current.y-pulldis},500,Laya.Ease.backOut,new Handler(this,this.complet) )
 		_tween.to(self.pre,{y:self.pre.y-pulldis},500,Laya.Ease.backOut,new Handler(this,this.complet) )
 		_tween.to(self.next,{y:self.next.y-pulldis},500,Laya.Ease.backOut,new Handler(this,this.complet) )
@@ -1050,6 +1095,18 @@ function Roller10()
 	Roller10.prototype.complet = function()
 	{
 		
+	}
+
+	Roller10.prototype.stop = function(mid)
+	{
+			Timer.clear(this,this.move);
+			this.pullback()
+			
+			if( self._mid ==0)  self.current.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
+			if( self._mid ==1)  self.next.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
+			if( self._mid ==2)  self.pre.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
+
+			_model.rollercomplet.dispatch(10);
 	}
 }
 
@@ -1109,11 +1166,6 @@ function Roller11()
 			self.pre.source =  Laya.loader.getRes("res/loading/"+idx+".jpg");
 		}
 
-		if( this.times ==8)
-		{
-			Timer.clear(this,this.move);
-			this.pullback()
-		}
 	}
 
     Roller11.prototype.picchange = function()
@@ -1123,7 +1175,6 @@ function Roller11()
 		if( value ==0 ) value =9 
 		self.idxarr.push(value)
 		self.idxarr.shift()
-		//trace(idxarr)
 		return value
 	}
 
@@ -1134,8 +1185,6 @@ function Roller11()
 		if( self._mid ==0)  pulldis = self.current.y;
 		if( self._mid ==1)  pulldis = self.next.y;
 		if( self._mid ==2)  pulldis = self.pre.y;
-		trace("mid = " +self._mid);
-		trace("pullids = " +pulldis);
 		_tween.to(self.current,{y:self.current.y-pulldis},500,Laya.Ease.backOut,new Handler(this,this.complet) )
 		_tween.to(self.pre,{y:self.pre.y-pulldis},500,Laya.Ease.backOut,new Handler(this,this.complet) )
 		_tween.to(self.next,{y:self.next.y-pulldis},500,Laya.Ease.backOut,new Handler(this,this.complet) )
@@ -1144,6 +1193,18 @@ function Roller11()
 	Roller11.prototype.complet = function()
 	{
 		
+	}
+
+	Roller11.prototype.stop = function(mid)
+	{
+			Timer.clear(this,this.move);
+			this.pullback()
+			
+			if( self._mid ==0)  self.current.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
+			if( self._mid ==1)  self.next.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
+			if( self._mid ==2)  self.pre.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
+
+			_model.rollercomplet.dispatch(11);
 	}
 }
 
@@ -1203,11 +1264,6 @@ function Roller12()
 			self.pre.source =  Laya.loader.getRes("res/loading/"+idx+".jpg");
 		}
 
-		if( this.times ==8)
-		{
-			Timer.clear(this,this.move);
-			this.pullback()
-		}
 	}
 
     Roller12.prototype.picchange = function()
@@ -1217,7 +1273,6 @@ function Roller12()
 		if( value ==0 ) value =9 
 		self.idxarr.push(value)
 		self.idxarr.shift()
-		//trace(idxarr)
 		return value
 	}
 
@@ -1228,8 +1283,6 @@ function Roller12()
 		if( self._mid ==0)  pulldis = self.current.y;
 		if( self._mid ==1)  pulldis = self.next.y;
 		if( self._mid ==2)  pulldis = self.pre.y;
-		trace("mid = " +self._mid);
-		trace("pullids = " +pulldis);
 		_tween.to(self.current,{y:self.current.y-pulldis},500,Laya.Ease.backOut,new Handler(this,this.complet) )
 		_tween.to(self.pre,{y:self.pre.y-pulldis},500,Laya.Ease.backOut,new Handler(this,this.complet) )
 		_tween.to(self.next,{y:self.next.y-pulldis},500,Laya.Ease.backOut,new Handler(this,this.complet) )
@@ -1238,6 +1291,18 @@ function Roller12()
 	Roller12.prototype.complet = function()
 	{
 		
+	}
+
+	Roller12.prototype.stop = function(mid)
+	{
+			Timer.clear(this,this.move);
+			this.pullback()
+			
+			if( self._mid ==0)  self.current.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
+			if( self._mid ==1)  self.next.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
+			if( self._mid ==2)  self.pre.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
+
+			_model.rollercomplet.dispatch(12);
 	}
 }
 
@@ -1297,11 +1362,6 @@ function Roller13()
 			self.pre.source =  Laya.loader.getRes("res/loading/"+idx+".jpg");
 		}
 
-		if( this.times ==8)
-		{
-			Timer.clear(this,this.move);
-			this.pullback()
-		}
 	}
 
     Roller13.prototype.picchange = function()
@@ -1311,7 +1371,6 @@ function Roller13()
 		if( value ==0 ) value =9 
 		self.idxarr.push(value)
 		self.idxarr.shift()
-		//trace(idxarr)
 		return value
 	}
 
@@ -1322,8 +1381,6 @@ function Roller13()
 		if( self._mid ==0)  pulldis = self.current.y;
 		if( self._mid ==1)  pulldis = self.next.y;
 		if( self._mid ==2)  pulldis = self.pre.y;
-		trace("mid = " +self._mid);
-		trace("pullids = " +pulldis);
 		_tween.to(self.current,{y:self.current.y-pulldis},500,Laya.Ease.backOut,new Handler(this,this.complet) )
 		_tween.to(self.pre,{y:self.pre.y-pulldis},500,Laya.Ease.backOut,new Handler(this,this.complet) )
 		_tween.to(self.next,{y:self.next.y-pulldis},500,Laya.Ease.backOut,new Handler(this,this.complet) )
@@ -1332,6 +1389,18 @@ function Roller13()
 	Roller13.prototype.complet = function()
 	{
 		
+	}
+
+	Roller13.prototype.stop = function(mid)
+	{
+			Timer.clear(this,this.move);
+			this.pullback()
+			
+			if( self._mid ==0)  self.current.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
+			if( self._mid ==1)  self.next.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
+			if( self._mid ==2)  self.pre.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
+
+			_model.rollercomplet.dispatch(13);
 	}
 }
 
@@ -1391,11 +1460,6 @@ Roller14.prototype.shift = function ()
 			self.pre.source =  Laya.loader.getRes("res/loading/"+idx+".jpg");
 		}
 
-		// if( this.times ==8)
-		// {
-		// 	Timer.clear(this,this.move);
-		// 	this.pullback()
-		// }
 	}
 
     Roller14.prototype.picchange = function()
@@ -1404,8 +1468,7 @@ Roller14.prototype.shift = function ()
 		value = ( value -1 ) 
 		if( value ==0 ) value =9 
 		self.idxarr.push(value)
-		self.idxarr.shift()
-		//trace(idxarr)
+		self.idxarr.shift()		
 		return value
 	}
 
@@ -1416,8 +1479,6 @@ Roller14.prototype.shift = function ()
 		if( self._mid ==0)  pulldis = self.current.y;
 		if( self._mid ==1)  pulldis = self.next.y;
 		if( self._mid ==2)  pulldis = self.pre.y;
-		trace("mid = " +self._mid);
-		trace("pullids = " +pulldis);
 		_tween.to(self.current,{y:self.current.y-pulldis},500,Laya.Ease.backOut,new Handler(this,this.complet) )
 		_tween.to(self.pre,{y:self.pre.y-pulldis},500,Laya.Ease.backOut,new Handler(this,this.complet) )
 		_tween.to(self.next,{y:self.next.y-pulldis},500,Laya.Ease.backOut,new Handler(this,this.complet) )
@@ -1442,42 +1503,45 @@ Roller14.prototype.shift = function ()
 	
 }
 
-function Foo()
-{
-	(function()
-	{
-		//建構式
-		//self.idxarr = [2,1,9]
-	})();
-	Foo.prototype.shift = function ()
-	{
-	}
-}
+// function Roller15()
+// {
+// 	var self = this
+// 	Roller1.call(this)
+// 	var _mid =1;
+// 	var _times = 8
+// 	_model = model.getInstance();
 
-function Roller15()
-{
-	var self = this
-	Roller15.super(this);
-	var _mid =1;
-	var _times = 8
-	_model = model.getInstance();
+// 	(function()
+// 	{
+// 		//建構式
+// 		//self.prototype = new Foo();
+// 		self.idxarr = [2,1,9]
+// 	})();
+// }
 
-	(function()
-	{
-		//建構式
-		self.prototype = new Foo();
-		self.idxarr = [2,1,9]
-	})();
-}
-
-//Roller15.prototype = Foo.prototype
-
-
-
- //Roller15.prototype = Roller14.__proto__
-
-
+// Roller15.prototype = new  Roller1()
 Laya.class(Roller1, "Roller1", rollerUI);
+
+// (function(_super){
+  
+//   function Roller15()
+//   {
+// 	  Roller15.__super.call(this)
+//   }
+
+//   	(function()
+//  	{
+//  		//建構式
+//  		//self.prototype = new Foo();
+//  		self.idxarr = [2,1,9]
+//  	})();
+
+// Laya.class(Roller15, "Roller15", _super);
+// })(Roller1);
+
+
+
+
 Laya.class(Roller2, "Roller2", rollerUI);
 Laya.class(Roller3, "Roller3", rollerUI);
 Laya.class(Roller4, "Roller4", rollerUI);
@@ -1491,5 +1555,5 @@ Laya.class(Roller11, "Roller11", rollerUI);
 Laya.class(Roller12, "Roller12", rollerUI);
 Laya.class(Roller13, "Roller13", rollerUI);
 Laya.class(Roller14, "Roller14", rollerUI);
-Laya.class(Roller15, "Roller15", rollerUI);
+
 Laya.class(Roller, "Roller", rollerUI);
