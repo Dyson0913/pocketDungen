@@ -4,7 +4,8 @@ var Handler = Laya.Handler;
 
 var _model;
 var BlurFilter = Laya.BlurFilter;
-
+		//blurFilter.strength = 2; //APK not support
+		//var blurFilter = new BlurFilter();
 var rollerNum =15;
 
 
@@ -17,37 +18,25 @@ function warcraftUI()
 
 	this.back_to_lobby.on(Event.CLICK, this, onBtnClick);
 	this.spinBtn.on(Event.CLICK, this, onspin);
+	this.stopBtn.on(Event.CLICK, this, onStop);
 	this.betAddBtn.on(Event.CLICK, this, onaddScore);
 	this.paytableBtn.on(Event.CLICK, this, onpatyTable);
 
 	_model.cashin.add(oncarrying);
 	_model.spinResult.add(onresult);
-	var blurFilter = new BlurFilter();
+	_model.rollercomplet.add(oncomplet);
+
+	
 	(function()
 	{
 		//建構式
 		_model.betamount =1
 		_model.winMoney.add(onwin);
-
-		
-		blurFilter.strength = 2;
-
-		//self.list.getChildByName('scrollBar').rollRatio = 0.5;
-		for( i =0;i< rollerNum ;i++)
-		{
-			self["roller_"+i].list.renderHandler = new Handler(this, updateItem);
-			self["roller_"+i].list.array = [0,1,2,3,4,5,6,7,8,0,1,2,3,4,5,6,7,8,0,1,2,3,4,5,6,7,8,0];
-		}
-	
+		self.stopBtn.visible = false;
 
 	})();
 
-	function updateItem(cell, idx)
-	{
-		var mya = cell.getChildByName('myani');
-		mya.index = idx % 9;
-	}
-
+	
 	function onBtnClick()
 	{
 		_model.eventHandle("leave_game",[]);
@@ -55,31 +44,55 @@ function warcraftUI()
 
 	function onspin()
 	{
-		self.spinBtn.off(Event.CLICK, this, onspin);
+		self.spinBtn.visible = false;
+		self.stopBtn.visible = true;
 		_model.betamount = self.betScore.text;
-		_model.eventHandle("spin",[]);
+
+		//socket spin
+		//_model.eventHandle("spin",[]);
 
 		for( i =0;i< rollerNum ;i++)
 		{
-			//APK 不支持filter
-			//self["roller_"+i].list.renderHandler = new Handler(this, fuzzyItem);
-			//self["roller_"+i].list.array = [0,1,2,3,4,5,6,7,8,0,1,2,3,4,5,6,7,8,0,1,2,3,4,5,6,7,8,0];
-			self["roller_"+i].list.tweenTo(9,2000,new Handler(this,comp,[i]));
-			
-		}
+			self["roller_"+i].shift();
+		}	
 		
 	}
-
-	function fuzzyItem(cell, idx)
+	
+	function onStop()
 	{
-		var mya = cell.getChildByName('myani');
-		mya.filters = [blurFilter];
+		var idx = Math.floor((Math.random() * 9) + 1)
+		self["roller_"+0].stop(idx);
 	}
 
-	function comp(idx )
-	{  
-		self["roller_"+idx].list.scrollTo(0);
-		if( idx == 14) self.spinBtn.on(Event.CLICK, this, onspin);
+	function oncomplet(n)
+	{
+		//all stop
+		if( n !=14)
+		{
+			var idx = Math.floor((Math.random() * 9) + 1)
+			self["roller_"+(n+1)].stop(idx);
+		}
+
+		//order stop
+		// if( n !=14)
+		// {
+		// 	Timer.frameOnce(10,self,self.nextstop,[n])
+		// }
+		
+		//roller all stop
+		if( n ==14)
+		{
+			self.spinBtn.visible = true;
+			self.stopBtn.visible = false;
+		}
+	}
+
+	
+	warcraftUI.prototype.nextstop = function(n)
+	{
+		var idx = Math.floor((Math.random() * 9) + 1)
+		self["roller_"+(n+1)].stop(idx);
+		
 	}
 
 	function onaddScore()

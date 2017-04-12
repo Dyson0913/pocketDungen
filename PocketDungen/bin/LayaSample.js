@@ -72,6 +72,8 @@
 	{
 		trace(" onAssetsLoaded ")
 
+		Laya.loader.load([{url: "res/atlas/game.json",type: Loader.ATLAS}], Handler.create(this, onIntoGame));
+		return
 		//先加載提示元件
 		_model.pushView("hint",new HintUI());
 
