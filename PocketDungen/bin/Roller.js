@@ -26,7 +26,16 @@ function Roller()
 	(function()
 	{
 		//建構式
-		self.idxarr = [2,1,9]
+		var idx = Math.floor((Math.random() * 9) + 1)
+		var sec= idx+1;
+		if( sec ==10 ) sec = 1
+		var thrid = sec+1
+		if( thrid == 10 ) thrid =1
+		self.idxarr = [idx,sec,thrid]
+
+		self.current.source =Laya.loader.getRes("res/loading/"+idx+".jpg");
+		self.next.source =  Laya.loader.getRes("res/loading/"+sec+".jpg");
+		self.pre.source =  Laya.loader.getRes("res/loading/"+thrid+".jpg");
 
 	})();
 
@@ -114,11 +123,11 @@ function Roller()
 			if( self._mid ==2)  self.pre.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
 
 			var sec= mid+1;
-			if( sec ==10 ) sec ==1
+			if( sec ==10 ) sec = 1
 			var thrid = sec+1
 			if( thrid == 10 ) thrid =1
 			self.idxarr = [mid,sec,thrid]
-
+			trace("self.idxarr "+self.idxarr)
 			_model.rollercomplet.dispatch(0);
 	}
 }
@@ -134,7 +143,16 @@ function Roller1()
 	(function()
 	{
 		//建構式
-		self.idxarr = [2,1,9]
+		var idx = Math.floor((Math.random() * 9) + 1)
+		var sec= idx+1;
+		if( sec ==10 ) sec = 1
+		var thrid = sec+1
+		if( thrid == 10 ) thrid =1
+		self.idxarr = [idx,sec,thrid]
+
+		self.current.source =Laya.loader.getRes("res/loading/"+idx+".jpg");
+		self.next.source =  Laya.loader.getRes("res/loading/"+sec+".jpg");
+		self.pre.source =  Laya.loader.getRes("res/loading/"+thrid+".jpg");
 	})();
 
 	Roller1.prototype.shift = function ()
@@ -218,7 +236,7 @@ function Roller1()
 			if( self._mid ==2)  self.pre.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
 
 			var sec= mid+1;
-			if( sec ==10 ) sec ==1
+			if( sec ==10 ) sec = 1
 			var thrid = sec+1
 			if( thrid == 10 ) thrid =1
 			self.idxarr = [mid,sec,thrid]
@@ -239,7 +257,16 @@ function Roller2()
 	(function()
 	{
 		//建構式
-		self.idxarr = [2,1,9]
+		var idx = Math.floor((Math.random() * 9) + 1)
+		var sec= idx+1;
+		if( sec ==10 ) sec = 1
+		var thrid = sec+1
+		if( thrid == 10 ) thrid =1
+		self.idxarr = [idx,sec,thrid]
+
+		self.current.source =Laya.loader.getRes("res/loading/"+idx+".jpg");
+		self.next.source =  Laya.loader.getRes("res/loading/"+sec+".jpg");
+		self.pre.source =  Laya.loader.getRes("res/loading/"+thrid+".jpg");
 	})();
 
 	Roller2.prototype.shift = function ()
@@ -323,7 +350,7 @@ function Roller2()
 			if( self._mid ==2)  self.pre.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
 
 			var sec= mid+1;
-			if( sec ==10 ) sec ==1
+			if( sec ==10 ) sec = 1
 			var thrid = sec+1
 			if( thrid == 10 ) thrid =1
 			self.idxarr = [mid,sec,thrid]
@@ -343,7 +370,16 @@ function Roller3()
 	(function()
 	{
 		//建構式
-		self.idxarr = [2,1,9]
+		var idx = Math.floor((Math.random() * 9) + 1)
+		var sec= idx+1;
+		if( sec ==10 ) sec = 1
+		var thrid = sec+1
+		if( thrid == 10 ) thrid =1
+		self.idxarr = [idx,sec,thrid]
+
+		self.current.source =Laya.loader.getRes("res/loading/"+idx+".jpg");
+		self.next.source =  Laya.loader.getRes("res/loading/"+sec+".jpg");
+		self.pre.source =  Laya.loader.getRes("res/loading/"+thrid+".jpg");
 	})();
 
 	Roller3.prototype.shift = function ()
@@ -427,7 +463,7 @@ function Roller3()
 			if( self._mid ==2)  self.pre.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
 			
 			var sec= mid+1;
-			if( sec ==10 ) sec ==1
+			if( sec ==10 ) sec = 1
 			var thrid = sec+1
 			if( thrid == 10 ) thrid =1
 			self.idxarr = [mid,sec,thrid]
@@ -447,7 +483,16 @@ function Roller4()
 	(function()
 	{
 		//建構式
-		self.idxarr = [2,1,9]
+		var idx = Math.floor((Math.random() * 9) + 1)
+		var sec= idx+1;
+		if( sec ==10 ) sec = 1
+		var thrid = sec+1
+		if( thrid == 10 ) thrid =1
+		self.idxarr = [idx,sec,thrid]
+
+		self.current.source =Laya.loader.getRes("res/loading/"+idx+".jpg");
+		self.next.source =  Laya.loader.getRes("res/loading/"+sec+".jpg");
+		self.pre.source =  Laya.loader.getRes("res/loading/"+thrid+".jpg");
 	})();
 
 	Roller4.prototype.shift = function ()
@@ -531,7 +576,7 @@ function Roller4()
 			if( self._mid ==2)  self.pre.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
 
 			var sec= mid+1;
-			if( sec ==10 ) sec ==1
+			if( sec ==10 ) sec = 1
 			var thrid = sec+1
 			if( thrid == 10 ) thrid =1
 			self.idxarr = [mid,sec,thrid]
@@ -551,7 +596,16 @@ function Roller5()
 	(function()
 	{
 		//建構式
-		self.idxarr = [2,1,9]
+		var idx = Math.floor((Math.random() * 9) + 1)
+		var sec= idx+1;
+		if( sec ==10 ) sec = 1
+		var thrid = sec+1
+		if( thrid == 10 ) thrid =1
+		self.idxarr = [idx,sec,thrid]
+
+		self.current.source =Laya.loader.getRes("res/loading/"+idx+".jpg");
+		self.next.source =  Laya.loader.getRes("res/loading/"+sec+".jpg");
+		self.pre.source =  Laya.loader.getRes("res/loading/"+thrid+".jpg");
 	})();
 
 	Roller5.prototype.shift = function ()
@@ -636,7 +690,7 @@ function Roller5()
 			if( self._mid ==2)  self.pre.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
 
 			var sec= mid+1;
-			if( sec ==10 ) sec ==1
+			if( sec ==10 ) sec = 1
 			var thrid = sec+1
 			if( thrid == 10 ) thrid =1
 			self.idxarr = [mid,sec,thrid]
@@ -656,7 +710,16 @@ function Roller6()
 	(function()
 	{
 		//建構式
-		self.idxarr = [2,1,9]
+		var idx = Math.floor((Math.random() * 9) + 1)
+		var sec= idx+1;
+		if( sec ==10 ) sec = 1
+		var thrid = sec+1
+		if( thrid == 10 ) thrid =1
+		self.idxarr = [idx,sec,thrid]
+
+		self.current.source =Laya.loader.getRes("res/loading/"+idx+".jpg");
+		self.next.source =  Laya.loader.getRes("res/loading/"+sec+".jpg");
+		self.pre.source =  Laya.loader.getRes("res/loading/"+thrid+".jpg");
 	})();
 
 	Roller6.prototype.shift = function ()
@@ -701,11 +764,6 @@ function Roller6()
 			self.pre.source =  Laya.loader.getRes("res/loading/"+idx+".jpg");
 		}
 
-		if( this.times ==8)
-		{
-			Timer.clear(this,this.move);
-			this.pullback()
-		}
 	}
 
     Roller6.prototype.picchange = function()
@@ -747,7 +805,7 @@ function Roller6()
 			if( self._mid ==2)  self.pre.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
 
 			var sec= mid+1;
-			if( sec ==10 ) sec ==1
+			if( sec ==10 ) sec = 1
 			var thrid = sec+1
 			if( thrid == 10 ) thrid =1
 			self.idxarr = [mid,sec,thrid]
@@ -767,7 +825,16 @@ function Roller7()
 	(function()
 	{
 		//建構式
-		self.idxarr = [2,1,9]
+		var idx = Math.floor((Math.random() * 9) + 1)
+		var sec= idx+1;
+		if( sec ==10 ) sec = 1
+		var thrid = sec+1
+		if( thrid == 10 ) thrid =1
+		self.idxarr = [idx,sec,thrid]
+
+		self.current.source =Laya.loader.getRes("res/loading/"+idx+".jpg");
+		self.next.source =  Laya.loader.getRes("res/loading/"+sec+".jpg");
+		self.pre.source =  Laya.loader.getRes("res/loading/"+thrid+".jpg");
 	})();
 
 	Roller7.prototype.shift = function ()
@@ -851,7 +918,7 @@ function Roller7()
 			if( self._mid ==2)  self.pre.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
 
 			var sec= mid+1;
-			if( sec ==10 ) sec ==1
+			if( sec ==10 ) sec = 1
 			var thrid = sec+1
 			if( thrid == 10 ) thrid =1
 			self.idxarr = [mid,sec,thrid]
@@ -872,7 +939,16 @@ function Roller8()
 	(function()
 	{
 		//建構式
-		self.idxarr = [2,1,9]
+		var idx = Math.floor((Math.random() * 9) + 1)
+		var sec= idx+1;
+		if( sec ==10 ) sec = 1
+		var thrid = sec+1
+		if( thrid == 10 ) thrid =1
+		self.idxarr = [idx,sec,thrid]
+
+		self.current.source =Laya.loader.getRes("res/loading/"+idx+".jpg");
+		self.next.source =  Laya.loader.getRes("res/loading/"+sec+".jpg");
+		self.pre.source =  Laya.loader.getRes("res/loading/"+thrid+".jpg");
 	})();
 
 	Roller8.prototype.shift = function ()
@@ -958,7 +1034,7 @@ function Roller8()
 			if( self._mid ==2)  self.pre.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
 
 			var sec= mid+1;
-			if( sec ==10 ) sec ==1
+			if( sec ==10 ) sec =1
 			var thrid = sec+1
 			if( thrid == 10 ) thrid =1
 			self.idxarr = [mid,sec,thrid]
@@ -978,7 +1054,16 @@ function Roller9()
 	(function()
 	{
 		//建構式
-		self.idxarr = [2,1,9]
+		var idx = Math.floor((Math.random() * 9) + 1)
+		var sec= idx+1;
+		if( sec ==10 ) sec = 1
+		var thrid = sec+1
+		if( thrid == 10 ) thrid =1
+		self.idxarr = [idx,sec,thrid]
+
+		self.current.source =Laya.loader.getRes("res/loading/"+idx+".jpg");
+		self.next.source =  Laya.loader.getRes("res/loading/"+sec+".jpg");
+		self.pre.source =  Laya.loader.getRes("res/loading/"+thrid+".jpg");
 	})();
 
 	Roller9.prototype.shift = function ()
@@ -1062,7 +1147,7 @@ function Roller9()
 			if( self._mid ==2)  self.pre.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
 
 			var sec= mid+1;
-			if( sec ==10 ) sec ==1
+			if( sec ==10 ) sec = 1
 			var thrid = sec+1
 			if( thrid == 10 ) thrid =1
 			self.idxarr = [mid,sec,thrid]
@@ -1082,7 +1167,16 @@ function Roller10()
 	(function()
 	{
 		//建構式
-		self.idxarr = [2,1,9]
+		var idx = Math.floor((Math.random() * 9) + 1)
+		var sec= idx+1;
+		if( sec ==10 ) sec = 1
+		var thrid = sec+1
+		if( thrid == 10 ) thrid =1
+		self.idxarr = [idx,sec,thrid]
+
+		self.current.source =Laya.loader.getRes("res/loading/"+idx+".jpg");
+		self.next.source =  Laya.loader.getRes("res/loading/"+sec+".jpg");
+		self.pre.source =  Laya.loader.getRes("res/loading/"+thrid+".jpg");
 	})();
 
 	Roller10.prototype.shift = function ()
@@ -1166,7 +1260,7 @@ function Roller10()
 			if( self._mid ==2)  self.pre.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
 
 			var sec= mid+1;
-			if( sec ==10 ) sec ==1
+			if( sec ==10 ) sec = 1
 			var thrid = sec+1
 			if( thrid == 10 ) thrid =1
 			self.idxarr = [mid,sec,thrid]
@@ -1186,7 +1280,16 @@ function Roller11()
 	(function()
 	{
 		//建構式
-		self.idxarr = [2,1,9]
+		var idx = Math.floor((Math.random() * 9) + 1)
+		var sec= idx+1;
+		if( sec ==10 ) sec = 1
+		var thrid = sec+1
+		if( thrid == 10 ) thrid =1
+		self.idxarr = [idx,sec,thrid]
+
+		self.current.source =Laya.loader.getRes("res/loading/"+idx+".jpg");
+		self.next.source =  Laya.loader.getRes("res/loading/"+sec+".jpg");
+		self.pre.source =  Laya.loader.getRes("res/loading/"+thrid+".jpg");
 	})();
 
 	Roller11.prototype.shift = function ()
@@ -1270,7 +1373,7 @@ function Roller11()
 			if( self._mid ==2)  self.pre.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
 
 			var sec= mid+1;
-			if( sec ==10 ) sec ==1
+			if( sec ==10 ) sec = 1
 			var thrid = sec+1
 			if( thrid == 10 ) thrid =1
 			self.idxarr = [mid,sec,thrid]
@@ -1290,7 +1393,16 @@ function Roller12()
 	(function()
 	{
 		//建構式
-		self.idxarr = [2,1,9]
+		var idx = Math.floor((Math.random() * 9) + 1)
+		var sec= idx+1;
+		if( sec ==10 ) sec = 1
+		var thrid = sec+1
+		if( thrid == 10 ) thrid =1
+		self.idxarr = [idx,sec,thrid]
+
+		self.current.source =Laya.loader.getRes("res/loading/"+idx+".jpg");
+		self.next.source =  Laya.loader.getRes("res/loading/"+sec+".jpg");
+		self.pre.source =  Laya.loader.getRes("res/loading/"+thrid+".jpg");
 	})();
 
 	Roller12.prototype.shift = function ()
@@ -1374,7 +1486,7 @@ function Roller12()
 			if( self._mid ==2)  self.pre.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
 			
 			var sec= mid+1;
-			if( sec ==10 ) sec ==1
+			if( sec ==10 ) sec = 1
 			var thrid = sec+1
 			if( thrid == 10 ) thrid =1
 			self.idxarr = [mid,sec,thrid]
@@ -1394,7 +1506,16 @@ function Roller13()
 	(function()
 	{
 		//建構式
-		self.idxarr = [2,1,9]
+		var idx = Math.floor((Math.random() * 9) + 1)
+		var sec= idx+1;
+		if( sec ==10 ) sec = 1
+		var thrid = sec+1
+		if( thrid == 10 ) thrid =1
+		self.idxarr = [idx,sec,thrid]
+
+		self.current.source =Laya.loader.getRes("res/loading/"+idx+".jpg");
+		self.next.source =  Laya.loader.getRes("res/loading/"+sec+".jpg");
+		self.pre.source =  Laya.loader.getRes("res/loading/"+thrid+".jpg");
 	})();
 
 	Roller13.prototype.shift = function ()
@@ -1478,7 +1599,7 @@ function Roller13()
 			if( self._mid ==2)  self.pre.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
 
 			var sec= mid+1;
-			if( sec ==10 ) sec ==1
+			if( sec ==10 ) sec = 1
 			var thrid = sec+1
 			if( thrid == 10 ) thrid =1
 			self.idxarr = [mid,sec,thrid]
@@ -1498,7 +1619,16 @@ function Roller14()
 	(function()
 	{
 		//建構式
-		self.idxarr = [2,1,9]
+		var idx = Math.floor((Math.random() * 9) + 1)
+		var sec= idx+1;
+		if( sec ==10 ) sec = 1
+		var thrid = sec+1
+		if( thrid == 10 ) thrid =1
+		self.idxarr = [idx,sec,thrid]
+
+		self.current.source =Laya.loader.getRes("res/loading/"+idx+".jpg");
+		self.next.source =  Laya.loader.getRes("res/loading/"+sec+".jpg");
+		self.pre.source =  Laya.loader.getRes("res/loading/"+thrid+".jpg");
 	})();
 
 Roller14.prototype.shift = function ()
@@ -1582,7 +1712,7 @@ Roller14.prototype.shift = function ()
 			if( self._mid ==2)  self.pre.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
 
 			var sec= mid+1;
-			if( sec ==10 ) sec ==1
+			if( sec ==10 ) sec = 1
 			var thrid = sec+1
 			if( thrid == 10 ) thrid =1
 			self.idxarr = [mid,sec,thrid]

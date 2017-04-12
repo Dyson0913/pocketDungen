@@ -2,6 +2,8 @@
 var Event = Laya.Event;
 
 var _model;
+var Timer = Laya.timer;
+var Handler = Laya.Handler;
 
 function logingUI()
 {
@@ -38,15 +40,29 @@ function logingUI()
 
 	function oncomplet(n)
 	{
-		
+		//all stop
 		if( n !=14)
 		{
 			var idx = Math.floor((Math.random() * 9) + 1)
-			trace(idx);
 			self["roller_"+(n+1)].stop(idx);
 		}
+
+
+		//order stop
+		// if( n !=14)
+		// {
+		// 	Timer.frameOnce(10,self,self.nextstop,[n])
+		// }
+		
+		//stop 
 	}
 
+	logingUI.prototype.nextstop = function (n)
+	{
+		var idx = Math.floor((Math.random() * 9) + 1)
+			self["roller_"+(n+1)].stop(idx);
+	}
+	
 
 }
 
