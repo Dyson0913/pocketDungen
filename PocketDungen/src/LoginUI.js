@@ -22,8 +22,9 @@ function logingUI()
 		// _model.login_name = namehash;
 		// _model.login_pw =pwhash;
 		// _model.eventHandle("login",[]);
-
-		self["roller_"+0].stop(1);
+		var idx = Math.floor((Math.random() * 9) + 1)
+			trace("first ="+idx);
+		self["roller_"+0].stop(idx);
 	}
 
 	function onBtnClick2()
@@ -38,10 +39,12 @@ function logingUI()
 
 	function oncomplet(n)
 	{
-		trace("ok "+n)
+		
 		if( n !=14)
 		{
-			self["roller_"+(n+1)].stop();
+			var idx = Math.floor((Math.random() * 9) + 1)
+			trace(idx);
+			self["roller_"+(n+1)].stop(idx);
 		}
 	}
 

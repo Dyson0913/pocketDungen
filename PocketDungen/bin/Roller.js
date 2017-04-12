@@ -113,6 +113,12 @@ function Roller()
 			if( self._mid ==1)  self.next.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
 			if( self._mid ==2)  self.pre.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
 
+			var sec= mid+1;
+			if( sec ==10 ) sec ==1
+			var thrid = sec+1
+			if( thrid ==10 ) thrid ==1
+			self.idxarr = [mid,sec,thrid]
+			trace("self.idxarr "+self.idxarr)
 			_model.rollercomplet.dispatch(0);
 	}
 }
