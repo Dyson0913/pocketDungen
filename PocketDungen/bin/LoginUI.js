@@ -23,7 +23,6 @@ function logingUI()
 		// _model.login_pw =pwhash;
 		// _model.eventHandle("login",[]);
 		var idx = Math.floor((Math.random() * 9) + 1)
-			trace("first ="+idx);
 		self["roller_"+0].stop(idx);
 	}
 

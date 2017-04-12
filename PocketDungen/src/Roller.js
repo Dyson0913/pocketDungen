@@ -116,9 +116,9 @@ function Roller()
 			var sec= mid+1;
 			if( sec ==10 ) sec ==1
 			var thrid = sec+1
-			if( thrid ==10 ) thrid ==1
+			if( thrid == 10 ) thrid =1
 			self.idxarr = [mid,sec,thrid]
-			trace("self.idxarr "+self.idxarr)
+
 			_model.rollercomplet.dispatch(0);
 	}
 }
@@ -216,6 +216,12 @@ function Roller1()
 			if( self._mid ==0)  self.current.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
 			if( self._mid ==1)  self.next.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
 			if( self._mid ==2)  self.pre.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
+
+			var sec= mid+1;
+			if( sec ==10 ) sec ==1
+			var thrid = sec+1
+			if( thrid == 10 ) thrid =1
+			self.idxarr = [mid,sec,thrid]
 
 			_model.rollercomplet.dispatch(1);
 	}
@@ -316,6 +322,12 @@ function Roller2()
 			if( self._mid ==1)  self.next.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
 			if( self._mid ==2)  self.pre.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
 
+			var sec= mid+1;
+			if( sec ==10 ) sec ==1
+			var thrid = sec+1
+			if( thrid == 10 ) thrid =1
+			self.idxarr = [mid,sec,thrid]
+
 			_model.rollercomplet.dispatch(2);
 	}
 }
@@ -413,6 +425,12 @@ function Roller3()
 			if( self._mid ==0)  self.current.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
 			if( self._mid ==1)  self.next.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
 			if( self._mid ==2)  self.pre.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
+			
+			var sec= mid+1;
+			if( sec ==10 ) sec ==1
+			var thrid = sec+1
+			if( thrid == 10 ) thrid =1
+			self.idxarr = [mid,sec,thrid]
 
 			_model.rollercomplet.dispatch(3);
 	}
@@ -511,6 +529,12 @@ function Roller4()
 			if( self._mid ==0)  self.current.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
 			if( self._mid ==1)  self.next.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
 			if( self._mid ==2)  self.pre.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
+
+			var sec= mid+1;
+			if( sec ==10 ) sec ==1
+			var thrid = sec+1
+			if( thrid == 10 ) thrid =1
+			self.idxarr = [mid,sec,thrid]
 
 			_model.rollercomplet.dispatch(4);
 	}
@@ -611,6 +635,12 @@ function Roller5()
 			if( self._mid ==1)  self.next.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
 			if( self._mid ==2)  self.pre.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
 
+			var sec= mid+1;
+			if( sec ==10 ) sec ==1
+			var thrid = sec+1
+			if( thrid == 10 ) thrid =1
+			self.idxarr = [mid,sec,thrid]
+
 			_model.rollercomplet.dispatch(5);
 	}
 }
@@ -696,8 +726,7 @@ function Roller6()
 		if( self._mid ==0)  pulldis = self.current.y;
 		if( self._mid ==1)  pulldis = self.next.y;
 		if( self._mid ==2)  pulldis = self.pre.y;
-		trace("mid = " +self._mid);
-		trace("pullids = " +pulldis);
+		
 		_tween.to(self.current,{y:self.current.y-pulldis},500,Laya.Ease.backOut,new Handler(this,this.complet) )
 		_tween.to(self.pre,{y:self.pre.y-pulldis},500,Laya.Ease.backOut,new Handler(this,this.complet) )
 		_tween.to(self.next,{y:self.next.y-pulldis},500,Laya.Ease.backOut,new Handler(this,this.complet) )
@@ -716,6 +745,12 @@ function Roller6()
 			if( self._mid ==0)  self.current.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
 			if( self._mid ==1)  self.next.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
 			if( self._mid ==2)  self.pre.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
+
+			var sec= mid+1;
+			if( sec ==10 ) sec ==1
+			var thrid = sec+1
+			if( thrid == 10 ) thrid =1
+			self.idxarr = [mid,sec,thrid]
 
 			_model.rollercomplet.dispatch(6);
 	}
@@ -814,6 +849,12 @@ function Roller7()
 			if( self._mid ==0)  self.current.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
 			if( self._mid ==1)  self.next.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
 			if( self._mid ==2)  self.pre.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
+
+			var sec= mid+1;
+			if( sec ==10 ) sec ==1
+			var thrid = sec+1
+			if( thrid == 10 ) thrid =1
+			self.idxarr = [mid,sec,thrid]
 
 			_model.rollercomplet.dispatch(7);
 	}
@@ -916,6 +957,12 @@ function Roller8()
 			if( self._mid ==1)  self.next.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
 			if( self._mid ==2)  self.pre.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
 
+			var sec= mid+1;
+			if( sec ==10 ) sec ==1
+			var thrid = sec+1
+			if( thrid == 10 ) thrid =1
+			self.idxarr = [mid,sec,thrid]
+
 			_model.rollercomplet.dispatch(8);
 	}
 }
@@ -1013,6 +1060,12 @@ function Roller9()
 			if( self._mid ==0)  self.current.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
 			if( self._mid ==1)  self.next.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
 			if( self._mid ==2)  self.pre.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
+
+			var sec= mid+1;
+			if( sec ==10 ) sec ==1
+			var thrid = sec+1
+			if( thrid == 10 ) thrid =1
+			self.idxarr = [mid,sec,thrid]
 
 			_model.rollercomplet.dispatch(9);
 	}
@@ -1112,6 +1165,12 @@ function Roller10()
 			if( self._mid ==1)  self.next.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
 			if( self._mid ==2)  self.pre.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
 
+			var sec= mid+1;
+			if( sec ==10 ) sec ==1
+			var thrid = sec+1
+			if( thrid == 10 ) thrid =1
+			self.idxarr = [mid,sec,thrid]
+
 			_model.rollercomplet.dispatch(10);
 	}
 }
@@ -1210,6 +1269,12 @@ function Roller11()
 			if( self._mid ==1)  self.next.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
 			if( self._mid ==2)  self.pre.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
 
+			var sec= mid+1;
+			if( sec ==10 ) sec ==1
+			var thrid = sec+1
+			if( thrid == 10 ) thrid =1
+			self.idxarr = [mid,sec,thrid]
+
 			_model.rollercomplet.dispatch(11);
 	}
 }
@@ -1307,7 +1372,13 @@ function Roller12()
 			if( self._mid ==0)  self.current.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
 			if( self._mid ==1)  self.next.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
 			if( self._mid ==2)  self.pre.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
-
+			
+			var sec= mid+1;
+			if( sec ==10 ) sec ==1
+			var thrid = sec+1
+			if( thrid == 10 ) thrid =1
+			self.idxarr = [mid,sec,thrid]
+			
 			_model.rollercomplet.dispatch(12);
 	}
 }
@@ -1405,6 +1476,12 @@ function Roller13()
 			if( self._mid ==0)  self.current.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
 			if( self._mid ==1)  self.next.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
 			if( self._mid ==2)  self.pre.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
+
+			var sec= mid+1;
+			if( sec ==10 ) sec ==1
+			var thrid = sec+1
+			if( thrid == 10 ) thrid =1
+			self.idxarr = [mid,sec,thrid]
 
 			_model.rollercomplet.dispatch(13);
 	}
@@ -1504,6 +1581,12 @@ Roller14.prototype.shift = function ()
 			if( self._mid ==1)  self.next.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
 			if( self._mid ==2)  self.pre.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
 
+			var sec= mid+1;
+			if( sec ==10 ) sec ==1
+			var thrid = sec+1
+			if( thrid == 10 ) thrid =1
+			self.idxarr = [mid,sec,thrid]
+			
 			_model.rollercomplet.dispatch(14);
 	}
 	
