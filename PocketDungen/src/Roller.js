@@ -33,9 +33,9 @@ function Roller()
 		if( thrid == 10 ) thrid =1
 		self.idxarr = [idx,sec,thrid]
 
-		self.current.source =Laya.loader.getRes("res/loading/"+idx+".jpg");
-		self.next.source =  Laya.loader.getRes("res/loading/"+sec+".jpg");
-		self.pre.source =  Laya.loader.getRes("res/loading/"+thrid+".jpg");
+		self.current.source =Laya.loader.getRes("res/game/"+idx+".jpg");
+		self.next.source =  Laya.loader.getRes("res/game/"+sec+".jpg");
+		self.pre.source =  Laya.loader.getRes("res/game/"+thrid+".jpg");
 
 	})();
 
@@ -62,7 +62,7 @@ function Roller()
 			this.times++;
 
 			idx = this.picchange()
-			self.next.source =  Laya.loader.getRes("res/loading/"+idx+".jpg");
+			self.next.source =  Laya.loader.getRes("res/game/"+idx+".jpg");
 		}
 
 		if( self.current.y >141)
@@ -71,7 +71,7 @@ function Roller()
 			self._mid =2;
 			this.times++;
 			idx = this.picchange()
-			self.current.source =  Laya.loader.getRes("res/loading/"+idx+".jpg");
+			self.current.source =  Laya.loader.getRes("res/game/"+idx+".jpg");
 		}
 
 		if( self.pre.y >141)
@@ -80,7 +80,7 @@ function Roller()
 			self._mid =1;
 			this.times++;
 			idx = this.picchange()
-			self.pre.source =  Laya.loader.getRes("res/loading/"+idx+".jpg");
+			self.pre.source =  Laya.loader.getRes("res/game/"+idx+".jpg");
 		}
 
 		
@@ -118,9 +118,9 @@ function Roller()
 			Timer.clear(this,this.move);
 			this.pullback()
 			
-			if( self._mid ==0)  self.current.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
-			if( self._mid ==1)  self.next.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
-			if( self._mid ==2)  self.pre.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
+			if( self._mid ==0)  self.current.source =  Laya.loader.getRes("res/game/"+mid+".jpg");
+			if( self._mid ==1)  self.next.source =  Laya.loader.getRes("res/game/"+mid+".jpg");
+			if( self._mid ==2)  self.pre.source =  Laya.loader.getRes("res/game/"+mid+".jpg");
 
 			var sec= mid+1;
 			if( sec ==10 ) sec = 1
@@ -150,9 +150,9 @@ function Roller1()
 		if( thrid == 10 ) thrid =1
 		self.idxarr = [idx,sec,thrid]
 
-		self.current.source =Laya.loader.getRes("res/loading/"+idx+".jpg");
-		self.next.source =  Laya.loader.getRes("res/loading/"+sec+".jpg");
-		self.pre.source =  Laya.loader.getRes("res/loading/"+thrid+".jpg");
+		self.current.source =Laya.loader.getRes("res/game/"+idx+".jpg");
+		self.next.source =  Laya.loader.getRes("res/game/"+sec+".jpg");
+		self.pre.source =  Laya.loader.getRes("res/game/"+thrid+".jpg");
 	})();
 
 	Roller1.prototype.shift = function ()
@@ -176,7 +176,7 @@ function Roller1()
 			this.times++;
 
 			idx = this.picchange()
-			self.next.source =  Laya.loader.getRes("res/loading/"+idx+".jpg");
+			self.next.source =  Laya.loader.getRes("res/game/"+idx+".jpg");
 		}
 
 		if( self.current.y >141)
@@ -185,7 +185,7 @@ function Roller1()
 			self._mid =2;
 			this.times++;
 			idx = this.picchange()
-			self.current.source =  Laya.loader.getRes("res/loading/"+idx+".jpg");
+			self.current.source =  Laya.loader.getRes("res/game/"+idx+".jpg");
 		}
 
 		if( self.pre.y >141)
@@ -194,7 +194,7 @@ function Roller1()
 			self._mid =1;
 			this.times++;
 			idx = this.picchange()
-			self.pre.source =  Laya.loader.getRes("res/loading/"+idx+".jpg");
+			self.pre.source =  Laya.loader.getRes("res/game/"+idx+".jpg");
 		}
 		
 	}
@@ -231,9 +231,9 @@ function Roller1()
 			Timer.clear(this,this.move);
 			this.pullback()
 			
-			if( self._mid ==0)  self.current.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
-			if( self._mid ==1)  self.next.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
-			if( self._mid ==2)  self.pre.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
+			if( self._mid ==0)  self.current.source =  Laya.loader.getRes("res/game/"+mid+".jpg");
+			if( self._mid ==1)  self.next.source =  Laya.loader.getRes("res/game/"+mid+".jpg");
+			if( self._mid ==2)  self.pre.source =  Laya.loader.getRes("res/game/"+mid+".jpg");
 
 			var sec= mid+1;
 			if( sec ==10 ) sec = 1
@@ -264,9 +264,9 @@ function Roller2()
 		if( thrid == 10 ) thrid =1
 		self.idxarr = [idx,sec,thrid]
 
-		self.current.source =Laya.loader.getRes("res/loading/"+idx+".jpg");
-		self.next.source =  Laya.loader.getRes("res/loading/"+sec+".jpg");
-		self.pre.source =  Laya.loader.getRes("res/loading/"+thrid+".jpg");
+		self.current.source =Laya.loader.getRes("res/game/"+idx+".jpg");
+		self.next.source =  Laya.loader.getRes("res/game/"+sec+".jpg");
+		self.pre.source =  Laya.loader.getRes("res/game/"+thrid+".jpg");
 	})();
 
 	Roller2.prototype.shift = function ()
@@ -290,7 +290,7 @@ function Roller2()
 			this.times++;
 
 			idx = this.picchange()
-			self.next.source =  Laya.loader.getRes("res/loading/"+idx+".jpg");
+			self.next.source =  Laya.loader.getRes("res/game/"+idx+".jpg");
 		}
 
 		if( self.current.y >141)
@@ -299,7 +299,7 @@ function Roller2()
 			self._mid =2;
 			this.times++;
 			idx = this.picchange()
-			self.current.source =  Laya.loader.getRes("res/loading/"+idx+".jpg");
+			self.current.source =  Laya.loader.getRes("res/game/"+idx+".jpg");
 		}
 
 		if( self.pre.y >141)
@@ -308,7 +308,7 @@ function Roller2()
 			self._mid =1;
 			this.times++;
 			idx = this.picchange()
-			self.pre.source =  Laya.loader.getRes("res/loading/"+idx+".jpg");
+			self.pre.source =  Laya.loader.getRes("res/game/"+idx+".jpg");
 		}
 
 	}
@@ -345,9 +345,9 @@ function Roller2()
 			Timer.clear(this,this.move);
 			this.pullback()
 			
-			if( self._mid ==0)  self.current.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
-			if( self._mid ==1)  self.next.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
-			if( self._mid ==2)  self.pre.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
+			if( self._mid ==0)  self.current.source =  Laya.loader.getRes("res/game/"+mid+".jpg");
+			if( self._mid ==1)  self.next.source =  Laya.loader.getRes("res/game/"+mid+".jpg");
+			if( self._mid ==2)  self.pre.source =  Laya.loader.getRes("res/game/"+mid+".jpg");
 
 			var sec= mid+1;
 			if( sec ==10 ) sec = 1
@@ -377,9 +377,9 @@ function Roller3()
 		if( thrid == 10 ) thrid =1
 		self.idxarr = [idx,sec,thrid]
 
-		self.current.source =Laya.loader.getRes("res/loading/"+idx+".jpg");
-		self.next.source =  Laya.loader.getRes("res/loading/"+sec+".jpg");
-		self.pre.source =  Laya.loader.getRes("res/loading/"+thrid+".jpg");
+		self.current.source =Laya.loader.getRes("res/game/"+idx+".jpg");
+		self.next.source =  Laya.loader.getRes("res/game/"+sec+".jpg");
+		self.pre.source =  Laya.loader.getRes("res/game/"+thrid+".jpg");
 	})();
 
 	Roller3.prototype.shift = function ()
@@ -403,7 +403,7 @@ function Roller3()
 			this.times++;
 
 			idx = this.picchange()
-			self.next.source =  Laya.loader.getRes("res/loading/"+idx+".jpg");
+			self.next.source =  Laya.loader.getRes("res/game/"+idx+".jpg");
 		}
 
 		if( self.current.y >141)
@@ -412,7 +412,7 @@ function Roller3()
 			self._mid =2;
 			this.times++;
 			idx = this.picchange()
-			self.current.source =  Laya.loader.getRes("res/loading/"+idx+".jpg");
+			self.current.source =  Laya.loader.getRes("res/game/"+idx+".jpg");
 		}
 
 		if( self.pre.y >141)
@@ -421,7 +421,7 @@ function Roller3()
 			self._mid =1;
 			this.times++;
 			idx = this.picchange()
-			self.pre.source =  Laya.loader.getRes("res/loading/"+idx+".jpg");
+			self.pre.source =  Laya.loader.getRes("res/game/"+idx+".jpg");
 		}
 	
 	}
@@ -458,9 +458,9 @@ function Roller3()
 			Timer.clear(this,this.move);
 			this.pullback()
 			
-			if( self._mid ==0)  self.current.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
-			if( self._mid ==1)  self.next.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
-			if( self._mid ==2)  self.pre.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
+			if( self._mid ==0)  self.current.source =  Laya.loader.getRes("res/game/"+mid+".jpg");
+			if( self._mid ==1)  self.next.source =  Laya.loader.getRes("res/game/"+mid+".jpg");
+			if( self._mid ==2)  self.pre.source =  Laya.loader.getRes("res/game/"+mid+".jpg");
 			
 			var sec= mid+1;
 			if( sec ==10 ) sec = 1
@@ -490,9 +490,9 @@ function Roller4()
 		if( thrid == 10 ) thrid =1
 		self.idxarr = [idx,sec,thrid]
 
-		self.current.source =Laya.loader.getRes("res/loading/"+idx+".jpg");
-		self.next.source =  Laya.loader.getRes("res/loading/"+sec+".jpg");
-		self.pre.source =  Laya.loader.getRes("res/loading/"+thrid+".jpg");
+		self.current.source =Laya.loader.getRes("res/game/"+idx+".jpg");
+		self.next.source =  Laya.loader.getRes("res/game/"+sec+".jpg");
+		self.pre.source =  Laya.loader.getRes("res/game/"+thrid+".jpg");
 	})();
 
 	Roller4.prototype.shift = function ()
@@ -516,7 +516,7 @@ function Roller4()
 			this.times++;
 
 			idx = this.picchange()
-			self.next.source =  Laya.loader.getRes("res/loading/"+idx+".jpg");
+			self.next.source =  Laya.loader.getRes("res/game/"+idx+".jpg");
 		}
 
 		if( self.current.y >141)
@@ -525,7 +525,7 @@ function Roller4()
 			self._mid =2;
 			this.times++;
 			idx = this.picchange()
-			self.current.source =  Laya.loader.getRes("res/loading/"+idx+".jpg");
+			self.current.source =  Laya.loader.getRes("res/game/"+idx+".jpg");
 		}
 
 		if( self.pre.y >141)
@@ -534,7 +534,7 @@ function Roller4()
 			self._mid =1;
 			this.times++;
 			idx = this.picchange()
-			self.pre.source =  Laya.loader.getRes("res/loading/"+idx+".jpg");
+			self.pre.source =  Laya.loader.getRes("res/game/"+idx+".jpg");
 		}
 	
 	}
@@ -571,9 +571,9 @@ function Roller4()
 			Timer.clear(this,this.move);
 			this.pullback()
 			
-			if( self._mid ==0)  self.current.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
-			if( self._mid ==1)  self.next.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
-			if( self._mid ==2)  self.pre.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
+			if( self._mid ==0)  self.current.source =  Laya.loader.getRes("res/game/"+mid+".jpg");
+			if( self._mid ==1)  self.next.source =  Laya.loader.getRes("res/game/"+mid+".jpg");
+			if( self._mid ==2)  self.pre.source =  Laya.loader.getRes("res/game/"+mid+".jpg");
 
 			var sec= mid+1;
 			if( sec ==10 ) sec = 1
@@ -603,9 +603,9 @@ function Roller5()
 		if( thrid == 10 ) thrid =1
 		self.idxarr = [idx,sec,thrid]
 
-		self.current.source =Laya.loader.getRes("res/loading/"+idx+".jpg");
-		self.next.source =  Laya.loader.getRes("res/loading/"+sec+".jpg");
-		self.pre.source =  Laya.loader.getRes("res/loading/"+thrid+".jpg");
+		self.current.source =Laya.loader.getRes("res/game/"+idx+".jpg");
+		self.next.source =  Laya.loader.getRes("res/game/"+sec+".jpg");
+		self.pre.source =  Laya.loader.getRes("res/game/"+thrid+".jpg");
 	})();
 
 	Roller5.prototype.shift = function ()
@@ -629,7 +629,7 @@ function Roller5()
 			this.times++;
 
 			idx = this.picchange()
-			self.next.source =  Laya.loader.getRes("res/loading/"+idx+".jpg");
+			self.next.source =  Laya.loader.getRes("res/game/"+idx+".jpg");
 		}
 
 		if( self.current.y >141)
@@ -638,7 +638,7 @@ function Roller5()
 			self._mid =2;
 			this.times++;
 			idx = this.picchange()
-			self.current.source =  Laya.loader.getRes("res/loading/"+idx+".jpg");
+			self.current.source =  Laya.loader.getRes("res/game/"+idx+".jpg");
 		}
 
 		if( self.pre.y >141)
@@ -647,7 +647,7 @@ function Roller5()
 			self._mid =1;
 			this.times++;
 			idx = this.picchange()
-			self.pre.source =  Laya.loader.getRes("res/loading/"+idx+".jpg");
+			self.pre.source =  Laya.loader.getRes("res/game/"+idx+".jpg");
 		}
 
 		
@@ -685,9 +685,9 @@ function Roller5()
 			Timer.clear(this,this.move);
 			this.pullback()
 			
-			if( self._mid ==0)  self.current.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
-			if( self._mid ==1)  self.next.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
-			if( self._mid ==2)  self.pre.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
+			if( self._mid ==0)  self.current.source =  Laya.loader.getRes("res/game/"+mid+".jpg");
+			if( self._mid ==1)  self.next.source =  Laya.loader.getRes("res/game/"+mid+".jpg");
+			if( self._mid ==2)  self.pre.source =  Laya.loader.getRes("res/game/"+mid+".jpg");
 
 			var sec= mid+1;
 			if( sec ==10 ) sec = 1
@@ -717,9 +717,9 @@ function Roller6()
 		if( thrid == 10 ) thrid =1
 		self.idxarr = [idx,sec,thrid]
 
-		self.current.source =Laya.loader.getRes("res/loading/"+idx+".jpg");
-		self.next.source =  Laya.loader.getRes("res/loading/"+sec+".jpg");
-		self.pre.source =  Laya.loader.getRes("res/loading/"+thrid+".jpg");
+		self.current.source =Laya.loader.getRes("res/game/"+idx+".jpg");
+		self.next.source =  Laya.loader.getRes("res/game/"+sec+".jpg");
+		self.pre.source =  Laya.loader.getRes("res/game/"+thrid+".jpg");
 	})();
 
 	Roller6.prototype.shift = function ()
@@ -743,7 +743,7 @@ function Roller6()
 			this.times++;
 
 			idx = this.picchange()
-			self.next.source =  Laya.loader.getRes("res/loading/"+idx+".jpg");
+			self.next.source =  Laya.loader.getRes("res/game/"+idx+".jpg");
 		}
 
 		if( self.current.y >141)
@@ -752,7 +752,7 @@ function Roller6()
 			self._mid =2;
 			this.times++;
 			idx = this.picchange()
-			self.current.source =  Laya.loader.getRes("res/loading/"+idx+".jpg");
+			self.current.source =  Laya.loader.getRes("res/game/"+idx+".jpg");
 		}
 
 		if( self.pre.y >141)
@@ -761,7 +761,7 @@ function Roller6()
 			self._mid =1;
 			this.times++;
 			idx = this.picchange()
-			self.pre.source =  Laya.loader.getRes("res/loading/"+idx+".jpg");
+			self.pre.source =  Laya.loader.getRes("res/game/"+idx+".jpg");
 		}
 
 	}
@@ -800,9 +800,9 @@ function Roller6()
 			Timer.clear(this,this.move);
 			this.pullback()
 			
-			if( self._mid ==0)  self.current.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
-			if( self._mid ==1)  self.next.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
-			if( self._mid ==2)  self.pre.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
+			if( self._mid ==0)  self.current.source =  Laya.loader.getRes("res/game/"+mid+".jpg");
+			if( self._mid ==1)  self.next.source =  Laya.loader.getRes("res/game/"+mid+".jpg");
+			if( self._mid ==2)  self.pre.source =  Laya.loader.getRes("res/game/"+mid+".jpg");
 
 			var sec= mid+1;
 			if( sec ==10 ) sec = 1
@@ -832,9 +832,9 @@ function Roller7()
 		if( thrid == 10 ) thrid =1
 		self.idxarr = [idx,sec,thrid]
 
-		self.current.source =Laya.loader.getRes("res/loading/"+idx+".jpg");
-		self.next.source =  Laya.loader.getRes("res/loading/"+sec+".jpg");
-		self.pre.source =  Laya.loader.getRes("res/loading/"+thrid+".jpg");
+		self.current.source =Laya.loader.getRes("res/game/"+idx+".jpg");
+		self.next.source =  Laya.loader.getRes("res/game/"+sec+".jpg");
+		self.pre.source =  Laya.loader.getRes("res/game/"+thrid+".jpg");
 	})();
 
 	Roller7.prototype.shift = function ()
@@ -858,7 +858,7 @@ function Roller7()
 			this.times++;
 
 			idx = this.picchange()
-			self.next.source =  Laya.loader.getRes("res/loading/"+idx+".jpg");
+			self.next.source =  Laya.loader.getRes("res/game/"+idx+".jpg");
 		}
 
 		if( self.current.y >141)
@@ -867,7 +867,7 @@ function Roller7()
 			self._mid =2;
 			this.times++;
 			idx = this.picchange()
-			self.current.source =  Laya.loader.getRes("res/loading/"+idx+".jpg");
+			self.current.source =  Laya.loader.getRes("res/game/"+idx+".jpg");
 		}
 
 		if( self.pre.y >141)
@@ -876,7 +876,7 @@ function Roller7()
 			self._mid =1;
 			this.times++;
 			idx = this.picchange()
-			self.pre.source =  Laya.loader.getRes("res/loading/"+idx+".jpg");
+			self.pre.source =  Laya.loader.getRes("res/game/"+idx+".jpg");
 		}
 
 	}
@@ -913,9 +913,9 @@ function Roller7()
 			Timer.clear(this,this.move);
 			this.pullback()
 			
-			if( self._mid ==0)  self.current.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
-			if( self._mid ==1)  self.next.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
-			if( self._mid ==2)  self.pre.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
+			if( self._mid ==0)  self.current.source =  Laya.loader.getRes("res/game/"+mid+".jpg");
+			if( self._mid ==1)  self.next.source =  Laya.loader.getRes("res/game/"+mid+".jpg");
+			if( self._mid ==2)  self.pre.source =  Laya.loader.getRes("res/game/"+mid+".jpg");
 
 			var sec= mid+1;
 			if( sec ==10 ) sec = 1
@@ -946,9 +946,9 @@ function Roller8()
 		if( thrid == 10 ) thrid =1
 		self.idxarr = [idx,sec,thrid]
 
-		self.current.source =Laya.loader.getRes("res/loading/"+idx+".jpg");
-		self.next.source =  Laya.loader.getRes("res/loading/"+sec+".jpg");
-		self.pre.source =  Laya.loader.getRes("res/loading/"+thrid+".jpg");
+		self.current.source =Laya.loader.getRes("res/game/"+idx+".jpg");
+		self.next.source =  Laya.loader.getRes("res/game/"+sec+".jpg");
+		self.pre.source =  Laya.loader.getRes("res/game/"+thrid+".jpg");
 	})();
 
 	Roller8.prototype.shift = function ()
@@ -972,7 +972,7 @@ function Roller8()
 			this.times++;
 
 			idx = this.picchange()
-			self.next.source =  Laya.loader.getRes("res/loading/"+idx+".jpg");
+			self.next.source =  Laya.loader.getRes("res/game/"+idx+".jpg");
 		}
 
 		if( self.current.y >141)
@@ -981,7 +981,7 @@ function Roller8()
 			self._mid =2;
 			this.times++;
 			idx = this.picchange()
-			self.current.source =  Laya.loader.getRes("res/loading/"+idx+".jpg");
+			self.current.source =  Laya.loader.getRes("res/game/"+idx+".jpg");
 		}
 
 		if( self.pre.y >141)
@@ -990,7 +990,7 @@ function Roller8()
 			self._mid =1;
 			this.times++;
 			idx = this.picchange()
-			self.pre.source =  Laya.loader.getRes("res/loading/"+idx+".jpg");
+			self.pre.source =  Laya.loader.getRes("res/game/"+idx+".jpg");
 		}
 
 	
@@ -1029,9 +1029,9 @@ function Roller8()
 			Timer.clear(this,this.move);
 			this.pullback()
 			
-			if( self._mid ==0)  self.current.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
-			if( self._mid ==1)  self.next.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
-			if( self._mid ==2)  self.pre.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
+			if( self._mid ==0)  self.current.source =  Laya.loader.getRes("res/game/"+mid+".jpg");
+			if( self._mid ==1)  self.next.source =  Laya.loader.getRes("res/game/"+mid+".jpg");
+			if( self._mid ==2)  self.pre.source =  Laya.loader.getRes("res/game/"+mid+".jpg");
 
 			var sec= mid+1;
 			if( sec ==10 ) sec =1
@@ -1061,9 +1061,9 @@ function Roller9()
 		if( thrid == 10 ) thrid =1
 		self.idxarr = [idx,sec,thrid]
 
-		self.current.source =Laya.loader.getRes("res/loading/"+idx+".jpg");
-		self.next.source =  Laya.loader.getRes("res/loading/"+sec+".jpg");
-		self.pre.source =  Laya.loader.getRes("res/loading/"+thrid+".jpg");
+		self.current.source =Laya.loader.getRes("res/game/"+idx+".jpg");
+		self.next.source =  Laya.loader.getRes("res/game/"+sec+".jpg");
+		self.pre.source =  Laya.loader.getRes("res/game/"+thrid+".jpg");
 	})();
 
 	Roller9.prototype.shift = function ()
@@ -1087,7 +1087,7 @@ function Roller9()
 			this.times++;
 
 			idx = this.picchange()
-			self.next.source =  Laya.loader.getRes("res/loading/"+idx+".jpg");
+			self.next.source =  Laya.loader.getRes("res/game/"+idx+".jpg");
 		}
 
 		if( self.current.y >141)
@@ -1096,7 +1096,7 @@ function Roller9()
 			self._mid =2;
 			this.times++;
 			idx = this.picchange()
-			self.current.source =  Laya.loader.getRes("res/loading/"+idx+".jpg");
+			self.current.source =  Laya.loader.getRes("res/game/"+idx+".jpg");
 		}
 
 		if( self.pre.y >141)
@@ -1105,7 +1105,7 @@ function Roller9()
 			self._mid =1;
 			this.times++;
 			idx = this.picchange()
-			self.pre.source =  Laya.loader.getRes("res/loading/"+idx+".jpg");
+			self.pre.source =  Laya.loader.getRes("res/game/"+idx+".jpg");
 		}
 
 	}
@@ -1142,9 +1142,9 @@ function Roller9()
 			Timer.clear(this,this.move);
 			this.pullback()
 			
-			if( self._mid ==0)  self.current.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
-			if( self._mid ==1)  self.next.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
-			if( self._mid ==2)  self.pre.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
+			if( self._mid ==0)  self.current.source =  Laya.loader.getRes("res/game/"+mid+".jpg");
+			if( self._mid ==1)  self.next.source =  Laya.loader.getRes("res/game/"+mid+".jpg");
+			if( self._mid ==2)  self.pre.source =  Laya.loader.getRes("res/game/"+mid+".jpg");
 
 			var sec= mid+1;
 			if( sec ==10 ) sec = 1
@@ -1174,9 +1174,9 @@ function Roller10()
 		if( thrid == 10 ) thrid =1
 		self.idxarr = [idx,sec,thrid]
 
-		self.current.source =Laya.loader.getRes("res/loading/"+idx+".jpg");
-		self.next.source =  Laya.loader.getRes("res/loading/"+sec+".jpg");
-		self.pre.source =  Laya.loader.getRes("res/loading/"+thrid+".jpg");
+		self.current.source =Laya.loader.getRes("res/game/"+idx+".jpg");
+		self.next.source =  Laya.loader.getRes("res/game/"+sec+".jpg");
+		self.pre.source =  Laya.loader.getRes("res/game/"+thrid+".jpg");
 	})();
 
 	Roller10.prototype.shift = function ()
@@ -1200,7 +1200,7 @@ function Roller10()
 			this.times++;
 
 			idx = this.picchange()
-			self.next.source =  Laya.loader.getRes("res/loading/"+idx+".jpg");
+			self.next.source =  Laya.loader.getRes("res/game/"+idx+".jpg");
 		}
 
 		if( self.current.y >141)
@@ -1209,7 +1209,7 @@ function Roller10()
 			self._mid =2;
 			this.times++;
 			idx = this.picchange()
-			self.current.source =  Laya.loader.getRes("res/loading/"+idx+".jpg");
+			self.current.source =  Laya.loader.getRes("res/game/"+idx+".jpg");
 		}
 
 		if( self.pre.y >141)
@@ -1218,7 +1218,7 @@ function Roller10()
 			self._mid =1;
 			this.times++;
 			idx = this.picchange()
-			self.pre.source =  Laya.loader.getRes("res/loading/"+idx+".jpg");
+			self.pre.source =  Laya.loader.getRes("res/game/"+idx+".jpg");
 		}
 
 	}
@@ -1255,9 +1255,9 @@ function Roller10()
 			Timer.clear(this,this.move);
 			this.pullback()
 			
-			if( self._mid ==0)  self.current.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
-			if( self._mid ==1)  self.next.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
-			if( self._mid ==2)  self.pre.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
+			if( self._mid ==0)  self.current.source =  Laya.loader.getRes("res/game/"+mid+".jpg");
+			if( self._mid ==1)  self.next.source =  Laya.loader.getRes("res/game/"+mid+".jpg");
+			if( self._mid ==2)  self.pre.source =  Laya.loader.getRes("res/game/"+mid+".jpg");
 
 			var sec= mid+1;
 			if( sec ==10 ) sec = 1
@@ -1287,9 +1287,9 @@ function Roller11()
 		if( thrid == 10 ) thrid =1
 		self.idxarr = [idx,sec,thrid]
 
-		self.current.source =Laya.loader.getRes("res/loading/"+idx+".jpg");
-		self.next.source =  Laya.loader.getRes("res/loading/"+sec+".jpg");
-		self.pre.source =  Laya.loader.getRes("res/loading/"+thrid+".jpg");
+		self.current.source =Laya.loader.getRes("res/game/"+idx+".jpg");
+		self.next.source =  Laya.loader.getRes("res/game/"+sec+".jpg");
+		self.pre.source =  Laya.loader.getRes("res/game/"+thrid+".jpg");
 	})();
 
 	Roller11.prototype.shift = function ()
@@ -1313,7 +1313,7 @@ function Roller11()
 			this.times++;
 
 			idx = this.picchange()
-			self.next.source =  Laya.loader.getRes("res/loading/"+idx+".jpg");
+			self.next.source =  Laya.loader.getRes("res/game/"+idx+".jpg");
 		}
 
 		if( self.current.y >141)
@@ -1322,7 +1322,7 @@ function Roller11()
 			self._mid =2;
 			this.times++;
 			idx = this.picchange()
-			self.current.source =  Laya.loader.getRes("res/loading/"+idx+".jpg");
+			self.current.source =  Laya.loader.getRes("res/game/"+idx+".jpg");
 		}
 
 		if( self.pre.y >141)
@@ -1331,7 +1331,7 @@ function Roller11()
 			self._mid =1;
 			this.times++;
 			idx = this.picchange()
-			self.pre.source =  Laya.loader.getRes("res/loading/"+idx+".jpg");
+			self.pre.source =  Laya.loader.getRes("res/game/"+idx+".jpg");
 		}
 
 	}
@@ -1368,9 +1368,9 @@ function Roller11()
 			Timer.clear(this,this.move);
 			this.pullback()
 			
-			if( self._mid ==0)  self.current.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
-			if( self._mid ==1)  self.next.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
-			if( self._mid ==2)  self.pre.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
+			if( self._mid ==0)  self.current.source =  Laya.loader.getRes("res/game/"+mid+".jpg");
+			if( self._mid ==1)  self.next.source =  Laya.loader.getRes("res/game/"+mid+".jpg");
+			if( self._mid ==2)  self.pre.source =  Laya.loader.getRes("res/game/"+mid+".jpg");
 
 			var sec= mid+1;
 			if( sec ==10 ) sec = 1
@@ -1400,9 +1400,9 @@ function Roller12()
 		if( thrid == 10 ) thrid =1
 		self.idxarr = [idx,sec,thrid]
 
-		self.current.source =Laya.loader.getRes("res/loading/"+idx+".jpg");
-		self.next.source =  Laya.loader.getRes("res/loading/"+sec+".jpg");
-		self.pre.source =  Laya.loader.getRes("res/loading/"+thrid+".jpg");
+		self.current.source =Laya.loader.getRes("res/game/"+idx+".jpg");
+		self.next.source =  Laya.loader.getRes("res/game/"+sec+".jpg");
+		self.pre.source =  Laya.loader.getRes("res/game/"+thrid+".jpg");
 	})();
 
 	Roller12.prototype.shift = function ()
@@ -1426,7 +1426,7 @@ function Roller12()
 			this.times++;
 
 			idx = this.picchange()
-			self.next.source =  Laya.loader.getRes("res/loading/"+idx+".jpg");
+			self.next.source =  Laya.loader.getRes("res/game/"+idx+".jpg");
 		}
 
 		if( self.current.y >141)
@@ -1435,7 +1435,7 @@ function Roller12()
 			self._mid =2;
 			this.times++;
 			idx = this.picchange()
-			self.current.source =  Laya.loader.getRes("res/loading/"+idx+".jpg");
+			self.current.source =  Laya.loader.getRes("res/game/"+idx+".jpg");
 		}
 
 		if( self.pre.y >141)
@@ -1444,7 +1444,7 @@ function Roller12()
 			self._mid =1;
 			this.times++;
 			idx = this.picchange()
-			self.pre.source =  Laya.loader.getRes("res/loading/"+idx+".jpg");
+			self.pre.source =  Laya.loader.getRes("res/game/"+idx+".jpg");
 		}
 
 	}
@@ -1481,9 +1481,9 @@ function Roller12()
 			Timer.clear(this,this.move);
 			this.pullback()
 			
-			if( self._mid ==0)  self.current.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
-			if( self._mid ==1)  self.next.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
-			if( self._mid ==2)  self.pre.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
+			if( self._mid ==0)  self.current.source =  Laya.loader.getRes("res/game/"+mid+".jpg");
+			if( self._mid ==1)  self.next.source =  Laya.loader.getRes("res/game/"+mid+".jpg");
+			if( self._mid ==2)  self.pre.source =  Laya.loader.getRes("res/game/"+mid+".jpg");
 			
 			var sec= mid+1;
 			if( sec ==10 ) sec = 1
@@ -1513,9 +1513,9 @@ function Roller13()
 		if( thrid == 10 ) thrid =1
 		self.idxarr = [idx,sec,thrid]
 
-		self.current.source =Laya.loader.getRes("res/loading/"+idx+".jpg");
-		self.next.source =  Laya.loader.getRes("res/loading/"+sec+".jpg");
-		self.pre.source =  Laya.loader.getRes("res/loading/"+thrid+".jpg");
+		self.current.source =Laya.loader.getRes("res/game/"+idx+".jpg");
+		self.next.source =  Laya.loader.getRes("res/game/"+sec+".jpg");
+		self.pre.source =  Laya.loader.getRes("res/game/"+thrid+".jpg");
 	})();
 
 	Roller13.prototype.shift = function ()
@@ -1539,7 +1539,7 @@ function Roller13()
 			this.times++;
 
 			idx = this.picchange()
-			self.next.source =  Laya.loader.getRes("res/loading/"+idx+".jpg");
+			self.next.source =  Laya.loader.getRes("res/game/"+idx+".jpg");
 		}
 
 		if( self.current.y >141)
@@ -1548,7 +1548,7 @@ function Roller13()
 			self._mid =2;
 			this.times++;
 			idx = this.picchange()
-			self.current.source =  Laya.loader.getRes("res/loading/"+idx+".jpg");
+			self.current.source =  Laya.loader.getRes("res/game/"+idx+".jpg");
 		}
 
 		if( self.pre.y >141)
@@ -1557,7 +1557,7 @@ function Roller13()
 			self._mid =1;
 			this.times++;
 			idx = this.picchange()
-			self.pre.source =  Laya.loader.getRes("res/loading/"+idx+".jpg");
+			self.pre.source =  Laya.loader.getRes("res/game/"+idx+".jpg");
 		}
 
 	}
@@ -1594,9 +1594,9 @@ function Roller13()
 			Timer.clear(this,this.move);
 			this.pullback()
 			
-			if( self._mid ==0)  self.current.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
-			if( self._mid ==1)  self.next.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
-			if( self._mid ==2)  self.pre.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
+			if( self._mid ==0)  self.current.source =  Laya.loader.getRes("res/game/"+mid+".jpg");
+			if( self._mid ==1)  self.next.source =  Laya.loader.getRes("res/game/"+mid+".jpg");
+			if( self._mid ==2)  self.pre.source =  Laya.loader.getRes("res/game/"+mid+".jpg");
 
 			var sec= mid+1;
 			if( sec ==10 ) sec = 1
@@ -1626,9 +1626,9 @@ function Roller14()
 		if( thrid == 10 ) thrid =1
 		self.idxarr = [idx,sec,thrid]
 
-		self.current.source =Laya.loader.getRes("res/loading/"+idx+".jpg");
-		self.next.source =  Laya.loader.getRes("res/loading/"+sec+".jpg");
-		self.pre.source =  Laya.loader.getRes("res/loading/"+thrid+".jpg");
+		self.current.source =Laya.loader.getRes("res/game/"+idx+".jpg");
+		self.next.source =  Laya.loader.getRes("res/game/"+sec+".jpg");
+		self.pre.source =  Laya.loader.getRes("res/game/"+thrid+".jpg");
 	})();
 
 Roller14.prototype.shift = function ()
@@ -1652,7 +1652,7 @@ Roller14.prototype.shift = function ()
 			this.times++;
 
 			idx = this.picchange()
-			self.next.source =  Laya.loader.getRes("res/loading/"+idx+".jpg");
+			self.next.source =  Laya.loader.getRes("res/game/"+idx+".jpg");
 		}
 
 		if( self.current.y >141)
@@ -1661,7 +1661,7 @@ Roller14.prototype.shift = function ()
 			self._mid =2;
 			this.times++;
 			idx = this.picchange()
-			self.current.source =  Laya.loader.getRes("res/loading/"+idx+".jpg");
+			self.current.source =  Laya.loader.getRes("res/game/"+idx+".jpg");
 		}
 
 		if( self.pre.y >141)
@@ -1670,7 +1670,7 @@ Roller14.prototype.shift = function ()
 			self._mid =1;
 			this.times++;
 			idx = this.picchange()
-			self.pre.source =  Laya.loader.getRes("res/loading/"+idx+".jpg");
+			self.pre.source =  Laya.loader.getRes("res/game/"+idx+".jpg");
 		}
 
 	}
@@ -1707,9 +1707,9 @@ Roller14.prototype.shift = function ()
 			Timer.clear(this,this.move);
 			this.pullback()
 			
-			if( self._mid ==0)  self.current.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
-			if( self._mid ==1)  self.next.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
-			if( self._mid ==2)  self.pre.source =  Laya.loader.getRes("res/loading/"+mid+".jpg");
+			if( self._mid ==0)  self.current.source =  Laya.loader.getRes("res/game/"+mid+".jpg");
+			if( self._mid ==1)  self.next.source =  Laya.loader.getRes("res/game/"+mid+".jpg");
+			if( self._mid ==2)  self.pre.source =  Laya.loader.getRes("res/game/"+mid+".jpg");
 
 			var sec= mid+1;
 			if( sec ==10 ) sec = 1

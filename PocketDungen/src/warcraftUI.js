@@ -48,6 +48,8 @@ function warcraftUI()
 		self.stopBtn.visible = true;
 		_model.betamount = self.betScore.text;
 
+		self.winAni.interval = 100;
+		self.winAni.play()
 		//socket spin
 		//_model.eventHandle("spin",[]);
 
@@ -62,6 +64,7 @@ function warcraftUI()
 	{
 		var idx = Math.floor((Math.random() * 9) + 1)
 		self["roller_"+0].stop(idx);
+		self.winAni.stop()
 	}
 
 	function oncomplet(n)

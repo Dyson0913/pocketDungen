@@ -75,12 +75,13 @@
                             "compId":4,
                             "child":[
                                 ]
-                        }]
+                        }],
+                    "$HIDDEN":false
                 },
                 {
                     "x":30,
                     "type":"Image",
-                    "props":{"y":140,"x":0,"var":"next","skin":"res/loading/2.jpg"},
+                    "props":{"y":140,"x":0,"var":"next","skin":"res/game/2.jpg"},
                     "nodeParent":2,
                     "label":"Image(next)",
                     "isDirectory":false,
@@ -100,7 +101,7 @@
                 {
                     "x":30,
                     "type":"Image",
-                    "props":{"y":0,"x":0,"var":"current","skin":"res/loading/1.jpg"},
+                    "props":{"y":0,"x":0,"var":"current","skin":"res/game/1.jpg"},
                     "nodeParent":2,
                     "label":"Image(current)",
                     "isOpen":true,
@@ -121,7 +122,7 @@
                 {
                     "x":30,
                     "type":"Image",
-                    "props":{"y":-140,"x":0,"var":"pre","skin":"res/loading/9.jpg"},
+                    "props":{"y":-140,"x":0,"var":"pre","skin":"res/game/9.jpg"},
                     "nodeParent":2,
                     "label":"Image(pre)",
                     "isDirectory":false,
