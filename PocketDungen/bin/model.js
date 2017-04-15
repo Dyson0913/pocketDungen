@@ -1,4 +1,5 @@
 
+//dictionary
 var Scene={};
 
 var current_view_name;
@@ -23,7 +24,7 @@ var odds;  //賠率表 symbol_N{N0~NM):[中1格倍率,2格,3格,4格,5格]
                    //(F= free game):[0,0,5,10,15] (免費轉動次數)
                    //(B=bouns game):[0,0,1,2,3] (bounds game 種類)
 //顥示賠率表用,不計算
-
+var winAniSet;
 
 var hint_msg;
 var betamount;
@@ -50,6 +51,7 @@ var model = function ()
 
     this.socket = undefined;
     this.odds = [];
+    this.winAniSet = [];
 }
 
 model.getInstance = function ()
