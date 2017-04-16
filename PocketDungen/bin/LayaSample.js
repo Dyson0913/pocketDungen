@@ -57,6 +57,19 @@
 		{
 			url: "res/sound/UI_Normal_Link.mp3",type: Loader.SOUND
 		});
+		assets.push(
+		{
+			url: "res/sound/UI_Bet.mp3",type: Loader.SOUND
+		});
+		assets.push(
+		{
+			url: "res/sound/UI_DeBet.mp3",type: Loader.SOUND
+		});
+		assets.push(
+		{
+			url: "res/sound/slot_BGM.mp3",type: Loader.SOUND
+		});
+		
 		
 		// assets.push(
 		// {

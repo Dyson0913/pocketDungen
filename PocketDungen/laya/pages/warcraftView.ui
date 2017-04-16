@@ -2,7 +2,7 @@
     "x":0,
     "type":"View",
     "selectedBox":1,
-    "selecteID":46,
+    "selecteID":77,
     "props":{"width":1280,"var":"bg","sceneColor":"#000000","height":720},
     "nodeParent":-1,
     "label":"View(bg)",
@@ -671,6 +671,26 @@
             "child":[
                 ],
             "$HIDDEN":true
+        },
+        {
+            "x":15,
+            "type":"Button",
+            "props":{"y":658,"x":213,"var":"betSubBtn","skin":"res/share/PlayerListCloseBtn.png"},
+            "nodeParent":1,
+            "label":"Button(betSubBtn)",
+            "isDirectory":false,
+            "isAniNode":true,
+            "hasChild":false,
+            "frames":[
+                {
+                    "type":1,
+                    "props":{"label":"label"},
+                    "frame":0,
+                    "__InPool":false
+                }],
+            "compId":77,
+            "child":[
+                ]
         }],
     "animations":[
         {

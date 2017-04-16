@@ -25,6 +25,8 @@ function warcraftUI()
 	this.spinBtn.on(Event.CLICK, this, onspin);
 	this.stopBtn.on(Event.CLICK, this, onStop);
 	this.betAddBtn.on(Event.CLICK, this, onaddScore);
+	this.betSubBtn.on(Event.CLICK, this, onsubScore);
+	
 	this.paytableBtn.on(Event.CLICK, this, onpatyTable);
 
 	_model.cashin.add(oncarrying);
@@ -49,7 +51,7 @@ function warcraftUI()
 		_model.winAniSet.push(["1@1","4@1","7@1"])
 		_model.winAniSet.push(["2@1","5@1","6@1","10@1","13@1"])
 
-		
+		SoundManager.playMusic("res/sound/slot_BGM.mp3")		
 	})();
 
 	
@@ -190,8 +192,16 @@ function warcraftUI()
 	function onaddScore()
 	{
 		this.betScore.text = parseInt(this.betScore.text)+1;
-		
+		SoundManager.playSound("res/sound/UI_Bet.mp3")
 	}
+
+	function onsubScore()
+	{
+		if(parseInt(this.betScore.text) == 0 ) return
+		this.betScore.text = parseInt(this.betScore.text)-1;
+		SoundManager.playSound("res/sound/UI_DeBet.mp3")
+	}
+	
 
 	function onpatyTable()
 	{
