@@ -6,7 +6,7 @@ var _model;
 var BlurFilter = Laya.BlurFilter;
 		//blurFilter.strength = 2; //APK not support
 		//var blurFilter = new BlurFilter();
-var rollerNum =15;
+var rollerNum =1;
 
 var _tween = Laya.Tween;
 var _ease = Laya.Ease;
@@ -56,8 +56,8 @@ function warcraftUI()
 
 	function onspin()
 	{
-		self.spinBtn.visible = false;
-		self.stopBtn.visible = true;
+		//self.spinBtn.visible = false;
+		//self.stopBtn.visible = true;
 		_model.betamount = self.betScore.text;
 		
 		//socket spin
@@ -67,6 +67,7 @@ function warcraftUI()
 		for( i =0;i< rollerNum ;i++)
 		{
 			self["roller_"+i].shift();
+			//self["roller_"+i].move();
 		}	
 		
 	}
@@ -81,7 +82,7 @@ function warcraftUI()
 	function oncomplet(n)
 	{
 		//all stop
-		if( n !=14)
+		if( n != (rollerNum-1))
 		{
 			var idx = Math.floor((Math.random() * 9) + 1)
 			self["roller_"+(n+1)].stop(idx);
@@ -94,7 +95,7 @@ function warcraftUI()
 		// }
 		
 		//roller all stop
-		if( n ==14)
+		if( n ==(rollerNum-1))
 		{
 			self.spinBtn.visible = true;
 			self.stopBtn.visible = false;
@@ -153,7 +154,7 @@ function warcraftUI()
 
 		_model.winAniSet.shift()
 
-		playAni();
+		playAni()
 	}
 	
 	warcraftUI.prototype.nextstop = function(n)

@@ -6,36 +6,52 @@ var Handler = Laya.Handler;
 var Timer = Laya.timer;
 var _model;
 
+//symbol para
+var _viewblock = 3
+var _rollerNum = 5
+var _symbolNum = 10
 var _width = 140
 var _heigh = 140
+
+
 var _movedis = 10
 var _speed = 10
 var _model = model.getInstance();
 
-// var Roller1 = function()
+
+function mod(n)
+{
+	if( n == _symbolNum ) return 1
+
+	return n
+}
+
 function Roller()
 {
 	var self = this
 	Roller.super(this);
 
 	var _mid =1;
-	var _times = 8
-
-	_model = model.getInstance();
 
 	(function()
 	{
 		//建構式
 		var idx = Math.floor((Math.random() * 9) + 1)
-		var sec= idx+1;
-		if( sec ==10 ) sec = 1
-		var thrid = sec+1
-		if( thrid == 10 ) thrid =1
-		self.idxarr = [idx,sec,thrid]
+		var sec = mod(idx+1)
+		var thrid = mod(sec+1)
+		var four = mod(thrid+1)
+		var five = mod(four+1)
+		self.idxarr = [idx,sec,thrid,four,five]
+		self.rollerArr = [0,1,2,3,4]
 
-		self.current.source =Laya.loader.getRes("res/game/"+idx+".jpg");
-		self.next.source =  Laya.loader.getRes("res/game/"+sec+".jpg");
-		self.pre.source =  Laya.loader.getRes("res/game/"+thrid+".jpg");
+		for( i = 0; i < _rollerNum ; i++)
+		{
+			var idx = self.idxarr[i]
+			self["icon_"+ i ].source =Laya.loader.getRes("res/game/"+idx+".jpg");
+		}
+		
+		trace("self.idxarr "+ self.idxarr)
+		trace("self.roller "+self.rollerArr)
 
 	})();
 
@@ -46,53 +62,42 @@ function Roller()
 		Timer.loop(_speed,this,this.move)
 	}
 
-
-
  	Roller.prototype.move = function ()
 	{
-		self.pre.y +=_movedis;
-		self.current.y +=_movedis;
-		self.next.y +=_movedis;
+		for( i = 0; i < _rollerNum ; i++)
+		{
+			var idx = self.rollerArr[i]
+			self["icon_"+ i ].y +=_movedis;
+		}
 
 		//超出下邊界,上提
-		if( self.next.y >141)
-		{
-			self.next.y = self.pre.y - _heigh;
-			self._mid =0;
-			this.times++;
-
+		if ( self["icon_"+ self.rollerArr[(_rollerNum-1)]].y > (_heigh * (_viewblock)) )
+ 		{
+			 var y = self["icon_"+self.rollerArr[0]].y
+   		 	self["icon_"+ self.rollerArr[(_rollerNum-1)]].y = y - _heigh
+			
 			idx = this.picchange()
 			self.next.source =  Laya.loader.getRes("res/game/"+idx+".jpg");
 		}
-
-		if( self.current.y >141)
-		{
-			self.current.y = self.next.y - _heigh;
-			self._mid =2;
-			this.times++;
-			idx = this.picchange()
-			self.current.source =  Laya.loader.getRes("res/game/"+idx+".jpg");
-		}
-
-		if( self.pre.y >141)
-		{
-			self.pre.y = self.current.y - _heigh;
-			self._mid =1;
-			this.times++;
-			idx = this.picchange()
-			self.pre.source =  Laya.loader.getRes("res/game/"+idx+".jpg");
-		}
-
 		
+		// trace("self.idxarr "+self.idxarr)
+		// trace("self.roller "+self.rollerArr)
+		//this.stop();
 	}
 
     Roller.prototype.picchange = function()
 	{
-		var value = self.idxarr[2]
-		value = ( value -1 ) 
-		if( value ==0 ) value =9 
-		self.idxarr.push(value)
-		self.idxarr.shift()		
+		//roller idx
+		var value1 = self.rollerArr[_rollerNum-1] 
+		self.rollerArr.pop()
+		self.rollerArr.unshift(value1)
+
+		//pic idx
+		var value = self.idxarr[0]
+		value =  value -1
+		if( value == 1) value = _symbolNum-1
+		self.idxarr.pop()
+		self.idxarr.unshift(value)
 		return value
 	}
 
@@ -116,6 +121,7 @@ function Roller()
 	Roller.prototype.stop = function(mid)
 	{
 			Timer.clear(this,this.move);
+			return
 			this.pullback()
 			
 			if( self._mid ==0)  self.current.source =  Laya.loader.getRes("res/game/"+mid+".jpg");
@@ -127,7 +133,7 @@ function Roller()
 			var thrid = sec+1
 			if( thrid == 10 ) thrid =1
 			self.idxarr = [mid,sec,thrid]
-			trace("self.idxarr "+self.idxarr)
+			
 			_model.rollercomplet.dispatch(0);
 	}
 }
