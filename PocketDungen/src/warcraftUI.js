@@ -11,7 +11,9 @@ var rollerNum =5;
 var _tween = Laya.Tween;
 var _ease = Laya.Ease;
 var Handler = Laya.Handler;
+var SoundManager = Laya.SoundManager;
 
+var ui_spin
 
 function warcraftUI()
 {
@@ -46,6 +48,8 @@ function warcraftUI()
 		_model.winAniSet.push(["0@1","3@0","7@0"])
 		_model.winAniSet.push(["1@1","4@1","7@1"])
 		_model.winAniSet.push(["2@1","5@1","6@1","10@1","13@1"])
+
+		
 	})();
 
 	
@@ -63,6 +67,7 @@ function warcraftUI()
 		//socket spin
 		//_model.eventHandle("spin",[]);
 		
+		SoundManager.playSound("res/sound/UI_Spin.mp3")
 
 		for( i =0;i< rollerNum ;i++)
 		{
@@ -80,6 +85,8 @@ function warcraftUI()
 		var result = [idx,sec,thrid]
 		
 		self["roller_"+0].stop(result.reverse());
+
+		SoundManager.playSound("res/sound/UI_Stop.mp3")
 		
 	}
 
@@ -140,6 +147,7 @@ function warcraftUI()
 		    self["ani_"+idx]["winAni_"+type].play()
 		}
 		
+		SoundManager.playSound("res/sound/UI_Normal_Link.mp3")
 		
 		//ready to next winset
 		_tween.to(self,{},2000,Laya.Ease.linearNone,new Handler(this,stopAni) )
@@ -169,7 +177,8 @@ function warcraftUI()
 	
 	warcraftUI.prototype.nextstop = function(n)
 	{
-		
+		SoundManager.playSound("res/sound/UI_Stop.mp3")
+
 		var idx = Math.floor((Math.random() * 9) + 1)
 		var sec = mod(idx+1)
 		var thrid = mod(sec+1)

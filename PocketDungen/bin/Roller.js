@@ -76,7 +76,6 @@ function Roller()
    		 	self["icon_"+ self.rollerArr[(_rollerNum-1)]].y = y - _heigh
 			
 			idx = this.picchange()
-			self.next.source =  Laya.loader.getRes("res/game/"+idx+".jpg");
 
 			//最後幾個換成結果
 			if( self._stop == true)
@@ -113,7 +112,7 @@ function Roller()
 		for( i = 0; i < _rollerNum ; i++)
 		{
 			var idx = self.idxarr[i]
-			_tween.to(self["icon_"+ self.rollerArr[(_rollerNum-(i+1))]],{y:self["icon_"+ self.rollerArr[(_rollerNum-(i+1))]].y+pulldis},500,Laya.Ease.backOut)
+			_tween.to(self["icon_"+ self.rollerArr[(_rollerNum-(i+1))]],{y:self["icon_"+ self.rollerArr[(_rollerNum-(i+1))]].y+pulldis},100,Laya.Ease.backOut)
 		}
 
 		//換圖
@@ -186,7 +185,6 @@ function Roller1()
    		 	self["icon_"+ self.rollerArr[(_rollerNum-1)]].y = y - _heigh
 			
 			idx = this.picchange()
-			self.next.source =  Laya.loader.getRes("res/game/"+idx+".jpg");
 
 			//最後幾個換成結果
 			if( self._stop == true)
@@ -223,7 +221,7 @@ function Roller1()
 		for( i = 0; i < _rollerNum ; i++)
 		{
 			var idx = self.idxarr[i]
-			_tween.to(self["icon_"+ self.rollerArr[(_rollerNum-(i+1))]],{y:self["icon_"+ self.rollerArr[(_rollerNum-(i+1))]].y+pulldis},500,Laya.Ease.backOut)
+			_tween.to(self["icon_"+ self.rollerArr[(_rollerNum-(i+1))]],{y:self["icon_"+ self.rollerArr[(_rollerNum-(i+1))]].y+pulldis},100,Laya.Ease.backOut)
 		}
 
 		//換圖
@@ -296,7 +294,6 @@ function Roller2()
    		 	self["icon_"+ self.rollerArr[(_rollerNum-1)]].y = y - _heigh
 			
 			idx = this.picchange()
-			self.next.source =  Laya.loader.getRes("res/game/"+idx+".jpg");
 
 			//最後幾個換成結果
 			if( self._stop == true)
@@ -333,7 +330,7 @@ function Roller2()
 		for( i = 0; i < _rollerNum ; i++)
 		{
 			var idx = self.idxarr[i]
-			_tween.to(self["icon_"+ self.rollerArr[(_rollerNum-(i+1))]],{y:self["icon_"+ self.rollerArr[(_rollerNum-(i+1))]].y+pulldis},500,Laya.Ease.backOut)
+			_tween.to(self["icon_"+ self.rollerArr[(_rollerNum-(i+1))]],{y:self["icon_"+ self.rollerArr[(_rollerNum-(i+1))]].y+pulldis},100,Laya.Ease.backOut)
 		}
 
 		//換圖
@@ -406,7 +403,6 @@ function Roller3()
    		 	self["icon_"+ self.rollerArr[(_rollerNum-1)]].y = y - _heigh
 			
 			idx = this.picchange()
-			self.next.source =  Laya.loader.getRes("res/game/"+idx+".jpg");
 
 			//最後幾個換成結果
 			if( self._stop == true)
@@ -443,7 +439,7 @@ function Roller3()
 		for( i = 0; i < _rollerNum ; i++)
 		{
 			var idx = self.idxarr[i]
-			_tween.to(self["icon_"+ self.rollerArr[(_rollerNum-(i+1))]],{y:self["icon_"+ self.rollerArr[(_rollerNum-(i+1))]].y+pulldis},500,Laya.Ease.backOut)
+			_tween.to(self["icon_"+ self.rollerArr[(_rollerNum-(i+1))]],{y:self["icon_"+ self.rollerArr[(_rollerNum-(i+1))]].y+pulldis},100,Laya.Ease.backOut)
 		}
 
 		//換圖
@@ -516,7 +512,6 @@ function Roller4()
    		 	self["icon_"+ self.rollerArr[(_rollerNum-1)]].y = y - _heigh
 			
 			idx = this.picchange()
-			self.next.source =  Laya.loader.getRes("res/game/"+idx+".jpg");
 
 			//最後幾個換成結果
 			if( self._stop == true)
@@ -553,7 +548,7 @@ function Roller4()
 		for( i = 0; i < _rollerNum ; i++)
 		{
 			var idx = self.idxarr[i]
-			_tween.to(self["icon_"+ self.rollerArr[(_rollerNum-(i+1))]],{y:self["icon_"+ self.rollerArr[(_rollerNum-(i+1))]].y+pulldis},500,Laya.Ease.backOut)
+			_tween.to(self["icon_"+ self.rollerArr[(_rollerNum-(i+1))]],{y:self["icon_"+ self.rollerArr[(_rollerNum-(i+1))]].y+pulldis},100,Laya.Ease.backOut)
 		}
 
 		//換圖

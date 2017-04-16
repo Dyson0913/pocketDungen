@@ -45,6 +45,19 @@
 		{
 			url: "res/atlas/comp.json",type: Loader.ATLAS
 		});
+		assets.push(
+		{
+			url: "res/sound/UI_Spin.mp3",type: Loader.SOUND
+		});
+		assets.push(
+		{
+			url: "res/sound/UI_Stop.mp3",type: Loader.SOUND
+		});
+		assets.push(
+		{
+			url: "res/sound/UI_Normal_Link.mp3",type: Loader.SOUND
+		});
+		
 		// assets.push(
 		// {
 		// 	url: "res/atlas/game.json",type: Loader.ATLAS

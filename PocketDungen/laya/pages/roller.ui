@@ -2,7 +2,7 @@
     "x":0,
     "type":"View",
     "selectedBox":2,
-    "selecteID":9,
+    "selecteID":11,
     "props":{"width":140,"var":"a","sceneColor":"#000000","height":140},
     "nodeParent":-1,
     "label":"View(a)",
@@ -58,7 +58,6 @@
                     "compId":3,
                     "child":[
                         {
-                            "x":45,
                             "type":"Rect",
                             "props":{"y":0,"x":0,"width":140,"lineWidth":1,"height":420,"fillColor":"#ff0000"},
                             "nodeParent":3,
@@ -177,66 +176,6 @@
                             "__InPool":false
                         }],
                     "compId":9,
-                    "child":[
-                        ]
-                },
-                {
-                    "x":30,
-                    "type":"Image",
-                    "props":{"y":115,"x":-401,"var":"pre","skin":"res/game/4.jpg"},
-                    "nodeParent":2,
-                    "label":"Image(pre)",
-                    "isDirectory":false,
-                    "isAniNode":true,
-                    "hasChild":false,
-                    "frames":[
-                        {
-                            "type":1,
-                            "props":{"y":230,"x":248,"skin":"res/game/3.jpg"},
-                            "frame":0,
-                            "__InPool":false
-                        }],
-                    "compId":10,
-                    "child":[
-                        ]
-                },
-                {
-                    "x":30,
-                    "type":"Image",
-                    "props":{"y":364,"x":-445,"var":"current","skin":"res/game/4.jpg"},
-                    "nodeParent":2,
-                    "label":"Image(current)",
-                    "isDirectory":false,
-                    "isAniNode":true,
-                    "hasChild":false,
-                    "frames":[
-                        {
-                            "type":1,
-                            "props":{"y":230,"x":248,"skin":"res/game/3.jpg"},
-                            "frame":0,
-                            "__InPool":false
-                        }],
-                    "compId":11,
-                    "child":[
-                        ]
-                },
-                {
-                    "x":30,
-                    "type":"Image",
-                    "props":{"y":-41,"x":-396,"var":"next","skin":"res/game/4.jpg"},
-                    "nodeParent":2,
-                    "label":"Image(next)",
-                    "isDirectory":false,
-                    "isAniNode":true,
-                    "hasChild":false,
-                    "frames":[
-                        {
-                            "type":1,
-                            "props":{"y":230,"x":248,"skin":"res/game/3.jpg"},
-                            "frame":0,
-                            "__InPool":false
-                        }],
-                    "compId":12,
                     "child":[
                         ]
                 }]
