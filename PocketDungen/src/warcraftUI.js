@@ -56,8 +56,8 @@ function warcraftUI()
 
 	function onspin()
 	{
-		//self.spinBtn.visible = false;
-		//self.stopBtn.visible = true;
+		self.spinBtn.visible = false;
+		self.stopBtn.visible = true;
 		_model.betamount = self.betScore.text;
 		
 		//socket spin
@@ -75,8 +75,18 @@ function warcraftUI()
 	function onStop()
 	{
 		var idx = Math.floor((Math.random() * 9) + 1)
-		self["roller_"+0].stop(idx);
+		var sec = mod(idx+1)
+		var thrid = mod(sec+1)
+		var result = [idx,sec,thrid]
 		
+		self["roller_"+0].stop(result.reverse());
+		
+	}
+
+	function mod(n)
+	{
+		if( n == _symbolNum ) return 1
+		return n
 	}
 
 	function oncomplet(n)

@@ -14,7 +14,7 @@ var _width = 140
 var _heigh = 140
 
 
-var _movedis = 10
+var _movedis = 30
 var _speed = 10
 var _model = model.getInstance();
 
@@ -22,7 +22,6 @@ var _model = model.getInstance();
 function mod(n)
 {
 	if( n == _symbolNum ) return 1
-
 	return n
 }
 
@@ -30,7 +29,7 @@ function Roller()
 {
 	var self = this
 	Roller.super(this);
-
+	var _stop = false;
 	var _mid =1;
 
 	(function()
@@ -52,6 +51,7 @@ function Roller()
 		
 		trace("self.idxarr "+ self.idxarr)
 		trace("self.roller "+self.rollerArr)
+		self.result = [];
 
 	})();
 
@@ -59,6 +59,7 @@ function Roller()
 	{
 		this.times = 0;
 	//	_tween.to(self.pre,{y:200},1000,Laya.Ease.backOut,new Handler(this,complet) )
+		self._stop = false;
 		Timer.loop(_speed,this,this.move)
 	}
 
@@ -78,11 +79,19 @@ function Roller()
 			
 			idx = this.picchange()
 			self.next.source =  Laya.loader.getRes("res/game/"+idx+".jpg");
+
+			//最後幾個換成結果
+			if( self._stop == true)
+			{
+				Timer.clear(this,this.move);
+				this.pullback()
+			}
 		}
 		
 		// trace("self.idxarr "+self.idxarr)
 		// trace("self.roller "+self.rollerArr)
 		//this.stop();
+		
 	}
 
     Roller.prototype.picchange = function()
@@ -105,36 +114,33 @@ function Roller()
 	{
 		//find -140 0 140
 		var pulldis =0
-		if( self._mid ==0)  pulldis = self.current.y;
-		if( self._mid ==1)  pulldis = self.next.y;
-		if( self._mid ==2)  pulldis = self.pre.y;
-		_tween.to(self.current,{y:self.current.y-pulldis},500,Laya.Ease.backOut,new Handler(this,this.complet) )
-		_tween.to(self.pre,{y:self.pre.y-pulldis},500,Laya.Ease.backOut,new Handler(this,this.complet) )
-		_tween.to(self.next,{y:self.next.y-pulldis},500,Laya.Ease.backOut,new Handler(this,this.complet) )
+		//剛往上提,所以一定是超出_viewblock-1的邊界
+		pulldis = (_heigh * (_viewblock-1)) - self["icon_"+ self.rollerArr[(_rollerNum-1)]].y;
+
+		for( i = 0; i < _rollerNum ; i++)
+		{
+			var idx = self.idxarr[i]
+			_tween.to(self["icon_"+ self.rollerArr[(_rollerNum-(i+1))]],{y:self["icon_"+ self.rollerArr[(_rollerNum-(i+1))]].y+pulldis},500,Laya.Ease.backOut)
+		
+		}
+
+		//換圖
+		var n = self.result.length
+		for( i = 0; i < n ; i++)
+		{
+			var idx = self.result[i]
+			
+			self["icon_"+ self.rollerArr[(_rollerNum-(i+1))] ].source = Laya.loader.getRes("res/game/"+idx+".jpg");
+		}
+
+		_model.rollercomplet.dispatch(0);
 	}
 
-	Roller.prototype.complet = function()
+	Roller.prototype.stop = function(resultarr)
 	{
-	
-	}
-
-	Roller.prototype.stop = function(mid)
-	{
-			Timer.clear(this,this.move);
-			return
-			this.pullback()
-			
-			if( self._mid ==0)  self.current.source =  Laya.loader.getRes("res/game/"+mid+".jpg");
-			if( self._mid ==1)  self.next.source =  Laya.loader.getRes("res/game/"+mid+".jpg");
-			if( self._mid ==2)  self.pre.source =  Laya.loader.getRes("res/game/"+mid+".jpg");
-
-			var sec= mid+1;
-			if( sec ==10 ) sec = 1
-			var thrid = sec+1
-			if( thrid == 10 ) thrid =1
-			self.idxarr = [mid,sec,thrid]
-			
-			_model.rollercomplet.dispatch(0);
+		  self._stop = true
+		  self.result = resultarr;
+		  trace("self.result = "+self.result)
 	}
 }
 
