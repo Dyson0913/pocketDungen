@@ -121,16 +121,6 @@ var warcraftViewUI=(function(_super){
 		    this.roller_2=null;
 		    this.roller_3=null;
 		    this.roller_4=null;
-		    this.roller_5=null;
-		    this.roller_6=null;
-		    this.roller_7=null;
-		    this.roller_8=null;
-		    this.roller_9=null;
-		    this.roller_10=null;
-		    this.roller_11=null;
-		    this.roller_12=null;
-		    this.roller_13=null;
-		    this.roller_14=null;
 		    this.stopBtn=null;
 		    this.ani_0=null;
 		    this.ani_1=null;
@@ -155,28 +145,18 @@ var warcraftViewUI=(function(_super){
 		var __proto__=warcraftViewUI.prototype;
 		__proto__.createChildren=function(){
 		    			View.regComponent("Roller",Roller);
-			View.regComponent("ui.WinAniUI",ui.WinAniUI);
+			View.regComponent("Roller1",Roller1);
 			View.regComponent("Roller2",Roller2);
 			View.regComponent("Roller3",Roller3);
 			View.regComponent("Roller4",Roller4);
-			View.regComponent("Roller5",Roller5);
-			View.regComponent("Roller6",Roller6);
-			View.regComponent("Roller7",Roller7);
-			View.regComponent("Roller1",Roller1);
-			View.regComponent("Roller9",Roller9);
-			View.regComponent("Roller10",Roller10);
-			View.regComponent("Roller11",Roller11);
-			View.regComponent("Roller12",Roller12);
-			View.regComponent("Roller13",Roller13);
-			View.regComponent("Roller14",Roller14);
-			View.regComponent("Roller8",Roller8);
+			View.regComponent("ui.WinAniUI",ui.WinAniUI);
 
 			laya.ui.Component.prototype.createChildren.call(this);
 			this.createView(warcraftViewUI.uiView);
 		}
 
 		STATICATTR$(warcraftViewUI,
-		['uiView',function(){return this.uiView={"type":"View","props":{"width":1280,"height":720},"child":[{"type":"Label","props":{"y":665,"x":707,"width":206,"var":"Winpoint","text":"123,456,789","height":55,"fontSize":30,"color":"#ecdede","align":"center"}},{"type":"Label","props":{"y":668,"x":233,"width":101,"var":"betScore","text":"1","height":55,"fontSize":30,"color":"#ecdede","align":"center"}},{"type":"Label","props":{"y":20,"x":1089,"width":173,"var":"coin_amount","text":"999,999,999","height":34,"fontSize":30,"color":"#ecdede","align":"center"}},{"type":"Label","props":{"y":57,"x":1083,"width":193,"var":"cash_amount","text":"999,999,999","height":33,"fontSize":30,"color":"#ecdede","align":"center"}},{"type":"Button","props":{"y":118,"x":20,"var":"back_to_lobby","skin":"res/share/backLobbyBtn.png"}},{"type":"Button","props":{"y":632,"x":950,"width":215,"var":"spinBtn","skin":"res/share/Btn_bg.png","height":82},"child":[{"type":"Label","props":{"y":26,"x":78,"text":"開始","fontSize":30,"color":"#fbe6e5"}}]},{"type":"Button","props":{"y":660,"x":354,"var":"betAddBtn","skin":"res/share/CarryIn.png"}},{"type":"Button","props":{"y":646,"x":124,"var":"paytableBtn","skin":"res/share/helpBtn.png"}},{"type":"roller","props":{"y":165,"x":1119,"var":"roller_0","runtime":"Roller"}},{"type":"roller","props":{"y":220,"x":162,"var":"roller_1","runtime":"Roller1"}},{"type":"roller","props":{"y":365,"x":162,"var":"roller_2","runtime":"Roller2"}},{"type":"roller","props":{"y":76,"x":314,"var":"roller_3","runtime":"Roller3"}},{"type":"roller","props":{"y":220,"x":314,"var":"roller_4","runtime":"Roller4"}},{"type":"roller","props":{"y":365,"x":314,"var":"roller_5","runtime":"Roller5"}},{"type":"roller","props":{"y":76,"x":467,"var":"roller_6","runtime":"Roller6"}},{"type":"roller","props":{"y":220,"x":467,"var":"roller_7","runtime":"Roller7"}},{"type":"roller","props":{"y":365,"x":467,"var":"roller_8","runtime":"Roller8"}},{"type":"roller","props":{"y":76,"x":619,"var":"roller_9","runtime":"Roller9"}},{"type":"roller","props":{"y":220,"x":619,"var":"roller_10","runtime":"Roller10"}},{"type":"roller","props":{"y":365,"x":619,"var":"roller_11","runtime":"Roller11"}},{"type":"roller","props":{"y":76,"x":771,"var":"roller_12","runtime":"Roller12"}},{"type":"roller","props":{"y":220,"x":771,"var":"roller_13","runtime":"Roller13"}},{"type":"roller","props":{"y":365,"x":771,"var":"roller_14","runtime":"Roller14"}},{"type":"Button","props":{"y":632,"x":950,"width":215,"var":"stopBtn","skin":"res/share/Btn_bg.png","height":82},"child":[{"type":"Label","props":{"y":26,"x":78,"text":"停輪","fontSize":30,"color":"#fbe6e5"}}]},{"type":"WinAni","props":{"y":74,"x":148,"visible":false,"var":"ani_0","runtime":"ui.WinAniUI"}},{"type":"WinAni","props":{"y":207,"x":153,"visible":false,"var":"ani_1","runtime":"ui.WinAniUI"}},{"type":"WinAni","props":{"y":358,"x":157,"var":"ani_2","runtime":"ui.WinAniUI"}},{"type":"WinAni","props":{"y":68,"x":304,"visible":false,"var":"ani_3","runtime":"ui.WinAniUI"}},{"type":"WinAni","props":{"y":207,"x":303,"visible":false,"var":"ani_4","runtime":"ui.WinAniUI"}},{"type":"WinAni","props":{"y":358,"x":307,"var":"ani_5","runtime":"ui.WinAniUI"}},{"type":"WinAni","props":{"y":76,"x":451,"visible":false,"var":"ani_6","runtime":"ui.WinAniUI"}},{"type":"WinAni","props":{"y":212,"x":453,"visible":false,"var":"ani_7","runtime":"ui.WinAniUI"}},{"type":"WinAni","props":{"y":363,"x":457,"var":"ani_8","runtime":"ui.WinAniUI"}},{"type":"WinAni","props":{"y":77,"x":614,"visible":false,"var":"ani_9","runtime":"ui.WinAniUI"}},{"type":"WinAni","props":{"y":213,"x":616,"visible":false,"var":"ani_10","runtime":"ui.WinAniUI"}},{"type":"WinAni","props":{"y":364,"x":620,"var":"ani_11","runtime":"ui.WinAniUI"}},{"type":"WinAni","props":{"y":68,"x":763,"visible":false,"var":"ani_12","runtime":"ui.WinAniUI"}},{"type":"WinAni","props":{"y":204,"x":765,"visible":false,"var":"ani_13","runtime":"ui.WinAniUI"}},{"type":"WinAni","props":{"y":355,"x":769,"var":"ani_14","runtime":"ui.WinAniUI"}}]};}
+		['uiView',function(){return this.uiView={"type":"View","props":{"width":1280,"height":720},"child":[{"type":"Label","props":{"y":665,"x":707,"width":206,"var":"Winpoint","text":"123,456,789","height":55,"fontSize":30,"color":"#ecdede","align":"center"}},{"type":"Label","props":{"y":668,"x":233,"width":101,"var":"betScore","text":"1","height":55,"fontSize":30,"color":"#ecdede","align":"center"}},{"type":"Label","props":{"y":20,"x":1089,"width":173,"var":"coin_amount","text":"999,999,999","height":34,"fontSize":30,"color":"#ecdede","align":"center"}},{"type":"Label","props":{"y":57,"x":1083,"width":193,"var":"cash_amount","text":"999,999,999","height":33,"fontSize":30,"color":"#ecdede","align":"center"}},{"type":"Button","props":{"y":118,"x":20,"var":"back_to_lobby","skin":"res/share/backLobbyBtn.png"}},{"type":"Button","props":{"y":632,"x":950,"width":215,"var":"spinBtn","skin":"res/share/Btn_bg.png","height":82},"child":[{"type":"Label","props":{"y":26,"x":78,"text":"開始","fontSize":30,"color":"#fbe6e5"}}]},{"type":"Button","props":{"y":660,"x":354,"var":"betAddBtn","skin":"res/share/CarryIn.png"}},{"type":"Button","props":{"y":646,"x":124,"var":"paytableBtn","skin":"res/share/helpBtn.png"}},{"type":"roller","props":{"y":76,"x":162,"var":"roller_0","runtime":"Roller"}},{"type":"roller","props":{"y":76,"x":314,"var":"roller_1","runtime":"Roller1"}},{"type":"roller","props":{"y":76,"x":467,"var":"roller_2","runtime":"Roller2"}},{"type":"roller","props":{"y":76,"x":619,"var":"roller_3","runtime":"Roller3"}},{"type":"roller","props":{"y":76,"x":771,"var":"roller_4","runtime":"Roller4"}},{"type":"Button","props":{"y":632,"x":950,"width":215,"var":"stopBtn","skin":"res/share/Btn_bg.png","height":82},"child":[{"type":"Label","props":{"y":26,"x":78,"text":"停輪","fontSize":30,"color":"#fbe6e5"}}]},{"type":"WinAni","props":{"y":74,"x":148,"visible":false,"var":"ani_0","runtime":"ui.WinAniUI"}},{"type":"WinAni","props":{"y":207,"x":153,"visible":false,"var":"ani_1","runtime":"ui.WinAniUI"}},{"type":"WinAni","props":{"y":358,"x":157,"var":"ani_2","runtime":"ui.WinAniUI"}},{"type":"WinAni","props":{"y":68,"x":304,"visible":false,"var":"ani_3","runtime":"ui.WinAniUI"}},{"type":"WinAni","props":{"y":207,"x":303,"visible":false,"var":"ani_4","runtime":"ui.WinAniUI"}},{"type":"WinAni","props":{"y":358,"x":307,"var":"ani_5","runtime":"ui.WinAniUI"}},{"type":"WinAni","props":{"y":76,"x":451,"visible":false,"var":"ani_6","runtime":"ui.WinAniUI"}},{"type":"WinAni","props":{"y":212,"x":453,"visible":false,"var":"ani_7","runtime":"ui.WinAniUI"}},{"type":"WinAni","props":{"y":363,"x":457,"var":"ani_8","runtime":"ui.WinAniUI"}},{"type":"WinAni","props":{"y":77,"x":614,"visible":false,"var":"ani_9","runtime":"ui.WinAniUI"}},{"type":"WinAni","props":{"y":213,"x":616,"visible":false,"var":"ani_10","runtime":"ui.WinAniUI"}},{"type":"WinAni","props":{"y":364,"x":620,"var":"ani_11","runtime":"ui.WinAniUI"}},{"type":"WinAni","props":{"y":68,"x":763,"visible":false,"var":"ani_12","runtime":"ui.WinAniUI"}},{"type":"WinAni","props":{"y":204,"x":765,"visible":false,"var":"ani_13","runtime":"ui.WinAniUI"}},{"type":"WinAni","props":{"y":355,"x":769,"var":"ani_14","runtime":"ui.WinAniUI"}}]};}
 		]);
 		return warcraftViewUI;
 	})(View);

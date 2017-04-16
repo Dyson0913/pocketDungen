@@ -6,7 +6,7 @@ var _model;
 var BlurFilter = Laya.BlurFilter;
 		//blurFilter.strength = 2; //APK not support
 		//var blurFilter = new BlurFilter();
-var rollerNum =1;
+var rollerNum =5;
 
 var _tween = Laya.Tween;
 var _ease = Laya.Ease;
@@ -92,17 +92,17 @@ function warcraftUI()
 	function oncomplet(n)
 	{
 		//all stop
-		if( n != (rollerNum-1))
-		{
-			var idx = Math.floor((Math.random() * 9) + 1)
-			self["roller_"+(n+1)].stop(idx);
-		}
+		// if( n != (rollerNum-1))
+		// {
+		// 	var idx = Math.floor((Math.random() * 9) + 1)
+		// 	self["roller_"+(n+1)].stop(idx);
+		// }
 
 		//order stop
-		// if( n !=14)
-		// {
-		// 	Timer.frameOnce(10,self,self.nextstop,[n])
-		// }
+		if( n != (rollerNum-1) )
+		{
+			Timer.frameOnce(10,self,self.nextstop,[n])
+		}
 		
 		//roller all stop
 		if( n ==(rollerNum-1))
@@ -169,8 +169,12 @@ function warcraftUI()
 	
 	warcraftUI.prototype.nextstop = function(n)
 	{
+		
 		var idx = Math.floor((Math.random() * 9) + 1)
-		self["roller_"+(n+1)].stop(idx);
+		var sec = mod(idx+1)
+		var thrid = mod(sec+1)
+		var result = [idx,sec,thrid]
+		self["roller_"+(n+1)].stop(result.reverse());
 		
 	}
 

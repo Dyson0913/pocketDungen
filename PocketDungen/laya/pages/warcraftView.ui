@@ -2,7 +2,7 @@
     "x":0,
     "type":"View",
     "selectedBox":1,
-    "selecteID":42,
+    "selecteID":46,
     "props":{"width":1280,"var":"bg","sceneColor":"#000000","height":720},
     "nodeParent":-1,
     "label":"View(bg)",
@@ -202,7 +202,7 @@
             "x":15,
             "type":"UIView",
             "source":"roller.ui",
-            "props":{"y":165,"x":1119,"var":"roller_0","runtime":"Roller"},
+            "props":{"y":76,"x":162,"var":"roller_0","runtime":"Roller"},
             "nodeParent":1,
             "label":"UIView(roller_0)",
             "isDirectory":false,
@@ -223,7 +223,7 @@
             "x":15,
             "type":"UIView",
             "source":"roller.ui",
-            "props":{"y":220,"x":162,"var":"roller_1","runtime":"Roller1"},
+            "props":{"y":76,"x":314,"var":"roller_1","runtime":"Roller1"},
             "nodeParent":1,
             "label":"UIView(roller_1)",
             "isDirectory":false,
@@ -244,7 +244,7 @@
             "x":15,
             "type":"UIView",
             "source":"roller.ui",
-            "props":{"y":365,"x":162,"var":"roller_2","runtime":"Roller2"},
+            "props":{"y":76,"x":467,"var":"roller_2","runtime":"Roller2"},
             "nodeParent":1,
             "label":"UIView(roller_2)",
             "isDirectory":false,
@@ -265,7 +265,7 @@
             "x":15,
             "type":"UIView",
             "source":"roller.ui",
-            "props":{"y":76,"x":314,"var":"roller_3","runtime":"Roller3"},
+            "props":{"y":76,"x":619,"var":"roller_3","runtime":"Roller3"},
             "nodeParent":1,
             "label":"UIView(roller_3)",
             "isDirectory":false,
@@ -286,7 +286,7 @@
             "x":15,
             "type":"UIView",
             "source":"roller.ui",
-            "props":{"y":220,"x":314,"var":"roller_4","runtime":"Roller4"},
+            "props":{"y":76,"x":771,"var":"roller_4","runtime":"Roller4"},
             "nodeParent":1,
             "label":"UIView(roller_4)",
             "isDirectory":false,
@@ -300,216 +300,6 @@
                     "__InPool":false
                 }],
             "compId":46,
-            "child":[
-                ]
-        },
-        {
-            "x":15,
-            "type":"UIView",
-            "source":"roller.ui",
-            "props":{"y":365,"x":314,"var":"roller_5","runtime":"Roller5"},
-            "nodeParent":1,
-            "label":"UIView(roller_5)",
-            "isDirectory":false,
-            "isAniNode":true,
-            "hasChild":false,
-            "frames":[
-                {
-                    "type":1,
-                    "props":{"y":104,"x":107},
-                    "frame":0,
-                    "__InPool":false
-                }],
-            "compId":47,
-            "child":[
-                ]
-        },
-        {
-            "x":15,
-            "type":"UIView",
-            "source":"roller.ui",
-            "props":{"y":76,"x":467,"var":"roller_6","runtime":"Roller6"},
-            "nodeParent":1,
-            "label":"UIView(roller_6)",
-            "isDirectory":false,
-            "isAniNode":true,
-            "hasChild":false,
-            "frames":[
-                {
-                    "type":1,
-                    "props":{"y":104,"x":107},
-                    "frame":0,
-                    "__InPool":false
-                }],
-            "compId":48,
-            "child":[
-                ]
-        },
-        {
-            "x":15,
-            "type":"UIView",
-            "source":"roller.ui",
-            "props":{"y":220,"x":467,"var":"roller_7","runtime":"Roller7"},
-            "nodeParent":1,
-            "label":"UIView(roller_7)",
-            "isDirectory":false,
-            "isAniNode":true,
-            "hasChild":false,
-            "frames":[
-                {
-                    "type":1,
-                    "props":{"y":104,"x":107},
-                    "frame":0,
-                    "__InPool":false
-                }],
-            "compId":49,
-            "child":[
-                ]
-        },
-        {
-            "x":15,
-            "type":"UIView",
-            "source":"roller.ui",
-            "props":{"y":365,"x":467,"var":"roller_8","runtime":"Roller8"},
-            "nodeParent":1,
-            "label":"UIView(roller_8)",
-            "isDirectory":false,
-            "isAniNode":true,
-            "hasChild":false,
-            "frames":[
-                {
-                    "type":1,
-                    "props":{"y":104,"x":107},
-                    "frame":0,
-                    "__InPool":false
-                }],
-            "compId":50,
-            "child":[
-                ]
-        },
-        {
-            "x":15,
-            "type":"UIView",
-            "source":"roller.ui",
-            "props":{"y":76,"x":619,"var":"roller_9","runtime":"Roller9"},
-            "nodeParent":1,
-            "label":"UIView(roller_9)",
-            "isDirectory":false,
-            "isAniNode":true,
-            "hasChild":false,
-            "frames":[
-                {
-                    "type":1,
-                    "props":{"y":104,"x":107},
-                    "frame":0,
-                    "__InPool":false
-                }],
-            "compId":51,
-            "child":[
-                ]
-        },
-        {
-            "x":15,
-            "type":"UIView",
-            "source":"roller.ui",
-            "props":{"y":220,"x":619,"var":"roller_10","runtime":"Roller10"},
-            "nodeParent":1,
-            "label":"UIView(roller_10)",
-            "isDirectory":false,
-            "isAniNode":true,
-            "hasChild":false,
-            "frames":[
-                {
-                    "type":1,
-                    "props":{"y":104,"x":107},
-                    "frame":0,
-                    "__InPool":false
-                }],
-            "compId":52,
-            "child":[
-                ]
-        },
-        {
-            "x":15,
-            "type":"UIView",
-            "source":"roller.ui",
-            "props":{"y":365,"x":619,"var":"roller_11","runtime":"Roller11"},
-            "nodeParent":1,
-            "label":"UIView(roller_11)",
-            "isDirectory":false,
-            "isAniNode":true,
-            "hasChild":false,
-            "frames":[
-                {
-                    "type":1,
-                    "props":{"y":104,"x":107},
-                    "frame":0,
-                    "__InPool":false
-                }],
-            "compId":53,
-            "child":[
-                ]
-        },
-        {
-            "x":15,
-            "type":"UIView",
-            "source":"roller.ui",
-            "props":{"y":76,"x":771,"var":"roller_12","runtime":"Roller12"},
-            "nodeParent":1,
-            "label":"UIView(roller_12)",
-            "isDirectory":false,
-            "isAniNode":true,
-            "hasChild":false,
-            "frames":[
-                {
-                    "type":1,
-                    "props":{"y":104,"x":107},
-                    "frame":0,
-                    "__InPool":false
-                }],
-            "compId":54,
-            "child":[
-                ]
-        },
-        {
-            "x":15,
-            "type":"UIView",
-            "source":"roller.ui",
-            "props":{"y":220,"x":771,"var":"roller_13","runtime":"Roller13"},
-            "nodeParent":1,
-            "label":"UIView(roller_13)",
-            "isDirectory":false,
-            "isAniNode":true,
-            "hasChild":false,
-            "frames":[
-                {
-                    "type":1,
-                    "props":{"y":104,"x":107},
-                    "frame":0,
-                    "__InPool":false
-                }],
-            "compId":55,
-            "child":[
-                ]
-        },
-        {
-            "x":15,
-            "type":"UIView",
-            "source":"roller.ui",
-            "props":{"y":365,"x":771,"var":"roller_14","runtime":"Roller14"},
-            "nodeParent":1,
-            "label":"UIView(roller_14)",
-            "isDirectory":false,
-            "isAniNode":true,
-            "hasChild":false,
-            "frames":[
-                {
-                    "type":1,
-                    "props":{"y":104,"x":107},
-                    "frame":0,
-                    "__InPool":false
-                }],
-            "compId":56,
             "child":[
                 ]
         },
@@ -593,7 +383,8 @@
                 }],
             "compId":63,
             "child":[
-                ]
+                ],
+            "$HIDDEN":true
         },
         {
             "x":15,
@@ -614,7 +405,8 @@
                 }],
             "compId":64,
             "child":[
-                ]
+                ],
+            "$HIDDEN":true
         },
         {
             "x":15,
@@ -635,7 +427,8 @@
                 }],
             "compId":65,
             "child":[
-                ]
+                ],
+            "$HIDDEN":true
         },
         {
             "x":15,
@@ -656,7 +449,8 @@
                 }],
             "compId":66,
             "child":[
-                ]
+                ],
+            "$HIDDEN":true
         },
         {
             "x":15,
@@ -677,7 +471,8 @@
                 }],
             "compId":67,
             "child":[
-                ]
+                ],
+            "$HIDDEN":true
         },
         {
             "x":15,
@@ -698,7 +493,8 @@
                 }],
             "compId":68,
             "child":[
-                ]
+                ],
+            "$HIDDEN":true
         },
         {
             "x":15,
@@ -719,7 +515,8 @@
                 }],
             "compId":69,
             "child":[
-                ]
+                ],
+            "$HIDDEN":true
         },
         {
             "x":15,
@@ -740,7 +537,8 @@
                 }],
             "compId":70,
             "child":[
-                ]
+                ],
+            "$HIDDEN":true
         },
         {
             "x":15,
@@ -761,7 +559,8 @@
                 }],
             "compId":71,
             "child":[
-                ]
+                ],
+            "$HIDDEN":true
         },
         {
             "x":15,
@@ -782,7 +581,8 @@
                 }],
             "compId":72,
             "child":[
-                ]
+                ],
+            "$HIDDEN":true
         },
         {
             "x":15,
@@ -803,7 +603,8 @@
                 }],
             "compId":73,
             "child":[
-                ]
+                ],
+            "$HIDDEN":true
         },
         {
             "x":15,
@@ -824,7 +625,8 @@
                 }],
             "compId":74,
             "child":[
-                ]
+                ],
+            "$HIDDEN":true
         },
         {
             "x":15,
@@ -845,7 +647,8 @@
                 }],
             "compId":75,
             "child":[
-                ]
+                ],
+            "$HIDDEN":true
         },
         {
             "x":15,
@@ -866,7 +669,8 @@
                 }],
             "compId":76,
             "child":[
-                ]
+                ],
+            "$HIDDEN":true
         }],
     "animations":[
         {
