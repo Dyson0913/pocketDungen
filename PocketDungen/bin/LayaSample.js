@@ -90,7 +90,7 @@
 		_model.closeHint.add(onhintok)
     	_model.comfirmHint.add(onhintcancel)
 
-		
+		_model.Intofreegame.add(onfreegame);
 
 	})();
 
@@ -98,10 +98,15 @@
 	{
 		trace(" onAssetsLoaded ")
 
+		//先加載freegame
+		_model.pushView("freeGame",new FreeGame());
+
 		Laya.loader.load([{url: "res/atlas/game.json",type: Loader.ATLAS}], Handler.create(this, onIntoGame));
 		return
 		//先加載提示元件
 		_model.pushView("hint",new HintUI());
+
+		
 
 		_model.pushView("login",new logingUI());
 		_model.current_view_name ="login";
@@ -212,6 +217,11 @@
 	{
 		trace("fale");
 		Laya.stage.removeChild(_model.getView("hint"))
+	}
+
+	function onfreegame()
+	{
+		Laya.stage.addChild(_model.getView("freeGame"));
 	}
 
 })();

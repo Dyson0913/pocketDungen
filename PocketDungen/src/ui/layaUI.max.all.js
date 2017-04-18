@@ -2,6 +2,27 @@ var CLASS$=Laya.class;
 var STATICATTR$=Laya.static;
 var View=laya.ui.View;
 var Dialog=laya.ui.Dialog;
+var FreeGameUI=(function(_super){
+		function FreeGameUI(){
+			
+
+			FreeGameUI.__super.call(this);
+		}
+
+		CLASS$(FreeGameUI,'ui.FreeGameUI',_super);
+		var __proto__=FreeGameUI.prototype;
+		__proto__.createChildren=function(){
+		    			View.regComponent("FreeGame",FreeGame);
+
+			laya.ui.Component.prototype.createChildren.call(this);
+			this.createView(FreeGameUI.uiView);
+		}
+
+		STATICATTR$(FreeGameUI,
+		['uiView',function(){return this.uiView={"type":"View","props":{"width":1280,"runtime":"FreeGame","height":720},"child":[{"type":"Label","props":{"y":322,"x":479,"width":298,"text":"FreeGame","height":60,"fontSize":30,"color":"#f9f3f3","align":"center"}}]};}
+		]);
+		return FreeGameUI;
+	})(View);
 var HintViewUI=(function(_super){
 		function HintViewUI(){
 			

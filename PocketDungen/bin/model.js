@@ -39,10 +39,16 @@ var model = function ()
     this.lobbylist_getok  =  new signals.Signal();
     this.in_game =  new signals.Signal();
 
+    //game share
     this.cashin =  new signals.Signal();
     this.winMoney =  new signals.Signal();
+
+    //game self
     this.spinResult =  new signals.Signal();
     this.rollercomplet =  new signals.Signal();
+    this.rollerAnicomplet =  new signals.Signal();
+    this.Intofreegame =  new signals.Signal();
+    
 
     this.hint =  new signals.Signal();
     this.hint_pop =  new signals.Signal();

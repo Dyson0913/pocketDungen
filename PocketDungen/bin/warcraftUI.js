@@ -32,6 +32,7 @@ function warcraftUI()
 	_model.cashin.add(oncarrying);
 	_model.spinResult.add(onresult);
 	_model.rollercomplet.add(oncomplet);
+	_model.rollerAnicomplet.add(onRollerAnicomplet);
 
 	
 	(function()
@@ -127,7 +128,12 @@ function warcraftUI()
 
 	function playAni()
 	{
-		if( _model.winAniSet.length ==0) return;
+		if( _model.winAniSet.length ==0) 
+		{
+			//free game or bouns game
+			_model.rollerAnicomplet.dispatch();
+			return;
+		}
 
 		var winset = _model.winAniSet[0]
 
@@ -177,6 +183,12 @@ function warcraftUI()
 		playAni()
 	}
 	
+	function onRollerAnicomplet()
+	{
+		//
+		_model.Intofreegame.dispatch()
+	}
+
 	warcraftUI.prototype.nextstop = function(n)
 	{
 		SoundManager.playSound("res/sound/UI_Stop.mp3")

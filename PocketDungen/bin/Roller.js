@@ -1,10 +1,10 @@
 
 var Event = Laya.Event;
+var Handler = Laya.Handler;
+
 var _tween = Laya.Tween;
 var _ease = Laya.Ease;
-var Handler = Laya.Handler;
 var Timer = Laya.timer;
-var _model;
 
 //symbol para
 var _viewblock = 3
