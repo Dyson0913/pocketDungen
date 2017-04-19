@@ -50,9 +50,7 @@ var model = function ()
     this.Intofreegame =  new signals.Signal();
     
 
-    this.hint =  new signals.Signal();
-    this.hint_pop =  new signals.Signal();
-    this.closeHint =  new signals.Signal();
+    this.hint =  new signals.Signal();     
     this.comfirmHint =  new signals.Signal();
 
     //viewclose

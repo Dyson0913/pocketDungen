@@ -13,8 +13,7 @@ function HintUI()
 	
 	 var self = this
 	this.cancel.on(Event.CLICK, this, oncancel);
-	this.comfirmBtn.on(Event.CLICK, this, oncomfirm);
-	_model.hint_pop.add(onupdate);
+	this.comfirmBtn.on(Event.CLICK, this, oncomfirm);	
     (function()
 	{
 		//建構式
@@ -22,23 +21,19 @@ function HintUI()
 
 	})();
 
-	function onupdate()
+	HintUI.prototype.onupdate = function()
 	{
 		self.context.text = _model.hint_msg;
 	}
-	
 
 	function oncomfirm()
 	{
-		
           _model.comfirmHint.dispatch();
    }
 
 	function oncancel()
-	{
-	
-         _model.closeHint.dispatch();
-	
+	{		
+		 _model.closeview.dispatch("hint");	
 	}
 
 

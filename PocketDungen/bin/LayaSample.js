@@ -86,9 +86,8 @@
 		_model.in_game.add(unloadlobby);
 
 		//提示
-		_model.hint.add(onhint)
-		_model.closeHint.add(onhintok)
-    	_model.comfirmHint.add(onhintcancel)
+		_model.hint.add(onhint)		
+    	_model.comfirmHint.add(onhintok)
 
 		_model.Intofreegame.add(onfreegame);
 		_model.closeview.add(oncloseView);
@@ -199,6 +198,8 @@
 		 _model.hint_pop.dispatch();
 		 
 		Laya.stage.addChild(_model.getView("hint"));
+		var hint = _model.getView("hint")
+		hint.onupdate()
 	}
 
     
@@ -213,15 +214,11 @@
 		//	_model.eventHandle("kickOtherDevice");
 		//}
 	}
-	
-	function onhintcancel()
-	{
-		trace("fale");
-		Laya.stage.removeChild(_model.getView("hint"))
-	}
 
 	function onfreegame()
 	{
+		SoundManager.playSound("res/sound/UI_Stop.mp3")
+		
 		Laya.stage.addChild(_model.getView("freeGame"));
 		var freegame = _model.getView("freeGame")
 		freegame.Intofreegame()
