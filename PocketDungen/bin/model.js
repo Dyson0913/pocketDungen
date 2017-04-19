@@ -47,8 +47,9 @@ var model = function ()
     this.spinResult =  new signals.Signal();
     this.rollercomplet =  new signals.Signal();
     this.rollerAnicomplet =  new signals.Signal();
+
     this.Intofreegame =  new signals.Signal();
-    
+    this.IntoBonusgame =  new signals.Signal();
 
     this.hint =  new signals.Signal();     
     this.comfirmHint =  new signals.Signal();

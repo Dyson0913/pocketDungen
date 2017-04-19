@@ -13,8 +13,6 @@ var _ease = Laya.Ease;
 var Handler = Laya.Handler;
 var SoundManager = Laya.SoundManager;
 
-var ui_spin
-
 function warcraftUI()
 {
 	var self = this
@@ -52,7 +50,7 @@ function warcraftUI()
 		_model.winAniSet.push(["1@1","4@1","7@1"])
 		_model.winAniSet.push(["2@1","5@1","6@1","10@1","13@1"])
 
-		SoundManager.playMusic("res/sound/slot_BGM.mp3")		
+		//SoundManager.playMusic("res/sound/slot_BGM.mp3")		
 	})();
 
 	
@@ -186,7 +184,9 @@ function warcraftUI()
 	function onRollerAnicomplet()
 	{
 		//
-		_model.Intofreegame.dispatch()
+		//_model.Intofreegame.dispatch()
+		_model.IntoBonusgame.dispatch()
+		
 	}
 
 	warcraftUI.prototype.nextstop = function(n)

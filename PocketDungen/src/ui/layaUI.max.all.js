@@ -12,13 +12,14 @@ var BonusGameUI=(function(_super){
 		CLASS$(BonusGameUI,'ui.BonusGameUI',_super);
 		var __proto__=BonusGameUI.prototype;
 		__proto__.createChildren=function(){
-		    
+		    			View.regComponent("BonusGame",BonusGame);
+
 			laya.ui.Component.prototype.createChildren.call(this);
 			this.createView(BonusGameUI.uiView);
 		}
 
 		STATICATTR$(BonusGameUI,
-		['uiView',function(){return this.uiView={"type":"View","props":{"width":1280,"height":720},"child":[{"type":"Label","props":{"y":332,"x":489,"width":298,"text":"BounsGame","height":60,"fontSize":30,"color":"#f9f3f3","align":"center"}}]};}
+		['uiView',function(){return this.uiView={"type":"View","props":{"width":1280,"runtime":"BonusGame","height":720},"child":[{"type":"Label","props":{"y":332,"x":489,"width":298,"text":"BounsGame","height":60,"fontSize":30,"color":"#f9f3f3","align":"center"}}]};}
 		]);
 		return BonusGameUI;
 	})(View);

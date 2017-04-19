@@ -69,6 +69,15 @@
 		{
 			url: "res/sound/slot_BGM.mp3",type: Loader.SOUND
 		});
+		assets.push(
+		{
+			url: "res/sound/FreeGame.mp3",type: Loader.SOUND
+		});
+		assets.push(
+		{
+			url: "res/sound/BonusGame.mp3",type: Loader.SOUND
+		});
+		
 		
 		
 		// assets.push(
@@ -90,6 +99,9 @@
     	_model.comfirmHint.add(onhintok)
 
 		_model.Intofreegame.add(onfreegame);
+		_model.IntoBonusgame.add(onbonusgame);
+		
+
 		_model.closeview.add(oncloseView);
 		
 	})();
@@ -100,6 +112,7 @@
 
 		//先加載freegame
 		_model.pushView("freeGame",new FreeGame());
+		_model.pushView("bonusGame",new BonusGame());
 
 		Laya.loader.load([{url: "res/atlas/game.json",type: Loader.ATLAS}], Handler.create(this, onIntoGame));
 		return
@@ -217,11 +230,16 @@
 
 	function onfreegame()
 	{
-		SoundManager.playSound("res/sound/UI_Stop.mp3")
-		
 		Laya.stage.addChild(_model.getView("freeGame"));
 		var freegame = _model.getView("freeGame")
 		freegame.Intofreegame()
+	}
+
+	function onbonusgame()
+	{
+		Laya.stage.addChild(_model.getView("bonusGame"));
+		var bounsGame = _model.getView("bonusGame")
+		bounsGame.Intofreegame()
 	}
 
 	function oncloseView(viewname)

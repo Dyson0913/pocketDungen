@@ -5,6 +5,8 @@ var Event = Laya.Event;
 var _tween = Laya.Tween;
 var _ease = Laya.Ease;
 
+var SoundManager = Laya.SoundManager;
+
 var _model = model.getInstance();
 
 function FreeGame()
@@ -21,12 +23,11 @@ function FreeGame()
 
 	FreeGame.prototype.Intofreegame = function()
 	{
-		_tween.to(self,{},2000,Laya.Ease.backOut,new Handler(this,complet) )
+		SoundManager.playSound("res/sound/FreeGame.mp3",1,new Handler(this,complet))
 	}
 	
 	function complet()
 	{
-		trace("free game ok")
          _model.closeview.dispatch("freeGame");		 
 	}
 
