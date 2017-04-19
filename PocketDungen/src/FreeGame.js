@@ -19,18 +19,15 @@ function FreeGame()
 
 	})();
 
-	function Intofreegame()
+	FreeGame.prototype.Intofreegame = function()
 	{
-		//self.context.text = _model.hint_msg;
-
 		_tween.to(self,{},2000,Laya.Ease.backOut,new Handler(this,complet) )
-	}	
-
+	}
+	
 	function complet()
 	{
 		trace("free game ok")
-         //_model.closeHint.dispatch();
-	
+         _model.closeview.dispatch("freeGame");		 
 	}
 
 

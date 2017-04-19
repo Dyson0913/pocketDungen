@@ -55,6 +55,9 @@ var model = function ()
     this.closeHint =  new signals.Signal();
     this.comfirmHint =  new signals.Signal();
 
+    //viewclose
+    this.closeview =  new signals.Signal();
+
     this.socket = undefined;
     this.odds = [];
     this.winAniSet = [];

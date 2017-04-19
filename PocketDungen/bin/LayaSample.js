@@ -91,7 +91,8 @@
     	_model.comfirmHint.add(onhintcancel)
 
 		_model.Intofreegame.add(onfreegame);
-
+		_model.closeview.add(oncloseView);
+		
 	})();
 
 	function onAssetsLoaded()
@@ -222,6 +223,14 @@
 	function onfreegame()
 	{
 		Laya.stage.addChild(_model.getView("freeGame"));
+		var freegame = _model.getView("freeGame")
+		freegame.Intofreegame()
 	}
+
+	function oncloseView(viewname)
+	{
+		Laya.stage.removeChild(_model.getView(viewname))
+	}
+
 
 })();
