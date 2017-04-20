@@ -21,7 +21,7 @@ function HintUI()
 
 	})();
 
-	HintUI.prototype.onupdate = function()
+	HintUI.prototype.onAppear = function()
 	{
 		self.context.text = _model.hint_msg;
 	}

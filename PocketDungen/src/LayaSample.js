@@ -94,14 +94,10 @@
 		_model.lobbylist_getok.add(onloadlobby);
 		_model.in_game.add(unloadlobby);
 
-		//提示
-		_model.hint.add(onhint)		
+		//提示		
     	_model.comfirmHint.add(onhintok)
-
-		_model.Intofreegame.add(onfreegame);
-		_model.IntoBonusgame.add(onbonusgame);
 		
-
+		_model.openview.add(onOpenView)
 		_model.closeview.add(oncloseView);
 		
 	})();
@@ -204,18 +200,7 @@
 		 //TODO 實際帶入
          _model.cashin.dispatch(1000,2000);
 	}
-	
-	function onhint()
-	{
-		//hint windown		
-		 _model.hint_pop.dispatch();
-		 
-		Laya.stage.addChild(_model.getView("hint"));
-		var hint = _model.getView("hint")
-		hint.onupdate()
-	}
-
-    
+	    
 	function onhintok()
 	{
 		trace("ok");
@@ -228,20 +213,15 @@
 		//}
 	}
 
-	function onfreegame()
-	{
-		Laya.stage.addChild(_model.getView("freeGame"));
-		var freegame = _model.getView("freeGame")
-		freegame.Intofreegame()
-	}
 
-	function onbonusgame()
+	function onOpenView(viewname)
 	{
-		Laya.stage.addChild(_model.getView("bonusGame"));
-		var bounsGame = _model.getView("bonusGame")
-		bounsGame.Intofreegame()
+		var view = _model.getView(viewname)
+		Laya.stage.addChild(view);
+		view.onAppear();
+		//bounsGame.Intofreegame()
 	}
-
+	
 	function oncloseView(viewname)
 	{
 		Laya.stage.removeChild(_model.getView(viewname))

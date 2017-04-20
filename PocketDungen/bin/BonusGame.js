@@ -19,7 +19,7 @@ function BonusGame()
 
 	})();
 
-	BonusGame.prototype.Intofreegame = function()
+	BonusGame.prototype.onAppear = function()
 	{
 		SoundManager.playSound("res/sound/BonusGame.mp3",1,new Handler(this,complet))
 	}

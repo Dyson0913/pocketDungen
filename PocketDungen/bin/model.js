@@ -47,14 +47,12 @@ var model = function ()
     this.spinResult =  new signals.Signal();
     this.rollercomplet =  new signals.Signal();
     this.rollerAnicomplet =  new signals.Signal();
-
-    this.Intofreegame =  new signals.Signal();
-    this.IntoBonusgame =  new signals.Signal();
-
-    this.hint =  new signals.Signal();     
+    
+         
     this.comfirmHint =  new signals.Signal();
 
     //viewclose
+    this.openview =  new signals.Signal();
     this.closeview =  new signals.Signal();
 
     this.socket = undefined;
@@ -92,7 +90,7 @@ model.prototype.eventHandle = function (name,data)
        case "login_fail":
         this.hint_msg = data[0].reason
         this.uuid = data[0].uuid;
-        this.hint.dispatch();
+        this.openview.dispatch("hint");        	
        break;
         case "kickOtherDevice":
          //要踢人,token 也要傳,驗證用

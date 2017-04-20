@@ -21,7 +21,7 @@ function FreeGame()
 
 	})();
 
-	FreeGame.prototype.Intofreegame = function()
+	FreeGame.prototype.onAppear = function()
 	{
 		SoundManager.playSound("res/sound/FreeGame.mp3",1,new Handler(this,complet))
 	}

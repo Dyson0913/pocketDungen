@@ -182,10 +182,9 @@ function warcraftUI()
 	}
 	
 	function onRollerAnicomplet()
-	{
-		//
-		//_model.Intofreegame.dispatch()
-		_model.IntoBonusgame.dispatch()
+	{		
+		//_model.openview.dispatch("freeGame")
+		_model.openview.dispatch("bonusGame")	
 		
 	}
 
