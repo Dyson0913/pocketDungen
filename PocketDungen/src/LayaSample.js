@@ -110,7 +110,12 @@
 		_model.pushView("freeGame",new FreeGame());
 		_model.pushView("bonusGame",new BonusGame());
 
-		Laya.loader.load([{url: "res/atlas/game.json",type: Loader.ATLAS}], Handler.create(this, onIntoGame));
+		//warcaft
+		//Laya.loader.load([{url: "res/atlas/game.json",type: Loader.ATLAS}], Handler.create(this, onIntoGame));
+
+		Laya.loader.load([{url: "res/atlas/Coin.json",type: Loader.ATLAS}]);
+		Laya.loader.load([{url: "res/atlas/poker.json",type: Loader.ATLAS}], Handler.create(this, onIntobaccrat));
+
 		return
 		//先加載提示元件
 		_model.pushView("hint",new HintUI());
@@ -196,6 +201,21 @@
 		
 		_model.current_view_name = "warcraft";
 		Laya.stage.addChild(_model.getView("warcraft"));
+
+		 //TODO 實際帶入
+         _model.cashin.dispatch(1000,2000);
+	}
+
+	function onIntobaccrat()
+	{
+		if(_model.getView("baccarat") == undefined )
+		{
+			trace("first create baccarat")
+			_model.pushView("baccarat",new baccaratUI());
+		}
+		
+		_model.current_view_name = "baccarat";
+		Laya.stage.addChild(_model.getView("baccarat"));
 
 		 //TODO 實際帶入
          _model.cashin.dispatch(1000,2000);

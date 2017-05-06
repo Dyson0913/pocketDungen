@@ -10,7 +10,7 @@ function lobbyUI()
 	_model = model.getInstance();
 	
 	this.game1.on(Event.CLICK, this, onBtnClick);
-	
+	this.game2.on(Event.CLICK, this, onBtnClick2);
 
 	function onBtnClick()
 	{
@@ -18,6 +18,12 @@ function lobbyUI()
 		_model.eventHandle("join_game",[]);
 	}
 
+	function onBtnClick2()
+	{
+		_model.join_game = 2;
+		_model.eventHandle("join_game",[]);
+	}
+	
 	
 
 
