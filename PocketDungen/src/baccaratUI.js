@@ -70,30 +70,35 @@ function baccaratUI()
 		if( idx ==0)
 		{
 			//poker_show(0,10)
+			_model.gameStateUpdate.dispatch("init");
 		}
 		if( idx ==1)
 		{
 			//poker_show(1,12)
-			
+			_model.gameStateUpdate.dispatch("wait_bet");
+			self.countTimer.countdown(10)
 		}
 		if( idx ==2)
 		{
 			//poker_show(2,15)
+			_model.gameStateUpdate.dispatch("player_card");
 		}
 		if( idx ==3)
 		{
 			//poker_show(3,11)
+			_model.gameStateUpdate.dispatch("banker_card");
 		}
 		if( idx ==4)
 		{
 			//poker_show(4,9)
+			_model.gameStateUpdate.dispatch("settle");
 		}
 		if( idx ==5)
 		{
 			//poker_show(5,17)
 		}
 
-		self.countTimer.countdown(10)
+		
 		coin_add(_selectRes,idx)
 
 		btn_appear(true)

@@ -12,11 +12,25 @@ function CountTimer()
 	var self = this
 	CountTimer.super(this);
 	
+	_model.gameStateUpdate.add(onState);
+
 	(function()
 	{
 		//regFont("tableFont.fnt", "res\BitmapFont\tableFont.png");
 
 	})();
+
+	function onState(state)
+	{
+		if( _model.appearidx(state) == 1)
+		{
+			self.visible = true;
+		}
+		else
+		{
+			self.visible = false;
+		}
+	}
 
 	function regFont(fontFileName,path)
 	{
@@ -47,6 +61,7 @@ function CountTimer()
 		}
 		
 	}
+
 
 }
 

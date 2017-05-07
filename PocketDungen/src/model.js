@@ -12,6 +12,7 @@ var join_game;
 var game_id;
 
 //TODO total_point
+var gameState;
 
 //game command
 var take_in_gamePoint =2000;
@@ -42,6 +43,7 @@ var model = function ()
     //game share
     this.cashin =  new signals.Signal();
     this.winMoney =  new signals.Signal();
+    this.gameStateUpdate = new signals.Signal();
 
     //game self
     this.spinResult =  new signals.Signal();
@@ -58,6 +60,8 @@ var model = function ()
     this.socket = undefined;
     this.odds = [];
     this.winAniSet = [];
+
+    this.gameState = ["init","wait_bet","player_card","banker_card","settle"];
 }
 
 model.getInstance = function ()
@@ -196,4 +200,9 @@ model.prototype.removeView = function (name)
 model.prototype.getView = function (name)
 {
     return Scene[name];
+}
+
+model.prototype.appearidx = function (state)
+{
+   return this.gameState.indexOf(state)
 }
