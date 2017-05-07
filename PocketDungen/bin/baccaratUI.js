@@ -30,12 +30,16 @@ function baccaratUI()
 	this.coin_4.on(Event.CLICK, this, coin,[4]);
 	this.coin_5.on(Event.CLICK, this, coin,[5]);
 
+	this.cancelBtn.on(Event.CLICK, this, betorcancel,[0]);
+	this.comfirmBtn.on(Event.CLICK, this, betorcancel,[1]);
+
 	_model.cashin.add(oncarrying);
 	
 	(function()
 	{
 		//建構式
-
+		self.cancelBtn.visible = false;
+		self.comfirmBtn.visible = false;
 		//SoundManager.playMusic("res/sound/slot_BGM.mp3")		
 	})();
 
@@ -48,12 +52,34 @@ function baccaratUI()
 	function onbetzone(idx)
 	{
 		trace("betzone0 ",idx);
-	}
 
+		btn_appear(true)
+	}
 
 	function coin(idx)
 	{
 		trace("coin0",idx);
+	}
+
+	function betorcancel(idx)
+	{
+		trace("betorcancel",idx);
+		if( idx == 0)
+		{
+			
+		}
+		else if ( idx == 1)
+		{
+
+		}
+
+		btn_appear(false)
+	}
+
+	function btn_appear(visible)
+	{
+		self.cancelBtn.visible = visible;
+		self.comfirmBtn.visible = visible;
 	}
 
 	function oncarrying(coin,cash)
