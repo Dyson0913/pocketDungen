@@ -2,8 +2,12 @@
 var Event = Laya.Event;
 var Handler = Laya.Handler;
 
+var Sprite  = Laya.Sprite;
 var _model;
-var rollerNum =5;
+var _coinarr;
+var _selectRes;
+var _coinRes;
+var _betzone;
 
 var _tween = Laya.Tween;
 var _ease = Laya.Ease;
@@ -15,6 +19,8 @@ function baccaratUI()
 	var self = this
 	baccaratUI.super(this);
 	_model = model.getInstance();
+
+	
 
 	this.back_to_lobby.on(Event.CLICK, this, onBtnClick);
 	this.betzone_0.on(Event.CLICK, this, onbetzone,[0]);
@@ -40,6 +46,16 @@ function baccaratUI()
 		//建構式
 		btn_appear(false)
 		poker_appear(false)
+		_betzone = [0,1,2]
+		_coinarr = []
+		for(i =0;i< _betzone.length;i++)
+		{
+			_coinarr.push([])
+		}
+		_coinRes = ["res/Coin/coin_10_s.png","res/Coin/coin_50_s.png","res/Coin/coin_100_s.png","res/Coin/coin_500_s.png","res/Coin/coin_1k_s.png","res/Coin/coin_5k_s.png"]
+
+		_selectRes = _coinRes[0]
+
 		//SoundManager.playMusic("res/sound/slot_BGM.mp3")		
 	})();
 
@@ -55,45 +71,57 @@ function baccaratUI()
 
 		if( idx ==0)
 		{
-			poker_show(0,10)
+			//poker_show(0,10)
 		}
 		if( idx ==1)
 		{
-			poker_show(1,12)
+			//poker_show(1,12)
+			
 		}
 		if( idx ==2)
 		{
-			poker_show(2,15)
+			//poker_show(2,15)
 		}
 		if( idx ==3)
 		{
-			poker_show(3,11)
+			//poker_show(3,11)
 		}
 		if( idx ==4)
 		{
-			poker_show(4,9)
+			//poker_show(4,9)
 		}
 		if( idx ==5)
 		{
-			poker_show(5,17)
+			//poker_show(5,17)
 		}
+
+		coin_add(_selectRes,idx)
+
 		btn_appear(true)
 	}
 
 	function coin(idx)
 	{
 		trace("coin0",idx);
+		_selectRes = _coinRes[idx]
 	}
 
 	function betorcancel(idx)
 	{
 		if( idx == 0)
 		{
+			//cancel
+			for(i =0;i< _betzone.length;i++)
+			{
+				coin_clear(_betzone[i])
+			}
 			
+			//TODO pack
 		}
 		else if ( idx == 1)
 		{
-
+			//comfirm
+			//TODO pack
 		}
 
 		btn_appear(false)
@@ -119,6 +147,40 @@ function baccaratUI()
 	{
 		self["poker_"+idx].visible = true
 		self["poker_"+idx].index = pokerVal
+	}
+
+	function coin_add(res,idx)
+	{
+		var t = Laya.loader.getRes(res);
+		var coin = new Sprite
+		coin.graphics.drawTexture(t, 0, 0);
+		self["betzone_"+idx].addChild(coin);
+		var width = self["betzone_"+idx].width
+		var heigh = self["betzone_"+idx].height
+		coin.pos(Math.random()*width, Math.random()*heigh);
+
+		var data  = _coinarr[idx]
+		_coinarr[idx].push(coin)
+			//ape.graphics.clear();
+			// var texture = Laya.loader.getRes(textureUrl);
+			// ape.graphics.drawTexture(texture, 0, 0);
+
+			// // 设置交互区域
+			// ape.size(texture.width, texture.height);
+	}
+
+	function coin_clear(idx)
+	{
+		for(i =0;i< _coinarr.length; i++)
+		{
+			var n = _coinarr[i].length
+			var data = _coinarr[i];
+			for(k =0 ;k< n;k++)
+			{
+				data[k].destroy(true)
+			}
+		}
+		
 	}
 
 	function oncarrying(coin,cash)
