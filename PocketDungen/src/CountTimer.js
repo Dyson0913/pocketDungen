@@ -6,6 +6,9 @@ var _sec;
 
 var _model = model.getInstance();
 
+var BitmapFont = laya.display.BitmapFont;
+var Text       = Laya.Text;
+
 
 function CountTimer()
 {
@@ -16,7 +19,8 @@ function CountTimer()
 
 	(function()
 	{
-		//regFont("tableFont.fnt", "res\BitmapFont\tableFont.png");
+		
+		
 
 	})();
 
@@ -25,18 +29,21 @@ function CountTimer()
 		if( _model.appearidx(state) == 1)
 		{
 			self.visible = true;
+			regFont("res/BitmapFont/tableFont.fnt", "res/BitmapFont/tableFont.png");
+			self.timer.font = "res/BitmapFont/tableFont";
 		}
 		else
 		{
 			self.visible = false;
 		}
+			
 	}
 
 	function regFont(fontFileName,path)
 	{
-            var newFont = new BitmapFont();
-            var fnt = Light.loader.getRes(fontFileName);
-            var fntTxt = Light.loader.getRes(path);
+            var newFont = new BitmapFont()
+            var fnt = Laya.loader.getRes(fontFileName);
+            var fntTxt = Laya.loader.getRes(path);
             newFont.parseFont(fnt, fntTxt);
 
             var pat = /.fnt/;

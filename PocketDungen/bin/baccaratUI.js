@@ -15,7 +15,7 @@ var _ease = Laya.Ease;
 var Handler = Laya.Handler;
 var SoundManager = Laya.SoundManager;
 
-var BitmapFont = laya.BitmapFont;
+
 
 function baccaratUI()
 {
