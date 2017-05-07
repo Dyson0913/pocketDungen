@@ -38,8 +38,8 @@ function baccaratUI()
 	(function()
 	{
 		//建構式
-		self.cancelBtn.visible = false;
-		self.comfirmBtn.visible = false;
+		btn_appear(false)
+		poker_appear(false)
 		//SoundManager.playMusic("res/sound/slot_BGM.mp3")		
 	})();
 
@@ -53,6 +53,30 @@ function baccaratUI()
 	{
 		trace("betzone0 ",idx);
 
+		if( idx ==0)
+		{
+			poker_show(0,10)
+		}
+		if( idx ==1)
+		{
+			poker_show(1,12)
+		}
+		if( idx ==2)
+		{
+			poker_show(2,15)
+		}
+		if( idx ==3)
+		{
+			poker_show(3,11)
+		}
+		if( idx ==4)
+		{
+			poker_show(4,9)
+		}
+		if( idx ==5)
+		{
+			poker_show(5,17)
+		}
 		btn_appear(true)
 	}
 
@@ -77,8 +101,24 @@ function baccaratUI()
 
 	function btn_appear(visible)
 	{
-		self.cancelBtn.visible = visible;
-		self.comfirmBtn.visible = visible;
+		self.cancelBtn.visible = visible
+		self.comfirmBtn.visible = visible
+	}
+
+	function poker_appear(visible)
+	{
+		self.poker_0.visible = visible
+		self.poker_1.visible = visible
+		self.poker_2.visible = visible
+		self.poker_3.visible = visible
+		self.poker_4.visible = visible
+		self.poker_5.visible = visible
+	}
+
+	function poker_show(idx,pokerVal)
+	{
+		self["poker_"+idx].visible = true
+		self["poker_"+idx].index = pokerVal
 	}
 
 	function oncarrying(coin,cash)
