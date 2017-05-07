@@ -2,7 +2,7 @@
     "x":0,
     "type":"View",
     "selectedBox":1,
-    "selecteID":38,
+    "selecteID":40,
     "props":{"width":1280,"sceneColor":"#000000","height":720},
     "nodeParent":-1,
     "label":"View",
@@ -482,21 +482,22 @@
         },
         {
             "x":15,
-            "type":"Label",
-            "props":{"y":389,"x":468,"width":84,"var":"timer","text":"9","height":36,"fontSize":50,"font":"tableFont","align":"center"},
+            "type":"UIView",
+            "source":"CountTimer.ui",
+            "props":{"y":354,"x":586,"var":"countTimer","runtime":"CountTimer"},
             "nodeParent":1,
-            "label":"Label(timer)",
+            "label":"UIView(countTimer)",
             "isDirectory":false,
             "isAniNode":true,
             "hasChild":false,
             "frames":[
                 {
                     "type":1,
-                    "props":{"text":"label"},
+                    "props":{"y":394,"x":614},
                     "frame":0,
                     "__InPool":false
                 }],
-            "compId":38,
+            "compId":40,
             "child":[
                 ]
         }],

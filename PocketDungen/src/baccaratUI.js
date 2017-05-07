@@ -8,7 +8,7 @@ var _coinarr;
 var _selectRes;
 var _coinRes;
 var _betzone;
-var _sec;
+
 
 var _tween = Laya.Tween;
 var _ease = Laya.Ease;
@@ -22,8 +22,6 @@ function baccaratUI()
 	var self = this
 	baccaratUI.super(this);
 	_model = model.getInstance();
-
-	
 
 	this.back_to_lobby.on(Event.CLICK, this, onBtnClick);
 	this.betzone_0.on(Event.CLICK, this, onbetzone,[0]);
@@ -58,23 +56,9 @@ function baccaratUI()
 		_coinRes = ["res/Coin/coin_10_s.png","res/Coin/coin_50_s.png","res/Coin/coin_100_s.png","res/Coin/coin_500_s.png","res/Coin/coin_1k_s.png","res/Coin/coin_5k_s.png"]
 
 		_selectRes = _coinRes[0]
-		//regFont("tableFont.fnt", "res\BitmapFont\tableFont.png");
+		
 		//SoundManager.playMusic("res/sound/slot_BGM.mp3")		
 	})();
-
-	function regFont(fontFileName,path)
-	{
-            var newFont = new BitmapFont();
-            var fnt = Light.loader.getRes(fontFileName);
-            var fntTxt = Light.loader.getRes(path);
-            newFont.parseFont(fnt, fntTxt);
-
-            var pat = /.fnt/;
-            fontFileName = fontFileName.replace(pat,"");
-
-            Text.registerBitmapFont(fontFileName, newFont);           
-     }
-
 
 	function onBtnClick()
 	{
@@ -83,8 +67,6 @@ function baccaratUI()
 
 	function onbetzone(idx)
 	{
-		trace("betzone0 ",idx);
-
 		if( idx ==0)
 		{
 			//poker_show(0,10)
@@ -111,8 +93,7 @@ function baccaratUI()
 			//poker_show(5,17)
 		}
 
-		_sec = 10;
-		Timer.loop(1000,this,this.countDown)
+		self.countTimer.countdown(10)
 		coin_add(_selectRes,idx)
 
 		btn_appear(true)
@@ -120,20 +101,7 @@ function baccaratUI()
 
 	function coin(idx)
 	{
-		trace("coin0",idx);
 		_selectRes = _coinRes[idx]
-	}
-
-	baccaratUI.prototype.countDown = function (sec)
-	{
-		self.timer.text = _sec
-		_sec--;
-		trace(_sec)
-		if( _sec == -1)
-		{
-			Timer.clear(this,this.countDown);
-		}
-		
 	}
 
 	function betorcancel(idx)
