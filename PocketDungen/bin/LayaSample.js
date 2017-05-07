@@ -78,15 +78,6 @@
 			url: "res/sound/BonusGame.mp3",type: Loader.SOUND
 		});
 		
-		
-		
-		// assets.push(
-		// {
-		// 	url: "res/atlas/game.json",type: Loader.ATLAS
-		// });
-		
-		
-
 		Laya.loader.load(assets, Handler.create(this, onAssetsLoaded));
 
 
@@ -107,8 +98,8 @@
 		trace(" onAssetsLoaded ")
 
 		//先加載freegame
-		_model.pushView("freeGame",new FreeGame());
-		_model.pushView("bonusGame",new BonusGame());
+		//_model.pushView("freeGame",new FreeGame());
+		//_model.pushView("bonusGame",new BonusGame());
 
 		//warcaft
 		//Laya.loader.load([{url: "res/atlas/game.json",type: Loader.ATLAS}], Handler.create(this, onIntoGame));
