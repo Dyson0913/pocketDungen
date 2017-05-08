@@ -69,7 +69,7 @@ function baccaratUI()
 	{
 		if( idx ==0)
 		{
-			//poker_show(0,10)
+			
 			_model.gameStateUpdate.dispatch("init");
 		}
 		if( idx ==1)
@@ -82,11 +82,13 @@ function baccaratUI()
 		{
 			//poker_show(2,15)
 			_model.gameStateUpdate.dispatch("player_card");
+			poker_show(0,10)
 		}
 		if( idx ==3)
 		{
 			//poker_show(3,11)
 			_model.gameStateUpdate.dispatch("banker_card");
+			poker_show(1,11)
 		}
 		if( idx ==4)
 		{
@@ -148,8 +150,7 @@ function baccaratUI()
 
 	function poker_show(idx,pokerVal)
 	{
-		self["poker_"+idx].visible = true
-		self["poker_"+idx].index = pokerVal
+		self["poker_"+idx].flip(pokerVal)
 	}
 
 	function coin_add(res,idx)
