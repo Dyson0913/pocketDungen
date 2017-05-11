@@ -92,9 +92,8 @@ model.prototype.eventHandle = function (name,data)
         this.start();
        break;
        case "login_fail":
-        this.hint_msg = data[0].reason
-        this.uuid = data[0].uuid;
-        this.openview.dispatch("hint");        	
+        this.uuid = data[0].uuid; 
+        this.hintmsg(data[0].reason)
        break;
         case "kickOtherDevice":
          //要踢人,token 也要傳,驗證用
@@ -118,35 +117,46 @@ model.prototype.eventHandle = function (name,data)
         //this.socket.sendMessage(msg);
        break;
         case "leave_game":
-         var msg = {"uuid": this.uuid,"module":game_list[this.join_game],"room":"1","cmd":"leave_game","game_id":this.game_id};
+         var msg = {"uuid": this.uuid,"module":game_list[this.join_game]["game"],"room":"1","cmd":"leave_game","game_id":this.game_id};
          this.socket.sendMessage(JSON.stringify(msg));
        break;
        case "join_game":
         //trace("list ="+game_list)
         //trace("join ="+this.join_game)
        //  trace("join ="+game_list[this.join_game]);
-       var msg = {"uuid": this.uuid,"module":game_list[this.join_game],"room":"1","cmd":"request_join"};
+       var msg = {"uuid": this.uuid,"module":game_list[this.join_game]["game"],"room":"1","cmd":"request_join"};
         this.socket.sendMessage(JSON.stringify(msg));
        break;
        case "game_join_fail":
-        trace("reason = "+data[0].error_code)
+        this.hintmsg(data[0].error_code)
        break;
         case "game_join_ok":
-        this.game_id = data[0].game_id;
-        this.take_in_gamePoint = data[0].UserPoint
-         this.line = data[0].Line
-        this.symbol_num = data[0].Symbol_Num
-        var dat = data[0].odds
-         this.odds.push(dat.N0)
-         this.odds.push(dat.N1)
-         this.odds.push(dat.N2)
-         this.odds.push(dat.N3)
-         this.odds.push(dat.N4)
-         this.odds.push(dat.N5)
-         this.odds.push(dat.N6)
-         this.odds.push(dat.N7)
-         this.odds.push(dat.W)
-         this.odds.push(dat.S)
+
+        if(this.join_game == 0 )
+        {
+            //hope slot
+            this.game_id = data[0].game_id;
+            this.take_in_gamePoint = data[0].UserPoint
+            this.line = data[0].Line
+            this.symbol_num = data[0].Symbol_Num
+            var dat = data[0].odds
+            this.odds.push(dat.N0)
+            this.odds.push(dat.N1)
+            this.odds.push(dat.N2)
+            this.odds.push(dat.N3)
+            this.odds.push(dat.N4)
+            this.odds.push(dat.N5)
+            this.odds.push(dat.N6)
+            this.odds.push(dat.N7)
+            this.odds.push(dat.W)
+            this.odds.push(dat.S)
+        }
+
+        if(this.join_game == 2 )
+        {
+            //baccarat
+            this.game_id = data[0].game_id;
+        }
        
          this.in_game.dispatch();
 
@@ -186,6 +196,12 @@ model.prototype.eventHandle = function (name,data)
    }
 
 };
+
+model.prototype.hintmsg = function(msg)
+{
+    this.hint_msg = msg
+    this.openview.dispatch("hint"); 
+}
 
 model.prototype.pushView = function (name,view)
 {

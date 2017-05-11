@@ -96,37 +96,19 @@
 	function onAssetsLoaded()
 	{
 		trace(" onAssetsLoaded ")
-
-		//先加載freegame
-		//_model.pushView("freeGame",new FreeGame());
-		//_model.pushView("bonusGame",new BonusGame());
-
-		//warcaft
-		//Laya.loader.load([{url: "res/atlas/game.json",type: Loader.ATLAS}], Handler.create(this, onIntoGame));
-		Laya.loader.load([{url: "res/BitmapFont/tableFont.fnt",type: Loader.XML}]);
-		Laya.loader.load([{url: "res/BitmapFont/tableFont.png",type: Loader.IMAGE}]);
 		
-		Laya.loader.load([{url: "res/atlas/timer.json",type: Loader.ATLAS}]);
-		Laya.loader.load([{url: "res/atlas/Coin.json",type: Loader.ATLAS}]);
-		Laya.loader.load([{url: "res/atlas/poker.json",type: Loader.ATLAS}], Handler.create(this, onIntobaccrat));
-
-		return
 		//先加載提示元件
-		_model.pushView("hint",new HintUI());
-
-		
+		_model.pushView("hint",new HintUI());	
 
 		_model.pushView("login",new logingUI());
 		_model.current_view_name ="login";
 		Laya.stage.addChild(_model.getView("login"));
 
-		//this.stage.addChild(robotData);
 	}
 
 
 	function onlogok()
 	{
-    	trace("logok ,get lobby list")
 		_model.eventHandle("query_lobby_list",[]);
   	}
 	
@@ -134,8 +116,10 @@
 	{
 		Laya.stage.removeChild(_model.getView(_model.current_view_name));
 		_model.removeView(_model.current_view_name)
-		if( _model.current_view_name =="login") 
+
+		if( _model.current_view_name == "login") 
 		{
+			//from login -> lobby
 			trace(Laya.loader.getRes("res/atlas/loading.json"));
 			Loader.clearRes("res/atlas/loading.json")
 			trace(Laya.loader.getRes("res/atlas/loading.json"));
@@ -143,10 +127,24 @@
 		} 
 		else
 		{
-			//del game res
-			trace(Laya.loader.getRes("res/atlas/game.json"));
-			Loader.clearRes("res/atlas/game.json") 
-			trace(Laya.loader.getRes("res/atlas/game.json"));
+			//from game back to lobby  ,del game res
+			if(this.join_game == 0 )
+			{
+				
+				trace(Laya.loader.getRes("res/atlas/game.json"));
+				Loader.clearRes("res/atlas/game.json") 
+				trace(Laya.loader.getRes("res/atlas/game.json"));
+			}
+			if(this.join_game == 2 )
+			{
+				//baccarat
+				Loader.clearRes("res/BitmapFont/tableFont.fnt")
+				Loader.clearRes("res/BitmapFont/tableFont.png")
+				Loader.clearRes("res/atlas/timer.json")
+				Loader.clearRes("res/atlas/Coin.json")
+				Loader.clearRes("res/atlas/poker.json")
+			}
+			
 			Laya.loader.load([{url: "res/atlas/lobby.json",type: Loader.ATLAS}], Handler.create(this, onlobby));
 		}
 	}
@@ -177,8 +175,28 @@
 		trace(Laya.loader.getRes("res/atlas/lobby.json"));
 		Loader.clearRes("res/atlas/lobby.json"); 
 		trace(Laya.loader.getRes("res/atlas/lobby.json"));
-		Laya.loader.load([{url: "res/atlas/game.json",type: Loader.ATLAS}], Handler.create(this, onIntoGame));
-		//onIntoGame()
+
+		//judge which game
+		if( _model.join_game == 0 )
+		{
+			//先加載freegame
+			_model.pushView("freeGame",new FreeGame());
+			_model.pushView("bonusGame",new BonusGame());
+
+			//hope slot
+			Laya.loader.load([{url: "res/atlas/game.json",type: Loader.ATLAS}], Handler.create(this, onIntoGame));
+		
+		}
+		if( _model.join_game == 2 )
+		{
+			Laya.loader.load([{url: "res/BitmapFont/tableFont.fnt",type: Loader.XML}]);
+			Laya.loader.load([{url: "res/BitmapFont/tableFont.png",type: Loader.IMAGE}]);
+			
+			Laya.loader.load([{url: "res/atlas/timer.json",type: Loader.ATLAS}]);
+			Laya.loader.load([{url: "res/atlas/Coin.json",type: Loader.ATLAS}]);
+			Laya.loader.load([{url: "res/atlas/poker.json",type: Loader.ATLAS}], Handler.create(this, onIntobaccrat));
+		}
+
 	}
 
 	function onIntoGame()
@@ -233,7 +251,6 @@
 		var view = _model.getView(viewname)
 		Laya.stage.addChild(view);
 		view.onAppear();
-		//bounsGame.Intofreegame()
 	}
 	
 	function oncloseView(viewname)
