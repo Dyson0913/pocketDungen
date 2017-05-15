@@ -120,9 +120,7 @@
 		if( _model.current_view_name == "login") 
 		{
 			//from login -> lobby
-			trace(Laya.loader.getRes("res/atlas/loading.json"));
 			Loader.clearRes("res/atlas/loading.json")
-			trace(Laya.loader.getRes("res/atlas/loading.json"));
 			onlobby()
 		} 
 		else
@@ -172,9 +170,7 @@
 	{
 		Laya.stage.removeChild(_model.getView(_model.current_view_name));
 		_model.removeView(_model.current_view_name)
-		trace(Laya.loader.getRes("res/atlas/lobby.json"));
 		Loader.clearRes("res/atlas/lobby.json"); 
-		trace(Laya.loader.getRes("res/atlas/lobby.json"));
 
 		//judge which game
 		if( _model.join_game == 0 )

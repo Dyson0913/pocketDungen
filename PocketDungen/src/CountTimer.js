@@ -54,6 +54,11 @@ function CountTimer()
 
 	CountTimer.prototype.countdown = function (times)
 	{
+		self.timer.text = times
+	}
+
+	CountTimer.prototype.countdown_self = function (times)
+	{
 		self._sec = times;
 		Timer.loop(1000,this,this.count)
 	}

@@ -41,12 +41,12 @@ function baccaratUI()
 	this.comfirmBtn.on(Event.CLICK, this, betorcancel,[1]);
 
 	_model.cashin.add(oncarrying);
+	_model.countDown.add(oncountDown);
 	
 	(function()
 	{
 		//建構式
 		btn_appear(false)
-		poker_appear(false)
 		_betzone = [0,1,2]
 		_coinarr = []
 		for(i =0;i< _betzone.length;i++)
@@ -70,30 +70,21 @@ function baccaratUI()
 		if( idx ==0)
 		{
 			
-			_model.gameStateUpdate.dispatch("init");
 		}
 		if( idx ==1)
 		{
-			//poker_show(1,12)
-			_model.gameStateUpdate.dispatch("wait_bet");
-			self.countTimer.countdown(10)
 		}
 		if( idx ==2)
 		{
-			//poker_show(2,15)
-			_model.gameStateUpdate.dispatch("player_card");
-			poker_show(0,10)
+			
 		}
 		if( idx ==3)
 		{
-			//poker_show(3,11)
-			_model.gameStateUpdate.dispatch("banker_card");
 			poker_show(1,11)
 		}
 		if( idx ==4)
 		{
 			//poker_show(4,9)
-			_model.gameStateUpdate.dispatch("settle");
 		}
 		if( idx ==5)
 		{
@@ -138,21 +129,6 @@ function baccaratUI()
 		self.comfirmBtn.visible = visible
 	}
 
-	function poker_appear(visible)
-	{
-		self.poker_0.visible = visible
-		self.poker_1.visible = visible
-		self.poker_2.visible = visible
-		self.poker_3.visible = visible
-		self.poker_4.visible = visible
-		self.poker_5.visible = visible
-	}
-
-	function poker_show(idx,pokerVal)
-	{
-		self["poker_"+idx].flip(pokerVal)
-	}
-
 	function coin_add(res,idx)
 	{
 		var t = Laya.loader.getRes(res);
@@ -191,6 +167,11 @@ function baccaratUI()
 	{
 		//self.coin_amount.text = coin
 		//self.cash_amount.text = cash
+	}
+
+	function oncountDown(times)
+	{
+		self.countTimer.countdown(times)
 	}
 
 }

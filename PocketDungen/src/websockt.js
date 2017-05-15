@@ -61,8 +61,7 @@ socket.prototype.onMessage = function (message)
     //trace("message = "+message)
 
     var data = JSON.parse(message.data);
-    trace("message = ",data);        
-    // this.callback.call(this.callbackContext, data);
+    //trace("message = ",data);
    _model.eventHandle(data["state"],[data]);
    
 };

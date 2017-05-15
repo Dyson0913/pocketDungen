@@ -44,6 +44,8 @@ var model = function ()
     this.cashin =  new signals.Signal();
     this.winMoney =  new signals.Signal();
     this.gameStateUpdate = new signals.Signal();
+    this.countDown = new signals.Signal();
+    this.pokerShow = new signals.Signal();
 
     //game self
     this.spinResult =  new signals.Signal();
@@ -85,7 +87,8 @@ model.prototype.start = function ()
 
 model.prototype.eventHandle = function (name,data)
 {
-     trace("CMD = "+name)
+    trace("CMD = ",name,data)
+    var jsondata = data[0]
    switch(name) 
    {
        case "login":
@@ -110,7 +113,6 @@ model.prototype.eventHandle = function (name,data)
         this.socket.sendMessage(JSON.stringify(msg));
        break;
        case "lobby_waitting":
-        trace("lobby info=",data[0].gamelist)
         game_list = data[0].gamelist
          this.lobbylist_getok.dispatch();
         //var msg = {  "uuid": uuid,"module":"lobby","cmd":"request_gamelist"};
@@ -159,10 +161,28 @@ model.prototype.eventHandle = function (name,data)
         }
        
          this.in_game.dispatch();
-
         
        break;
-       
+        case "init":
+            _model.gameStateUpdate.dispatch(name);
+        break;
+        case "wait_bet":
+            _model.countDown.dispatch(jsondata.rest_time);
+            _model.gameStateUpdate.dispatch(name);
+        break;
+        case "player_card":
+            _model.gameStateUpdate.dispatch(name);
+            _model.pokerShow.dispatch(jsondata.playerpoker.length-1,jsondata.playerpoker[jsondata.playerpoker.length-1]);
+        break;
+        case "banker_card":
+            _model.gameStateUpdate.dispatch(name);
+            _model.pokerShow.dispatch(jsondata.bankerpoker.length+2,jsondata.bankerpoker[jsondata.bankerpoker.length-1]);
+        break;
+        case "settle":
+            trace("settle",data[0]);
+            _model.gameStateUpdate.dispatch(name);
+        break;
+        
        
         case "idle_kick":
              //pop hint ,click and go back
