@@ -9,12 +9,6 @@ var BaccaratViewUI=(function(_super){
 		    this.betzone_0=null;
 		    this.betzone_1=null;
 		    this.betzone_2=null;
-		    this.coin_0=null;
-		    this.coin_2=null;
-		    this.coin_4=null;
-		    this.coin_1=null;
-		    this.coin_3=null;
-		    this.coin_5=null;
 		    this.back_to_lobby=null;
 		    this.betzone_3=null;
 		    this.betzone_4=null;
@@ -41,13 +35,15 @@ var BaccaratViewUI=(function(_super){
 			View.regComponent("Poker3",Poker3);
 			View.regComponent("Poker4",Poker4);
 			View.regComponent("Poker5",Poker5);
+			View.regComponent("Settle",Settle);
+			View.regComponent("CoinSelect",CoinSelect);
 
 			laya.ui.Component.prototype.createChildren.call(this);
 			this.createView(BaccaratViewUI.uiView);
 		}
 
 		STATICATTR$(BaccaratViewUI,
-		['uiView',function(){return this.uiView={"type":"View","props":{"width":1280,"pivotX":1,"height":720},"child":[{"type":"Image","props":{"y":0,"x":0,"width":1280,"var":"bg","skin":"res/baccarat/bg.jpg","height":720}},{"type":"Sprite","props":{"y":437,"x":748,"width":194,"var":"betzone_0","height":190}},{"type":"Sprite","props":{"y":433,"x":338,"width":194,"var":"betzone_1","height":190}},{"type":"Sprite","props":{"y":447,"x":556,"width":171,"var":"betzone_2","height":150}},{"type":"Image","props":{"y":629,"x":244,"var":"coin_0","skin":"res/Coin/coin_10.png"}},{"type":"Image","props":{"y":636,"x":546,"var":"coin_2","skin":"res/Coin/coin_100.png"}},{"type":"Image","props":{"y":636,"x":815,"var":"coin_4","skin":"res/Coin/coin_1k.png"}},{"type":"Image","props":{"y":634,"x":394,"var":"coin_1","skin":"res/Coin/coin_50.png"}},{"type":"Image","props":{"y":632,"x":696,"var":"coin_3","skin":"res/Coin/coin_500.png"}},{"type":"Image","props":{"y":633,"x":974,"var":"coin_5","skin":"res/Coin/coin_5k.png"}},{"type":"Button","props":{"y":15,"x":30,"var":"back_to_lobby","skin":"res/share/backLobbyBtn.png"}},{"type":"Sprite","props":{"y":456,"x":970,"width":150,"var":"betzone_3","height":141}},{"type":"Sprite","props":{"y":462,"x":162,"width":150,"var":"betzone_4","height":141}},{"type":"Button","props":{"y":44,"x":265,"width":310,"var":"cancelBtn","skin":"res/share/Btn_bg.png","height":82},"child":[{"type":"Label","props":{"y":13,"x":37,"width":238,"text":"取消","height":53,"fontSize":50,"color":"#f6eaea","align":"center"}}]},{"type":"Button","props":{"y":45,"x":632,"width":310,"var":"comfirmBtn","skin":"res/share/Btn_bg.png","height":82},"child":[{"type":"Label","props":{"y":14,"x":28,"width":238,"text":"確定","height":53,"fontSize":50,"color":"#f6eaea","align":"center"}}]},{"type":"CountTimer","props":{"y":354,"x":586,"var":"countTimer","runtime":"CountTimer"}},{"type":"Poker","props":{"y":139,"x":115,"var":"poker_0","runtime":"Poker","name":"poker_0"}},{"type":"Poker","props":{"y":142,"x":307,"var":"poker_1","runtime":"Poker1","name":"poker_1"}},{"type":"Poker","props":{"y":143,"x":500,"var":"poker_2","runtime":"Poker2","name":"poker_2"}},{"type":"Poker","props":{"y":142,"x":710,"var":"poker_3","runtime":"Poker3","name":"poker_3"}},{"type":"Poker","props":{"y":140,"x":891,"var":"poker_4","runtime":"Poker4","name":"poker_4"}},{"type":"Poker","props":{"y":138,"x":1071,"var":"poker_5","runtime":"Poker5","name":"poker_5"}}]};}
+		['uiView',function(){return this.uiView={"type":"View","props":{"width":1280,"pivotX":1,"height":720},"child":[{"type":"Image","props":{"y":0,"x":0,"width":1280,"var":"bg","skin":"res/baccarat/bg.jpg","height":720}},{"type":"Sprite","props":{"y":437,"x":748,"width":194,"var":"betzone_0","height":190}},{"type":"Sprite","props":{"y":433,"x":338,"width":194,"var":"betzone_1","height":190}},{"type":"Sprite","props":{"y":447,"x":556,"width":171,"var":"betzone_2","height":150}},{"type":"Button","props":{"y":15,"x":30,"var":"back_to_lobby","skin":"res/share/backLobbyBtn.png"}},{"type":"Sprite","props":{"y":456,"x":970,"width":150,"var":"betzone_3","height":141}},{"type":"Sprite","props":{"y":462,"x":162,"width":150,"var":"betzone_4","height":141}},{"type":"Button","props":{"y":44,"x":265,"width":310,"var":"cancelBtn","skin":"res/share/Btn_bg.png","height":82},"child":[{"type":"Label","props":{"y":13,"x":37,"width":238,"text":"取消","height":53,"fontSize":50,"color":"#f6eaea","align":"center"}}]},{"type":"Button","props":{"y":45,"x":632,"width":310,"var":"comfirmBtn","skin":"res/share/Btn_bg.png","height":82},"child":[{"type":"Label","props":{"y":14,"x":28,"width":238,"text":"確定","height":53,"fontSize":50,"color":"#f6eaea","align":"center"}}]},{"type":"CountTimer","props":{"y":354,"x":586,"var":"countTimer","runtime":"CountTimer"}},{"type":"Poker","props":{"y":139,"x":115,"visible":false,"var":"poker_0","runtime":"Poker","name":"poker_0"}},{"type":"Poker","props":{"y":142,"x":307,"visible":false,"var":"poker_1","runtime":"Poker1","name":"poker_1"}},{"type":"Poker","props":{"y":143,"x":500,"visible":false,"var":"poker_2","runtime":"Poker2","name":"poker_2"}},{"type":"Poker","props":{"y":142,"x":710,"visible":false,"var":"poker_3","runtime":"Poker3","name":"poker_3"}},{"type":"Poker","props":{"y":140,"x":891,"visible":false,"var":"poker_4","runtime":"Poker4","name":"poker_4"}},{"type":"Poker","props":{"y":138,"x":1071,"visible":false,"var":"poker_5","runtime":"Poker5","name":"poker_5"}},{"type":"Settle","props":{"y":-2,"x":0,"runtime":"Settle"}},{"type":"coinSelect","props":{"y":0,"x":0,"runtime":"CoinSelect"}}]};}
 		]);
 		return BaccaratViewUI;
 	})(View);
@@ -71,6 +67,32 @@ var BonusGameUI=(function(_super){
 		['uiView',function(){return this.uiView={"type":"View","props":{"width":1280,"runtime":"BonusGame","height":720},"child":[{"type":"Label","props":{"y":332,"x":489,"width":298,"text":"BounsGame","height":60,"fontSize":30,"color":"#f9f3f3","align":"center"}}]};}
 		]);
 		return BonusGameUI;
+	})(View);
+var coinSelectUI=(function(_super){
+		function coinSelectUI(){
+			
+		    this.coin_0=null;
+		    this.coin_2=null;
+		    this.coin_4=null;
+		    this.coin_1=null;
+		    this.coin_3=null;
+		    this.coin_5=null;
+
+			coinSelectUI.__super.call(this);
+		}
+
+		CLASS$(coinSelectUI,'ui.coinSelectUI',_super);
+		var __proto__=coinSelectUI.prototype;
+		__proto__.createChildren=function(){
+		    
+			laya.ui.Component.prototype.createChildren.call(this);
+			this.createView(coinSelectUI.uiView);
+		}
+
+		STATICATTR$(coinSelectUI,
+		['uiView',function(){return this.uiView={"type":"View","props":{"width":1280,"height":720},"child":[{"type":"Image","props":{"y":627,"x":253,"var":"coin_0","skin":"res/Coin/coin_10.png"}},{"type":"Image","props":{"y":632,"x":555,"var":"coin_2","skin":"res/Coin/coin_100.png"}},{"type":"Image","props":{"y":632,"x":824,"var":"coin_4","skin":"res/Coin/coin_1k.png"}},{"type":"Image","props":{"y":630,"x":403,"var":"coin_1","skin":"res/Coin/coin_50.png"}},{"type":"Image","props":{"y":628,"x":705,"var":"coin_3","skin":"res/Coin/coin_500.png"}},{"type":"Image","props":{"y":629,"x":983,"var":"coin_5","skin":"res/Coin/coin_5k.png"}}]};}
+		]);
+		return coinSelectUI;
 	})(View);
 var CountTimerUI=(function(_super){
 		function CountTimerUI(){
@@ -236,6 +258,31 @@ var rollerUI=(function(_super){
 		['uiView',function(){return this.uiView={"type":"View","props":{"width":140,"height":140},"child":[{"type":"Image","props":{"y":0,"x":0,"width":0,"var":"imgItem","height":0},"child":[{"type":"Sprite","props":{"y":0,"x":0,"width":140,"renderType":"mask","height":420},"child":[{"type":"Rect","props":{"y":0,"x":0,"width":140,"lineWidth":1,"height":420,"fillColor":"#ff0000"}}]},{"type":"Image","props":{"y":140,"x":0,"var":"icon_2","skin":"res/game/2.jpg"}},{"type":"Image","props":{"y":0,"x":0,"var":"icon_1","skin":"res/game/1.jpg"}},{"type":"Image","props":{"y":-143,"x":0,"var":"icon_0","skin":"res/game/9.jpg"}},{"type":"Image","props":{"y":280,"x":0,"var":"icon_3","skin":"res/game/3.jpg"}},{"type":"Image","props":{"y":420,"x":0,"var":"icon_4","skin":"res/game/4.jpg"}}]}]};}
 		]);
 		return rollerUI;
+	})(View);
+var SettleUI=(function(_super){
+		function SettleUI(){
+			
+		    this.playerPoint=null;
+		    this.bankerPoint=null;
+		    this.bankerWin=null;
+		    this.playerWin=null;
+		    this.Tie=null;
+
+			SettleUI.__super.call(this);
+		}
+
+		CLASS$(SettleUI,'ui.SettleUI',_super);
+		var __proto__=SettleUI.prototype;
+		__proto__.createChildren=function(){
+		    
+			laya.ui.Component.prototype.createChildren.call(this);
+			this.createView(SettleUI.uiView);
+		}
+
+		STATICATTR$(SettleUI,
+		['uiView',function(){return this.uiView={"type":"View","props":{"width":1280,"height":720},"child":[{"type":"Image","props":{"y":62,"x":812,"skin":"res/settle/莊.png"}},{"type":"Image","props":{"y":67,"x":1007,"skin":"res/settle/莊點.png"}},{"type":"Image","props":{"y":63,"x":218,"skin":"res/settle/閒.png"}},{"type":"Image","props":{"y":63,"x":389,"skin":"res/settle/閒點.png"}},{"type":"Label","props":{"y":86,"x":284,"width":109,"var":"playerPoint","text":"10","height":32,"font":"tableFont","align":"center"}},{"type":"Label","props":{"y":82,"x":887,"width":109,"var":"bankerPoint","text":"10","height":32,"font":"tableFont","align":"center"}},{"type":"Image","props":{"y":11,"x":879,"var":"bankerWin","skin":"res/settle/庄贏.jpg"}},{"type":"Image","props":{"y":6,"x":280,"var":"playerWin","skin":"res/settle/閒贏.jpg"}},{"type":"Image","props":{"y":2,"x":577,"var":"Tie","skin":"res/settle/閒贏.jpg"}}]};}
+		]);
+		return SettleUI;
 	})(View);
 var warcraftViewUI=(function(_super){
 		function warcraftViewUI(){

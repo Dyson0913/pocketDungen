@@ -5,8 +5,7 @@ var Handler = Laya.Handler;
 var Sprite  = Laya.Sprite;
 var _model;
 var _coinarr;
-var _selectRes;
-var _coinRes;
+
 var _betzone;
 
 
@@ -30,18 +29,13 @@ function baccaratUI()
 	this.betzone_3.on(Event.CLICK, this, onbetzone,[3]);
 	this.betzone_4.on(Event.CLICK, this, onbetzone,[4]);
 	
-	this.coin_0.on(Event.CLICK, this, coin,[0]);
-	this.coin_1.on(Event.CLICK, this, coin,[1]);
-	this.coin_2.on(Event.CLICK, this, coin,[2]);
-	this.coin_3.on(Event.CLICK, this, coin,[3]);
-	this.coin_4.on(Event.CLICK, this, coin,[4]);
-	this.coin_5.on(Event.CLICK, this, coin,[5]);
+	
 
 	this.cancelBtn.on(Event.CLICK, this, betorcancel,[0]);
 	this.comfirmBtn.on(Event.CLICK, this, betorcancel,[1]);
 
 	_model.cashin.add(oncarrying);
-	_model.countDown.add(oncountDown);
+	
 	
 	(function()
 	{
@@ -53,9 +47,6 @@ function baccaratUI()
 		{
 			_coinarr.push([])
 		}
-		_coinRes = ["res/Coin/coin_10_s.png","res/Coin/coin_50_s.png","res/Coin/coin_100_s.png","res/Coin/coin_500_s.png","res/Coin/coin_1k_s.png","res/Coin/coin_5k_s.png"]
-
-		_selectRes = _coinRes[0]
 		
 		//SoundManager.playMusic("res/sound/slot_BGM.mp3")		
 	})();
@@ -80,15 +71,14 @@ function baccaratUI()
 		}
 		if( idx ==3)
 		{
-			poker_show(1,11)
+			
 		}
 		if( idx ==4)
 		{
-			//poker_show(4,9)
+			
 		}
 		if( idx ==5)
 		{
-			//poker_show(5,17)
 		}
 
 		
@@ -97,10 +87,7 @@ function baccaratUI()
 		btn_appear(true)
 	}
 
-	function coin(idx)
-	{
-		_selectRes = _coinRes[idx]
-	}
+	
 
 	function betorcancel(idx)
 	{
@@ -167,11 +154,6 @@ function baccaratUI()
 	{
 		//self.coin_amount.text = coin
 		//self.cash_amount.text = cash
-	}
-
-	function oncountDown(times)
-	{
-		self.countTimer.countdown(times)
 	}
 
 }

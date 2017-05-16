@@ -1,6 +1,11 @@
 
+//font
+var BitmapFont = laya.display.BitmapFont;
+var Text       = Laya.Text;
+
 //dictionary
-var Scene={};
+var Scene={}; //Scene
+var font={};
 
 var current_view_name;
 //loging & lobby
@@ -46,6 +51,7 @@ var model = function ()
     this.gameStateUpdate = new signals.Signal();
     this.countDown = new signals.Signal();
     this.pokerShow = new signals.Signal();
+    this.settleInfo = new signals.Signal();
 
     //game self
     this.spinResult =  new signals.Signal();
@@ -167,8 +173,9 @@ model.prototype.eventHandle = function (name,data)
             _model.gameStateUpdate.dispatch(name);
         break;
         case "wait_bet":
-            _model.countDown.dispatch(jsondata.rest_time);
             _model.gameStateUpdate.dispatch(name);
+            _model.countDown.dispatch(jsondata.rest_time);
+            
         break;
         case "player_card":
             _model.gameStateUpdate.dispatch(name);
@@ -179,8 +186,8 @@ model.prototype.eventHandle = function (name,data)
             _model.pokerShow.dispatch(jsondata.bankerpoker.length+2,jsondata.bankerpoker[jsondata.bankerpoker.length-1]);
         break;
         case "settle":
-            trace("settle",data[0]);
             _model.gameStateUpdate.dispatch(name);
+            _model.settleInfo.dispatch(jsondata.winstate,jsondata.settlePoint, jsondata.settle)
         break;
         
        
@@ -241,4 +248,25 @@ model.prototype.getView = function (name)
 model.prototype.appearidx = function (state)
 {
    return this.gameState.indexOf(state)
+}
+
+function regFont(fontFileName,path)
+{
+    var test_filename = fontFileName;
+    var pat = /.fnt/;
+    var test_fontFileName = test_filename.replace(pat,"");
+    
+    //font exsit
+    if (font[test_fontFileName] != null) reutrn
+
+    var newFont = new BitmapFont()
+    var fnt = Laya.loader.getRes(fontFileName);
+    var fntTxt = Laya.loader.getRes(path);
+    newFont.parseFont(fnt, fntTxt);
+
+    var pat = /.fnt/;
+    fontFileName = fontFileName.replace(pat,"");
+
+    Text.registerBitmapFont(fontFileName, newFont);
+    font[fontFileName] = newFont
 }

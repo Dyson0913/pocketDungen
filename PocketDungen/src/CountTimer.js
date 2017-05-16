@@ -6,8 +6,6 @@ var _sec;
 
 var _model = model.getInstance();
 
-var BitmapFont = laya.display.BitmapFont;
-var Text       = Laya.Text;
 
 
 function CountTimer()
@@ -16,6 +14,7 @@ function CountTimer()
 	CountTimer.super(this);
 	
 	_model.gameStateUpdate.add(onState);
+	_model.countDown.add(oncountDown);
 
 	(function()
 	{
@@ -29,7 +28,7 @@ function CountTimer()
 		if( _model.appearidx(state) == 1)
 		{
 			self.visible = true;
-			regFont("res/BitmapFont/tableFont.fnt", "res/BitmapFont/tableFont.png");
+			_model.regFont("res/BitmapFont/tableFont.fnt", "res/BitmapFont/tableFont.png");
 			self.timer.font = "res/BitmapFont/tableFont";
 		}
 		else
@@ -39,18 +38,10 @@ function CountTimer()
 			
 	}
 
-	function regFont(fontFileName,path)
+	function oncountDown(times)
 	{
-            var newFont = new BitmapFont()
-            var fnt = Laya.loader.getRes(fontFileName);
-            var fntTxt = Laya.loader.getRes(path);
-            newFont.parseFont(fnt, fntTxt);
-
-            var pat = /.fnt/;
-            fontFileName = fontFileName.replace(pat,"");
-
-            Text.registerBitmapFont(fontFileName, newFont);           
-     }
+		self.countdown(times)
+	}
 
 	CountTimer.prototype.countdown = function (times)
 	{

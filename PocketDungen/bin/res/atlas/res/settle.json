@@ -1,0 +1,138 @@
+{
+    "frames": {
+        "绍墓.jpg": {
+            "frame": {
+                "x": 0,
+                "y": 0,
+                "w": 119,
+                "h": 58,
+                "idx": 0
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 119,
+                "h": 58
+            },
+            "sourceSize": {
+                "w": 119,
+                "h": 58
+            },
+            "rotated": false,
+            "trimed": false
+        },
+        "盯墓.jpg": {
+            "frame": {
+                "x": 0,
+                "y": 60,
+                "w": 119,
+                "h": 58,
+                "idx": 0
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 119,
+                "h": 58
+            },
+            "sourceSize": {
+                "w": 119,
+                "h": 58
+            },
+            "rotated": false,
+            "trimed": false
+        },
+        "缠.png": {
+            "frame": {
+                "x": 121,
+                "y": 0,
+                "w": 56,
+                "h": 60,
+                "idx": 0
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 56,
+                "h": 60
+            },
+            "sourceSize": {
+                "w": 56,
+                "h": 60
+            },
+            "rotated": false,
+            "trimed": false
+        },
+        "缠翴.png": {
+            "frame": {
+                "x": 121,
+                "y": 62,
+                "w": 56,
+                "h": 60,
+                "idx": 0
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 56,
+                "h": 60
+            },
+            "sourceSize": {
+                "w": 56,
+                "h": 60
+            },
+            "rotated": false,
+            "trimed": false
+        },
+        "盯.png": {
+            "frame": {
+                "x": 0,
+                "y": 120,
+                "w": 56,
+                "h": 60,
+                "idx": 0
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 56,
+                "h": 60
+            },
+            "sourceSize": {
+                "w": 56,
+                "h": 60
+            },
+            "rotated": false,
+            "trimed": false
+        },
+        "盯翴.png": {
+            "frame": {
+                "x": 58,
+                "y": 120,
+                "w": 56,
+                "h": 60,
+                "idx": 0
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 56,
+                "h": 60
+            },
+            "sourceSize": {
+                "w": 56,
+                "h": 60
+            },
+            "rotated": false,
+            "trimed": false
+        }
+    },
+    "meta": {
+        "app": "http:\/\/www.layabox.com",
+        "version": "0.1.0 alpha",
+        "format": "json",
+        "scale": 1,
+        "image": "settle.png",
+        "prefix": "res\/settle\/"
+    }
+}

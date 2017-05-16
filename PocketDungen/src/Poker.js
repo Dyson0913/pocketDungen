@@ -152,7 +152,7 @@ function Poker2()
 
 	function onState(state)
 	{
-		if( _model.appearidx(state) == 2 || _model.appearidx(state) == 3)
+		if( _model.appearidx(state) == 2 || _model.appearidx(state) == 3 )
 		{
 			var namelist = self.name.split("_")
 			self._idx = namelist[1]
