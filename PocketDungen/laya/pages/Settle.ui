@@ -22,7 +22,7 @@
         {
             "x":15,
             "type":"Image",
-            "props":{"y":62,"x":812,"skin":"res/settle/莊.png"},
+            "props":{"y":62,"x":812,"skin":"res/settle/banker.png"},
             "nodeParent":1,
             "label":"Image",
             "isOpen":true,
@@ -32,7 +32,7 @@
             "frames":[
                 {
                     "type":1,
-                    "props":{"y":390,"x":275,"skin":"res/settle/莊.png"},
+                    "props":{"y":390,"x":275,"skin":"res/settle/banker.png"},
                     "frame":0,
                     "__InPool":false
                 }],
@@ -43,7 +43,7 @@
         {
             "x":15,
             "type":"Image",
-            "props":{"y":67,"x":1007,"skin":"res/settle/莊點.png"},
+            "props":{"y":67,"x":1007,"skin":"res/settle/bankerpoint.png"},
             "nodeParent":1,
             "label":"Image",
             "isDirectory":false,
@@ -52,7 +52,7 @@
             "frames":[
                 {
                     "type":1,
-                    "props":{"y":509,"x":470,"skin":"res/settle/莊點.png"},
+                    "props":{"y":509,"x":470,"skin":"res/settle/bankerpoint.png"},
                     "frame":0,
                     "__InPool":false
                 }],
@@ -63,7 +63,7 @@
         {
             "x":15,
             "type":"Image",
-            "props":{"y":63,"x":218,"skin":"res/settle/閒.png"},
+            "props":{"y":63,"x":218,"skin":"res/settle/player.png"},
             "nodeParent":1,
             "label":"Image",
             "isDirectory":false,
@@ -72,7 +72,7 @@
             "frames":[
                 {
                     "type":1,
-                    "props":{"y":377,"x":743,"skin":"res/settle/閒.png"},
+                    "props":{"y":377,"x":743,"skin":"res/settle/player.png"},
                     "frame":0,
                     "__InPool":false
                 }],
@@ -83,7 +83,7 @@
         {
             "x":15,
             "type":"Image",
-            "props":{"y":63,"x":389,"skin":"res/settle/閒點.png"},
+            "props":{"y":63,"x":389,"skin":"res/settle/playerpoint.png"},
             "nodeParent":1,
             "label":"Image",
             "isDirectory":false,
@@ -92,7 +92,7 @@
             "frames":[
                 {
                     "type":1,
-                    "props":{"y":382,"x":1040,"skin":"res/settle/閒點.png"},
+                    "props":{"y":382,"x":1040,"skin":"res/settle/playerpoint.png"},
                     "frame":0,
                     "__InPool":false
                 }],
@@ -143,7 +143,7 @@
         {
             "x":15,
             "type":"Image",
-            "props":{"y":11,"x":879,"var":"bankerWin","skin":"res/settle/庄贏.jpg"},
+            "props":{"y":11,"x":879,"var":"bankerWin","skin":"res/settle/bankerwin.jpg"},
             "nodeParent":1,
             "label":"Image(bankerWin)",
             "isDirectory":false,
@@ -152,7 +152,7 @@
             "frames":[
                 {
                     "type":1,
-                    "props":{"y":326,"x":616,"skin":"res/settle/庄贏.jpg"},
+                    "props":{"y":326,"x":616,"skin":"res/settle/bankerwin.jpg"},
                     "frame":0,
                     "__InPool":false
                 }],
@@ -163,7 +163,7 @@
         {
             "x":15,
             "type":"Image",
-            "props":{"y":6,"x":280,"var":"playerWin","skin":"res/settle/閒贏.jpg"},
+            "props":{"y":6,"x":280,"var":"playerWin","skin":"res/settle/playerwin.jpg"},
             "nodeParent":1,
             "label":"Image(playerWin)",
             "isDirectory":false,
@@ -172,7 +172,7 @@
             "frames":[
                 {
                     "type":1,
-                    "props":{"y":350,"x":346,"skin":"res/settle/閒贏.jpg"},
+                    "props":{"y":350,"x":346,"skin":"res/settle/playerwin.jpg"},
                     "frame":0,
                     "__InPool":false
                 }],
@@ -183,7 +183,7 @@
         {
             "x":15,
             "type":"Image",
-            "props":{"y":2,"x":577,"var":"Tie","skin":"res/settle/閒贏.jpg"},
+            "props":{"y":2,"x":577,"var":"Tie","skin":"res/settle/tie.png"},
             "nodeParent":1,
             "label":"Image(Tie)",
             "isDirectory":false,
@@ -192,7 +192,7 @@
             "frames":[
                 {
                     "type":1,
-                    "props":{"y":350,"x":346,"skin":"res/settle/閒贏.jpg"},
+                    "props":{"y":350,"x":346,"skin":"res/settle/playerwin.jpg"},
                     "frame":0,
                     "__InPool":false
                 }],

@@ -250,14 +250,14 @@ model.prototype.appearidx = function (state)
    return this.gameState.indexOf(state)
 }
 
-function regFont(fontFileName,path)
+model.prototype.regFont = function(fontFileName,path)
 {
     var test_filename = fontFileName;
     var pat = /.fnt/;
     var test_fontFileName = test_filename.replace(pat,"");
     
     //font exsit
-    if (font[test_fontFileName] != null) reutrn
+    if (font[test_fontFileName] != null) return
 
     var newFont = new BitmapFont()
     var fnt = Laya.loader.getRes(fontFileName);

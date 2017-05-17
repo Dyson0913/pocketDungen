@@ -22,7 +22,7 @@ function Poker()
 
 	function onState(state)
 	{
-		if( _model.appearidx(state) == 2 || _model.appearidx(state) == 3)
+		if( _model.appearidx(state) == 2 || _model.appearidx(state) == 3 || _model.appearidx(state) == 4)
 		{
 			var namelist = self.name.split("_")
 			self._idx = namelist[1]
@@ -87,7 +87,7 @@ function Poker1()
 
 	function onState(state)
 	{
-		if( _model.appearidx(state) == 2 || _model.appearidx(state) == 3)
+		if( _model.appearidx(state) == 2 || _model.appearidx(state) == 3 || _model.appearidx(state) == 4)
 		{
 			var namelist = self.name.split("_")
 			self._idx = namelist[1]
@@ -152,13 +152,14 @@ function Poker2()
 
 	function onState(state)
 	{
-		if( _model.appearidx(state) == 2 || _model.appearidx(state) == 3 )
+		if( _model.appearidx(state) == 2 || _model.appearidx(state) == 3 || _model.appearidx(state) == 4)
 		{
 			var namelist = self.name.split("_")
 			self._idx = namelist[1]
 			//last one show when need
 			if( self._idx  == 2 || self._idx == 5)
 			{
+				if( self._val !=undefined ) return
 				self.visible = false;
 				return;
 			} 
@@ -217,7 +218,7 @@ function Poker3()
 
 	function onState(state)
 	{
-		if( _model.appearidx(state) == 2 || _model.appearidx(state) == 3)
+		if( _model.appearidx(state) == 2 || _model.appearidx(state) == 3 || _model.appearidx(state) == 4)
 		{
 			var namelist = self.name.split("_")
 			self._idx = namelist[1]
@@ -282,7 +283,7 @@ function Poker4()
 
 	function onState(state)
 	{
-		if( _model.appearidx(state) == 2 || _model.appearidx(state) == 3)
+		if( _model.appearidx(state) == 2 || _model.appearidx(state) == 3 || _model.appearidx(state) == 4)
 		{
 			var namelist = self.name.split("_")
 			self._idx = namelist[1]
@@ -347,13 +348,14 @@ function Poker5()
 
 	function onState(state)
 	{
-		if( _model.appearidx(state) == 2 || _model.appearidx(state) == 3)
+		if( _model.appearidx(state) == 2 || _model.appearidx(state) == 3 || _model.appearidx(state) == 4)
 		{
 			var namelist = self.name.split("_")
 			self._idx = namelist[1]
 			//last one show when need
 			if( self._idx  == 2 || self._idx == 5)
 			{
+				if( self._val !=undefined ) return
 				self.visible = false;
 				return;
 			} 
