@@ -131,7 +131,23 @@ model.prototype.eventHandle = function (name,data)
         this.total_Credit = data[0].total_Credit
        break;
 
-       
+       case "takein"
+         this.take_in_gamePoint = jsondata
+        var msg = {"uuid": this.uuid,"module":"credit","cmd":"take_in","takein_credit":jsondata,"game":game_list[this.join_game]["game"]};
+        this.send_pack(msg)
+        break;
+        case "takein_result"
+         if( data[0].result == "ok")
+         {
+             
+             _model.eventHandle("join_game",[]);
+         }
+         else
+         {
+             this.hintmsg(data[0].reason)
+         }
+        
+        break;
 
         case "leave_game":
          var msg = {"uuid": this.uuid,"module":game_list[this.join_game]["game"],"room":"1","cmd":"leave_game","game_id":this.game_id};
