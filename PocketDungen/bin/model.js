@@ -15,6 +15,7 @@ var uuid;
 var game_list;
 var join_game;
 var game_id;
+var total_Credit;
 
 //TODO total_point
 var gameState;
@@ -111,29 +112,34 @@ model.prototype.eventHandle = function (name,data)
         break;
        case "login_ok":
         this.uuid = data[0].uuid;
-       
         this.login_ok.dispatch();
        break;
        case "query_lobby_list":
         var msg = {"uuid": this.uuid,"module":"lobby","cmd":"request_gamelist"};
-        this.socket.sendMessage(JSON.stringify(msg));
+        this.send_pack(msg)
        break;
        case "lobby_waitting":
-        game_list = data[0].gamelist
+        this.game_list = data[0].gamelist
          this.lobbylist_getok.dispatch();
-        //var msg = {  "uuid": uuid,"module":"lobby","cmd":"request_gamelist"};
-        //this.socket.sendMessage(msg);
        break;
+
+       case "query_user_credit":
+        var msg = {"uuid": this.uuid,"module":"credit","cmd":"query_credit"};
+        this.send_pack(msg)
+        break;
+        case "userCredit_update":
+        this.total_Credit = data[0].total_Credit
+       break;
+
+       
+
         case "leave_game":
          var msg = {"uuid": this.uuid,"module":game_list[this.join_game]["game"],"room":"1","cmd":"leave_game","game_id":this.game_id};
-         this.socket.sendMessage(JSON.stringify(msg));
+         this.send_pack(msg)
        break;
        case "join_game":
-        //trace("list ="+game_list)
-        //trace("join ="+this.join_game)
-       //  trace("join ="+game_list[this.join_game]);
        var msg = {"uuid": this.uuid,"module":game_list[this.join_game]["game"],"room":"1","cmd":"request_join"};
-        this.socket.sendMessage(JSON.stringify(msg));
+        this.send_pack(msg)
        break;
        case "game_join_fail":
         this.hintmsg(data[0].error_code)
@@ -200,9 +206,8 @@ model.prototype.eventHandle = function (name,data)
 
        //game action
         case "spin":
-        trace("betamount = "+this.betamount);
          var msg = {"uuid": this.uuid,"module":game_list[this.join_game],"cmd":"gamespin","Line":25,"Bet":this.betamount};
-         this.socket.sendMessage(JSON.stringify(msg));
+         this.send_pack(msg)
         break;
         case "spin_result":
          var result = data[0].gameResult
@@ -224,6 +229,12 @@ model.prototype.eventHandle = function (name,data)
 
 };
 
+model.prototype.send_pack = function(msg)
+{
+     this.socket.sendMessage(JSON.stringify(msg));
+}
+
+//call hintmsg
 model.prototype.hintmsg = function(msg)
 {
     this.hint_msg = msg

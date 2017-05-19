@@ -105,9 +105,30 @@
             "rotated": false,
             "trimed": false
         },
-        "PlayerListCloseBtn.png": {
+        "btn_close.png": {
             "frame": {
                 "x": 221,
+                "y": 206,
+                "w": 43,
+                "h": 126,
+                "idx": 0
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 43,
+                "h": 126
+            },
+            "sourceSize": {
+                "w": 43,
+                "h": 126
+            },
+            "rotated": false,
+            "trimed": false
+        },
+        "PlayerListCloseBtn.png": {
+            "frame": {
+                "x": 266,
                 "y": 206,
                 "w": 41,
                 "h": 129,
@@ -128,7 +149,7 @@
         },
         "02.png": {
             "frame": {
-                "x": 307,
+                "x": 309,
                 "y": 0,
                 "w": 3,
                 "h": 338,
@@ -143,6 +164,48 @@
             "sourceSize": {
                 "w": 3,
                 "h": 338
+            },
+            "rotated": false,
+            "trimed": false
+        },
+        "03.png": {
+            "frame": {
+                "x": 314,
+                "y": 0,
+                "w": 3,
+                "h": 248,
+                "idx": 0
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 3,
+                "h": 248
+            },
+            "sourceSize": {
+                "w": 3,
+                "h": 248
+            },
+            "rotated": false,
+            "trimed": false
+        },
+        "04.png": {
+            "frame": {
+                "x": 319,
+                "y": 0,
+                "w": 3,
+                "h": 238,
+                "idx": 0
+            },
+            "spriteSourceSize": {
+                "x": 0,
+                "y": 0,
+                "w": 3,
+                "h": 238
+            },
+            "sourceSize": {
+                "w": 3,
+                "h": 238
             },
             "rotated": false,
             "trimed": false

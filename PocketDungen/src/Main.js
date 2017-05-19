@@ -98,18 +98,20 @@
 		trace(" onAssetsLoaded ")
 		
 		//先加載提示元件
-		_model.pushView("hint",new HintUI());	
+		_model.pushView("hint",new HintUI());
+		_model.pushView("takeIn",new TakeIn());
 
 		_model.pushView("login",new logingUI());
 		_model.current_view_name ="login";
 		Laya.stage.addChild(_model.getView("login"));
-
 	}
 
 
 	function onlogok()
 	{
+		//login ok asking lobbylist & usercredit
 		_model.eventHandle("query_lobby_list",[]);
+		_model.eventHandle("query_user_credit",[]);
   	}
 	
 	function onloadlobby()

@@ -20,8 +20,13 @@ function lobbyUI()
 
 	function onBtnClick2()
 	{
-		_model.join_game = 2;
-		_model.eventHandle("join_game",[]);
+		//take in 
+		
+		//_model.eventHandle("takein",[]);
+
+		//join game
+		//_model.join_game = 2;
+		//_model.eventHandle("join_game",[]);
 	}
 	
 	

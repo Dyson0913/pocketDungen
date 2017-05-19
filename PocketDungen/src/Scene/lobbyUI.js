@@ -21,7 +21,8 @@ function lobbyUI()
 	function onBtnClick2()
 	{
 		//take in 
-		_model.eventHandle("takein",[]);
+		
+		//_model.eventHandle("takein",[]);
 
 		//join game
 		//_model.join_game = 2;

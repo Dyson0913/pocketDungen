@@ -2,7 +2,7 @@
     "x":0,
     "type":"View",
     "selectedBox":1,
-    "selecteID":48,
+    "selecteID":51,
     "props":{"width":1280,"sceneColor":"#000000","pivotX":1,"height":720},
     "nodeParent":-1,
     "label":"View",
@@ -243,8 +243,8 @@
         {
             "x":15,
             "type":"UIView",
-            "source":"CountTimer.ui",
-            "props":{"y":354,"x":586,"var":"countTimer","runtime":"CountTimer"},
+            "source":"component/CountTimer.ui",
+            "props":{"y":356,"x":580,"var":"countTimer","runtime":"CountTimer"},
             "nodeParent":1,
             "label":"UIView(countTimer)",
             "isDirectory":false,
@@ -253,19 +253,19 @@
             "frames":[
                 {
                     "type":1,
-                    "props":{"y":394,"x":614},
+                    "props":{"y":360,"x":500},
                     "frame":0,
                     "__InPool":false
                 }],
-            "compId":40,
+            "compId":50,
             "child":[
                 ]
         },
         {
             "x":15,
             "type":"UIView",
-            "source":"Poker.ui",
-            "props":{"y":139,"x":115,"visible":false,"var":"poker_0","runtime":"Poker","name":"poker_0"},
+            "source":"component/Poker.ui",
+            "props":{"y":139,"x":94,"var":"poker_0","runtime":"Poker","name":"poker_0"},
             "nodeParent":1,
             "label":"UIView(poker_0)",
             "isDirectory":false,
@@ -274,19 +274,19 @@
             "frames":[
                 {
                     "type":1,
-                    "props":{"y":241,"x":200},
+                    "props":{"y":307,"x":160},
                     "frame":0,
                     "__InPool":false
                 }],
-            "compId":41,
+            "compId":51,
             "child":[
                 ]
         },
         {
             "x":15,
             "type":"UIView",
-            "source":"Poker.ui",
-            "props":{"y":142,"x":307,"visible":false,"var":"poker_1","runtime":"Poker1","name":"poker_1"},
+            "source":"component/Poker.ui",
+            "props":{"y":138,"x":274,"var":"poker_1","runtime":"Poker1","name":"poker_1"},
             "nodeParent":1,
             "label":"UIView(poker_1)",
             "isDirectory":false,
@@ -295,19 +295,19 @@
             "frames":[
                 {
                     "type":1,
-                    "props":{"y":241,"x":200},
+                    "props":{"y":286,"x":369},
                     "frame":0,
                     "__InPool":false
                 }],
-            "compId":42,
+            "compId":52,
             "child":[
                 ]
         },
         {
             "x":15,
             "type":"UIView",
-            "source":"Poker.ui",
-            "props":{"y":143,"x":500,"visible":false,"var":"poker_2","runtime":"Poker2","name":"poker_2"},
+            "source":"component/Poker.ui",
+            "props":{"y":139,"x":468,"var":"poker_2","runtime":"Poker2","name":"poker_2"},
             "nodeParent":1,
             "label":"UIView(poker_2)",
             "isDirectory":false,
@@ -316,19 +316,19 @@
             "frames":[
                 {
                     "type":1,
-                    "props":{"y":241,"x":200},
+                    "props":{"y":311,"x":536},
                     "frame":0,
                     "__InPool":false
                 }],
-            "compId":43,
+            "compId":53,
             "child":[
                 ]
         },
         {
             "x":15,
             "type":"UIView",
-            "source":"Poker.ui",
-            "props":{"y":142,"x":710,"visible":false,"var":"poker_3","runtime":"Poker3","name":"poker_3"},
+            "source":"component/Poker.ui",
+            "props":{"y":140,"x":681,"var":"poker_3","runtime":"Poker3","name":"poker_3"},
             "nodeParent":1,
             "label":"UIView(poker_3)",
             "isDirectory":false,
@@ -337,19 +337,19 @@
             "frames":[
                 {
                     "type":1,
-                    "props":{"y":241,"x":200},
+                    "props":{"y":330,"x":760},
                     "frame":0,
                     "__InPool":false
                 }],
-            "compId":44,
+            "compId":54,
             "child":[
                 ]
         },
         {
             "x":15,
             "type":"UIView",
-            "source":"Poker.ui",
-            "props":{"y":140,"x":891,"visible":false,"var":"poker_4","runtime":"Poker4","name":"poker_4"},
+            "source":"component/Poker.ui",
+            "props":{"y":140,"x":870,"var":"poker_4","runtime":"Poker4","name":"poker_4"},
             "nodeParent":1,
             "label":"UIView(poker_4)",
             "isDirectory":false,
@@ -358,19 +358,19 @@
             "frames":[
                 {
                     "type":1,
-                    "props":{"y":241,"x":200},
+                    "props":{"y":441,"x":934},
                     "frame":0,
                     "__InPool":false
                 }],
-            "compId":45,
+            "compId":55,
             "child":[
                 ]
         },
         {
             "x":15,
             "type":"UIView",
-            "source":"Poker.ui",
-            "props":{"y":138,"x":1071,"visible":false,"var":"poker_5","runtime":"Poker5","name":"poker_5"},
+            "source":"component/Poker.ui",
+            "props":{"y":142,"x":1066,"var":"poker_5","runtime":"Poker5","name":"poker_5"},
             "nodeParent":1,
             "label":"UIView(poker_5)",
             "isDirectory":false,
@@ -379,19 +379,19 @@
             "frames":[
                 {
                     "type":1,
-                    "props":{"y":241,"x":200},
+                    "props":{"y":451,"x":1071},
                     "frame":0,
                     "__InPool":false
                 }],
-            "compId":46,
+            "compId":56,
             "child":[
                 ]
         },
         {
             "x":15,
             "type":"UIView",
-            "source":"Settle.ui",
-            "props":{"y":-2,"x":0,"visible":false,"runtime":"Settle"},
+            "source":"component/coinSelect.ui",
+            "props":{"runtime":"CoinSelect"},
             "nodeParent":1,
             "label":"UIView",
             "isDirectory":false,
@@ -400,20 +400,19 @@
             "frames":[
                 {
                     "type":1,
-                    "props":{"y":281,"x":271},
+                    "props":{"y":383,"x":211},
                     "frame":0,
                     "__InPool":false
                 }],
-            "compId":47,
+            "compId":57,
             "child":[
-                ],
-            "$HIDDEN":false
+                ]
         },
         {
             "x":15,
             "type":"UIView",
-            "source":"coinSelect.ui",
-            "props":{"y":0,"x":0,"visible":false,"runtime":"CoinSelect"},
+            "source":"component/Settle.ui",
+            "props":{"y":0,"x":0,"runtime":"Settle"},
             "nodeParent":1,
             "label":"UIView",
             "isDirectory":false,
@@ -422,11 +421,11 @@
             "frames":[
                 {
                     "type":1,
-                    "props":{"y":288,"x":253},
+                    "props":{"y":241,"x":171},
                     "frame":0,
                     "__InPool":false
                 }],
-            "compId":48,
+            "compId":58,
             "child":[
                 ]
         }],
