@@ -27,14 +27,19 @@ function TakeIn()
 
 	function onTakeIn()
 	{
-		
-		if( self.inputtext > _model.total_Credit ) 
+		if (!self.inputtext.text )
 		{
-			_model.hintmsg("takin to much")
+			_model.hintmsg("請輸入帶入金額")
 			return
 		}
 
-		_model.eventHandle("takein",[this.inputtext.text]);
+		if( self.inputtext > _model.total_Credit ) 
+		{
+			_model.hintmsg("帶入超過上限")
+			return
+		}
+
+		_model.eventHandle("takein",[Number(this.inputtext.text)]);
    	}
 
 	function onclose()

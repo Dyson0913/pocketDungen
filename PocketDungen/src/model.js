@@ -21,7 +21,7 @@ var total_Credit;
 var gameState;
 
 //game command
-var take_in_gamePoint =2000;
+var take_in_gamePoint;
 
 //eash game
 var line;  //幾輪幾線的線
@@ -131,15 +131,14 @@ model.prototype.eventHandle = function (name,data)
         this.total_Credit = data[0].total_Credit
        break;
 
-       case "takein"
+       case "takein":
          this.take_in_gamePoint = jsondata
-        var msg = {"uuid": this.uuid,"module":"credit","cmd":"take_in","takein_credit":jsondata,"game":game_list[this.join_game]["game"]};
+        var msg = {"uuid": this.uuid,"module":"credit","cmd":"take_in","takein_credit":jsondata,"game":this.game_list[this.join_game]["game"]};
         this.send_pack(msg)
         break;
-        case "takein_result"
+        case "takein_result":
          if( data[0].result == "ok")
          {
-             
              _model.eventHandle("join_game",[]);
          }
          else
@@ -149,13 +148,15 @@ model.prototype.eventHandle = function (name,data)
         
         break;
 
+         case "join_game":
+       var msg = {"uuid": this.uuid,"module":this.game_list[this.join_game]["game"],"room":"1","cmd":"request_join"};
+        this.send_pack(msg)
+        
         case "leave_game":
-         var msg = {"uuid": this.uuid,"module":game_list[this.join_game]["game"],"room":"1","cmd":"leave_game","game_id":this.game_id};
+         var msg = {"uuid": this.uuid,"module":this.game_list[this.join_game]["game"],"room":"1","cmd":"leave_game","game_id":this.game_id};
          this.send_pack(msg)
        break;
-       case "join_game":
-       var msg = {"uuid": this.uuid,"module":game_list[this.join_game]["game"],"room":"1","cmd":"request_join"};
-        this.send_pack(msg)
+      
        break;
        case "game_join_fail":
         this.hintmsg(data[0].error_code)

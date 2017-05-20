@@ -22,14 +22,25 @@ function TakeIn()
 	TakeIn.prototype.onAppear = function()
 	{
 		//point 
-		self.inputtext.prompt = "100 ~" + _model.total_Credit
+		this.inputtext.prompt = "100 ~" + _model.total_Credit
 	}
 
 	function onTakeIn()
 	{
-		trace("inin")
-         // _model.comfirmHint.dispatch();
-   }
+		if (!self.inputtext.text )
+		{
+			_model.hintmsg("請輸入帶入金額")
+			return
+		}
+
+		if( self.inputtext > _model.total_Credit ) 
+		{
+			_model.hintmsg("帶入超過上限")
+			return
+		}
+
+		_model.eventHandle("takein",[Number(this.inputtext.text)]);
+   	}
 
 	function onclose()
 	{		

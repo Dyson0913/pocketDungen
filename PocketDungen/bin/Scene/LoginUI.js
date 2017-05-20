@@ -29,7 +29,7 @@ function logingUI()
 
 	function onBtnClick2()
 	{		
-		 _model.openview.dispatch("takeIn"); 
+		 
 	}
 
 }
