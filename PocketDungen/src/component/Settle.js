@@ -15,7 +15,7 @@ function Settle()
 
 	(function()
 	{
-
+		self.visible = false;
 	})();
 
 	function onState(state)

@@ -17,7 +17,7 @@ function Poker()
 
 	(function()
 	{
-
+		self.visible = false;
 	})();
 
 	function onState(state)
@@ -82,7 +82,7 @@ function Poker1()
 
 	(function()
 	{
-
+		self.visible = false;
 	})();
 
 	function onState(state)
@@ -147,7 +147,7 @@ function Poker2()
 
 	(function()
 	{
-
+		self.visible = false;
 	})();
 
 	function onState(state)
@@ -213,7 +213,7 @@ function Poker3()
 
 	(function()
 	{
-
+		self.visible = false;
 	})();
 
 	function onState(state)
@@ -278,7 +278,7 @@ function Poker4()
 
 	(function()
 	{
-
+		self.visible = false;
 	})();
 
 	function onState(state)
@@ -343,7 +343,7 @@ function Poker5()
 
 	(function()
 	{
-
+		self.visible = false;
 	})();
 
 	function onState(state)

@@ -18,8 +18,7 @@ function CountTimer()
 
 	(function()
 	{
-		
-		
+		self.visible = false;
 
 	})();
 

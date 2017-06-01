@@ -14,10 +14,11 @@ var login_pw;
 var uuid;
 var game_list;
 var join_game;
+var join_group;
 var game_id;
 var total_Credit;
 
-//TODO total_point
+//joined game state
 var gameState;
 
 //game command
@@ -133,8 +134,12 @@ model.prototype.eventHandle = function (name,data)
 
        case "takein":
          this.take_in_gamePoint = jsondata
-        var msg = {"uuid": this.uuid,"module":"credit","cmd":"take_in","takein_credit":jsondata,"game":this.game_list[this.join_game]["game"]};
+         var join_id = this.game_list[this.join_game]["game"]+"_"+_model.join_group
+        var msg = {"uuid": this.uuid,"module":"credit","cmd":"take_in","takein_credit":jsondata,"game":join_id};
         this.send_pack(msg)
+
+        // var msg = {"uuid": this.uuid,"module":"credit","cmd":"take_in","takein_credit":jsondata,"game":this.game_list[1]["game"]};
+        // this.send_pack(msg)
         break;
         case "takein_result":
          if( data[0].result == "ok")
@@ -149,15 +154,16 @@ model.prototype.eventHandle = function (name,data)
         break;
 
          case "join_game":
-       var msg = {"uuid": this.uuid,"module":this.game_list[this.join_game]["game"],"room":"1","cmd":"request_join"};
-        this.send_pack(msg)
-        
+             var msg = {"uuid": this.uuid,"module":this.game_list[this.join_game]["game"],"room":this.join_group,"cmd":"request_join"};
+            this.send_pack(msg)
+        break;
+
         case "leave_game":
-         var msg = {"uuid": this.uuid,"module":this.game_list[this.join_game]["game"],"room":"1","cmd":"leave_game","game_id":this.game_id};
+         var msg = {"uuid": this.uuid,"module":this.game_list[this.join_game]["game"],"room":this.join_group,"cmd":"leave_game","game_id":this.game_id};
          this.send_pack(msg)
        break;
       
-       break;
+       
        case "game_join_fail":
         this.hintmsg(data[0].error_code)
        break;
@@ -167,7 +173,7 @@ model.prototype.eventHandle = function (name,data)
         {
             //hope slot
             this.game_id = data[0].game_id;
-            this.take_in_gamePoint = data[0].UserPoint
+           
             this.line = data[0].Line
             this.symbol_num = data[0].Symbol_Num
             var dat = data[0].odds

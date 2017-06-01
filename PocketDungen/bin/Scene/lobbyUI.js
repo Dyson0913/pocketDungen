@@ -22,6 +22,7 @@ function lobbyUI()
 	{
 		//take in 
 		_model.join_game = 2;
+		_model.join_group = 1;
 		_model.openview.dispatch("takeIn");
 	}
 	
