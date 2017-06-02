@@ -21,6 +21,8 @@ function BetZone()
 			this._coinarr.push([])
 		}
 		
+		_model.pushValue("coinlist",this._coinarr)
+
 		self.visible = false;
 	})();
 
@@ -57,29 +59,35 @@ function BetZone()
 
 	function onbetzone(idx)
 	{		
-		coin_add(_model.getValue("selectRes"),idx)
+		
+		coin_add(idx,_model.getValue("select_coin_idx"))
 
 		_model.betBtnApear.dispatch(true);
 	}
 
-	function coin_add(res,idx)
+	function coin_add(zone_idx,select_coin_idx)
 	{
+		var res = _model.getValue("selectRes")[select_coin_idx]
+		
 		var t = Laya.loader.getRes(res);
 		var coin = new Sprite
+		coin.name = _model.getValue("coinValue")[select_coin_idx]
 		coin.graphics.drawTexture(t, 0, 0);
-		self["betzone_"+idx].addChild(coin);
-		var width = self["betzone_"+idx].width
-		var heigh = self["betzone_"+idx].height
+		self["betzone_"+zone_idx].addChild(coin);
+		var width = self["betzone_"+zone_idx].width
+		var heigh = self["betzone_"+zone_idx].height
 		coin.pos(Math.random()*width, Math.random()*heigh);
 
-		var data  = this._coinarr[idx]
-		this._coinarr[idx].push(coin)
+		var data  = this._coinarr[zone_idx]
+		this._coinarr[zone_idx].push(coin)
 			//ape.graphics.clear();
 			// var texture = Laya.loader.getRes(textureUrl);
 			// ape.graphics.drawTexture(texture, 0, 0);
 
 			// // 设置交互区域
 			// ape.size(texture.width, texture.height);
+
+		_model.pushValue("coinlist",this._coinarr)
 	}
 
 	function coin_clear(idx)
@@ -98,6 +106,7 @@ function BetZone()
 	function onCancelbet()
 	{
 		//cancel
+		trace("cancel")
 		for(i =0;i< this._betzone.length;i++)
 		{
 			coin_clear(this._betzone[i])

@@ -4,26 +4,32 @@ var Handler = Laya.Handler;
 
 var _model = model.getInstance();
 
-var _coinRes;
-
 function CoinSelect()
 {
 	var self = this
 	CoinSelect.super(this);
 	
-	this.coin_0.on(Event.CLICK, this, coin,[0]);
-	this.coin_1.on(Event.CLICK, this, coin,[1]);
-	this.coin_2.on(Event.CLICK, this, coin,[2]);
-	this.coin_3.on(Event.CLICK, this, coin,[3]);
-	this.coin_4.on(Event.CLICK, this, coin,[4]);
-	this.coin_5.on(Event.CLICK, this, coin,[5]);
+	
 
 	_model.gameStateUpdate.add(onState);
 	
 	(function()
 	{
-		this._coinRes = ["res/Coin/coin_10_s.png","res/Coin/coin_50_s.png","res/Coin/coin_100_s.png","res/Coin/coin_500_s.png","res/Coin/coin_1k_s.png","res/Coin/coin_5k_s.png"]		
-		_model.pushValue("selectRes",_coinRes[0])
+		self.coin_0.on(Event.CLICK, self, coin,[0]);
+		self.coin_1.on(Event.CLICK, self, coin,[1]);
+		self.coin_2.on(Event.CLICK, self, coin,[2]);
+		self.coin_3.on(Event.CLICK, self, coin,[3]);
+		self.coin_4.on(Event.CLICK, self, coin,[4]);
+		self.coin_5.on(Event.CLICK, self, coin,[5]);
+
+		_model.pushValue("select_coin_idx",0)
+
+		self._coinRes = ["res/Coin/coin_10_s.png","res/Coin/coin_50_s.png","res/Coin/coin_100_s.png","res/Coin/coin_500_s.png","res/Coin/coin_1k_s.png","res/Coin/coin_5k_s.png"]		
+		_model.pushValue("selectRes",self._coinRes)
+
+		self._coinValue = [10,50,100,500,1000,5000]		
+		_model.pushValue("coinValue",self._coinValue)
+
 		self.visible = false;
 	})();
 
@@ -42,7 +48,7 @@ function CoinSelect()
 
 	function coin(idx)
 	{
-		_model.pushValue("selectRes",this._coinRes[idx])		
+		_model.pushValue("select_coin_idx",idx)
 	}
 
 }

@@ -43,7 +43,19 @@ function BetBtnSet()
 		}
 		else if ( idx == 1)
 		{
-			//comfirm
+			//comfirm		
+			var coinarr = _model.getValue("coinlist")
+			for(i =0;i< coinarr.length; i++)
+			{
+				var n = coinarr[i].length
+				var data = coinarr[i];
+				for(k =0 ;k< n;k++)
+				{	
+					var sp = data[k];
+					trace(sp.name)
+				}
+			}			
+			
 			//TODO pack
 		}
 

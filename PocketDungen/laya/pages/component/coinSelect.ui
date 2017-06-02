@@ -2,8 +2,8 @@
     "x":0,
     "type":"View",
     "selectedBox":1,
-    "selecteID":2,
-    "props":{"width":1280,"sceneColor":"#000000","height":720},
+    "selecteID":1,
+    "props":{"width":900,"sceneColor":"#000000","height":150},
     "nodeParent":-1,
     "label":"View",
     "isOpen":true,
@@ -22,7 +22,7 @@
         {
             "x":15,
             "type":"Image",
-            "props":{"y":627,"x":253,"var":"coin_0","skin":"res/Coin/coin_10.png"},
+            "props":{"y":27,"x":16,"var":"coin_0","skin":"res/Coin/coin_10.png"},
             "nodeParent":1,
             "label":"Image(coin_0)",
             "isDirectory":false,
@@ -42,7 +42,7 @@
         {
             "x":15,
             "type":"Image",
-            "props":{"y":632,"x":555,"var":"coin_2","skin":"res/Coin/coin_100.png"},
+            "props":{"y":32,"x":318,"var":"coin_2","skin":"res/Coin/coin_100.png"},
             "nodeParent":1,
             "label":"Image(coin_2)",
             "isDirectory":false,
@@ -62,7 +62,7 @@
         {
             "x":15,
             "type":"Image",
-            "props":{"y":632,"x":824,"var":"coin_4","skin":"res/Coin/coin_1k.png"},
+            "props":{"y":32,"x":587,"var":"coin_4","skin":"res/Coin/coin_1k.png"},
             "nodeParent":1,
             "label":"Image(coin_4)",
             "isDirectory":false,
@@ -82,7 +82,7 @@
         {
             "x":15,
             "type":"Image",
-            "props":{"y":630,"x":403,"var":"coin_1","skin":"res/Coin/coin_50.png"},
+            "props":{"y":30,"x":166,"var":"coin_1","skin":"res/Coin/coin_50.png"},
             "nodeParent":1,
             "label":"Image(coin_1)",
             "isDirectory":false,
@@ -102,7 +102,7 @@
         {
             "x":15,
             "type":"Image",
-            "props":{"y":628,"x":705,"var":"coin_3","skin":"res/Coin/coin_500.png"},
+            "props":{"y":28,"x":468,"var":"coin_3","skin":"res/Coin/coin_500.png"},
             "nodeParent":1,
             "label":"Image(coin_3)",
             "isDirectory":false,
@@ -122,7 +122,7 @@
         {
             "x":15,
             "type":"Image",
-            "props":{"y":629,"x":983,"var":"coin_5","skin":"res/Coin/coin_5k.png"},
+            "props":{"y":29,"x":746,"var":"coin_5","skin":"res/Coin/coin_5k.png"},
             "nodeParent":1,
             "label":"Image(coin_5)",
             "isDirectory":false,

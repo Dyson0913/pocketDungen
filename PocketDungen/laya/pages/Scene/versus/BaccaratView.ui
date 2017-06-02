@@ -189,28 +189,6 @@
         {
             "x":15,
             "type":"UIView",
-            "source":"component/coinSelect.ui",
-            "props":{"runtime":"CoinSelect"},
-            "nodeParent":1,
-            "label":"UIView",
-            "isDirectory":false,
-            "isAniNode":true,
-            "hasChild":false,
-            "frames":[
-                {
-                    "type":1,
-                    "props":{"y":383,"x":211},
-                    "frame":0,
-                    "__InPool":false
-                }],
-            "compId":57,
-            "child":[
-                ],
-            "$HIDDEN":false
-        },
-        {
-            "x":15,
-            "type":"UIView",
             "source":"component/Settle.ui",
             "props":{"y":0,"x":0,"runtime":"Settle"},
             "nodeParent":1,
@@ -229,27 +207,6 @@
             "child":[
                 ],
             "$HIDDEN":false
-        },
-        {
-            "x":15,
-            "type":"UIView",
-            "source":"component/BetBtnSet.ui",
-            "props":{"y":0,"x":-2.5091040356528538e-14,"runtime":"BetBtnSet"},
-            "nodeParent":1,
-            "label":"UIView",
-            "isDirectory":false,
-            "isAniNode":true,
-            "hasChild":false,
-            "frames":[
-                {
-                    "type":1,
-                    "props":{},
-                    "frame":0,
-                    "__InPool":false
-                }],
-            "compId":61,
-            "child":[
-                ]
         },
         {
             "x":15,
@@ -274,10 +231,54 @@
         },
         {
             "x":15,
+            "type":"UIView",
+            "source":"component/BetBtnSet.ui",
+            "props":{"y":33,"x":284,"width":678,"runtime":"BetBtnSet","height":85},
+            "nodeParent":1,
+            "label":"UIView",
+            "isDirectory":false,
+            "isAniNode":true,
+            "hasChild":false,
+            "frames":[
+                {
+                    "type":1,
+                    "props":{},
+                    "frame":0,
+                    "__InPool":false
+                }],
+            "compId":61,
+            "child":[
+                ]
+        },
+        {
+            "x":15,
+            "type":"UIView",
+            "source":"component/coinSelect.ui",
+            "props":{"y":592,"x":204,"runtime":"CoinSelect"},
+            "nodeParent":1,
+            "label":"UIView",
+            "isDirectory":false,
+            "isAniNode":true,
+            "hasChild":false,
+            "frames":[
+                {
+                    "type":1,
+                    "props":{"y":383,"x":211},
+                    "frame":0,
+                    "__InPool":false
+                }],
+            "compId":57,
+            "child":[
+                ],
+            "$HIDDEN":false
+        },
+        {
+            "x":15,
             "type":"Button",
             "props":{"y":14.999999999999986,"x":29.999999999999947,"var":"back_to_lobby","skin":"res/share/backLobbyBtn.png"},
             "nodeParent":1,
             "label":"Button(back_to_lobby)",
+            "isOpen":true,
             "isDirectory":false,
             "isAniNode":true,
             "hasChild":false,
