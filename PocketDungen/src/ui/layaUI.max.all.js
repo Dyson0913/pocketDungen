@@ -2,6 +2,53 @@ var CLASS$=Laya.class;
 var STATICATTR$=Laya.static;
 var View=laya.ui.View;
 var Dialog=laya.ui.Dialog;
+var BetBtnSetUI=(function(_super){
+		function BetBtnSetUI(){
+			
+		    this.cancelBtn=null;
+		    this.comfirmBtn=null;
+
+			BetBtnSetUI.__super.call(this);
+		}
+
+		CLASS$(BetBtnSetUI,'ui.component.BetBtnSetUI',_super);
+		var __proto__=BetBtnSetUI.prototype;
+		__proto__.createChildren=function(){
+		    
+			laya.ui.Component.prototype.createChildren.call(this);
+			this.createView(BetBtnSetUI.uiView);
+		}
+
+		STATICATTR$(BetBtnSetUI,
+		['uiView',function(){return this.uiView={"type":"View","props":{"width":1280,"height":720},"child":[{"type":"Button","props":{"y":54,"x":275,"width":310,"var":"cancelBtn","skin":"res/share/Btn_bg.png","height":82},"child":[{"type":"Label","props":{"y":13,"x":37,"width":238,"text":"取消","height":53,"fontSize":50,"color":"#f6eaea","align":"center"}}]},{"type":"Button","props":{"y":55,"x":642,"width":310,"var":"comfirmBtn","skin":"res/share/Btn_bg.png","height":82},"child":[{"type":"Label","props":{"y":14,"x":28,"width":238,"text":"確定","height":53,"fontSize":50,"color":"#f6eaea","align":"center"}}]}]};}
+		]);
+		return BetBtnSetUI;
+	})(View);
+var betzoneUI=(function(_super){
+		function betzoneUI(){
+			
+		    this.betzone_0=null;
+		    this.betzone_1=null;
+		    this.betzone_2=null;
+		    this.betzone_3=null;
+		    this.betzone_4=null;
+
+			betzoneUI.__super.call(this);
+		}
+
+		CLASS$(betzoneUI,'ui.component.betzoneUI',_super);
+		var __proto__=betzoneUI.prototype;
+		__proto__.createChildren=function(){
+		    
+			laya.ui.Component.prototype.createChildren.call(this);
+			this.createView(betzoneUI.uiView);
+		}
+
+		STATICATTR$(betzoneUI,
+		['uiView',function(){return this.uiView={"type":"View","props":{"width":1280,"height":720},"child":[{"type":"Sprite","props":{"y":437,"x":756,"width":194,"var":"betzone_0","height":190}},{"type":"Sprite","props":{"y":433,"x":346,"width":194,"var":"betzone_1","height":190}},{"type":"Sprite","props":{"y":447,"x":564,"width":171,"var":"betzone_2","height":150}},{"type":"Sprite","props":{"y":456,"x":978,"width":150,"var":"betzone_3","height":141}},{"type":"Sprite","props":{"y":462,"x":170,"width":150,"var":"betzone_4","height":141}}]};}
+		]);
+		return betzoneUI;
+	})(View);
 var coinSelectUI=(function(_super){
 		function coinSelectUI(){
 			
@@ -275,14 +322,6 @@ var BaccaratViewUI=(function(_super){
 		function BaccaratViewUI(){
 			
 		    this.bg=null;
-		    this.betzone_0=null;
-		    this.betzone_1=null;
-		    this.betzone_2=null;
-		    this.back_to_lobby=null;
-		    this.betzone_3=null;
-		    this.betzone_4=null;
-		    this.cancelBtn=null;
-		    this.comfirmBtn=null;
 		    this.countTimer=null;
 		    this.poker_0=null;
 		    this.poker_1=null;
@@ -290,6 +329,7 @@ var BaccaratViewUI=(function(_super){
 		    this.poker_3=null;
 		    this.poker_4=null;
 		    this.poker_5=null;
+		    this.back_to_lobby=null;
 
 			BaccaratViewUI.__super.call(this);
 		}
@@ -298,21 +338,23 @@ var BaccaratViewUI=(function(_super){
 		var __proto__=BaccaratViewUI.prototype;
 		__proto__.createChildren=function(){
 		    			View.regComponent("CountTimer",CountTimer);
-			View.regComponent("Poker",Poker);
+			View.regComponent("BetZone",BetZone);
 			View.regComponent("Poker1",Poker1);
 			View.regComponent("Poker2",Poker2);
 			View.regComponent("Poker3",Poker3);
-			View.regComponent("Poker4",Poker4);
+			View.regComponent("Poker",Poker);
 			View.regComponent("Poker5",Poker5);
 			View.regComponent("CoinSelect",CoinSelect);
 			View.regComponent("Settle",Settle);
+			View.regComponent("BetBtnSet",BetBtnSet);
+			View.regComponent("Poker4",Poker4);
 
 			laya.ui.Component.prototype.createChildren.call(this);
 			this.createView(BaccaratViewUI.uiView);
 		}
 
 		STATICATTR$(BaccaratViewUI,
-		['uiView',function(){return this.uiView={"type":"View","props":{"width":1280,"pivotX":1,"height":720},"child":[{"type":"Image","props":{"y":0,"x":0,"width":1280,"var":"bg","skin":"res/baccarat/bg.jpg","height":720}},{"type":"Sprite","props":{"y":437,"x":748,"width":194,"var":"betzone_0","height":190}},{"type":"Sprite","props":{"y":433,"x":338,"width":194,"var":"betzone_1","height":190}},{"type":"Sprite","props":{"y":447,"x":556,"width":171,"var":"betzone_2","height":150}},{"type":"Button","props":{"y":15,"x":30,"var":"back_to_lobby","skin":"res/share/backLobbyBtn.png"}},{"type":"Sprite","props":{"y":456,"x":970,"width":150,"var":"betzone_3","height":141}},{"type":"Sprite","props":{"y":462,"x":162,"width":150,"var":"betzone_4","height":141}},{"type":"Button","props":{"y":44,"x":265,"width":310,"var":"cancelBtn","skin":"res/share/Btn_bg.png","height":82},"child":[{"type":"Label","props":{"y":13,"x":37,"width":238,"text":"取消","height":53,"fontSize":50,"color":"#f6eaea","align":"center"}}]},{"type":"Button","props":{"y":45,"x":632,"width":310,"var":"comfirmBtn","skin":"res/share/Btn_bg.png","height":82},"child":[{"type":"Label","props":{"y":14,"x":28,"width":238,"text":"確定","height":53,"fontSize":50,"color":"#f6eaea","align":"center"}}]},{"type":"CountTimer","props":{"y":356,"x":580,"var":"countTimer","runtime":"CountTimer"}},{"type":"Poker","props":{"y":139,"x":94,"var":"poker_0","runtime":"Poker","name":"poker_0"}},{"type":"Poker","props":{"y":138,"x":274,"var":"poker_1","runtime":"Poker1","name":"poker_1"}},{"type":"Poker","props":{"y":139,"x":468,"var":"poker_2","runtime":"Poker2","name":"poker_2"}},{"type":"Poker","props":{"y":140,"x":681,"var":"poker_3","runtime":"Poker3","name":"poker_3"}},{"type":"Poker","props":{"y":140,"x":870,"var":"poker_4","runtime":"Poker4","name":"poker_4"}},{"type":"Poker","props":{"y":142,"x":1066,"var":"poker_5","runtime":"Poker5","name":"poker_5"}},{"type":"coinSelect","props":{"runtime":"CoinSelect"}},{"type":"Settle","props":{"y":0,"x":0,"runtime":"Settle"}}]};}
+		['uiView',function(){return this.uiView={"type":"View","props":{"width":1280,"pivotX":1,"height":720},"child":[{"type":"Image","props":{"y":0,"x":0,"width":1280,"var":"bg","skin":"res/baccarat/bg.jpg","height":720}},{"type":"CountTimer","props":{"y":356,"x":580,"var":"countTimer","runtime":"CountTimer"}},{"type":"Poker","props":{"y":139,"x":94,"var":"poker_0","runtime":"Poker","name":"poker_0"}},{"type":"Poker","props":{"y":138,"x":274,"var":"poker_1","runtime":"Poker1","name":"poker_1"}},{"type":"Poker","props":{"y":139,"x":468,"var":"poker_2","runtime":"Poker2","name":"poker_2"}},{"type":"Poker","props":{"y":140,"x":681,"var":"poker_3","runtime":"Poker3","name":"poker_3"}},{"type":"Poker","props":{"y":140,"x":870,"var":"poker_4","runtime":"Poker4","name":"poker_4"}},{"type":"Poker","props":{"y":142,"x":1066,"var":"poker_5","runtime":"Poker5","name":"poker_5"}},{"type":"coinSelect","props":{"runtime":"CoinSelect"}},{"type":"Settle","props":{"y":0,"x":0,"runtime":"Settle"}},{"type":"BetBtnSet","props":{"y":0,"x":-2.5091040356528538e-14,"runtime":"BetBtnSet"}},{"type":"betzone","props":{"runtime":"BetZone"}},{"type":"Button","props":{"y":14.999999999999986,"x":29.999999999999947,"var":"back_to_lobby","skin":"res/share/backLobbyBtn.png"}}]};}
 		]);
 		return BaccaratViewUI;
 	})(View);

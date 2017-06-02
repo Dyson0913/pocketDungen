@@ -6,6 +6,7 @@ var Text       = Laya.Text;
 //dictionary
 var Scene={}; //Scene
 var font={};
+var dicVaule={};
 
 var current_view_name;
 //loging & lobby
@@ -52,6 +53,8 @@ var model = function ()
     this.winMoney =  new signals.Signal();
     this.gameStateUpdate = new signals.Signal();
     this.countDown = new signals.Signal();
+    this.betCancel = new signals.Signal();
+    this.betBtnApear = new signals.Signal();
     this.pokerShow = new signals.Signal();
     this.settleInfo = new signals.Signal();
 
@@ -282,6 +285,16 @@ model.prototype.getView = function (name)
 model.prototype.appearidx = function (state)
 {
    return this.gameState.indexOf(state)
+}
+
+model.prototype.pushValue = function(key,value)
+{
+    dicVaule[key] = value    
+}
+
+model.prototype.getValue = function(key)
+{    
+    return dicVaule[key]
 }
 
 model.prototype.regFont = function(fontFileName,path)

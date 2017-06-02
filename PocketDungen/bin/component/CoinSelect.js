@@ -4,7 +4,6 @@ var Handler = Laya.Handler;
 
 var _model = model.getInstance();
 
-var _selectRes;
 var _coinRes;
 
 function CoinSelect()
@@ -23,8 +22,8 @@ function CoinSelect()
 	
 	(function()
 	{
-		this._coinRes = ["res/Coin/coin_10_s.png","res/Coin/coin_50_s.png","res/Coin/coin_100_s.png","res/Coin/coin_500_s.png","res/Coin/coin_1k_s.png","res/Coin/coin_5k_s.png"]
-		this._selectRes = _coinRes[0]
+		this._coinRes = ["res/Coin/coin_10_s.png","res/Coin/coin_50_s.png","res/Coin/coin_100_s.png","res/Coin/coin_500_s.png","res/Coin/coin_1k_s.png","res/Coin/coin_5k_s.png"]		
+		_model.pushValue("selectRes",_coinRes[0])
 		self.visible = false;
 	})();
 
@@ -43,7 +42,7 @@ function CoinSelect()
 
 	function coin(idx)
 	{
-		this._selectRes = this._coinRes[idx]
+		_model.pushValue("selectRes",this._coinRes[idx])		
 	}
 
 }
