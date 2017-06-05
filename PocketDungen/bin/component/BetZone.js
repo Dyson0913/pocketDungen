@@ -14,14 +14,14 @@ function BetZone()
 	
 	(function()
 	{
-		this._coinarr = []
-		this._betzone = [0,1,2]
-		for(i =0;i< this._betzone.length;i++)
+		self._coinarr = []
+		self._betzone = [0,1,2]
+		for(i =0;i< self._betzone.length;i++)
 		{
-			this._coinarr.push([])
+			self._coinarr.push([])
 		}
 		
-		_model.pushValue("coinlist",this._coinarr)
+		_model.pushValue("coinlist",self._coinarr)
 
 		self.visible = false;
 	})();
@@ -31,15 +31,13 @@ function BetZone()
 		var state =  _model.appearidx(state)
 		if( state >= 1)
 		{
-			self.visible = true;
-
 			if( state >=2)
 			{				
-				self.betzone_0.off(Event.CLICK, self);
-				self.betzone_1.off(Event.CLICK, self);
-				self.betzone_2.off(Event.CLICK, self);
-				self.betzone_3.off(Event.CLICK, self);
-				self.betzone_4.off(Event.CLICK, self);
+				self.betzone_0.off(Event.CLICK, self,onbetzone);
+				self.betzone_1.off(Event.CLICK, self,onbetzone);
+				self.betzone_2.off(Event.CLICK, self,onbetzone);
+				self.betzone_3.off(Event.CLICK, self,onbetzone);
+				self.betzone_4.off(Event.CLICK, self,onbetzone);
 			}
 			else if (state == 1)
 			{
@@ -48,11 +46,14 @@ function BetZone()
 				self.betzone_2.on(Event.CLICK, self, onbetzone,[2]);
 				self.betzone_3.on(Event.CLICK, self, onbetzone,[3]);
 				self.betzone_4.on(Event.CLICK, self, onbetzone,[4]);
+
+				self.visible = true;
 			}
 		}
 		else
 		{
 			self.visible = false;
+			onCancelbet()
 		}
 			
 	}
@@ -78,8 +79,8 @@ function BetZone()
 		var heigh = self["betzone_"+zone_idx].height
 		coin.pos(Math.random()*width, Math.random()*heigh);
 
-		var data  = this._coinarr[zone_idx]
-		this._coinarr[zone_idx].push(coin)
+		var data  = self._coinarr[zone_idx]
+		self._coinarr[zone_idx].push(coin)
 			//ape.graphics.clear();
 			// var texture = Laya.loader.getRes(textureUrl);
 			// ape.graphics.drawTexture(texture, 0, 0);
@@ -87,29 +88,25 @@ function BetZone()
 			// // 设置交互区域
 			// ape.size(texture.width, texture.height);
 
-		_model.pushValue("coinlist",this._coinarr)
+		_model.pushValue("coinlist",self._coinarr)
 	}
 
 	function coin_clear(idx)
 	{
-		for(i =0;i< _coinarr.length; i++)
-		{
-			var n = this._coinarr[i].length
-			var data = this._coinarr[i];
-			for(k =0 ;k< n;k++)
-			{
-				data[k].destroy(true)
-			}
-		}		
+		var n = self._coinarr[idx].length
+		var data = self._coinarr[idx];			
+		for(k =0 ;k< n;k++)
+		{			
+			data[k].destroy(true)
+		}
+		self._coinarr[idx] = []				
 	}
 
 	function onCancelbet()
-	{
-		//cancel
-		trace("cancel")
-		for(i =0;i< this._betzone.length;i++)
+	{				
+		for(i =0;i< self._betzone.length;i++)
 		{
-			coin_clear(this._betzone[i])
+			coin_clear(i)
 		}
 	}
 

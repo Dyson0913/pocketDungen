@@ -148,11 +148,13 @@ model.prototype.eventHandle = function (name,data)
          if( data[0].result == "ok")
          {
              _model.eventHandle("join_game",[]);
+             _model.closeview.dispatch("takeIn");             
          }
          else
          {
              this.hintmsg(data[0].reason)
          }
+         
         
         break;
 
