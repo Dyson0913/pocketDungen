@@ -11,17 +11,21 @@ function BetZone()
 	
 	_model.gameStateUpdate.add(onState);
 	_model.betCancel.add(onCancelbet);
+	_model.betok.add(onbetok);
 	
 	(function()
 	{
 		self._coinarr = []
+		self._unfirm_coin =[]
 		self._betzone = [0,1,2]
 		for(i =0;i< self._betzone.length;i++)
 		{
 			self._coinarr.push([])
+			self._unfirm_coin.push([])
 		}
 		
 		_model.pushValue("coinlist",self._coinarr)
+		_model.pushValue("unfirm_coin",self._unfirm_coin)
 
 		self.visible = false;
 	})();
@@ -53,7 +57,7 @@ function BetZone()
 		else
 		{
 			self.visible = false;
-			onCancelbet()
+			roundClear()
 		}
 			
 	}
@@ -79,8 +83,8 @@ function BetZone()
 		var heigh = self["betzone_"+zone_idx].height
 		coin.pos(Math.random()*width, Math.random()*heigh);
 
-		var data  = self._coinarr[zone_idx]
-		self._coinarr[zone_idx].push(coin)
+		var data  = self._unfirm_coin[zone_idx]
+		self._unfirm_coin[zone_idx].push(coin)
 			//ape.graphics.clear();
 			// var texture = Laya.loader.getRes(textureUrl);
 			// ape.graphics.drawTexture(texture, 0, 0);
@@ -88,9 +92,38 @@ function BetZone()
 			// // 设置交互区域
 			// ape.size(texture.width, texture.height);
 
-		_model.pushValue("coinlist",self._coinarr)
+		_model.pushValue("unfirm_coin",self._unfirm_coin)
 	}
 
+	function uncomfirm_coin_clear(idx)
+	{
+		var n = self._unfirm_coin[idx].length
+		var data = self._unfirm_coin[idx];			
+		for(k =0 ;k< n;k++)
+		{			
+			data[k].destroy(true)
+		}
+		self._unfirm_coin[idx] = []				
+	}
+
+	function onCancelbet()
+	{				
+		for(i =0;i< self._betzone.length;i++)
+		{
+			uncomfirm_coin_clear(i)
+		}
+
+		_model.pushValue("unfirm_coin",self._unfirm_coin)
+	}
+
+	function roundClear()
+	{
+		for(i =0;i< self._betzone.length;i++)
+		{
+			coin_clear(i)
+		}
+	}
+	
 	function coin_clear(idx)
 	{
 		var n = self._coinarr[idx].length
@@ -102,15 +135,27 @@ function BetZone()
 		self._coinarr[idx] = []				
 	}
 
-	function onCancelbet()
-	{				
-		for(i =0;i< self._betzone.length;i++)
+	function onbetok()
+	{
+		 //uncomfirm_bet move to bet
+		 for(i =0;i< self._betzone.length;i++)
 		{
-			coin_clear(i)
-		}
+			uncomfirm_to_comfirm(i)
+		} 
+
+		//clear uncomfirm
+		onCancelbet()
 	}
 
-	
+	function uncomfirm_to_comfirm(idx)
+	{
+		var n = self._unfirm_coin[idx].length
+		var data = self._unfirm_coin[idx];			
+		for(k =0 ;k< n;k++)
+		{						
+			self._coinarr[idx].push(data[k])
+		}	
+	}
 
 }
 

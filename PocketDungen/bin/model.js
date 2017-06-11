@@ -54,7 +54,9 @@ var model = function ()
     this.gameStateUpdate = new signals.Signal();
     this.countDown = new signals.Signal();
     this.betCancel = new signals.Signal();
+    this.betok = new signals.Signal();
     this.betBtnApear = new signals.Signal();
+    this.betTimeout = new signals.Signal();
     this.pokerShow = new signals.Signal();
     this.settleInfo = new signals.Signal();
 
@@ -210,6 +212,8 @@ model.prototype.eventHandle = function (name,data)
             _model.gameStateUpdate.dispatch(name);
             _model.countDown.dispatch(jsondata.rest_time);
             
+            //TODO 
+            if( jsondata.rest_time == 1) _model.betTimeout.dispatch()
         break;
         case "player_card":
             _model.gameStateUpdate.dispatch(name);
@@ -233,10 +237,13 @@ model.prototype.eventHandle = function (name,data)
 
         case "bet_ok":
             trace("bet_ok")
+                
+            _model.betok.dispatch();
         break;
 
         case "bet_fail":
             trace("bet_fail")
+            _model.betCancel.dispatch();
         break;
        
         case "idle_kick":

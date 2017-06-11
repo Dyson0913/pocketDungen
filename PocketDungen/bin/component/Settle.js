@@ -29,6 +29,8 @@ function Settle()
 			self.playerWin.visible = false
 			self.bankerWin.visible = false
 			self.Tie.visible = false;
+			self.playerTitle.visible = true;
+			self.bankerTitle.visible = true;
 		}
 		else
 		{
@@ -54,10 +56,11 @@ function Settle()
 		if ( winstate == "tie")
 		{
 			self.Tie.visible = true;
-		}
-
-		self.playerPoint.text = settlePoint[0]
-		self.bankerPoint.text = settlePoint[1]
+			self.playerTitle.visible = false;
+			self.bankerTitle.visible = false;
+		}						
+		self.playerPoint.text = String(settlePoint[0])
+		self.bankerPoint.text = String(settlePoint[1])
 	}
 
 	Settle.prototype.setpoint = function (point)

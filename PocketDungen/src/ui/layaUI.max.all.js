@@ -151,6 +151,8 @@ var SettleUI=(function(_super){
 		    this.bankerWin=null;
 		    this.playerWin=null;
 		    this.Tie=null;
+		    this.bankerTitle=null;
+		    this.playerTitle=null;
 
 			SettleUI.__super.call(this);
 		}
@@ -164,7 +166,7 @@ var SettleUI=(function(_super){
 		}
 
 		STATICATTR$(SettleUI,
-		['uiView',function(){return this.uiView={"type":"View","props":{"width":1280,"height":720},"child":[{"type":"Image","props":{"y":62,"x":812,"skin":"res/settle/banker.png"}},{"type":"Image","props":{"y":67,"x":1007,"skin":"res/settle/bankerpoint.png"}},{"type":"Image","props":{"y":63,"x":218,"skin":"res/settle/player.png"}},{"type":"Image","props":{"y":63,"x":389,"skin":"res/settle/playerpoint.png"}},{"type":"Label","props":{"y":86,"x":284,"width":109,"var":"playerPoint","text":"10","height":32,"font":"tableFont","align":"center"}},{"type":"Label","props":{"y":82,"x":887,"width":109,"var":"bankerPoint","text":"10","height":32,"font":"tableFont","align":"center"}},{"type":"Image","props":{"y":11,"x":879,"var":"bankerWin","skin":"res/settle/bankerwin.jpg"}},{"type":"Image","props":{"y":6,"x":280,"var":"playerWin","skin":"res/settle/playerwin.jpg"}},{"type":"Image","props":{"y":2,"x":577,"var":"Tie","skin":"res/settle/tie.png"}}]};}
+		['uiView',function(){return this.uiView={"type":"View","props":{"width":1280,"height":720},"child":[{"type":"Label","props":{"y":86,"x":284,"width":109,"var":"playerPoint","text":"10","height":32,"font":"tableFont","align":"center"}},{"type":"Label","props":{"y":82,"x":887,"width":109,"var":"bankerPoint","text":"10","height":32,"font":"tableFont","align":"center"}},{"type":"Image","props":{"y":11,"x":879,"var":"bankerWin","skin":"res/settle/bankerwin.jpg"}},{"type":"Image","props":{"y":6,"x":280,"var":"playerWin","skin":"res/settle/playerwin.jpg"}},{"type":"Image","props":{"y":2,"x":577,"var":"Tie","skin":"res/settle/tie.png"}},{"type":"Sprite","props":{"y":58,"x":796,"width":281,"var":"bankerTitle","height":90},"child":[{"type":"Image","props":{"y":9.000000000000014,"x":211.00000000000023,"skin":"res/settle/bankerpoint.png"}},{"type":"Image","props":{"y":4.000000000000014,"x":16,"skin":"res/settle/banker.png"}}]},{"type":"Sprite","props":{"y":61,"x":190,"width":283,"var":"playerTitle","height":81},"child":[{"type":"Image","props":{"y":2.000000000000007,"x":28.00000000000003,"skin":"res/settle/player.png"}},{"type":"Image","props":{"y":2.000000000000007,"x":199.00000000000006,"skin":"res/settle/playerpoint.png"}}]}]};}
 		]);
 		return SettleUI;
 	})(View);
