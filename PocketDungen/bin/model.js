@@ -224,6 +224,20 @@ model.prototype.eventHandle = function (name,data)
             _model.settleInfo.dispatch(jsondata.winstate,jsondata.settlePoint, jsondata.settle)
         break;
         
+        case "bet":
+            //this.game_id = join_group
+             var msg = {"uuid": this.uuid,"module":"bet","cmd":"bet","game_id":this.game_id,"bet_info":jsondata};
+             trace(msg)
+            this.send_pack(msg)
+        break;
+
+        case "bet_ok":
+            trace("bet_ok")
+        break;
+
+        case "bet_fail":
+            trace("bet_fail")
+        break;
        
         case "idle_kick":
              //pop hint ,click and go back

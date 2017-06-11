@@ -38,25 +38,29 @@ function BetBtnSet()
 		if( idx == 0)
 		{
 			//send notify
-			_model.betCancel.dispatch();
-			//TODO pack
+			_model.betCancel.dispatch();			
 		}
 		else if ( idx == 1)
 		{
 			//comfirm		
 			var coinarr = _model.getValue("coinlist")
+			var betlist = []
 			for(i =0;i< coinarr.length; i++)
 			{
-				var n = coinarr[i].length
 				var data = coinarr[i];
+				var n = data.length				
+				var totalbet = 0
 				for(k =0 ;k< n;k++)
 				{	
-					var sp = data[k];
-					trace(sp.name)
+					var sp = data[k];					
+					totalbet += sp.name
 				}
-			}			
-			
-			//TODO pack
+				//trace("i = "+i+ " bet = "+totalbet)
+				if (totalbet ==0) continue
+				betinfo = {"type":i,"amount":totalbet}
+				betlist.push(betinfo)
+			}											
+			_model.eventHandle("bet",[betlist]);			
 		}
 
 		onAppear(false)	
