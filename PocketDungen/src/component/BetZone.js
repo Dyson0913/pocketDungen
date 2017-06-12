@@ -10,7 +10,7 @@ function BetZone()
 	BetZone.super(this);
 	
 	_model.gameStateUpdate.add(onState);
-	_model.betCancel.add(onCancelbet);
+	_model.betCancel.add(oncancelbet);	
 	_model.betok.add(onbetok);
 	
 	(function()
@@ -64,9 +64,7 @@ function BetZone()
 
 	function onbetzone(idx)
 	{		
-		
 		coin_add(idx,_model.getValue("select_coin_idx"))
-
 		_model.betBtnApear.dispatch(true);
 	}
 
@@ -95,44 +93,34 @@ function BetZone()
 		_model.pushValue("unfirm_coin",self._unfirm_coin)
 	}
 
-	function uncomfirm_coin_clear(idx)
+	function oncancelbet()
 	{
-		var n = self._unfirm_coin[idx].length
-		var data = self._unfirm_coin[idx];			
-		for(k =0 ;k< n;k++)
-		{			
-			data[k].destroy(true)
-		}
-		self._unfirm_coin[idx] = []				
-	}
-
-	function onCancelbet()
-	{				
-		for(i =0;i< self._betzone.length;i++)
+		 for(i =0;i< self._betzone.length;i++)
 		{
-			uncomfirm_coin_clear(i)
+			coin_clear(i,self._unfirm_coin)
 		}
 
 		_model.pushValue("unfirm_coin",self._unfirm_coin)
-	}
+	} 
+
 
 	function roundClear()
 	{
 		for(i =0;i< self._betzone.length;i++)
 		{
-			coin_clear(i)
+			coin_clear(i,self._coinarr)
 		}
 	}
 	
-	function coin_clear(idx)
+	function coin_clear(idx,dataArr)
 	{
-		var n = self._coinarr[idx].length
-		var data = self._coinarr[idx];			
+		var n = dataArr[idx].length
+		var data = dataArr[idx];			
 		for(k =0 ;k< n;k++)
 		{			
 			data[k].destroy(true)
 		}
-		self._coinarr[idx] = []				
+		dataArr[idx] = []				
 	}
 
 	function onbetok()
@@ -143,18 +131,24 @@ function BetZone()
 			uncomfirm_to_comfirm(i)
 		} 
 
-		//clear uncomfirm
-		onCancelbet()
+		//just clear data,not image
+		for(i =0;i< self._betzone.length;i++)
+		{			
+			self._unfirm_coin[i] = []					
+		}
+
+		_model.pushValue("unfirm_coin",self._unfirm_coin)
 	}
 
 	function uncomfirm_to_comfirm(idx)
-	{
-		var n = self._unfirm_coin[idx].length
-		var data = self._unfirm_coin[idx];			
-		for(k =0 ;k< n;k++)
-		{						
-			self._coinarr[idx].push(data[k])
-		}	
+	{		
+		var data = self._unfirm_coin[idx];
+		var copydata = data.slice(0);		
+		if( copydata.length ==0 ) return
+		for(i =0;i< copydata.length;i++)
+		{
+		 	self._coinarr[idx].push(copydata[i])
+		} 		
 	}
 
 }

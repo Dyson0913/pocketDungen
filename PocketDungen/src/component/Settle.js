@@ -56,8 +56,8 @@ function Settle()
 		if ( winstate == "tie")
 		{
 			self.Tie.visible = true;
-			self.playerTitle.visible = false;
-			self.bankerTitle.visible = false;
+			//self.playerTitle.visible = false;
+			//self.bankerTitle.visible = false;
 		}		
 		self.playerPoint.text = String(settlePoint[0])
 		self.bankerPoint.text = String(settlePoint[1])

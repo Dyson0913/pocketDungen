@@ -54,7 +54,8 @@ var model = function ()
     this.gameStateUpdate = new signals.Signal();
     this.countDown = new signals.Signal();
     this.betCancel = new signals.Signal();
-    this.betok = new signals.Signal();
+    this.betok = new signals.Signal();    
+    this.betResult = new signals.Signal();
     this.betBtnApear = new signals.Signal();
     this.betTimeout = new signals.Signal();
     this.pokerShow = new signals.Signal();
@@ -205,10 +206,13 @@ model.prototype.eventHandle = function (name,data)
          this.in_game.dispatch();
         
        break;
-        case "init":
+        case "init":            
             _model.gameStateUpdate.dispatch(name);
         break;
         case "wait_bet":
+
+            _model.pushValue("reset_time",jsondata.rest_time)
+
             _model.gameStateUpdate.dispatch(name);
             _model.countDown.dispatch(jsondata.rest_time);
             
@@ -216,10 +220,18 @@ model.prototype.eventHandle = function (name,data)
             if( jsondata.rest_time == 1) _model.betTimeout.dispatch()
         break;
         case "player_card":
-            _model.gameStateUpdate.dispatch(name);
+
+            _model.pushValue("playerpoker",jsondata.playerpoker)
+            _model.pushValue("bankerpoker",jsondata.bankerpoker)
+
+            _model.gameStateUpdate.dispatch(name);            
             _model.pokerShow.dispatch(jsondata.playerpoker.length-1,jsondata.playerpoker[jsondata.playerpoker.length-1]);
         break;
         case "banker_card":
+
+            _model.pushValue("playerpoker",jsondata.playerpoker)
+            _model.pushValue("bankerpoker",jsondata.bankerpoker)
+
             _model.gameStateUpdate.dispatch(name);
             _model.pokerShow.dispatch(jsondata.bankerpoker.length+2,jsondata.bankerpoker[jsondata.bankerpoker.length-1]);
         break;
@@ -235,15 +247,15 @@ model.prototype.eventHandle = function (name,data)
             this.send_pack(msg)
         break;
 
-        case "bet_ok":
-            trace("bet_ok")
-                
+        case "bet_ok":                
             _model.betok.dispatch();
+            _model.betResult.dispatch("押注成功");
         break;
 
-        case "bet_fail":
-            trace("bet_fail")
+        case "bet_fail":            
             _model.betCancel.dispatch();
+            _model.betResult.dispatch("押注失敗");
+            
         break;
        
         case "idle_kick":
