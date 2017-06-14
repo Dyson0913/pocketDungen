@@ -71,14 +71,17 @@ function BetBtnSet()
 				var sp = data[k];					
 				totalbet += sp.name
 			}
-			//trace("i = "+i+ " bet = "+totalbet)
+			
 			if (totalbet ==0) continue
+
+			//trace("i = "+i+ " bet = "+totalbet)			
 			betinfo = {"type":i,"amount":totalbet}
 			betlist.push(betinfo)
 		}					
 
 		if( betlist.length !=0)
 		{
+			
 			_model.eventHandle("bet",[betlist]);
 		}						
 			

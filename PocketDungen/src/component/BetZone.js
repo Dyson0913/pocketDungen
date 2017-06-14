@@ -12,6 +12,7 @@ function BetZone()
 	_model.gameStateUpdate.add(onState);
 	_model.betCancel.add(oncancelbet);	
 	_model.betok.add(onbetok);
+	_model.betTimeout.add(onstopbet);
 	
 	(function()
 	{
@@ -37,11 +38,7 @@ function BetZone()
 		{
 			if( state >=2)
 			{				
-				self.betzone_0.off(Event.CLICK, self,onbetzone);
-				self.betzone_1.off(Event.CLICK, self,onbetzone);
-				self.betzone_2.off(Event.CLICK, self,onbetzone);
-				self.betzone_3.off(Event.CLICK, self,onbetzone);
-				self.betzone_4.off(Event.CLICK, self,onbetzone);
+				onstopbet()
 			}
 			else if (state == 1)
 			{
@@ -60,6 +57,15 @@ function BetZone()
 			roundClear()
 		}
 			
+	}
+
+	function onstopbet()
+	{
+		self.betzone_0.off(Event.CLICK, self,onbetzone);
+		self.betzone_1.off(Event.CLICK, self,onbetzone);
+		self.betzone_2.off(Event.CLICK, self,onbetzone);
+		self.betzone_3.off(Event.CLICK, self,onbetzone);
+		self.betzone_4.off(Event.CLICK, self,onbetzone);
 	}
 
 	function onbetzone(idx)
@@ -145,9 +151,9 @@ function BetZone()
 		var data = self._unfirm_coin[idx];
 		var copydata = data.slice(0);		
 		if( copydata.length ==0 ) return
-		for(i =0;i< copydata.length;i++)
+		for(k =0;k< copydata.length;k++)
 		{
-		 	self._coinarr[idx].push(copydata[i])
+		 	self._coinarr[idx].push(copydata[k])
 		} 		
 	}
 
