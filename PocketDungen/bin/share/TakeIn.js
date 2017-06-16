@@ -22,7 +22,7 @@ function TakeIn()
 	TakeIn.prototype.onAppear = function()
 	{
 		//point 
-		this.inputtext.prompt = "100 ~" + _model.total_Credit
+		this.inputtext.prompt = "100 ~" + _model.total_Credit		
 	}
 
 	function onTakeIn()
@@ -40,6 +40,8 @@ function TakeIn()
 		}
 
 		_model.eventHandle("takein",[Number(this.inputtext.text)]);
+
+		self.inputtext.text = String("")
    	}
 
 	function onclose()

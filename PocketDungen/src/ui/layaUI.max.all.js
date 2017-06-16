@@ -222,11 +222,11 @@ var loginViewUI=(function(_super){
 			
 		    this.title=null;
 		    this.oneTouch_btn=null;
-		    this.casino=null;
-		    this.loginZone=null;
 		    this.password=null;
 		    this.name=null;
 		    this.Login_btn=null;
+		    this.title=null;
+		    this.title=null;
 
 			loginViewUI.__super.call(this);
 		}
@@ -240,7 +240,7 @@ var loginViewUI=(function(_super){
 		}
 
 		STATICATTR$(loginViewUI,
-		['uiView',function(){return this.uiView={"type":"View","props":{"width":1280,"height":720},"child":[{"type":"Image","props":{"y":0,"x":186,"width":947,"skin":"res/loading/logo.png","height":723}},{"type":"Label","props":{"y":57,"x":91,"width":423,"var":"title","text":"Dyson","height":118,"fontSize":50,"color":"#d1cccc","align":"center"}},{"type":"Button","props":{"y":605,"x":939,"width":342,"var":"oneTouch_btn","skin":"res/share/Btn_bg.png","height":85},"child":[{"type":"Label","props":{"y":11.999999999999886,"x":54.00000000000006,"width":238,"text":"一鍵登入","height":118,"fontSize":50,"color":"#f6eaea","align":"center"}}]},{"type":"Label","props":{"y":62,"x":805,"width":423,"var":"casino","text":"Casino","height":118,"fontSize":50,"color":"#d1cccc","align":"center"}},{"type":"Box","props":{"y":456,"x":12,"var":"loginZone"},"child":[{"type":"TextInput","props":{"x":37,"width":283,"var":"password","text":"22","promptColor":"#f6eeee","prompt":"password","height":47,"fontSize":20,"color":"#f4ecec"}},{"type":"TextInput","props":{"y":65,"x":36,"width":283,"var":"name","text":"11","promptColor":"#f6eeee","prompt":"TextInput","height":47,"fontSize":20,"color":"#f4ecec"}},{"type":"Button","props":{"y":147,"width":342,"var":"Login_btn","skin":"res/share/Btn_bg.png","height":85},"child":[{"type":"Label","props":{"y":14,"x":48.00000000000006,"width":238,"text":"登入","height":118,"fontSize":50,"color":"#f6eaea","align":"center"}}]}]}]};}
+		['uiView',function(){return this.uiView={"type":"View","props":{"width":1280,"height":720},"child":[{"type":"Label","props":{"y":30,"x":382,"width":423,"var":"title","text":"Dyson Casino","height":118,"fontSize":50,"color":"#d1cccc","align":"center"}},{"type":"Button","props":{"y":559,"x":435,"width":342,"var":"oneTouch_btn","skin":"res/share/Btn_bg.png","height":85},"child":[{"type":"Label","props":{"y":11.999999999999886,"x":54.00000000000006,"width":238,"text":"一鍵登入","height":118,"fontSize":50,"color":"#f6eaea","align":"center"}}]},{"type":"TextInput","props":{"y":258,"x":443,"width":283,"var":"password","text":"22","promptColor":"#f6eeee","prompt":"password","height":47,"fontSize":30,"color":"#f4ecec","bgColor":"#24ad2f"}},{"type":"TextInput","props":{"y":187,"x":442,"width":283,"var":"name","text":"11","promptColor":"#f6eeee","prompt":"TextInput","height":55,"fontSize":30,"color":"#f4ecec","bgColor":"#24ad2f"}},{"type":"Button","props":{"y":327,"x":435,"width":342,"var":"Login_btn","skin":"res/share/Btn_bg.png","height":85},"child":[{"type":"Label","props":{"y":14,"x":48.00000000000006,"width":238,"text":"登入","height":118,"fontSize":50,"color":"#f6eaea","align":"center"}}]},{"type":"Label","props":{"y":185,"x":273,"width":177,"var":"title","text":"帳號:","height":63,"fontSize":50,"color":"#d1cccc","align":"center"}},{"type":"Label","props":{"y":251,"x":273,"width":177,"var":"title","text":"密碼:","height":63,"fontSize":50,"color":"#d1cccc","align":"center"}}]};}
 		]);
 		return loginViewUI;
 	})(View);
@@ -410,6 +410,7 @@ var HintViewUI=(function(_super){
 var TakeInUI=(function(_super){
 		function TakeInUI(){
 			
+		    this.range=null;
 		    this.inputtext=null;
 		    this.takeInBtn=null;
 		    this.closeBtn=null;
@@ -426,7 +427,7 @@ var TakeInUI=(function(_super){
 		}
 
 		STATICATTR$(TakeInUI,
-		['uiView',function(){return this.uiView={"type":"View","props":{"width":1280,"height":720},"child":[{"type":"Image","props":{"y":205,"x":310,"width":647,"skin":"res/share/03.png","height":297,"sizeGrid":"0,1,0,1"}},{"type":"Label","props":{"y":232,"x":556,"width":161,"text":"帶入點數","height":47,"fontSize":30,"align":"center"}},{"type":"TextInput","props":{"y":299,"x":473,"width":320,"var":"inputtext","promptColor":"#170302","height":46,"fontSize":30,"align":"center"}},{"type":"Button","props":{"y":375,"x":543,"width":198,"var":"takeInBtn","skin":"res/share/Btn_bg.png","height":89},"child":[{"type":"Label","props":{"y":27,"x":16,"width":175,"text":"帶入","height":42,"fontSize":30,"color":"#f8f0ef","align":"center"}}]},{"type":"Button","props":{"y":213,"x":902,"var":"closeBtn","skin":"res/share/btn_close.png"}}]};}
+		['uiView',function(){return this.uiView={"type":"View","props":{"width":1280,"height":720},"child":[{"type":"Image","props":{"y":205,"x":310,"width":647,"skin":"res/share/03.png","height":297,"sizeGrid":"0,1,0,1"}},{"type":"Label","props":{"y":232,"x":356,"width":538,"var":"range","text":"帶入點數","height":47,"fontSize":30,"align":"center"}},{"type":"TextInput","props":{"y":299,"x":473,"width":320,"var":"inputtext","promptColor":"#170302","height":46,"fontSize":30,"borderColor":"#000000","bgColor":"#a6dba6","align":"center"}},{"type":"Button","props":{"y":375,"x":543,"width":198,"var":"takeInBtn","skin":"res/share/Btn_bg.png","height":89},"child":[{"type":"Label","props":{"y":27,"x":16,"width":175,"text":"帶入","height":42,"fontSize":30,"color":"#f8f0ef","align":"center"}}]},{"type":"Button","props":{"y":213,"x":902,"var":"closeBtn","skin":"res/share/btn_close.png"}}]};}
 		]);
 		return TakeInUI;
 	})(View);

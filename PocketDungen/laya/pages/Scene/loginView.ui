@@ -2,7 +2,7 @@
     "x":0,
     "type":"View",
     "selectedBox":1,
-    "selecteID":40,
+    "selecteID":4,
     "props":{"width":1280,"sceneColor":"#1c1818","height":720},
     "nodeParent":-1,
     "label":"View",
@@ -21,29 +21,8 @@
     "child":[
         {
             "x":15,
-            "type":"Image",
-            "props":{"y":0,"x":186,"width":947,"skin":"res/loading/logo.png","height":723},
-            "nodeParent":1,
-            "label":"Image",
-            "isDirectory":false,
-            "isAniNode":true,
-            "hasChild":false,
-            "frames":[
-                {
-                    "type":1,
-                    "props":{"y":450,"x":72,"skin":"res/loading/logo.png"},
-                    "frame":0,
-                    "__InPool":false
-                }],
-            "compId":12,
-            "child":[
-                ],
-            "$LOCKED":true
-        },
-        {
-            "x":15,
             "type":"Label",
-            "props":{"y":57,"x":91,"width":423,"var":"title","text":"Dyson","height":118,"fontSize":50,"color":"#d1cccc","align":"center"},
+            "props":{"y":30,"x":382,"width":423,"var":"title","text":"Dyson Casino","height":118,"fontSize":50,"color":"#d1cccc","align":"center"},
             "nodeParent":1,
             "label":"Label(title)",
             "isDirectory":false,
@@ -63,7 +42,7 @@
         {
             "x":15,
             "type":"Button",
-            "props":{"y":605,"x":939,"width":342,"var":"oneTouch_btn","skin":"res/share/Btn_bg.png","height":85},
+            "props":{"y":559,"x":435,"width":342,"var":"oneTouch_btn","skin":"res/share/Btn_bg.png","height":85},
             "nodeParent":1,
             "label":"Button(oneTouch_btn)",
             "isOpen":false,
@@ -101,10 +80,90 @@
         },
         {
             "x":15,
-            "type":"Label",
-            "props":{"y":62,"x":805,"width":423,"var":"casino","text":"Casino","height":118,"fontSize":50,"color":"#d1cccc","align":"center"},
+            "type":"TextInput",
+            "props":{"y":258,"x":443,"width":283,"var":"password","text":"22","promptColor":"#f6eeee","prompt":"password","height":47,"fontSize":30,"color":"#f4ecec","bgColor":"#24ad2f"},
             "nodeParent":1,
-            "label":"Label(casino)",
+            "label":"TextInput(password)",
+            "isDirectory":false,
+            "isAniNode":true,
+            "hasChild":false,
+            "frames":[
+                {
+                    "type":1,
+                    "props":{"text":"TextInput"},
+                    "frame":0,
+                    "__InPool":false
+                }],
+            "compId":4,
+            "child":[
+                ]
+        },
+        {
+            "x":15,
+            "type":"TextInput",
+            "props":{"y":187,"x":442,"width":283,"var":"name","text":"11","promptColor":"#f6eeee","prompt":"TextInput","height":55,"fontSize":30,"color":"#f4ecec","bgColor":"#24ad2f"},
+            "nodeParent":1,
+            "label":"TextInput(name)",
+            "isDirectory":false,
+            "isAniNode":true,
+            "hasChild":false,
+            "frames":[
+                {
+                    "type":1,
+                    "props":{"text":"TextInput"},
+                    "frame":0,
+                    "__InPool":false
+                }],
+            "compId":3,
+            "child":[
+                ]
+        },
+        {
+            "x":15,
+            "type":"Button",
+            "props":{"y":327,"x":435,"width":342,"var":"Login_btn","skin":"res/share/Btn_bg.png","height":85},
+            "nodeParent":1,
+            "label":"Button(Login_btn)",
+            "isOpen":true,
+            "isDirectory":true,
+            "isAniNode":true,
+            "hasChild":true,
+            "frames":[
+                {
+                    "type":1,
+                    "props":{"label":"label"},
+                    "frame":0,
+                    "__InPool":false
+                }],
+            "compId":8,
+            "child":[
+                {
+                    "x":30,
+                    "type":"Label",
+                    "props":{"y":14,"x":48.00000000000006,"width":238,"text":"登入","height":118,"fontSize":50,"color":"#f6eaea","align":"center"},
+                    "nodeParent":8,
+                    "label":"Label",
+                    "isDirectory":false,
+                    "isAniNode":true,
+                    "hasChild":false,
+                    "frames":[
+                        {
+                            "type":1,
+                            "props":{"text":"label"},
+                            "frame":0,
+                            "__InPool":false
+                        }],
+                    "compId":9,
+                    "child":[
+                        ]
+                }]
+        },
+        {
+            "x":15,
+            "type":"Label",
+            "props":{"y":185,"x":273,"width":177,"var":"title","text":"帳號:","height":63,"fontSize":50,"color":"#d1cccc","align":"center"},
+            "nodeParent":1,
+            "label":"Label(title)",
             "isDirectory":false,
             "isAniNode":true,
             "hasChild":false,
@@ -115,105 +174,29 @@
                     "frame":0,
                     "__InPool":false
                 }],
-            "compId":13,
+            "compId":15,
             "child":[
                 ]
         },
         {
             "x":15,
-            "type":"Box",
-            "props":{"y":456,"x":12,"var":"loginZone"},
+            "type":"Label",
+            "props":{"y":251,"x":273,"width":177,"var":"title","text":"密碼:","height":63,"fontSize":50,"color":"#d1cccc","align":"center"},
             "nodeParent":1,
-            "label":"Box(loginZone)",
-            "isOpen":false,
-            "isDirectory":true,
+            "label":"Label(title)",
+            "isDirectory":false,
             "isAniNode":true,
-            "hasChild":true,
+            "hasChild":false,
             "frames":[
                 {
                     "type":1,
-                    "props":{"y":456,"x":12},
+                    "props":{"text":"label"},
                     "frame":0,
                     "__InPool":false
                 }],
-            "compId":14,
+            "compId":16,
             "child":[
-                {
-                    "type":"TextInput",
-                    "props":{"x":37,"width":283,"var":"password","text":"22","promptColor":"#f6eeee","prompt":"password","height":47,"fontSize":20,"color":"#f4ecec"},
-                    "nodeParent":14,
-                    "label":"TextInput(password)",
-                    "isDirectory":false,
-                    "isAniNode":true,
-                    "hasChild":false,
-                    "frames":[
-                        {
-                            "type":1,
-                            "props":{"text":"TextInput"},
-                            "frame":0,
-                            "__InPool":false
-                        }],
-                    "compId":4,
-                    "child":[
-                        ]
-                },
-                {
-                    "type":"TextInput",
-                    "props":{"y":65,"x":36,"width":283,"var":"name","text":"11","promptColor":"#f6eeee","prompt":"TextInput","height":47,"fontSize":20,"color":"#f4ecec"},
-                    "nodeParent":14,
-                    "label":"TextInput(name)",
-                    "isDirectory":false,
-                    "isAniNode":true,
-                    "hasChild":false,
-                    "frames":[
-                        {
-                            "type":1,
-                            "props":{"text":"TextInput"},
-                            "frame":0,
-                            "__InPool":false
-                        }],
-                    "compId":3,
-                    "child":[
-                        ]
-                },
-                {
-                    "type":"Button",
-                    "props":{"y":147,"width":342,"var":"Login_btn","skin":"res/share/Btn_bg.png","height":85},
-                    "nodeParent":14,
-                    "label":"Button(Login_btn)",
-                    "isOpen":true,
-                    "isDirectory":true,
-                    "isAniNode":true,
-                    "hasChild":true,
-                    "frames":[
-                        {
-                            "type":1,
-                            "props":{"label":"label"},
-                            "frame":0,
-                            "__InPool":false
-                        }],
-                    "compId":8,
-                    "child":[
-                        {
-                            "type":"Label",
-                            "props":{"y":14,"x":48.00000000000006,"width":238,"text":"登入","height":118,"fontSize":50,"color":"#f6eaea","align":"center"},
-                            "nodeParent":8,
-                            "label":"Label",
-                            "isDirectory":false,
-                            "isAniNode":true,
-                            "hasChild":false,
-                            "frames":[
-                                {
-                                    "type":1,
-                                    "props":{"text":"label"},
-                                    "frame":0,
-                                    "__InPool":false
-                                }],
-                            "compId":9,
-                            "child":[
-                                ]
-                        }]
-                }]
+                ]
         }],
     "animations":[
         {

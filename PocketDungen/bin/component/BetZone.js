@@ -18,7 +18,7 @@ function BetZone()
 	{
 		self._coinarr = []
 		self._unfirm_coin =[]
-		self._betzone = [0,1,2]
+		self._betzone = [0,1,2,3,4]
 		for(i =0;i< self._betzone.length;i++)
 		{
 			self._coinarr.push([])
