@@ -111,7 +111,7 @@
 	{
 		//login ok asking lobbylist & usercredit
 		_model.eventHandle("query_lobby_list",[]);
-		_model.eventHandle("query_user_credit",[]);
+		
   	}
 	
 	function onloadlobby()
@@ -166,7 +166,7 @@
 		_model.current_view_name = "lobby";
 		Laya.stage.addChild(_model.getView("lobby"));
 
-		
+		_model.eventHandle("query_user_credit",[]);
 	}
 	
 	function unloadlobby()
@@ -200,11 +200,7 @@
 	}
 
 	function onIntoGame()
-	{
-		//Laya.stage.removeChild(_model.getView(_model.current_view_name));
-		//_model.removeView(_model.current_view_name)
-		
-
+	{		
 		if(_model.getView("warcraft") == undefined )
 		{
 			trace("first create warcraft")
@@ -213,9 +209,7 @@
 		
 		_model.current_view_name = "warcraft";
 		Laya.stage.addChild(_model.getView("warcraft"));
-
-		 //TODO 實際帶入
-         _model.cashin.dispatch(1000,2000);
+		 
 	}
 
 	function onIntobaccrat()
@@ -227,10 +221,10 @@
 		}
 		
 		_model.current_view_name = "baccarat";
-		Laya.stage.addChild(_model.getView("baccarat"));
+		Laya.stage.addChild(_model.getView("baccarat"));   
 
-		 //TODO 實際帶入
-         _model.cashin.dispatch(1000,2000);
+		//show takin
+		_model.cashin.dispatch()      
 	}
 	    
 	function onhintok()

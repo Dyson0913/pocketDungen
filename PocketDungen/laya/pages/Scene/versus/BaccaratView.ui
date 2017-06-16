@@ -2,7 +2,7 @@
     "x":0,
     "type":"View",
     "selectedBox":1,
-    "selecteID":62,
+    "selecteID":61,
     "props":{"width":1280,"sceneColor":"#000000","pivotX":1,"height":720},
     "nodeParent":-1,
     "label":"View",
@@ -233,7 +233,7 @@
             "x":15,
             "type":"UIView",
             "source":"component/BetBtnSet.ui",
-            "props":{"y":33,"x":284,"width":678,"runtime":"BetBtnSet","height":85},
+            "props":{"y":56,"x":284,"width":678,"runtime":"BetBtnSet","height":85},
             "nodeParent":1,
             "label":"UIView",
             "isDirectory":false,
@@ -274,27 +274,6 @@
         },
         {
             "x":15,
-            "type":"Button",
-            "props":{"y":14.999999999999986,"x":29.999999999999947,"var":"back_to_lobby","skin":"res/share/backLobbyBtn.png"},
-            "nodeParent":1,
-            "label":"Button(back_to_lobby)",
-            "isOpen":true,
-            "isDirectory":false,
-            "isAniNode":true,
-            "hasChild":false,
-            "frames":[
-                {
-                    "type":1,
-                    "props":{"label":"label"},
-                    "frame":0,
-                    "__InPool":false
-                }],
-            "compId":30,
-            "child":[
-                ]
-        },
-        {
-            "x":15,
             "type":"UIView",
             "source":"component/PhaseHint.ui",
             "props":{"y":61,"x":540,"runtime":"PhaseHint"},
@@ -311,6 +290,48 @@
                     "__InPool":false
                 }],
             "compId":62,
+            "child":[
+                ]
+        },
+        {
+            "x":15,
+            "type":"UIView",
+            "source":"share/Menu.ui",
+            "props":{"y":5,"x":-27,"runtime":"Menu"},
+            "nodeParent":1,
+            "label":"UIView",
+            "isDirectory":false,
+            "isAniNode":true,
+            "hasChild":false,
+            "frames":[
+                {
+                    "type":1,
+                    "props":{"y":234,"x":1},
+                    "frame":0,
+                    "__InPool":false
+                }],
+            "compId":63,
+            "child":[
+                ]
+        },
+        {
+            "x":15,
+            "type":"UIView",
+            "source":"share/CreditBoard.ui",
+            "props":{"y":15,"x":278,"runtime":"CreditBoard"},
+            "nodeParent":1,
+            "label":"UIView",
+            "isDirectory":false,
+            "isAniNode":true,
+            "hasChild":false,
+            "frames":[
+                {
+                    "type":1,
+                    "props":{"y":302,"x":104},
+                    "frame":0,
+                    "__InPool":false
+                }],
+            "compId":64,
             "child":[
                 ]
         }],

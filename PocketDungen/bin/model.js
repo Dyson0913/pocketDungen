@@ -49,8 +49,10 @@ var model = function ()
     this.in_game =  new signals.Signal();
 
     //game share
+    this.creditUpdate =  new signals.Signal();
     this.cashin =  new signals.Signal();
     this.winMoney =  new signals.Signal();
+
     this.gameStateUpdate = new signals.Signal();
     this.countDown = new signals.Signal();
     this.betCancel = new signals.Signal();
@@ -136,10 +138,16 @@ model.prototype.eventHandle = function (name,data)
         break;
         case "userCredit_update":
         this.total_Credit = data[0].total_Credit
+        _model.pushValue("total_credit",data[0].total_Credit)
+        _model.creditUpdate.dispatch()        
        break;
 
        case "takein":
          this.take_in_gamePoint = jsondata
+         
+         _model.pushValue("game_credit",jsondata)        
+
+
          var join_id = this.game_list[this.join_game]["game"]+"_"+_model.join_group
         var msg = {"uuid": this.uuid,"module":"credit","cmd":"take_in","takein_credit":jsondata,"game":join_id};
         this.send_pack(msg)
@@ -204,6 +212,9 @@ model.prototype.eventHandle = function (name,data)
         }
        
          this.in_game.dispatch();
+
+         
+         
         
        break;
         case "init":            

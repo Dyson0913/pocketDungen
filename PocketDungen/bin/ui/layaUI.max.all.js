@@ -195,11 +195,8 @@ var SettleUI=(function(_super){
 var lobbyViewUI=(function(_super){
 		function lobbyViewUI(){
 			
-		    this.game1=null;
-		    this.priate=null;
-		    this.warcraft=null;
-		    this.gold=null;
 		    this.game2=null;
+		    this.credit=null;
 
 			lobbyViewUI.__super.call(this);
 		}
@@ -213,7 +210,7 @@ var lobbyViewUI=(function(_super){
 		}
 
 		STATICATTR$(lobbyViewUI,
-		['uiView',function(){return this.uiView={"type":"View","props":{"width":1280,"height":720},"child":[{"type":"Button","props":{"y":6,"x":8,"var":"game1","skin":"res/lobby/money.png"}},{"type":"Button","props":{"y":9,"x":1045,"skin":"res/lobby/home.png"}},{"type":"Button","props":{"y":477,"x":8,"var":"priate","skin":"res/lobby/pairate.png"}},{"type":"Button","props":{"y":476,"x":1037,"var":"warcraft","skin":"res/lobby/king.png"}},{"type":"Button","props":{"y":244,"x":917,"var":"gold","skin":"res/lobby/gold.png"}},{"type":"Button","props":{"y":236,"x":132,"var":"game2","skin":"res/lobby/arc.png"}}]};}
+		['uiView',function(){return this.uiView={"type":"View","props":{"width":1280,"height":720},"child":[{"type":"Button","props":{"y":284,"x":526,"var":"game2","skin":"res/lobby/arc.png"}},{"type":"Label","props":{"y":29,"x":179,"width":214,"var":"credit","text":"label","height":41,"fontSize":30,"color":"#f8eeee","bgColor":"#339e4d","align":"center"}},{"type":"Label","props":{"y":29,"x":26,"width":141,"text":"點數","height":41,"fontSize":30,"color":"#f8eeee","bgColor":"#339e4d","align":"center"}},{"type":"Label","props":{"y":219,"x":552,"width":141,"text":"百家","height":41,"fontSize":30,"color":"#f8eeee","bgColor":"#339e4d","align":"center"}}]};}
 		]);
 		return lobbyViewUI;
 	})(View);
@@ -353,7 +350,6 @@ var BaccaratViewUI=(function(_super){
 		    this.poker_3=null;
 		    this.poker_4=null;
 		    this.poker_5=null;
-		    this.back_to_lobby=null;
 
 			BaccaratViewUI.__super.call(this);
 		}
@@ -362,26 +358,51 @@ var BaccaratViewUI=(function(_super){
 		var __proto__=BaccaratViewUI.prototype;
 		__proto__.createChildren=function(){
 		    			View.regComponent("CountTimer",CountTimer);
-			View.regComponent("PhaseHint",PhaseHint);
+			View.regComponent("CreditBoard",CreditBoard);
 			View.regComponent("Poker1",Poker1);
 			View.regComponent("Poker2",Poker2);
 			View.regComponent("Poker3",Poker3);
 			View.regComponent("Poker4",Poker4);
+			View.regComponent("Poker5",Poker5);
 			View.regComponent("Poker",Poker);
-			View.regComponent("Settle",Settle);
 			View.regComponent("BetZone",BetZone);
 			View.regComponent("BetBtnSet",BetBtnSet);
 			View.regComponent("CoinSelect",CoinSelect);
-			View.regComponent("Poker5",Poker5);
+			View.regComponent("PhaseHint",PhaseHint);
+			View.regComponent("Menu",Menu);
+			View.regComponent("Settle",Settle);
 
 			laya.ui.Component.prototype.createChildren.call(this);
 			this.createView(BaccaratViewUI.uiView);
 		}
 
 		STATICATTR$(BaccaratViewUI,
-		['uiView',function(){return this.uiView={"type":"View","props":{"width":1280,"pivotX":1,"height":720},"child":[{"type":"Image","props":{"y":0,"x":0,"width":1280,"var":"bg","skin":"res/baccarat/bg.jpg","height":720}},{"type":"CountTimer","props":{"y":356,"x":580,"var":"countTimer","runtime":"CountTimer"}},{"type":"Poker","props":{"y":139,"x":94,"var":"poker_0","runtime":"Poker","name":"poker_0"}},{"type":"Poker","props":{"y":138,"x":274,"var":"poker_1","runtime":"Poker1","name":"poker_1"}},{"type":"Poker","props":{"y":139,"x":468,"var":"poker_2","runtime":"Poker2","name":"poker_2"}},{"type":"Poker","props":{"y":140,"x":681,"var":"poker_3","runtime":"Poker3","name":"poker_3"}},{"type":"Poker","props":{"y":140,"x":870,"var":"poker_4","runtime":"Poker4","name":"poker_4"}},{"type":"Poker","props":{"y":142,"x":1066,"var":"poker_5","runtime":"Poker5","name":"poker_5"}},{"type":"Settle","props":{"y":0,"x":0,"runtime":"Settle"}},{"type":"betzone","props":{"runtime":"BetZone"}},{"type":"BetBtnSet","props":{"y":33,"x":284,"width":678,"runtime":"BetBtnSet","height":85}},{"type":"coinSelect","props":{"y":592,"x":204,"runtime":"CoinSelect"}},{"type":"Button","props":{"y":14.999999999999986,"x":29.999999999999947,"var":"back_to_lobby","skin":"res/share/backLobbyBtn.png"}},{"type":"PhaseHint","props":{"y":61,"x":540,"runtime":"PhaseHint"}}]};}
+		['uiView',function(){return this.uiView={"type":"View","props":{"width":1280,"pivotX":1,"height":720},"child":[{"type":"Image","props":{"y":0,"x":0,"width":1280,"var":"bg","skin":"res/baccarat/bg.jpg","height":720}},{"type":"CountTimer","props":{"y":356,"x":580,"var":"countTimer","runtime":"CountTimer"}},{"type":"Poker","props":{"y":139,"x":94,"var":"poker_0","runtime":"Poker","name":"poker_0"}},{"type":"Poker","props":{"y":138,"x":274,"var":"poker_1","runtime":"Poker1","name":"poker_1"}},{"type":"Poker","props":{"y":139,"x":468,"var":"poker_2","runtime":"Poker2","name":"poker_2"}},{"type":"Poker","props":{"y":140,"x":681,"var":"poker_3","runtime":"Poker3","name":"poker_3"}},{"type":"Poker","props":{"y":140,"x":870,"var":"poker_4","runtime":"Poker4","name":"poker_4"}},{"type":"Poker","props":{"y":142,"x":1066,"var":"poker_5","runtime":"Poker5","name":"poker_5"}},{"type":"Settle","props":{"y":0,"x":0,"runtime":"Settle"}},{"type":"betzone","props":{"runtime":"BetZone"}},{"type":"BetBtnSet","props":{"y":56,"x":284,"width":678,"runtime":"BetBtnSet","height":85}},{"type":"coinSelect","props":{"y":592,"x":204,"runtime":"CoinSelect"}},{"type":"PhaseHint","props":{"y":61,"x":540,"runtime":"PhaseHint"}},{"type":"Menu","props":{"y":5,"x":-27,"runtime":"Menu"}},{"type":"CreditBoard","props":{"y":15,"x":278,"runtime":"CreditBoard"}}]};}
 		]);
 		return BaccaratViewUI;
+	})(View);
+var CreditBoardUI=(function(_super){
+		function CreditBoardUI(){
+			
+		    this.game_credit=null;
+		    this.total_bet=null;
+		    this.total_win=null;
+
+			CreditBoardUI.__super.call(this);
+		}
+
+		CLASS$(CreditBoardUI,'ui.share.CreditBoardUI',_super);
+		var __proto__=CreditBoardUI.prototype;
+		__proto__.createChildren=function(){
+		    
+			laya.ui.Component.prototype.createChildren.call(this);
+			this.createView(CreditBoardUI.uiView);
+		}
+
+		STATICATTR$(CreditBoardUI,
+		['uiView',function(){return this.uiView={"type":"View","props":{"width":200,"height":100},"child":[{"type":"Label","props":{"y":12,"x":12,"width":128,"var":"game_credit","text":"999999","height":35,"fontSize":30,"color":"#efeeee"}},{"type":"Label","props":{"y":10,"x":361,"width":128,"var":"total_bet","text":"999999","height":35,"fontSize":30,"color":"#efeeee"}},{"type":"Label","props":{"y":10,"x":611,"width":128,"var":"total_win","text":"999999","height":35,"fontSize":30,"color":"#efeeee"}},{"type":"Label","props":{"y":12,"x":-91,"width":124,"text":"小錢包:","height":31,"fontSize":28,"color":"#fbf5f4"}},{"type":"Label","props":{"y":10,"x":187,"width":124,"text":"總下注額度:","height":31,"fontSize":28,"color":"#fbf5f4"}},{"type":"Label","props":{"y":13,"x":507,"width":124,"text":"總輪贏:","height":31,"fontSize":28,"color":"#fbf5f4"}}]};}
+		]);
+		return CreditBoardUI;
 	})(View);
 var HintViewUI=(function(_super){
 		function HintViewUI(){
@@ -406,6 +427,27 @@ var HintViewUI=(function(_super){
 		['uiView',function(){return this.uiView={"type":"View","props":{"width":1280,"runtime":"HintUI","height":720},"child":[{"type":"Box","props":{},"child":[{"type":"Image","props":{"y":178,"x":246,"width":755,"skin":"res/share/02.png","height":271,"sizeGrid":"0,1,0,1"}},{"type":"Button","props":{"y":368,"x":655,"width":310,"var":"cancel","skin":"res/share/Btn_bg.png","height":82},"child":[{"type":"Label","props":{"y":13,"x":37,"width":238,"text":"取消","height":53,"fontSize":50,"color":"#f6eaea","align":"center"}}]},{"type":"Button","props":{"y":368,"x":299,"width":310,"var":"comfirmBtn","skin":"res/share/Btn_bg.png","height":82},"child":[{"type":"Label","props":{"y":14,"x":28,"width":238,"text":"確定","height":53,"fontSize":50,"color":"#f6eaea","align":"center"}}]},{"type":"Label","props":{"y":198,"x":287,"width":696,"var":"context","text":"label","height":162,"fontSize":30,"align":"center"}}]}]};}
 		]);
 		return HintViewUI;
+	})(View);
+var MenuUI=(function(_super){
+		function MenuUI(){
+			
+		    this.back_to_lobby=null;
+
+			MenuUI.__super.call(this);
+		}
+
+		CLASS$(MenuUI,'ui.share.MenuUI',_super);
+		var __proto__=MenuUI.prototype;
+		__proto__.createChildren=function(){
+		    
+			laya.ui.Component.prototype.createChildren.call(this);
+			this.createView(MenuUI.uiView);
+		}
+
+		STATICATTR$(MenuUI,
+		['uiView',function(){return this.uiView={"type":"View","props":{"width":200,"height":100},"child":[{"type":"Button","props":{"y":4,"x":57,"var":"back_to_lobby","skin":"res/share/backLobbyBtn.png"}}]};}
+		]);
+		return MenuUI;
 	})(View);
 var TakeInUI=(function(_super){
 		function TakeInUI(){

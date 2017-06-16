@@ -25,7 +25,7 @@ function BetZone()
 			self._unfirm_coin.push([])
 		}
 		
-		_model.pushValue("coinlist",self._coinarr)
+		_model.pushValue("comfirm_betlist",self._coinarr)
 		_model.pushValue("unfirm_coin",self._unfirm_coin)
 
 		self.visible = false;
@@ -116,6 +116,8 @@ function BetZone()
 		{
 			coin_clear(i,self._coinarr)
 		}
+
+		_model.pushValue("comfirm_betlist",self._coinarr)
 	}
 	
 	function coin_clear(idx,dataArr)
@@ -154,7 +156,9 @@ function BetZone()
 		for(k =0;k< copydata.length;k++)
 		{
 		 	self._coinarr[idx].push(copydata[k])
-		} 		
+		} 
+
+		_model.pushValue("comfirm_betlist",self._coinarr)
 	}
 
 }

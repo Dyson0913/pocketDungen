@@ -5,17 +5,19 @@ var _model;
 
 function lobbyUI()
 {
+	var self = this
 	lobbyUI.super(this);
 	
 	_model = model.getInstance();
-	
-	this.game1.on(Event.CLICK, this, onBtnClick);
+	_model.creditUpdate.add(onCredit);
+
+	//this.game1.on(Event.CLICK, this, onBtnClick);
 	this.game2.on(Event.CLICK, this, onBtnClick2);
 
 	function onBtnClick()
 	{
 		_model.join_game = 0;
-		_model.eventHandle("join_game",[]);
+		//_model.eventHandle("join_game",[]);
 	}
 
 	function onBtnClick2()
@@ -24,6 +26,11 @@ function lobbyUI()
 		_model.join_game = 2;
 		_model.join_group = 1;
 		_model.openview.dispatch("takeIn");
+	}
+	
+	function onCredit()
+	{
+		self.credit.text =  _model.getValue("total_credit")
 	}
 	
 	
