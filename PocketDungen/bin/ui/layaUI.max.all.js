@@ -377,7 +377,7 @@ var BaccaratViewUI=(function(_super){
 		}
 
 		STATICATTR$(BaccaratViewUI,
-		['uiView',function(){return this.uiView={"type":"View","props":{"width":1280,"pivotX":1,"height":720},"child":[{"type":"Image","props":{"y":0,"x":0,"width":1280,"var":"bg","skin":"res/baccarat/bg.jpg","height":720}},{"type":"CountTimer","props":{"y":356,"x":580,"var":"countTimer","runtime":"CountTimer"}},{"type":"Poker","props":{"y":139,"x":94,"var":"poker_0","runtime":"Poker","name":"poker_0"}},{"type":"Poker","props":{"y":138,"x":274,"var":"poker_1","runtime":"Poker1","name":"poker_1"}},{"type":"Poker","props":{"y":139,"x":468,"var":"poker_2","runtime":"Poker2","name":"poker_2"}},{"type":"Poker","props":{"y":140,"x":681,"var":"poker_3","runtime":"Poker3","name":"poker_3"}},{"type":"Poker","props":{"y":140,"x":870,"var":"poker_4","runtime":"Poker4","name":"poker_4"}},{"type":"Poker","props":{"y":142,"x":1066,"var":"poker_5","runtime":"Poker5","name":"poker_5"}},{"type":"Settle","props":{"y":0,"x":0,"runtime":"Settle"}},{"type":"betzone","props":{"runtime":"BetZone"}},{"type":"BetBtnSet","props":{"y":56,"x":284,"width":678,"runtime":"BetBtnSet","height":85}},{"type":"coinSelect","props":{"y":592,"x":204,"runtime":"CoinSelect"}},{"type":"PhaseHint","props":{"y":61,"x":540,"runtime":"PhaseHint"}},{"type":"Menu","props":{"y":5,"x":-27,"runtime":"Menu"}},{"type":"CreditBoard","props":{"y":15,"x":278,"runtime":"CreditBoard"}}]};}
+		['uiView',function(){return this.uiView={"type":"View","props":{"width":1280,"pivotX":1,"height":720},"child":[{"type":"Image","props":{"y":0,"x":0,"width":1280,"var":"bg","skin":"res/baccarat/bg.jpg","height":720}},{"type":"CountTimer","props":{"y":356,"x":580,"var":"countTimer","runtime":"CountTimer"}},{"type":"Poker","props":{"y":139,"x":94,"var":"poker_0","runtime":"Poker","name":"poker_0"}},{"type":"Poker","props":{"y":138,"x":274,"var":"poker_1","runtime":"Poker1","name":"poker_1"}},{"type":"Poker","props":{"y":139,"x":468,"var":"poker_2","runtime":"Poker2","name":"poker_2"}},{"type":"Poker","props":{"y":140,"x":681,"var":"poker_3","runtime":"Poker3","name":"poker_3"}},{"type":"Poker","props":{"y":140,"x":870,"var":"poker_4","runtime":"Poker4","name":"poker_4"}},{"type":"Poker","props":{"y":142,"x":1066,"var":"poker_5","runtime":"Poker5","name":"poker_5"}},{"type":"Settle","props":{"y":0,"x":0,"runtime":"Settle"}},{"type":"betzone","props":{"y":0,"x":0,"runtime":"BetZone"}},{"type":"BetBtnSet","props":{"y":56,"x":284,"width":678,"runtime":"BetBtnSet","height":85}},{"type":"coinSelect","props":{"y":592,"x":204,"runtime":"CoinSelect"}},{"type":"PhaseHint","props":{"y":61,"x":540,"runtime":"PhaseHint"}},{"type":"Menu","props":{"y":5,"x":-27,"runtime":"Menu"}},{"type":"CreditBoard","props":{"y":9,"x":257,"runtime":"CreditBoard"}}]};}
 		]);
 		return BaccaratViewUI;
 	})(View);
@@ -387,6 +387,7 @@ var CreditBoardUI=(function(_super){
 		    this.game_credit=null;
 		    this.total_bet=null;
 		    this.total_win=null;
+		    this.round_code=null;
 
 			CreditBoardUI.__super.call(this);
 		}
@@ -400,7 +401,7 @@ var CreditBoardUI=(function(_super){
 		}
 
 		STATICATTR$(CreditBoardUI,
-		['uiView',function(){return this.uiView={"type":"View","props":{"width":200,"height":100},"child":[{"type":"Label","props":{"y":12,"x":12,"width":128,"var":"game_credit","text":"999999","height":35,"fontSize":30,"color":"#efeeee"}},{"type":"Label","props":{"y":10,"x":361,"width":128,"var":"total_bet","text":"999999","height":35,"fontSize":30,"color":"#efeeee"}},{"type":"Label","props":{"y":10,"x":611,"width":128,"var":"total_win","text":"999999","height":35,"fontSize":30,"color":"#efeeee"}},{"type":"Label","props":{"y":12,"x":-91,"width":124,"text":"小錢包:","height":31,"fontSize":28,"color":"#fbf5f4"}},{"type":"Label","props":{"y":10,"x":187,"width":124,"text":"總下注額度:","height":31,"fontSize":28,"color":"#fbf5f4"}},{"type":"Label","props":{"y":13,"x":507,"width":124,"text":"總輪贏:","height":31,"fontSize":28,"color":"#fbf5f4"}}]};}
+		['uiView',function(){return this.uiView={"type":"View","props":{"width":200,"height":100},"child":[{"type":"Label","props":{"y":12,"x":12,"width":128,"var":"game_credit","text":"999999","height":35,"fontSize":30,"color":"#efeeee"}},{"type":"Label","props":{"y":10,"x":361,"width":128,"var":"total_bet","text":"999999","height":35,"fontSize":30,"color":"#efeeee"}},{"type":"Label","props":{"y":10,"x":611,"width":128,"var":"total_win","text":"999999","height":35,"fontSize":30,"color":"#efeeee"}},{"type":"Label","props":{"y":12,"x":-91,"width":124,"text":"小錢包:","height":31,"fontSize":28,"color":"#fbf5f4"}},{"type":"Label","props":{"y":10,"x":187,"width":124,"text":"總下注額度:","height":31,"fontSize":28,"color":"#fbf5f4"}},{"type":"Label","props":{"y":13,"x":507,"width":124,"text":"總輪贏:","height":31,"fontSize":28,"color":"#fbf5f4"}},{"type":"Label","props":{"y":12,"x":740,"width":72,"text":"局號:","height":31,"fontSize":28,"color":"#fbf5f4"}},{"type":"Label","props":{"y":11,"x":811,"width":128,"var":"round_code","text":"999999","height":35,"fontSize":30,"color":"#efeeee"}}]};}
 		]);
 		return CreditBoardUI;
 	})(View);

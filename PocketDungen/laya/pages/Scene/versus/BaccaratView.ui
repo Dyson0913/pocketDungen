@@ -2,7 +2,7 @@
     "x":0,
     "type":"View",
     "selectedBox":1,
-    "selecteID":61,
+    "selecteID":65,
     "props":{"width":1280,"sceneColor":"#000000","pivotX":1,"height":720},
     "nodeParent":-1,
     "label":"View",
@@ -37,7 +37,9 @@
                 }],
             "compId":4,
             "child":[
-                ]
+                ],
+            "$LOCKED":true,
+            "$HIDDEN":false
         },
         {
             "x":15,
@@ -58,7 +60,8 @@
                 }],
             "compId":50,
             "child":[
-                ]
+                ],
+            "$LOCKED":true
         },
         {
             "x":15,
@@ -79,7 +82,8 @@
                 }],
             "compId":51,
             "child":[
-                ]
+                ],
+            "$LOCKED":true
         },
         {
             "x":15,
@@ -100,7 +104,8 @@
                 }],
             "compId":52,
             "child":[
-                ]
+                ],
+            "$LOCKED":true
         },
         {
             "x":15,
@@ -121,7 +126,8 @@
                 }],
             "compId":53,
             "child":[
-                ]
+                ],
+            "$LOCKED":true
         },
         {
             "x":15,
@@ -142,7 +148,8 @@
                 }],
             "compId":54,
             "child":[
-                ]
+                ],
+            "$LOCKED":true
         },
         {
             "x":15,
@@ -163,7 +170,8 @@
                 }],
             "compId":55,
             "child":[
-                ]
+                ],
+            "$LOCKED":true
         },
         {
             "x":15,
@@ -184,7 +192,8 @@
                 }],
             "compId":56,
             "child":[
-                ]
+                ],
+            "$LOCKED":true
         },
         {
             "x":15,
@@ -206,13 +215,14 @@
             "compId":58,
             "child":[
                 ],
-            "$HIDDEN":false
+            "$LOCKED":true,
+            "$HIDDEN":true
         },
         {
             "x":15,
             "type":"UIView",
             "source":"component/betzone.ui",
-            "props":{"runtime":"BetZone"},
+            "props":{"y":0,"x":0,"runtime":"BetZone"},
             "nodeParent":1,
             "label":"UIView",
             "isDirectory":false,
@@ -221,11 +231,11 @@
             "frames":[
                 {
                     "type":1,
-                    "props":{},
+                    "props":{"y":408,"x":132},
                     "frame":0,
                     "__InPool":false
                 }],
-            "compId":60,
+            "compId":65,
             "child":[
                 ]
         },
@@ -248,7 +258,8 @@
                 }],
             "compId":61,
             "child":[
-                ]
+                ],
+            "$LOCKED":true
         },
         {
             "x":15,
@@ -270,6 +281,7 @@
             "compId":57,
             "child":[
                 ],
+            "$LOCKED":true,
             "$HIDDEN":false
         },
         {
@@ -291,7 +303,8 @@
                 }],
             "compId":62,
             "child":[
-                ]
+                ],
+            "$LOCKED":true
         },
         {
             "x":15,
@@ -312,13 +325,14 @@
                 }],
             "compId":63,
             "child":[
-                ]
+                ],
+            "$LOCKED":true
         },
         {
             "x":15,
             "type":"UIView",
             "source":"share/CreditBoard.ui",
-            "props":{"y":15,"x":278,"runtime":"CreditBoard"},
+            "props":{"y":9,"x":257,"runtime":"CreditBoard"},
             "nodeParent":1,
             "label":"UIView",
             "isDirectory":false,
@@ -333,7 +347,8 @@
                 }],
             "compId":64,
             "child":[
-                ]
+                ],
+            "$LOCKED":true
         }],
     "animations":[
         {

@@ -209,6 +209,7 @@ model.prototype.eventHandle = function (name,data)
         {
             //baccarat
             this.game_id = data[0].game_id;
+            _model.pushValue("round_code","")
         }
        
          this.in_game.dispatch();
@@ -217,7 +218,8 @@ model.prototype.eventHandle = function (name,data)
          
         
        break;
-        case "init":            
+        case "init":
+            _model.pushValue("round_code",jsondata.sn)
             _model.gameStateUpdate.dispatch(name);
         break;
         case "wait_bet":

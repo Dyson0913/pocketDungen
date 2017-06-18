@@ -19,8 +19,9 @@ function CreditBoard()
     (function()
 	{
 		//建構式
-		self.total_bet.text ="";
-		self.total_win.text = "";
+		self.total_bet.text =""
+		self.total_win.text = ""
+		self.round_code.text = ""
 
 	})();
 
@@ -31,6 +32,7 @@ function CreditBoard()
 		{			
 			self.total_bet.text ="";
 			self.total_win.text = "";
+			self.round_code.text = String(_model.getValue("round_code"))
 		}
 		
 			
