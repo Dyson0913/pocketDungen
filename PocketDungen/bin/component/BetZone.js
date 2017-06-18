@@ -151,10 +151,12 @@ function BetZone()
 	function uncomfirm_to_comfirm(idx)
 	{		
 		var data = self._unfirm_coin[idx];
+		
 		var copydata = data.slice(0);		
 		if( copydata.length ==0 ) return
+		
 		for(k =0;k< copydata.length;k++)
-		{
+		{			
 		 	self._coinarr[idx].push(copydata[k])
 		} 
 

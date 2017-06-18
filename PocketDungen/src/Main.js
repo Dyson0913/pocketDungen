@@ -128,14 +128,14 @@
 		else
 		{
 			//from game back to lobby  ,del game res
-			if(this.join_game == 0 )
+			if(_model.join_game == 0 )
 			{
 				
 				trace(Laya.loader.getRes("res/atlas/game.json"));
 				Loader.clearRes("res/atlas/game.json") 
 				trace(Laya.loader.getRes("res/atlas/game.json"));
 			}
-			if(this.join_game == 2 )
+			if(_model.join_game == 2 )
 			{
 				//baccarat
 				Loader.clearRes("res/BitmapFont/tableFont.fnt")
@@ -144,10 +144,31 @@
 				Loader.clearRes("res/atlas/Coin.json")
 				Loader.clearRes("res/atlas/poker.json")
 				Loader.clearRes("res/atlas/settle.json")
+
+				game_removelisten()
 			}
 			
 			Laya.loader.load([{url: "res/atlas/lobby.json",type: Loader.ATLAS}], Handler.create(this, onlobby));
 		}
+	}
+
+	function game_removelisten()
+	{
+		_model.cashin.removeAll()
+		_model.gameStateUpdate.removeAll()
+		_model.countDown.removeAll()
+		_model.betCancel.removeAll()
+		_model.betok.removeAll()    
+		_model.betResult.removeAll()
+		_model.betBtnApear.removeAll()
+		_model.betTimeout.removeAll()
+		_model.pokerShow.removeAll()
+		_model.settleInfo.removeAll()
+	}
+
+	function lobby_removelisten()
+	{
+		_model.creditUpdate.removeAll()
 	}
 
 	function onlobby()
@@ -174,7 +195,8 @@
 		Laya.stage.removeChild(_model.getView(_model.current_view_name));
 		_model.removeView(_model.current_view_name)
 		Loader.clearRes("res/atlas/lobby.json"); 
-
+		lobby_removelisten()
+		
 		//judge which game
 		if( _model.join_game == 0 )
 		{

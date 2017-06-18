@@ -43,16 +43,16 @@ var betamount;
 var model = function ()
 {
     this.instance = undefined;
-    this.eventDispatch  =  new signals.Signal();
+
     this.login_ok  =  new signals.Signal();
     this.lobbylist_getok  =  new signals.Signal();
     this.in_game =  new signals.Signal();
 
-    //game share
+    //lobby
     this.creditUpdate =  new signals.Signal();
-    this.cashin =  new signals.Signal();
-    this.winMoney =  new signals.Signal();
 
+    //game share
+    this.cashin =  new signals.Signal();    
     this.gameStateUpdate = new signals.Signal();
     this.countDown = new signals.Signal();
     this.betCancel = new signals.Signal();
@@ -210,6 +210,7 @@ model.prototype.eventHandle = function (name,data)
             //baccarat
             this.game_id = data[0].game_id;
             _model.pushValue("round_code","")
+            
         }
        
          this.in_game.dispatch();

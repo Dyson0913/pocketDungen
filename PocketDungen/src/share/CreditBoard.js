@@ -10,11 +10,10 @@ function CreditBoard()
 	CreditBoard.super(this);
 	 _model = model.getInstance();
 
-	 _model.gameStateUpdate.add(onState);
+	_model.gameStateUpdate.add(onState);
 	_model.cashin.add(oncarrying);
 	_model.betResult.add(onBetresult);
-	_model.settleInfo.add(onsettleInfo);
-	
+	_model.settleInfo.add(onsettleInfo);	
 
     (function()
 	{
@@ -22,6 +21,8 @@ function CreditBoard()
 		self.total_bet.text =""
 		self.total_win.text = ""
 		self.round_code.text = ""
+		_model.pushValue("total_bet",0)
+		 
 
 	})();
 
@@ -33,15 +34,16 @@ function CreditBoard()
 			self.total_bet.text ="";
 			self.total_win.text = "";
 			self.round_code.text = String(_model.getValue("round_code"))
+			_model.pushValue("total_bet",0)
 		}
 		
-			
+		trace("credit statae ="+state)
 	}
 
 
 	function oncarrying()
-	{
-		self.game_credit.text = String(_model.getValue("game_credit"))		
+	{		
+		self.game_credit.text = String(_model.getValue("game_credit") - _model.getValue("total_bet"))		
 	}
 
 	function onBetresult(text)
@@ -50,26 +52,24 @@ function CreditBoard()
 		{
 			//update total bet
 			var coinarr = _model.getValue("comfirm_betlist")
-
+			
 			var betlist = []	
 			var totalbet = 0			
 			for(i =0;i< coinarr.length; i++)
 			{
 				var data = coinarr[i];
-				var n = data.length								
+				var n = data.length							
 				for(k =0 ;k< n;k++)
 				{	
 					var sp = data[k];					
-					totalbet += sp.name
-				}				
+					totalbet += sp.name					
+				}					
 			}	
 
 			self.total_bet.text = String(totalbet)
 
-			//game_credit sub
-			var total_credit = _model.getValue("game_credit")
-			total_credit -= totalbet
-			_model.pushValue("game_credit",total_credit)
+			//game_credit sub			
+			_model.pushValue("total_bet",totalbet)
 			oncarrying()				
 		}
 		
@@ -79,30 +79,35 @@ function CreditBoard()
 	{
 		var coinarr = _model.getValue("comfirm_betlist")
 
-			var betlist = []	
-			var total_win = 0			
-			for(i =0;i< coinarr.length; i++)
-			{
-				var data = coinarr[i];
-				var n = data.length
-				var zone_total = 0						
-				for(k =0 ;k< n;k++)
-				{	
-					var sp = data[k];					
-					zone_total += sp.name
-				}		
+		var betlist = []	
+		var total_win = 0			
+		for(i =0;i< coinarr.length; i++)
+		{
+			var data = coinarr[i];
+			var n = data.length
+			var zone_total = 0						
+			for(k =0 ;k< n;k++)
+			{	
+				var sp = data[k];					
+				zone_total += sp.name
+			}		
 								
-				zone_total = paytable[i] * zone_total
-				total_win += zone_total
-			}	
+			zone_total = paytable[i] * zone_total
+			trace(zone_total)
+			total_win += zone_total
+		}	
 
-			self.total_win.text = String(total_win)
+		self.total_win.text = String(total_win)
 
-			//game_credit sub
-			var total_credit = _model.getValue("game_credit")
-			total_credit += total_win
-			_model.pushValue("game_credit",total_credit)
-			oncarrying()
+		//game_credit sub
+		var total_credit = _model.getValue("game_credit")
+		var total_bet = _model.getValue("total_bet")
+		total_credit = total_credit + - total_bet + total_win
+
+		_model.pushValue("game_credit",total_credit)
+		_model.pushValue("total_bet",0)
+
+		oncarrying()
 					
 	}
 
