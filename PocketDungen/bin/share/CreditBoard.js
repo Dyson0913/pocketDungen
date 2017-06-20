@@ -62,8 +62,7 @@ function CreditBoard()
 				for(k =0 ;k< n;k++)
 				{	
 					var sp = data[k];					
-					totalbet += sp.name
-					trace("bet ok = "+totalbet)
+					totalbet += sp.name					
 				}					
 			}	
 

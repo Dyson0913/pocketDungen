@@ -2,7 +2,7 @@
     "x":0,
     "type":"View",
     "selectedBox":1,
-    "selecteID":65,
+    "selecteID":56,
     "props":{"width":1280,"sceneColor":"#000000","pivotX":1,"height":720},
     "nodeParent":-1,
     "label":"View",
@@ -61,7 +61,7 @@
             "compId":50,
             "child":[
                 ],
-            "$LOCKED":true
+            "$LOCKED":false
         },
         {
             "x":15,
@@ -83,13 +83,13 @@
             "compId":51,
             "child":[
                 ],
-            "$LOCKED":true
+            "$LOCKED":false
         },
         {
             "x":15,
             "type":"UIView",
             "source":"component/Poker.ui",
-            "props":{"y":138,"x":274,"var":"poker_1","runtime":"Poker1","name":"poker_1"},
+            "props":{"y":138,"x":243,"var":"poker_1","runtime":"Poker1","name":"poker_1"},
             "nodeParent":1,
             "label":"UIView(poker_1)",
             "isDirectory":false,
@@ -105,13 +105,13 @@
             "compId":52,
             "child":[
                 ],
-            "$LOCKED":true
+            "$LOCKED":false
         },
         {
             "x":15,
             "type":"UIView",
             "source":"component/Poker.ui",
-            "props":{"y":139,"x":468,"var":"poker_2","runtime":"Poker2","name":"poker_2"},
+            "props":{"y":139,"x":404,"var":"poker_2","runtime":"Poker2","name":"poker_2"},
             "nodeParent":1,
             "label":"UIView(poker_2)",
             "isDirectory":false,
@@ -127,7 +127,7 @@
             "compId":53,
             "child":[
                 ],
-            "$LOCKED":true
+            "$LOCKED":false
         },
         {
             "x":15,
@@ -149,13 +149,13 @@
             "compId":54,
             "child":[
                 ],
-            "$LOCKED":true
+            "$LOCKED":false
         },
         {
             "x":15,
             "type":"UIView",
             "source":"component/Poker.ui",
-            "props":{"y":140,"x":870,"var":"poker_4","runtime":"Poker4","name":"poker_4"},
+            "props":{"y":140,"x":833,"var":"poker_4","runtime":"Poker4","name":"poker_4"},
             "nodeParent":1,
             "label":"UIView(poker_4)",
             "isDirectory":false,
@@ -171,13 +171,13 @@
             "compId":55,
             "child":[
                 ],
-            "$LOCKED":true
+            "$LOCKED":false
         },
         {
             "x":15,
             "type":"UIView",
             "source":"component/Poker.ui",
-            "props":{"y":142,"x":1066,"var":"poker_5","runtime":"Poker5","name":"poker_5"},
+            "props":{"y":142,"x":994,"var":"poker_5","runtime":"Poker5","name":"poker_5"},
             "nodeParent":1,
             "label":"UIView(poker_5)",
             "isDirectory":false,
@@ -193,13 +193,13 @@
             "compId":56,
             "child":[
                 ],
-            "$LOCKED":true
+            "$LOCKED":false
         },
         {
             "x":15,
             "type":"UIView",
             "source":"component/Settle.ui",
-            "props":{"y":0,"x":0,"runtime":"Settle"},
+            "props":{"y":347,"x":9,"runtime":"Settle"},
             "nodeParent":1,
             "label":"UIView",
             "isDirectory":false,
@@ -215,8 +215,8 @@
             "compId":58,
             "child":[
                 ],
-            "$LOCKED":true,
-            "$HIDDEN":true
+            "$LOCKED":false,
+            "$HIDDEN":false
         },
         {
             "x":15,
@@ -237,7 +237,8 @@
                 }],
             "compId":65,
             "child":[
-                ]
+                ],
+            "$HIDDEN":true
         },
         {
             "x":15,
@@ -358,5 +359,6 @@
             "id":1,
             "frameRate":24,
             "action":0
-        }]
+        }],
+    "$LOCKED":false
 }

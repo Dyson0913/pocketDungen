@@ -2,7 +2,7 @@
     "x":0,
     "type":"View",
     "selectedBox":1,
-    "selecteID":1,
+    "selecteID":5,
     "props":{"width":900,"sceneColor":"#000000","height":150},
     "nodeParent":-1,
     "label":"View",
@@ -71,7 +71,7 @@
             "frames":[
                 {
                     "type":1,
-                    "props":{"y":691,"x":535,"skin":"res/Coin/coin_1k.png"},
+                    "props":{"y":691,"x":535,"skin":"res/Coin/coin_1res/poker/13.png"},
                     "frame":0,
                     "__InPool":false
                 }],
@@ -131,7 +131,7 @@
             "frames":[
                 {
                     "type":1,
-                    "props":{"y":691,"x":1022,"skin":"res/Coin/coin_5k.png"},
+                    "props":{"y":691,"x":1022,"skin":"res/Coin/coin_5res/poker/13.png"},
                     "frame":0,
                     "__InPool":false
                 }],
