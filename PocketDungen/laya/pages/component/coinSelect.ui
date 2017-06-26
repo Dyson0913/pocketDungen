@@ -2,21 +2,14 @@
     "x":0,
     "type":"View",
     "selectedBox":1,
-    "selecteID":8,
-    "props":{"width":750,"sceneColor":"#000000","height":150},
+    "selecteID":10,
+    "props":{"width":750,"var":"fll","sceneColor":"#000000","height":150},
     "nodeParent":-1,
-    "label":"View",
+    "label":"View(fll)",
     "isOpen":true,
     "isDirectory":true,
     "isAniNode":true,
     "hasChild":true,
-    "frames":[
-        {
-            "type":1,
-            "props":{"width":1280,"sceneColor":"#000000","height":720},
-            "frame":0,
-            "__InPool":false
-        }],
     "compId":1,
     "child":[
         {
@@ -28,13 +21,6 @@
             "isDirectory":false,
             "isAniNode":true,
             "hasChild":false,
-            "frames":[
-                {
-                    "type":1,
-                    "props":{"y":664,"x":282,"skin":"res/Coin/coin_10.png"},
-                    "frame":0,
-                    "__InPool":false
-                }],
             "compId":3,
             "child":[
                 ]
@@ -48,13 +34,6 @@
             "isDirectory":false,
             "isAniNode":true,
             "hasChild":false,
-            "frames":[
-                {
-                    "type":1,
-                    "props":{"y":671,"x":342,"skin":"res/Coin/coin_100.png"},
-                    "frame":0,
-                    "__InPool":false
-                }],
             "compId":4,
             "child":[
                 ]
@@ -68,13 +47,6 @@
             "isDirectory":false,
             "isAniNode":true,
             "hasChild":false,
-            "frames":[
-                {
-                    "type":1,
-                    "props":{"y":691,"x":535,"skin":"res/Coin/coin_1res/poker/13.png"},
-                    "frame":0,
-                    "__InPool":false
-                }],
             "compId":5,
             "child":[
                 ]
@@ -88,13 +60,6 @@
             "isDirectory":false,
             "isAniNode":true,
             "hasChild":false,
-            "frames":[
-                {
-                    "type":1,
-                    "props":{"y":694,"x":315,"skin":"res/Coin/coin_50.png"},
-                    "frame":0,
-                    "__InPool":false
-                }],
             "compId":6,
             "child":[
                 ]
@@ -108,13 +73,6 @@
             "isDirectory":false,
             "isAniNode":true,
             "hasChild":false,
-            "frames":[
-                {
-                    "type":1,
-                    "props":{"y":684,"x":607,"skin":"res/Coin/coin_500.png"},
-                    "frame":0,
-                    "__InPool":false
-                }],
             "compId":7,
             "child":[
                 ]
@@ -128,14 +86,20 @@
             "isDirectory":false,
             "isAniNode":true,
             "hasChild":false,
-            "frames":[
-                {
-                    "type":1,
-                    "props":{"y":691,"x":1022,"skin":"res/Coin/coin_5res/poker/13.png"},
-                    "frame":0,
-                    "__InPool":false
-                }],
             "compId":8,
+            "child":[
+                ]
+        },
+        {
+            "x":15,
+            "type":"Image",
+            "props":{"y":-9,"x":605,"var":"coin_light","skin":"res/Coin/coinlight.png"},
+            "nodeParent":1,
+            "label":"Image(coin_light)",
+            "isDirectory":false,
+            "isAniNode":true,
+            "hasChild":false,
+            "compId":10,
             "child":[
                 ]
         }],

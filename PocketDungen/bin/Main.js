@@ -34,17 +34,18 @@
 		assets.push({url: "res/atlas/comp.json",type: Loader.ATLAS});
 		
 		//slot music
-		assets.push({url: "res/sound/UI_Spin.mp3",type: Loader.SOUND});
-		assets.push({url: "res/sound/UI_Stop.mp3",type: Loader.SOUND});
-		assets.push({url: "res/sound/UI_Normal_Link.mp3",type: Loader.SOUND});
-		assets.push({url: "res/sound/UI_Bet.mp3",type: Loader.SOUND});
-		assets.push({url: "res/sound/UI_DeBet.mp3",type: Loader.SOUND});
-		assets.push({url: "res/sound/slot_BGM.mp3",type: Loader.SOUND});
-		assets.push({url: "res/sound/FreeGame.mp3",type: Loader.SOUND});
-		assets.push({url: "res/sound/BonusGame.mp3",type: Loader.SOUND});
+		//assets.push({url: "res/sound/UI_Spin.mp3",type: Loader.SOUND});
+		//assets.push({url: "res/sound/UI_Stop.mp3",type: Loader.SOUND});
+		//assets.push({url: "res/sound/UI_Normal_Link.mp3",type: Loader.SOUND});
+		//assets.push({url: "res/sound/UI_Bet.mp3",type: Loader.SOUND});
+		//assets.push({url: "res/sound/UI_DeBet.mp3",type: Loader.SOUND});
+		//assets.push({url: "res/sound/slot_BGM.mp3",type: Loader.SOUND});
+		//assets.push({url: "res/sound/FreeGame.mp3",type: Loader.SOUND});
+		//assets.push({url: "res/sound/BonusGame.mp3",type: Loader.SOUND});
 		
-		//baccrat music
-		assets.push({url: "res/sound/cancel_btn.mp3",type: Loader.SOUND});		
+		//baccrat music		
+		assets.push({url: "res/sound/roundStart.mp3",type: Loader.SOUND});
+		assets.push({url: "res/sound/cancel_btn.mp3",type: Loader.SOUND});
 		assets.push({url: "res/sound/catalog_btn.mp3",type: Loader.SOUND});
 		assets.push({url: "res/sound/coinPlace.mp3",type: Loader.SOUND});
 		assets.push({url: "res/sound/hint.mp3",type: Loader.SOUND});

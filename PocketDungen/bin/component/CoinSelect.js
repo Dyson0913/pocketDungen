@@ -22,6 +22,10 @@ function CoinSelect()
 		self.coin_4.on(Event.CLICK, self, coin,[4]);
 		self.coin_5.on(Event.CLICK, self, coin,[5]);
 
+		self.coin_po = [[5,-9],[117,28],[236,46],[363,46],[485,26],[605 -9]]
+
+
+		self.coin_light.visible = false
 		_model.pushValue("select_coin_idx",0)
 
 		self._coinRes = ["res/Coin/coin_10_s.png","res/Coin/coin_50_s.png","res/Coin/coin_100_s.png","res/Coin/coin_500_s.png","res/Coin/coin_1k_s.png","res/Coin/coin_5k_s.png"]		
@@ -42,12 +46,18 @@ function CoinSelect()
 		else
 		{
 			self.visible = false;
+			self.coin_light.visible = false
 		}
 			
 	}
 
 	function coin(idx)
 	{
+		self.coin_light.visible = true
+		self.coin_light.x = self.coin_po[idx][0]
+		self.coin_light.y = self.coin_po[idx][1]
+		
+
 		_model.pushValue("select_coin_idx",idx)
 		_model.playerSound("res/sound/normal_btn.mp3")
 	}

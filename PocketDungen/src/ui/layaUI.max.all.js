@@ -58,6 +58,7 @@ var coinSelectUI=(function(_super){
 		    this.coin_1=null;
 		    this.coin_3=null;
 		    this.coin_5=null;
+		    this.coin_light=null;
 
 			coinSelectUI.__super.call(this);
 		}
@@ -69,10 +70,7 @@ var coinSelectUI=(function(_super){
 			laya.ui.Component.prototype.createChildren.call(this);
 			this.createView(coinSelectUI.uiView);
 		}
-
-		STATICATTR$(coinSelectUI,
-		['uiView',function(){return this.uiView={"type":"View","props":{"width":750,"height":150},"child":[{"type":"Image","props":{"y":3,"x":14,"var":"coin_0","skin":"res/Coin/coin_10.png"}},{"type":"Image","props":{"y":58,"x":245,"var":"coin_2","skin":"res/Coin/coin_100.png"}},{"type":"Image","props":{"y":38,"x":494,"var":"coin_4","skin":"res/Coin/coin_1k.png"}},{"type":"Image","props":{"y":40,"x":126,"var":"coin_1","skin":"res/Coin/coin_50.png"}},{"type":"Image","props":{"y":57,"x":372,"var":"coin_3","skin":"res/Coin/coin_500.png"}},{"type":"Image","props":{"y":3,"x":614,"var":"coin_5","skin":"res/Coin/coin_5k.png"}}]};}
-		]);
+		coinSelectUI.uiView={"type":"View","props":{"width":750,"height":150},"child":[{"type":"Image","props":{"y":3,"x":14,"var":"coin_0","skin":"res/Coin/coin_10.png"}},{"type":"Image","props":{"y":58,"x":245,"var":"coin_2","skin":"res/Coin/coin_100.png"}},{"type":"Image","props":{"y":38,"x":494,"var":"coin_4","skin":"res/Coin/coin_1k.png"}},{"type":"Image","props":{"y":40,"x":126,"var":"coin_1","skin":"res/Coin/coin_50.png"}},{"type":"Image","props":{"y":57,"x":372,"var":"coin_3","skin":"res/Coin/coin_500.png"}},{"type":"Image","props":{"y":3,"x":614,"var":"coin_5","skin":"res/Coin/coin_5k.png"}},{"type":"Image","props":{"y":-9,"x":605,"var":"coin_light","skin":"res/Coin/coinlight.png"}}]};
 		return coinSelectUI;
 	})(View);
 var CountTimerUI=(function(_super){

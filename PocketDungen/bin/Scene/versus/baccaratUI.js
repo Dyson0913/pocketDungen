@@ -13,14 +13,22 @@ function baccaratUI()
 	baccaratUI.super(this);
 	_model = model.getInstance();
 	
+	_model.gameStateUpdate.add(onState);
+
 	(function()
 	{
-		//建構式
-		
-		//SoundManager.playMusic("res/sound/slot_BGM.mp3")		
+		//建構式		
 	})();
 
-	
+	function onState(state)
+	{
+		var state =  _model.appearidx(state)
+		if( state == 0)
+		{
+			_model.playerSound("res/sound/roundStart.mp3")
+		}
+		
+	}
 	
 
 }
