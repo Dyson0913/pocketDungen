@@ -10,13 +10,6 @@
     "isDirectory":true,
     "isAniNode":true,
     "hasChild":true,
-    "frames":[
-        {
-            "type":1,
-            "props":{"width":200,"sceneColor":"#000000","height":100},
-            "frame":0,
-            "__InPool":false
-        }],
     "compId":1,
     "child":[
         {
@@ -28,13 +21,6 @@
             "isDirectory":false,
             "isAniNode":true,
             "hasChild":false,
-            "frames":[
-                {
-                    "type":1,
-                    "props":{"text":"label"},
-                    "frame":0,
-                    "__InPool":false
-                }],
             "compId":3,
             "child":[
                 ]
@@ -42,19 +28,12 @@
         {
             "x":15,
             "type":"Label",
-            "props":{"y":7,"x":420,"width":128,"var":"total_bet","text":"999999","height":35,"fontSize":30,"color":"#efeeee"},
+            "props":{"y":7,"x":392,"width":128,"var":"total_bet","text":"999999","height":35,"fontSize":30,"color":"#efeeee"},
             "nodeParent":1,
             "label":"Label(total_bet)",
             "isDirectory":false,
             "isAniNode":true,
             "hasChild":false,
-            "frames":[
-                {
-                    "type":1,
-                    "props":{"text":"label"},
-                    "frame":0,
-                    "__InPool":false
-                }],
             "compId":5,
             "child":[
                 ]
@@ -62,19 +41,12 @@
         {
             "x":15,
             "type":"Label",
-            "props":{"y":38,"x":420,"width":128,"var":"total_win","text":"999999","height":35,"fontSize":30,"color":"#efeeee"},
+            "props":{"y":38,"x":392,"width":128,"var":"total_win","text":"999999","height":35,"fontSize":30,"color":"#efeeee"},
             "nodeParent":1,
             "label":"Label(total_win)",
             "isDirectory":false,
             "isAniNode":true,
             "hasChild":false,
-            "frames":[
-                {
-                    "type":1,
-                    "props":{"text":"label"},
-                    "frame":0,
-                    "__InPool":false
-                }],
             "compId":6,
             "child":[
                 ]
@@ -88,13 +60,6 @@
             "isDirectory":false,
             "isAniNode":true,
             "hasChild":false,
-            "frames":[
-                {
-                    "type":1,
-                    "props":{"text":"label"},
-                    "frame":0,
-                    "__InPool":false
-                }],
             "compId":7,
             "child":[
                 ]
@@ -102,19 +67,12 @@
         {
             "x":15,
             "type":"Label",
-            "props":{"y":7,"x":258,"width":124,"text":"總下注額度:","height":31,"fontSize":28,"color":"#fbf5f4"},
+            "props":{"y":7,"x":285,"width":97,"text":"總下注:","height":31,"fontSize":28,"color":"#fbf5f4"},
             "nodeParent":1,
             "label":"Label",
             "isDirectory":false,
             "isAniNode":true,
             "hasChild":false,
-            "frames":[
-                {
-                    "type":1,
-                    "props":{"text":"label"},
-                    "frame":0,
-                    "__InPool":false
-                }],
             "compId":8,
             "child":[
                 ]
@@ -122,19 +80,12 @@
         {
             "x":15,
             "type":"Label",
-            "props":{"y":38,"x":313,"width":124,"text":"總輪贏:","height":31,"fontSize":28,"color":"#fbf5f4"},
+            "props":{"y":38,"x":285,"width":124,"text":"總輪贏:","height":31,"fontSize":28,"color":"#fbf5f4"},
             "nodeParent":1,
             "label":"Label",
             "isDirectory":false,
             "isAniNode":true,
             "hasChild":false,
-            "frames":[
-                {
-                    "type":1,
-                    "props":{"text":"label"},
-                    "frame":0,
-                    "__InPool":false
-                }],
             "compId":9,
             "child":[
                 ]
@@ -142,19 +93,12 @@
         {
             "x":15,
             "type":"Label",
-            "props":{"y":10,"x":573,"width":72,"text":"局號:","height":31,"fontSize":28,"color":"#fbf5f4"},
+            "props":{"y":10,"x":545,"width":72,"text":"局號:","height":31,"fontSize":28,"color":"#fbf5f4"},
             "nodeParent":1,
             "label":"Label",
             "isDirectory":false,
             "isAniNode":true,
             "hasChild":false,
-            "frames":[
-                {
-                    "type":1,
-                    "props":{"text":"label"},
-                    "frame":0,
-                    "__InPool":false
-                }],
             "compId":10,
             "child":[
                 ]
@@ -162,19 +106,12 @@
         {
             "x":15,
             "type":"Label",
-            "props":{"y":9,"x":644,"width":128,"var":"round_code","text":"999999","height":35,"fontSize":30,"color":"#efeeee"},
+            "props":{"y":9,"x":616,"width":128,"var":"round_code","text":"999999","height":35,"fontSize":30,"color":"#efeeee"},
             "nodeParent":1,
             "label":"Label(round_code)",
             "isDirectory":false,
             "isAniNode":true,
             "hasChild":false,
-            "frames":[
-                {
-                    "type":1,
-                    "props":{"text":"label"},
-                    "frame":0,
-                    "__InPool":false
-                }],
             "compId":11,
             "child":[
                 ]

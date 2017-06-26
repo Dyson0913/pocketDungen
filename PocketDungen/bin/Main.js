@@ -50,6 +50,7 @@
 		assets.push({url: "res/sound/hint.mp3",type: Loader.SOUND});
 		assets.push({url: "res/sound/normal_btn.mp3",type: Loader.SOUND});
 		assets.push({url: "res/sound/winloss.mp3",type: Loader.SOUND});
+		assets.push({url: "res/sound/flippoker.mp3",type: Loader.SOUND});
 
 		Laya.loader.load(assets, Handler.create(this, onAssetsLoaded));
 

@@ -81,6 +81,7 @@ function Poker()
 	Poker.prototype.flip = function ()
 	{
 		self.visible = true;
+		_model.playerSound("res/sound/flippoker.mp3")
 		_tween.to(self["poker"],{scaleX:0},150,Laya.Ease.linearNone,new Handler(this,scaleX) )
 	}
 
@@ -194,6 +195,7 @@ function Poker1()
 	Poker1.prototype.flip = function ()
 	{
 		self.visible = true;
+		_model.playerSound("res/sound/flippoker.mp3")
 		_tween.to(self["poker"],{scaleX:0},150,Laya.Ease.linearNone,new Handler(this,scaleX) )
 	}
 
@@ -307,6 +309,7 @@ function Poker2()
 	Poker2.prototype.flip = function ()
 	{
 		self.visible = true;
+		_model.playerSound("res/sound/flippoker.mp3")
 		_tween.to(self["poker"],{scaleX:0},150,Laya.Ease.linearNone,new Handler(this,scaleX) )
 	}
 
@@ -419,6 +422,7 @@ function Poker3()
 	Poker3.prototype.flip = function ()
 	{
 		self.visible = true;
+		_model.playerSound("res/sound/flippoker.mp3")
 		_tween.to(self["poker"],{scaleX:0},150,Laya.Ease.linearNone,new Handler(this,scaleX) )
 	}
 
@@ -532,6 +536,7 @@ function Poker4()
 	Poker4.prototype.flip = function ()
 	{
 		self.visible = true;
+		_model.playerSound("res/sound/flippoker.mp3")
 		_tween.to(self["poker"],{scaleX:0},150,Laya.Ease.linearNone,new Handler(this,scaleX) )
 	}
 
@@ -637,6 +642,7 @@ function Poker5()
 	Poker5.prototype.flip = function ()
 	{
 		self.visible = true;
+		_model.playerSound("res/sound/flippoker.mp3")
 		_tween.to(self["poker"],{scaleX:0},150,Laya.Ease.linearNone,new Handler(this,scaleX) )
 	}
 

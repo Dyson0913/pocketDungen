@@ -41,11 +41,14 @@ function BetBtnSet()
 		{
 			//send notify
 			_model.betCancel.dispatch();
+			_model.playerSound("res/sound/cancel_btn.mp3")
+			
 		}
 		else if ( idx == 1)
 		{
 			//comfirm		
 			onbet()
+			_model.playerSound("res/sound/normal_btn.mp3")
 		}
 
 		onAppear(false)	

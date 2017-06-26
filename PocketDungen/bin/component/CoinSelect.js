@@ -49,6 +49,7 @@ function CoinSelect()
 	function coin(idx)
 	{
 		_model.pushValue("select_coin_idx",idx)
+		_model.playerSound("res/sound/normal_btn.mp3")
 	}
 
 }

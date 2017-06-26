@@ -10,13 +10,6 @@
     "isDirectory":true,
     "isAniNode":true,
     "hasChild":true,
-    "frames":[
-        {
-            "type":1,
-            "props":{"width":1280,"sceneColor":"#000000","height":720},
-            "frame":0,
-            "__InPool":false
-        }],
     "compId":1,
     "child":[
         {
@@ -28,13 +21,6 @@
             "isDirectory":false,
             "isAniNode":true,
             "hasChild":false,
-            "frames":[
-                {
-                    "type":1,
-                    "props":{"y":631,"x":218,"skin":"res/baccarat/bg.jpg"},
-                    "frame":0,
-                    "__InPool":false
-                }],
             "compId":4,
             "child":[
                 ],
@@ -51,13 +37,6 @@
             "isDirectory":false,
             "isAniNode":true,
             "hasChild":false,
-            "frames":[
-                {
-                    "type":1,
-                    "props":{"y":360,"x":500},
-                    "frame":0,
-                    "__InPool":false
-                }],
             "compId":50,
             "child":[
                 ],
@@ -73,13 +52,6 @@
             "isDirectory":false,
             "isAniNode":true,
             "hasChild":false,
-            "frames":[
-                {
-                    "type":1,
-                    "props":{"y":307,"x":160},
-                    "frame":0,
-                    "__InPool":false
-                }],
             "compId":51,
             "child":[
                 ],
@@ -95,13 +67,6 @@
             "isDirectory":false,
             "isAniNode":true,
             "hasChild":false,
-            "frames":[
-                {
-                    "type":1,
-                    "props":{"y":286,"x":369},
-                    "frame":0,
-                    "__InPool":false
-                }],
             "compId":52,
             "child":[
                 ],
@@ -117,13 +82,6 @@
             "isDirectory":false,
             "isAniNode":true,
             "hasChild":false,
-            "frames":[
-                {
-                    "type":1,
-                    "props":{"y":311,"x":536},
-                    "frame":0,
-                    "__InPool":false
-                }],
             "compId":53,
             "child":[
                 ],
@@ -139,13 +97,6 @@
             "isDirectory":false,
             "isAniNode":true,
             "hasChild":false,
-            "frames":[
-                {
-                    "type":1,
-                    "props":{"y":330,"x":760},
-                    "frame":0,
-                    "__InPool":false
-                }],
             "compId":54,
             "child":[
                 ],
@@ -161,13 +112,6 @@
             "isDirectory":false,
             "isAniNode":true,
             "hasChild":false,
-            "frames":[
-                {
-                    "type":1,
-                    "props":{"y":441,"x":934},
-                    "frame":0,
-                    "__InPool":false
-                }],
             "compId":55,
             "child":[
                 ],
@@ -183,13 +127,6 @@
             "isDirectory":false,
             "isAniNode":true,
             "hasChild":false,
-            "frames":[
-                {
-                    "type":1,
-                    "props":{"y":451,"x":1071},
-                    "frame":0,
-                    "__InPool":false
-                }],
             "compId":56,
             "child":[
                 ],
@@ -205,13 +142,6 @@
             "isDirectory":false,
             "isAniNode":true,
             "hasChild":false,
-            "frames":[
-                {
-                    "type":1,
-                    "props":{"y":241,"x":171},
-                    "frame":0,
-                    "__InPool":false
-                }],
             "compId":58,
             "child":[
                 ],
@@ -228,13 +158,6 @@
             "isDirectory":false,
             "isAniNode":true,
             "hasChild":false,
-            "frames":[
-                {
-                    "type":1,
-                    "props":{"y":408,"x":132},
-                    "frame":0,
-                    "__InPool":false
-                }],
             "compId":65,
             "child":[
                 ],
@@ -245,19 +168,12 @@
             "x":15,
             "type":"UIView",
             "source":"component/BetBtnSet.ui",
-            "props":{"y":72,"x":32,"width":678,"runtime":"BetBtnSet","height":85},
+            "props":{"y":74,"x":59,"width":678,"runtime":"BetBtnSet","height":85},
             "nodeParent":1,
             "label":"UIView",
             "isDirectory":false,
             "isAniNode":true,
             "hasChild":false,
-            "frames":[
-                {
-                    "type":1,
-                    "props":{},
-                    "frame":0,
-                    "__InPool":false
-                }],
             "compId":61,
             "child":[
                 ],
@@ -273,13 +189,6 @@
             "isDirectory":false,
             "isAniNode":true,
             "hasChild":false,
-            "frames":[
-                {
-                    "type":1,
-                    "props":{"y":383,"x":211},
-                    "frame":0,
-                    "__InPool":false
-                }],
             "compId":57,
             "child":[
                 ],
@@ -296,13 +205,6 @@
             "isDirectory":false,
             "isAniNode":true,
             "hasChild":false,
-            "frames":[
-                {
-                    "type":1,
-                    "props":{"y":458,"x":379},
-                    "frame":0,
-                    "__InPool":false
-                }],
             "compId":62,
             "child":[
                 ],
@@ -312,19 +214,12 @@
             "x":15,
             "type":"UIView",
             "source":"share/Menu.ui",
-            "props":{"y":305,"x":731,"runtime":"Menu"},
+            "props":{"y":47,"x":-58,"runtime":"Menu"},
             "nodeParent":1,
             "label":"UIView",
             "isDirectory":false,
             "isAniNode":true,
             "hasChild":false,
-            "frames":[
-                {
-                    "type":1,
-                    "props":{"y":234,"x":1},
-                    "frame":0,
-                    "__InPool":false
-                }],
             "compId":63,
             "child":[
                 ],
@@ -340,13 +235,6 @@
             "isDirectory":false,
             "isAniNode":true,
             "hasChild":false,
-            "frames":[
-                {
-                    "type":1,
-                    "props":{"y":302,"x":104},
-                    "frame":0,
-                    "__InPool":false
-                }],
             "compId":64,
             "child":[
                 ],
