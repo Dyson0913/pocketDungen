@@ -21,6 +21,7 @@ function Menu()
 	function onBtnClick()
 	{
 		_model.eventHandle("leave_game",[]);
+		_model.playerSound("res/sound/hint.mp3")
 	}
 }
 

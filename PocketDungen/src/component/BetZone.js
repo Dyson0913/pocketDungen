@@ -72,6 +72,8 @@ function BetZone()
 	{		
 		coin_add(idx,_model.getValue("select_coin_idx"))
 		_model.betBtnApear.dispatch(true);
+
+		_model.playerSound("res/sound/coinPlace.mp3")
 	}
 
 	function coin_add(zone_idx,select_coin_idx)

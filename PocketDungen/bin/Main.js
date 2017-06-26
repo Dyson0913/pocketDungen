@@ -29,51 +29,28 @@
 
 		//res load
 		var assets = [];
-		assets.push(
-		{
-			url: "res/atlas/share.json",type: Loader.ATLAS
-		});	
-		assets.push(
-		{
-			url: "res/atlas/lobby.json",type: Loader.ATLAS
-		});
-		assets.push(
-		{
-			url: "res/atlas/comp.json",type: Loader.ATLAS
-		});
-		assets.push(
-		{
-			url: "res/sound/UI_Spin.mp3",type: Loader.SOUND
-		});
-		assets.push(
-		{
-			url: "res/sound/UI_Stop.mp3",type: Loader.SOUND
-		});
-		assets.push(
-		{
-			url: "res/sound/UI_Normal_Link.mp3",type: Loader.SOUND
-		});
-		assets.push(
-		{
-			url: "res/sound/UI_Bet.mp3",type: Loader.SOUND
-		});
-		assets.push(
-		{
-			url: "res/sound/UI_DeBet.mp3",type: Loader.SOUND
-		});
-		assets.push(
-		{
-			url: "res/sound/slot_BGM.mp3",type: Loader.SOUND
-		});
-		assets.push(
-		{
-			url: "res/sound/FreeGame.mp3",type: Loader.SOUND
-		});
-		assets.push(
-		{
-			url: "res/sound/BonusGame.mp3",type: Loader.SOUND
-		});
+		assets.push({url: "res/atlas/share.json",type: Loader.ATLAS});	
+		assets.push({url: "res/atlas/lobby.json",type: Loader.ATLAS});
+		assets.push({url: "res/atlas/comp.json",type: Loader.ATLAS});
 		
+		//slot music
+		assets.push({url: "res/sound/UI_Spin.mp3",type: Loader.SOUND});
+		assets.push({url: "res/sound/UI_Stop.mp3",type: Loader.SOUND});
+		assets.push({url: "res/sound/UI_Normal_Link.mp3",type: Loader.SOUND});
+		assets.push({url: "res/sound/UI_Bet.mp3",type: Loader.SOUND});
+		assets.push({url: "res/sound/UI_DeBet.mp3",type: Loader.SOUND});
+		assets.push({url: "res/sound/slot_BGM.mp3",type: Loader.SOUND});
+		assets.push({url: "res/sound/FreeGame.mp3",type: Loader.SOUND});
+		assets.push({url: "res/sound/BonusGame.mp3",type: Loader.SOUND});
+		
+		//baccrat music
+		assets.push({url: "res/sound/cancel_btn.mp3",type: Loader.SOUND});		
+		assets.push({url: "res/sound/catalog_btn.mp3",type: Loader.SOUND});
+		assets.push({url: "res/sound/coinPlace.mp3",type: Loader.SOUND});
+		assets.push({url: "res/sound/hint.mp3",type: Loader.SOUND});
+		assets.push({url: "res/sound/normal_btn.mp3",type: Loader.SOUND});
+		assets.push({url: "res/sound/winloss.mp3",type: Loader.SOUND});
+
 		Laya.loader.load(assets, Handler.create(this, onAssetsLoaded));
 
 
@@ -90,9 +67,7 @@
 	})();
 
 	function onAssetsLoaded()
-	{
-		trace(" onAssetsLoaded ")
-		
+	{		
 		//先加載提示元件
 		_model.pushView("hint",new HintUI());
 		_model.pushView("takeIn",new TakeIn());
@@ -126,10 +101,7 @@
 			//from game back to lobby  ,del game res
 			if(_model.join_game == 0 )
 			{
-				
-				trace(Laya.loader.getRes("res/atlas/game.json"));
 				Loader.clearRes("res/atlas/game.json") 
-				trace(Laya.loader.getRes("res/atlas/game.json"));
 			}
 			if(_model.join_game == 2 )
 			{
@@ -171,8 +143,7 @@
 	{	
 		
 		if(_model.getView("lobby") == undefined )
-		{
-			trace("first create lobby")
+		{			
 			_model.pushView("lobby",new lobbyUI());
 		} 
 		
@@ -216,8 +187,7 @@
 	function onIntoGame()
 	{		
 		if(_model.getView("warcraft") == undefined )
-		{
-			trace("first create warcraft")
+		{			
 			_model.pushView("warcraft",new warcraftUI());
 		}
 		
@@ -229,8 +199,7 @@
 	function onIntobaccrat()
 	{
 		if(_model.getView("baccarat") == undefined )
-		{
-			trace("first create baccarat")
+		{			
 			_model.pushView("baccarat",new baccaratUI());
 		}
 		
@@ -242,8 +211,7 @@
 	}
 	    
 	function onhintok()
-	{
-		trace("ok");
+	{		
 		Laya.stage.removeChild(_model.getView("hint"))
 
 		//判定是什麼回調
@@ -259,11 +227,14 @@
 		var view = _model.getView(viewname)
 		Laya.stage.addChild(view);
 		view.onAppear();
+
+		_model.playerSound("res/sound/hint.mp3")
 	}
 	
 	function oncloseView(viewname)
 	{
 		Laya.stage.removeChild(_model.getView(viewname))
+		_model.playerSound("res/sound/cancel_btn.mp3")
 	}
 
 

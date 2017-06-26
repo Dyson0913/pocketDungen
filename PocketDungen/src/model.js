@@ -2,6 +2,7 @@
 //font
 var BitmapFont = laya.display.BitmapFont;
 var Text       = Laya.Text;
+var SoundManager = Laya.SoundManager;
 
 //dictionary
 var Scene={}; //Scene
@@ -356,6 +357,16 @@ model.prototype.pushValue = function(key,value)
 model.prototype.getValue = function(key)
 {    
     return dicVaule[key]
+}
+
+model.prototype.playerSound= function(resname)
+{
+    SoundManager.playSound(resname)
+}
+
+model.prototype.playerMusic= function(resname)
+{
+    SoundManager.playMusic(resname)
 }
 
 model.prototype.regFont = function(fontFileName,path)

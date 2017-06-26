@@ -61,6 +61,8 @@ function Settle()
 		}		
 		self.playerPoint.text = String(settlePoint[0])
 		self.bankerPoint.text = String(settlePoint[1])
+
+		_model.playerSound("res/sound/winloss.mp3")
 	}
 
 	Settle.prototype.setpoint = function (point)

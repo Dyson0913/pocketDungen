@@ -26,6 +26,8 @@ function lobbyUI()
 		_model.join_game = 2;
 		_model.join_group = 1;
 		_model.openview.dispatch("takeIn");
+		
+		_model.playerSound("res/sound/catalog_btn.mp3")
 	}
 	
 	function onCredit()

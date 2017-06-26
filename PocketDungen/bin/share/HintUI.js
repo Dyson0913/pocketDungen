@@ -28,12 +28,14 @@ function HintUI()
 
 	function oncomfirm()
 	{
-          _model.comfirmHint.dispatch();
+          _model.comfirmHint.dispatch();		  
+		  _model.playerSound("res/sound/normal_btn.mp3")
    }
 
 	function oncancel()
 	{		
 		 _model.closeview.dispatch("hint");	
+		 _model.playerSound("res/sound/cancel_btn.mp3")
 	}
 
 
