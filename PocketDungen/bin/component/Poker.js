@@ -20,6 +20,11 @@ function Poker()
 	(function()
 	{
 		self.visible = false;
+		self["poker"].index = 0;
+		self["topPoint"].visible = false
+		self["type"].visible = false
+		self["stype"].visible = false
+		self["head"].visible = false
 	})();
 
 	function onState(state)
@@ -56,6 +61,9 @@ function Poker()
 		var str = poker_str.split("_")
 		//1_c convert to number (c,d,h,s)
 		//var value = (this.color.indexOf(str[1])+1) + 4*(str[0] -1)
+
+		//already open
+		if( self["poker"].index ==1) return
 
 		var shift = 0		
 		var point = str[0] -1
@@ -125,6 +133,11 @@ function Poker1()
 	(function()
 	{
 		self.visible = false;
+		self["poker"].index = 0;
+		self["topPoint"].visible = false
+		self["type"].visible = false
+		self["stype"].visible = false
+		self["head"].visible = false
 	})();
 
 	function onState(state)
@@ -161,6 +174,9 @@ function Poker1()
 		var str = poker_str.split("_")
 		//1_c convert to number (c,d,h,s)
 		//var value = (this.color.indexOf(str[1])+1) + 4*(str[0] -1)
+
+		//already open
+		if( self["poker"].index ==1) return
 
 		var shift = 0		
 		var point = str[0] -1
@@ -230,6 +246,11 @@ function Poker2()
 	(function()
 	{
 		self.visible = false;
+		self["poker"].index = 0;
+		self["topPoint"].visible = false
+		self["type"].visible = false
+		self["stype"].visible = false
+		self["head"].visible = false
 	})();
 
 	function onState(state)
@@ -266,6 +287,9 @@ function Poker2()
 		var str = poker_str.split("_")
 		//1_c convert to number (c,d,h,s)
 		//var value = (this.color.indexOf(str[1])+1) + 4*(str[0] -1)
+
+		//already open
+		if( self["poker"].index ==1) return
 
 		var shift = 0		
 		var point = str[0] -1
@@ -335,6 +359,11 @@ function Poker3()
 	(function()
 	{
 		self.visible = false;
+		self["poker"].index = 0;
+		self["topPoint"].visible = false
+		self["type"].visible = false
+		self["stype"].visible = false
+		self["head"].visible = false
 	})();
 
 	function onState(state)
@@ -370,6 +399,9 @@ function Poker3()
 		var str = poker_str.split("_")
 		//1_c convert to number (c,d,h,s)
 		//var value = (this.color.indexOf(str[1])+1) + 4*(str[0] -1)
+
+		//already open
+		if( self["poker"].index ==1) return
 
 		var shift = 0		
 		var point = str[0] -1
@@ -439,6 +471,12 @@ function Poker4()
 	(function()
 	{
 		self.visible = false;
+		self["poker"].index = 0;
+		self["topPoint"].visible = false
+		self["type"].visible = false
+		self["stype"].visible = false
+		self["head"].visible = false
+
 	})();
 
 	function onState(state)
@@ -474,6 +512,9 @@ function Poker4()
 		var str = poker_str.split("_")
 		//1_c convert to number (c,d,h,s)
 		//var value = (this.color.indexOf(str[1])+1) + 4*(str[0] -1)
+
+		//already open
+		if( self["poker"].index ==1) return
 
 		var shift = 0		
 		var point = str[0] -1

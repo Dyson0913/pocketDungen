@@ -32,11 +32,7 @@
 		assets.push(
 		{
 			url: "res/atlas/share.json",type: Loader.ATLAS
-		});
-		assets.push(
-		{
-			url: "res/atlas/loading.json",type: Loader.ATLAS
-		});
+		});	
 		assets.push(
 		{
 			url: "res/atlas/lobby.json",type: Loader.ATLAS
@@ -122,7 +118,7 @@
 		if( _model.current_view_name == "login") 
 		{
 			//from login -> lobby
-			Loader.clearRes("res/atlas/loading.json")
+			//Loader.clearRes("res/atlas/loading.json")
 			onlobby()
 		} 
 		else
@@ -172,11 +168,7 @@
 	}
 
 	function onlobby()
-	{
-		
-		//清上一個場景
-		//Laya.stage.removeChild(_model.getView(_model.current_view_name));
-		//Loader.clearRes("res/atlas/loading.json");
+	{	
 		
 		if(_model.getView("lobby") == undefined )
 		{

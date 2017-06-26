@@ -36,8 +36,7 @@ function CreditBoard()
 			self.round_code.text = String(_model.getValue("round_code"))
 			_model.pushValue("total_bet",0)
 		}
-		
-		trace("credit statae ="+state)
+				
 	}
 
 
@@ -92,8 +91,7 @@ function CreditBoard()
 				zone_total += sp.name
 			}		
 								
-			zone_total = paytable[i] * zone_total
-			trace(zone_total)
+			zone_total = paytable[i] * zone_total			
 			total_win += zone_total
 		}	
 

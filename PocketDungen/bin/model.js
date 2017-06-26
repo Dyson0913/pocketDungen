@@ -152,8 +152,6 @@ model.prototype.eventHandle = function (name,data)
         var msg = {"uuid": this.uuid,"module":"credit","cmd":"take_in","takein_credit":jsondata,"game":join_id};
         this.send_pack(msg)
 
-        // var msg = {"uuid": this.uuid,"module":"credit","cmd":"take_in","takein_credit":jsondata,"game":this.game_list[1]["game"]};
-        // this.send_pack(msg)
         break;
         case "takein_result":
          if( data[0].result == "ok")
@@ -213,10 +211,7 @@ model.prototype.eventHandle = function (name,data)
             
         }
        
-         this.in_game.dispatch();
-
-         
-         
+         this.in_game.dispatch(); 
         
        break;
         case "init":
@@ -234,24 +229,22 @@ model.prototype.eventHandle = function (name,data)
             if( jsondata.rest_time == 1) _model.betTimeout.dispatch()
         break;
         case "player_card":
-
-            _model.pushValue("playerpoker",jsondata.playerpoker)
-            _model.pushValue("bankerpoker",jsondata.bankerpoker)
-
-            _model.gameStateUpdate.dispatch(name);            
-            _model.pokerShow.dispatch(jsondata.playerpoker.length-1,jsondata.playerpoker[jsondata.playerpoker.length-1]);
-        break;
         case "banker_card":
 
             _model.pushValue("playerpoker",jsondata.playerpoker)
             _model.pushValue("bankerpoker",jsondata.bankerpoker)
 
             _model.gameStateUpdate.dispatch(name);
-            _model.pokerShow.dispatch(jsondata.bankerpoker.length+2,jsondata.bankerpoker[jsondata.bankerpoker.length-1]);
+            _model.pokerflush()
+            
         break;
         case "settle":
             _model.gameStateUpdate.dispatch(name);
             _model.settleInfo.dispatch(jsondata.winstate,jsondata.settlePoint, jsondata.settle)
+            
+            _model.pushValue("playerpoker",jsondata.playerpoker)
+            _model.pushValue("bankerpoker",jsondata.bankerpoker)            
+            _model.pokerflush()
         break;
         
         case "bet":
@@ -303,6 +296,25 @@ model.prototype.eventHandle = function (name,data)
    }
 
 };
+
+model.prototype.pokerflush = function()
+{
+    var playerpoker = _model.getValue("playerpoker")
+    var bankerpoker = _model.getValue("bankerpoker")
+
+    //0,1,2
+    for(i =0;i< playerpoker.length;i++)
+    {
+       _model.pokerShow.dispatch(i,playerpoker[i]);
+    }
+
+    //3,4,5
+    for(i =0;i< bankerpoker.length;i++)
+    {
+       _model.pokerShow.dispatch(i+3,bankerpoker[i]);
+    }            
+}
+
 
 model.prototype.send_pack = function(msg)
 {

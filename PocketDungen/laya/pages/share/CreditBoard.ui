@@ -22,7 +22,7 @@
         {
             "x":15,
             "type":"Label",
-            "props":{"y":12,"x":12,"width":128,"var":"game_credit","text":"999999","height":35,"fontSize":30,"color":"#efeeee"},
+            "props":{"y":6,"x":98,"width":128,"var":"game_credit","text":"999999","height":35,"fontSize":30,"color":"#efeeee"},
             "nodeParent":1,
             "label":"Label(game_credit)",
             "isDirectory":false,
@@ -42,7 +42,7 @@
         {
             "x":15,
             "type":"Label",
-            "props":{"y":10,"x":361,"width":128,"var":"total_bet","text":"999999","height":35,"fontSize":30,"color":"#efeeee"},
+            "props":{"y":7,"x":420,"width":128,"var":"total_bet","text":"999999","height":35,"fontSize":30,"color":"#efeeee"},
             "nodeParent":1,
             "label":"Label(total_bet)",
             "isDirectory":false,
@@ -62,7 +62,7 @@
         {
             "x":15,
             "type":"Label",
-            "props":{"y":10,"x":611,"width":128,"var":"total_win","text":"999999","height":35,"fontSize":30,"color":"#efeeee"},
+            "props":{"y":38,"x":420,"width":128,"var":"total_win","text":"999999","height":35,"fontSize":30,"color":"#efeeee"},
             "nodeParent":1,
             "label":"Label(total_win)",
             "isDirectory":false,
@@ -82,7 +82,7 @@
         {
             "x":15,
             "type":"Label",
-            "props":{"y":12,"x":-91,"width":124,"text":"小錢包:","height":31,"fontSize":28,"color":"#fbf5f4"},
+            "props":{"y":6,"x":-5,"width":124,"text":"小錢包:","height":31,"fontSize":28,"color":"#fbf5f4"},
             "nodeParent":1,
             "label":"Label",
             "isDirectory":false,
@@ -102,7 +102,7 @@
         {
             "x":15,
             "type":"Label",
-            "props":{"y":10,"x":187,"width":124,"text":"總下注額度:","height":31,"fontSize":28,"color":"#fbf5f4"},
+            "props":{"y":7,"x":258,"width":124,"text":"總下注額度:","height":31,"fontSize":28,"color":"#fbf5f4"},
             "nodeParent":1,
             "label":"Label",
             "isDirectory":false,
@@ -122,7 +122,7 @@
         {
             "x":15,
             "type":"Label",
-            "props":{"y":13,"x":507,"width":124,"text":"總輪贏:","height":31,"fontSize":28,"color":"#fbf5f4"},
+            "props":{"y":38,"x":313,"width":124,"text":"總輪贏:","height":31,"fontSize":28,"color":"#fbf5f4"},
             "nodeParent":1,
             "label":"Label",
             "isDirectory":false,
@@ -142,7 +142,7 @@
         {
             "x":15,
             "type":"Label",
-            "props":{"y":12,"x":740,"width":72,"text":"局號:","height":31,"fontSize":28,"color":"#fbf5f4"},
+            "props":{"y":10,"x":573,"width":72,"text":"局號:","height":31,"fontSize":28,"color":"#fbf5f4"},
             "nodeParent":1,
             "label":"Label",
             "isDirectory":false,
@@ -162,7 +162,7 @@
         {
             "x":15,
             "type":"Label",
-            "props":{"y":11,"x":811,"width":128,"var":"round_code","text":"999999","height":35,"fontSize":30,"color":"#efeeee"},
+            "props":{"y":9,"x":644,"width":128,"var":"round_code","text":"999999","height":35,"fontSize":30,"color":"#efeeee"},
             "nodeParent":1,
             "label":"Label(round_code)",
             "isDirectory":false,

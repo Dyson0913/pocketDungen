@@ -2,7 +2,7 @@
     "x":0,
     "type":"View",
     "selectedBox":1,
-    "selecteID":56,
+    "selecteID":64,
     "props":{"width":1280,"sceneColor":"#000000","pivotX":1,"height":720},
     "nodeParent":-1,
     "label":"View",
@@ -22,7 +22,7 @@
         {
             "x":15,
             "type":"Image",
-            "props":{"y":0,"x":0,"width":1280,"var":"bg","skin":"res/baccarat/bg.jpg","height":720},
+            "props":{"y":0,"x":0,"var":"bg","skin":"res/baccarat/bg-02.png","height":720},
             "nodeParent":1,
             "label":"Image(bg)",
             "isDirectory":false,
@@ -45,7 +45,7 @@
             "x":15,
             "type":"UIView",
             "source":"component/CountTimer.ui",
-            "props":{"y":356,"x":580,"var":"countTimer","runtime":"CountTimer"},
+            "props":{"y":157,"x":325,"var":"countTimer","runtime":"CountTimer"},
             "nodeParent":1,
             "label":"UIView(countTimer)",
             "isDirectory":false,
@@ -67,7 +67,7 @@
             "x":15,
             "type":"UIView",
             "source":"component/Poker.ui",
-            "props":{"y":139,"x":94,"var":"poker_0","runtime":"Poker","name":"poker_0"},
+            "props":{"y":113,"x":835,"width":141,"var":"poker_0","runtime":"Poker","name":"poker_0","height":197,"anchorY":0.5,"anchorX":0.5},
             "nodeParent":1,
             "label":"UIView(poker_0)",
             "isDirectory":false,
@@ -89,7 +89,7 @@
             "x":15,
             "type":"UIView",
             "source":"component/Poker.ui",
-            "props":{"y":138,"x":243,"var":"poker_1","runtime":"Poker1","name":"poker_1"},
+            "props":{"y":113,"x":990,"var":"poker_1","runtime":"Poker1","name":"poker_1","anchorY":0.5,"anchorX":0.5},
             "nodeParent":1,
             "label":"UIView(poker_1)",
             "isDirectory":false,
@@ -111,7 +111,7 @@
             "x":15,
             "type":"UIView",
             "source":"component/Poker.ui",
-            "props":{"y":139,"x":404,"var":"poker_2","runtime":"Poker2","name":"poker_2"},
+            "props":{"y":114,"x":1170,"var":"poker_2","runtime":"Poker2","name":"poker_2","anchorY":0.5,"anchorX":0.5},
             "nodeParent":1,
             "label":"UIView(poker_2)",
             "isDirectory":false,
@@ -133,7 +133,7 @@
             "x":15,
             "type":"UIView",
             "source":"component/Poker.ui",
-            "props":{"y":140,"x":681,"var":"poker_3","runtime":"Poker3","name":"poker_3"},
+            "props":{"y":604,"x":836,"var":"poker_3","runtime":"Poker3","name":"poker_3","anchorY":0.5,"anchorX":0.5},
             "nodeParent":1,
             "label":"UIView(poker_3)",
             "isDirectory":false,
@@ -155,7 +155,7 @@
             "x":15,
             "type":"UIView",
             "source":"component/Poker.ui",
-            "props":{"y":140,"x":833,"var":"poker_4","runtime":"Poker4","name":"poker_4"},
+            "props":{"y":603,"x":991,"var":"poker_4","runtime":"Poker4","name":"poker_4","anchorY":0.5,"anchorX":0.5},
             "nodeParent":1,
             "label":"UIView(poker_4)",
             "isDirectory":false,
@@ -177,7 +177,7 @@
             "x":15,
             "type":"UIView",
             "source":"component/Poker.ui",
-            "props":{"y":142,"x":994,"var":"poker_5","runtime":"Poker5","name":"poker_5"},
+            "props":{"y":605,"x":1172,"var":"poker_5","runtime":"Poker5","name":"poker_5","anchorY":0.5,"anchorX":0.5},
             "nodeParent":1,
             "label":"UIView(poker_5)",
             "isDirectory":false,
@@ -199,7 +199,7 @@
             "x":15,
             "type":"UIView",
             "source":"component/Settle.ui",
-            "props":{"y":347,"x":9,"runtime":"Settle"},
+            "props":{"y":219,"x":758,"runtime":"Settle"},
             "nodeParent":1,
             "label":"UIView",
             "isDirectory":false,
@@ -238,13 +238,14 @@
             "compId":65,
             "child":[
                 ],
-            "$HIDDEN":true
+            "$LOCKED":true,
+            "$HIDDEN":false
         },
         {
             "x":15,
             "type":"UIView",
             "source":"component/BetBtnSet.ui",
-            "props":{"y":56,"x":284,"width":678,"runtime":"BetBtnSet","height":85},
+            "props":{"y":72,"x":32,"width":678,"runtime":"BetBtnSet","height":85},
             "nodeParent":1,
             "label":"UIView",
             "isDirectory":false,
@@ -260,13 +261,13 @@
             "compId":61,
             "child":[
                 ],
-            "$LOCKED":true
+            "$LOCKED":false
         },
         {
             "x":15,
             "type":"UIView",
             "source":"component/coinSelect.ui",
-            "props":{"y":592,"x":204,"runtime":"CoinSelect"},
+            "props":{"y":541,"x":11,"runtime":"CoinSelect"},
             "nodeParent":1,
             "label":"UIView",
             "isDirectory":false,
@@ -282,14 +283,14 @@
             "compId":57,
             "child":[
                 ],
-            "$LOCKED":true,
+            "$LOCKED":false,
             "$HIDDEN":false
         },
         {
             "x":15,
             "type":"UIView",
             "source":"component/PhaseHint.ui",
-            "props":{"y":61,"x":540,"runtime":"PhaseHint"},
+            "props":{"y":114,"x":279,"runtime":"PhaseHint"},
             "nodeParent":1,
             "label":"UIView",
             "isDirectory":false,
@@ -305,13 +306,13 @@
             "compId":62,
             "child":[
                 ],
-            "$LOCKED":true
+            "$LOCKED":false
         },
         {
             "x":15,
             "type":"UIView",
             "source":"share/Menu.ui",
-            "props":{"y":5,"x":-27,"runtime":"Menu"},
+            "props":{"y":305,"x":731,"runtime":"Menu"},
             "nodeParent":1,
             "label":"UIView",
             "isDirectory":false,
@@ -327,13 +328,13 @@
             "compId":63,
             "child":[
                 ],
-            "$LOCKED":true
+            "$LOCKED":false
         },
         {
             "x":15,
             "type":"UIView",
             "source":"share/CreditBoard.ui",
-            "props":{"y":9,"x":257,"runtime":"CreditBoard"},
+            "props":{"y":2,"x":3,"runtime":"CreditBoard"},
             "nodeParent":1,
             "label":"UIView",
             "isDirectory":false,
@@ -349,7 +350,7 @@
             "compId":64,
             "child":[
                 ],
-            "$LOCKED":true
+            "$LOCKED":false
         }],
     "animations":[
         {

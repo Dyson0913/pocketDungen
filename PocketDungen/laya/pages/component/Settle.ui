@@ -2,8 +2,8 @@
     "x":0,
     "type":"View",
     "selectedBox":1,
-    "selecteID":1,
-    "props":{"width":1280,"sceneColor":"#000000","height":120},
+    "selecteID":9,
+    "props":{"width":500,"sceneColor":"#000000","height":300},
     "nodeParent":-1,
     "label":"View",
     "isOpen":true,
@@ -22,7 +22,7 @@
         {
             "x":15,
             "type":"Label",
-            "props":{"y":86,"x":284,"width":109,"var":"playerPoint","text":"10","height":32,"font":"tableFont","align":"center"},
+            "props":{"y":22,"x":89,"width":109,"var":"playerPoint","text":"10","height":32,"font":"tableFont","align":"center"},
             "nodeParent":1,
             "label":"Label(playerPoint)",
             "isDirectory":false,
@@ -42,7 +42,7 @@
         {
             "x":15,
             "type":"Label",
-            "props":{"y":82,"x":887,"width":109,"var":"bankerPoint","text":"10","height":32,"font":"tableFont","align":"center"},
+            "props":{"y":230,"x":89,"width":109,"var":"bankerPoint","text":"10","height":32,"font":"tableFont","align":"center"},
             "nodeParent":1,
             "label":"Label(bankerPoint)",
             "isDirectory":false,
@@ -62,7 +62,7 @@
         {
             "x":15,
             "type":"Image",
-            "props":{"y":11,"x":879,"var":"bankerWin","skin":"res/settle/bankerwin.jpg"},
+            "props":{"y":221,"x":378,"var":"bankerWin","skin":"res/settle/bankerwin.jpg"},
             "nodeParent":1,
             "label":"Image(bankerWin)",
             "isOpen":true,
@@ -83,7 +83,7 @@
         {
             "x":15,
             "type":"Image",
-            "props":{"y":6,"x":280,"var":"playerWin","skin":"res/settle/playerwin.jpg"},
+            "props":{"y":12,"x":381,"var":"playerWin","skin":"res/settle/playerwin.jpg"},
             "nodeParent":1,
             "label":"Image(playerWin)",
             "isOpen":true,
@@ -105,7 +105,7 @@
         {
             "x":15,
             "type":"Image",
-            "props":{"y":2,"x":577,"var":"Tie","skin":"res/settle/tie.png"},
+            "props":{"y":111,"x":414,"var":"Tie","skin":"res/settle/tie.png"},
             "nodeParent":1,
             "label":"Image(Tie)",
             "isDirectory":false,
@@ -125,10 +125,10 @@
         {
             "x":15,
             "type":"Sprite",
-            "props":{"y":58,"x":796,"width":281,"var":"bankerTitle","height":90},
+            "props":{"y":208,"x":9,"width":281,"var":"bankerTitle","height":90},
             "nodeParent":1,
             "label":"Sprite(bankerTitle)",
-            "isOpen":false,
+            "isOpen":true,
             "isDirectory":true,
             "isAniNode":true,
             "hasChild":true,
@@ -142,8 +142,9 @@
             "compId":12,
             "child":[
                 {
+                    "x":30,
                     "type":"Image",
-                    "props":{"y":9.000000000000014,"x":211.00000000000023,"skin":"res/settle/bankerpoint.png"},
+                    "props":{"y":8,"x":227,"skin":"res/settle/bankerpoint.png"},
                     "nodeParent":12,
                     "label":"Image",
                     "isDirectory":false,
@@ -161,6 +162,7 @@
                         ]
                 },
                 {
+                    "x":30,
                     "type":"Image",
                     "props":{"y":4.000000000000014,"x":16,"skin":"res/settle/banker.png"},
                     "nodeParent":12,
@@ -185,7 +187,7 @@
         {
             "x":15,
             "type":"Sprite",
-            "props":{"y":61,"x":190,"width":283,"var":"playerTitle","height":81},
+            "props":{"y":0,"x":-3,"width":283,"var":"playerTitle","height":81},
             "nodeParent":1,
             "label":"Sprite(playerTitle)",
             "isOpen":true,
@@ -224,7 +226,7 @@
                 {
                     "x":30,
                     "type":"Image",
-                    "props":{"y":2.000000000000007,"x":199.00000000000006,"skin":"res/settle/playerpoint.png"},
+                    "props":{"y":2,"x":238,"skin":"res/settle/playerpoint.png"},
                     "nodeParent":13,
                     "label":"Image",
                     "isDirectory":false,
