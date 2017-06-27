@@ -10,32 +10,18 @@
     "isDirectory":true,
     "isAniNode":true,
     "hasChild":true,
-    "frames":[
-        {
-            "type":1,
-            "props":{"width":200,"sceneColor":"#000000","height":100},
-            "frame":0,
-            "__InPool":false
-        }],
     "compId":1,
     "child":[
         {
             "x":15,
             "type":"Button",
-            "props":{"y":4,"x":57,"var":"back_to_lobby","skin":"res/share/backLobbyBtn.png"},
+            "props":{"y":5,"x":56,"var":"back_to_lobby","skin":"res/share/backLobbyBtn.png"},
             "nodeParent":1,
             "label":"Button(back_to_lobby)",
             "isOpen":true,
             "isDirectory":false,
             "isAniNode":true,
             "hasChild":false,
-            "frames":[
-                {
-                    "type":1,
-                    "props":{"label":"label"},
-                    "frame":0,
-                    "__InPool":false
-                }],
             "compId":2,
             "child":[
                 ]
