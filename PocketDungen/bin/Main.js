@@ -114,7 +114,7 @@
 				Loader.clearRes("res/atlas/Coin.json")
 				Loader.clearRes("res/atlas/poker.json")
 				Loader.clearRes("res/atlas/settle.json")
-
+				Loader.clearRes("res/atlas/baccarat.json");
 				game_removelisten()
 			}
 			
@@ -181,6 +181,8 @@
 			Laya.loader.load([{url: "res/atlas/settle.json",type: Loader.ATLAS}]);
 			Laya.loader.load([{url: "res/atlas/timer.json",type: Loader.ATLAS}]);
 			Laya.loader.load([{url: "res/atlas/Coin.json",type: Loader.ATLAS}]);
+			Laya.loader.load([{url: "res/atlas/baccarat.json",type: Loader.ATLAS}]);
+			
 			Laya.loader.load([{url: "res/atlas/poker.json",type: Loader.ATLAS}], Handler.create(this, onIntobaccrat));
 		}
 

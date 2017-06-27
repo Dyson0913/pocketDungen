@@ -5,8 +5,6 @@ var Handler = Laya.Handler;
 var Sprite  = Laya.Sprite;
 var _model;
 
-var SoundManager = Laya.SoundManager;
-
 function baccaratUI()
 {
 	var self = this
@@ -25,7 +23,7 @@ function baccaratUI()
 		var state =  _model.appearidx(state)
 		if( state == 0)
 		{
-			_model.playerSound("res/sound/roundStart.mp3")
+			_model.playerSound("res/sound/roundStart.mp3")			
 		}
 		
 	}

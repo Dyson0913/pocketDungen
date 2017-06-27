@@ -339,7 +339,6 @@ var BaccaratViewUI=(function(_super){
 		function BaccaratViewUI(){
 			
 		    this.bg=null;
-		    this.countTimer=null;
 		    this.poker_0=null;
 		    this.poker_1=null;
 		    this.poker_2=null;
@@ -354,7 +353,7 @@ var BaccaratViewUI=(function(_super){
 		var __proto__=BaccaratViewUI.prototype;
 		__proto__.createChildren=function(){
 		    			View.regComponent("CountTimer",CountTimer);
-			View.regComponent("CreditBoard",CreditBoard);
+			View.regComponent("roadBoard",roadBoard);
 			View.regComponent("Poker1",Poker1);
 			View.regComponent("Poker2",Poker2);
 			View.regComponent("Poker3",Poker3);
@@ -366,13 +365,59 @@ var BaccaratViewUI=(function(_super){
 			View.regComponent("CoinSelect",CoinSelect);
 			View.regComponent("PhaseHint",PhaseHint);
 			View.regComponent("Menu",Menu);
+			View.regComponent("CreditBoard",CreditBoard);
 			View.regComponent("Settle",Settle);
 
 			laya.ui.Component.prototype.createChildren.call(this);
 			this.createView(BaccaratViewUI.uiView);
 		}
-		BaccaratViewUI.uiView={"type":"View","props":{"width":1280,"pivotX":1,"height":720},"child":[{"type":"Image","props":{"y":0,"x":0,"var":"bg","skin":"res/baccarat/bg-02.png","height":720}},{"type":"CountTimer","props":{"y":157,"x":325,"var":"countTimer","runtime":"CountTimer"}},{"type":"Poker","props":{"y":113,"x":835,"width":141,"var":"poker_0","runtime":"Poker","name":"poker_0","height":197,"anchorY":0.5,"anchorX":0.5}},{"type":"Poker","props":{"y":113,"x":990,"var":"poker_1","runtime":"Poker1","name":"poker_1","anchorY":0.5,"anchorX":0.5}},{"type":"Poker","props":{"y":114,"x":1170,"var":"poker_2","runtime":"Poker2","name":"poker_2","anchorY":0.5,"anchorX":0.5}},{"type":"Poker","props":{"y":604,"x":836,"var":"poker_3","runtime":"Poker3","name":"poker_3","anchorY":0.5,"anchorX":0.5}},{"type":"Poker","props":{"y":603,"x":991,"var":"poker_4","runtime":"Poker4","name":"poker_4","anchorY":0.5,"anchorX":0.5}},{"type":"Poker","props":{"y":605,"x":1172,"var":"poker_5","runtime":"Poker5","name":"poker_5","anchorY":0.5,"anchorX":0.5}},{"type":"Settle","props":{"y":219,"x":758,"runtime":"Settle"}},{"type":"betzone","props":{"y":0,"x":0,"runtime":"BetZone"}},{"type":"BetBtnSet","props":{"y":37,"x":436,"runtime":"BetBtnSet"}},{"type":"coinSelect","props":{"y":541,"x":11,"runtime":"CoinSelect"}},{"type":"PhaseHint","props":{"y":114,"x":279,"runtime":"PhaseHint"}},{"type":"Menu","props":{"y":52,"x":-33,"runtime":"Menu"}},{"type":"CreditBoard","props":{"y":2,"x":3,"runtime":"CreditBoard"}}]};
+		BaccaratViewUI.uiView={"type":"View","props":{"width":1280,"pivotX":1,"height":720},"child":[{"type":"Image","props":{"y":0,"x":0,"var":"bg","skin":"res/baccarat/bg-02.png","height":720}},{"type":"CountTimer","props":{"y":157,"x":325,"runtime":"CountTimer"}},{"type":"Poker","props":{"y":113,"x":835,"width":141,"var":"poker_0","runtime":"Poker","name":"poker_0","height":197,"anchorY":0.5,"anchorX":0.5}},{"type":"Poker","props":{"y":113,"x":990,"var":"poker_1","runtime":"Poker1","name":"poker_1","anchorY":0.5,"anchorX":0.5}},{"type":"Poker","props":{"y":114,"x":1170,"var":"poker_2","runtime":"Poker2","name":"poker_2","anchorY":0.5,"anchorX":0.5}},{"type":"Poker","props":{"y":604,"x":836,"var":"poker_3","runtime":"Poker3","name":"poker_3","anchorY":0.5,"anchorX":0.5}},{"type":"Poker","props":{"y":603,"x":991,"var":"poker_4","runtime":"Poker4","name":"poker_4","anchorY":0.5,"anchorX":0.5}},{"type":"Poker","props":{"y":605,"x":1172,"var":"poker_5","runtime":"Poker5","name":"poker_5","anchorY":0.5,"anchorX":0.5}},{"type":"Settle","props":{"y":219,"x":758,"runtime":"Settle"}},{"type":"betzone","props":{"y":0,"x":0,"runtime":"BetZone"}},{"type":"BetBtnSet","props":{"y":37,"x":436,"runtime":"BetBtnSet"}},{"type":"coinSelect","props":{"y":541,"x":11,"runtime":"CoinSelect"}},{"type":"PhaseHint","props":{"y":114,"x":279,"runtime":"PhaseHint"}},{"type":"Menu","props":{"y":52,"x":-33,"runtime":"Menu"}},{"type":"CreditBoard","props":{"y":2,"x":3,"runtime":"CreditBoard"}},{"type":"roadBoard","props":{"y":48,"x":786,"runtime":"roadBoard"}}]};
 		return BaccaratViewUI;
+	})(View);
+var historyBallUI=(function(_super){
+		function historyBallUI(){
+			
+		    this.history=null;
+		    this.bPair=null;
+		    this.pPair=null;
+		    this.point=null;
+
+			historyBallUI.__super.call(this);
+		}
+
+		CLASS$(historyBallUI,'ui.Scene.versus.historyBallUI',_super);
+		var __proto__=historyBallUI.prototype;
+		__proto__.createChildren=function(){
+		    
+			laya.ui.Component.prototype.createChildren.call(this);
+			this.createView(historyBallUI.uiView);
+		}
+		historyBallUI.uiView={"type":"View","props":{"width":50,"height":50},"child":[{"type":"Animation","props":{"y":8,"x":8,"var":"history","source":"res/baccarat/bankerSymbol.png,res/baccarat/playerSymbol.png,res/baccarat/tieSymbol.png"},"child":[{"type":"Image","props":{"y":-3,"x":-3,"visible":false,"var":"bPair","skin":"res/baccarat/bPair.png"}},{"type":"Image","props":{"y":23,"x":26,"visible":false,"var":"pPair","skin":"res/baccarat/pPair.png"}}]},{"type":"Label","props":{"y":15,"x":12,"width":28,"var":"point","text":"3","height":26,"fontSize":20,"color":"#e8dbda","align":"center"}}]};
+		return historyBallUI;
+	})(View);
+var roadBoardUI=(function(_super){
+		function roadBoardUI(){
+			
+		    this.history_0=null;
+		    this.history_1=null;
+		    this.history_2=null;
+		    this.history_3=null;
+		    this.history_4=null;
+		    this.history_5=null;
+
+			roadBoardUI.__super.call(this);
+		}
+
+		CLASS$(roadBoardUI,'ui.Scene.versus.roadBoardUI',_super);
+		var __proto__=roadBoardUI.prototype;
+		__proto__.createChildren=function(){
+		    			View.regComponent("ui.Scene.versus.historyBallUI",ui.Scene.versus.historyBallUI);
+
+			laya.ui.Component.prototype.createChildren.call(this);
+			this.createView(roadBoardUI.uiView);
+		}
+		roadBoardUI.uiView={"type":"View","props":{"width":450,"height":250},"child":[{"type":"Image","props":{"y":0,"x":20,"skin":"res/baccarat/roadbg.png"}},{"type":"historyBall","props":{"y":0,"x":17,"var":"history_0","runtime":"ui.Scene.versus.historyBallUI"}},{"type":"historyBall","props":{"y":39,"x":17,"var":"history_1","runtime":"ui.Scene.versus.historyBallUI"}},{"type":"historyBall","props":{"y":78,"x":18,"var":"history_2","runtime":"ui.Scene.versus.historyBallUI"}},{"type":"historyBall","props":{"y":118,"x":18,"var":"history_3","runtime":"ui.Scene.versus.historyBallUI"}},{"type":"historyBall","props":{"y":158,"x":18,"var":"history_4","runtime":"ui.Scene.versus.historyBallUI"}},{"type":"historyBall","props":{"y":197,"x":18,"var":"history_5","runtime":"ui.Scene.versus.historyBallUI"}}]};
+		return roadBoardUI;
 	})(View);
 var CreditBoardUI=(function(_super){
 		function CreditBoardUI(){

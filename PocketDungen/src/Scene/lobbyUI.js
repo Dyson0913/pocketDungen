@@ -22,6 +22,8 @@ function lobbyUI()
 
 	function onBtnClick2()
 	{
+		
+
 		//take in 
 		_model.join_game = 2;
 		_model.join_group = 1;
