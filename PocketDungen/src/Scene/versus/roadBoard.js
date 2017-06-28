@@ -38,7 +38,7 @@ function roadBoard()
 	{
 		//[point,type,pair_type]
 		var data_len = history.length
-		for(ball =0;ball<6;ball++)
+		for(ball =0;ball<60;ball++)
 		{
 			
 			if (ball >= data_len)

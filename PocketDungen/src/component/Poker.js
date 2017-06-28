@@ -626,6 +626,9 @@ function Poker5()
 		//1_c convert to number (c,d,h,s)
 		//var value = (this.color.indexOf(str[1])+1) + 4*(str[0] -1)
 
+		//already open
+		if( self["poker"].index ==1) return
+
 		var shift = 0		
 		var point = str[0] -1
 		if ( this.color.indexOf(str[1]) == 0 || this.color.indexOf(str[1]) == 3)  shift = 13

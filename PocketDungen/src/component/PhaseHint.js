@@ -36,7 +36,12 @@ function PhaseHint()
 		{
 			var poker = _model.getValue("playerpoker")
 			var bpoker = _model.getValue("bankerpoker")		
-			if( (poker.length + bpoker.length) !=1) return
+			if( (poker.length + bpoker.length) !=1) 
+			{
+				//no ani
+				self.PhaseText.text = String("開牌中");
+				return
+			}
 			hintstr = String("開牌中");
 		}
 		
@@ -47,7 +52,7 @@ function PhaseHint()
 
 	function set_text(text)
 	{
-		self.PhaseText.text = String(text);
+		self.PhaseText.text = text
 		self.PhaseText.alpha = 1;
 		_tween.to(self.PhaseText,{y:0,alpha:0},1500,Laya.Ease.quadInOut,new Handler(this,hintover) )
 	}
