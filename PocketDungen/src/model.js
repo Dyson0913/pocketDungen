@@ -104,7 +104,7 @@ model.prototype.start = function ()
 
 model.prototype.eventHandle = function (name,data)
 {
-    trace("CMD = ",name,data)
+    //trace("CMD = ",name,data)
     var jsondata = data[0]
    switch(name) 
    {
@@ -220,7 +220,7 @@ model.prototype.eventHandle = function (name,data)
             _model.gameStateUpdate.dispatch(name);
         break;
         case "wait_bet":
-
+            _model.pushValue("round_code",jsondata.sn)
             _model.pushValue("reset_time",jsondata.rest_time)
 
             _model.gameStateUpdate.dispatch(name);
@@ -231,6 +231,7 @@ model.prototype.eventHandle = function (name,data)
         break;
         case "player_card":
         case "banker_card":
+            _model.pushValue("round_code",jsondata.sn)
 
             _model.pushValue("playerpoker",jsondata.playerpoker)
             _model.pushValue("bankerpoker",jsondata.bankerpoker)
@@ -240,7 +241,8 @@ model.prototype.eventHandle = function (name,data)
             
         break;
         case "settle":
-
+            _model.pushValue("round_code",jsondata.sn)
+            
             _model.pushValue("sttleState",jsondata.winstate)
             _model.pushValue("sttlepoint",jsondata.settlePoint)
             _model.pushValue("sttlepaytable",jsondata.settle)
@@ -255,8 +257,7 @@ model.prototype.eventHandle = function (name,data)
         
         case "bet":
             //this.game_id = join_group
-             var msg = {"uuid": this.uuid,"module":"bet","cmd":"bet","game_id":this.game_id,"bet_info":jsondata};
-             trace(msg)
+             var msg = {"uuid": this.uuid,"module":"bet","cmd":"bet","game_id":this.game_id,"bet_info":jsondata};             
             this.send_pack(msg)
         break;
 
@@ -393,4 +394,19 @@ model.prototype.regFont = function(fontFileName,path)
 
     Text.registerBitmapFont(fontFileName, newFont);
     font[fontFileName] = newFont
+}
+
+/**
+ * Returns a random number between min (inclusive) and max (exclusive)
+ */
+model.prototype.getRandomArbitrary = function(min, max) {
+    return Math.random() * (max - min) + min;
+}
+
+/**
+ * Returns a random integer between min (inclusive) and max (inclusive)
+ * Using Math.round() will give you a non-uniform distribution!
+ */
+model.prototype.getRandomInt = function (min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }

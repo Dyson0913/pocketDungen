@@ -24,8 +24,7 @@ socket.prototype.Connect = function ()
 {
     
     _model = model.getInstance();
-    var token = _model.login_name +"_"+ _model.login_pw;
-    trace("token = "+token);
+    var token = _model.login_name +"_"+ _model.login_pw;    
 
     if(self.ws != undefined)
     {
@@ -47,8 +46,7 @@ socket.prototype.Connect = function ()
 
 
 socket.prototype.connectionOpen = function ()
-{
-    trace('connected\n');
+{    
     var ret = {};
     
     //var retjson = JSON.stringify(ret);

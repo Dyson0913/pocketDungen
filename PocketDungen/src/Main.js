@@ -109,8 +109,7 @@
 			{
 				//baccarat
 				Loader.clearRes("res/BitmapFont/tableFont.fnt")
-				Loader.clearRes("res/BitmapFont/tableFont.png")
-				Loader.clearRes("res/atlas/timer.json")
+				Loader.clearRes("res/BitmapFont/tableFont.png")				
 				Loader.clearRes("res/atlas/Coin.json")
 				Loader.clearRes("res/atlas/poker.json")
 				Loader.clearRes("res/atlas/settle.json")
@@ -177,9 +176,8 @@
 		{
 			Laya.loader.load([{url: "res/BitmapFont/tableFont.fnt",type: Loader.XML}]);
 			Laya.loader.load([{url: "res/BitmapFont/tableFont.png",type: Loader.IMAGE}]);
-			
-			Laya.loader.load([{url: "res/atlas/settle.json",type: Loader.ATLAS}]);
-			Laya.loader.load([{url: "res/atlas/timer.json",type: Loader.ATLAS}]);
+						
+			Laya.loader.load([{url: "res/atlas/settle.json",type: Loader.ATLAS}]);			
 			Laya.loader.load([{url: "res/atlas/Coin.json",type: Loader.ATLAS}]);
 			Laya.loader.load([{url: "res/atlas/baccarat.json",type: Loader.ATLAS}]);
 			

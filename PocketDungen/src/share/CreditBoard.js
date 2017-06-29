@@ -32,11 +32,11 @@ function CreditBoard()
 		if( state == 0)
 		{			
 			self.total_bet.text ="";
-			self.total_win.text = "";
-			self.round_code.text = String(_model.getValue("round_code"))
+			self.total_win.text = "";			
 			_model.pushValue("total_bet",0)
 		}
 				
+		self.round_code.text = String(_model.getValue("round_code"))
 	}
 
 

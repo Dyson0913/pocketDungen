@@ -2,7 +2,7 @@
     "x":0,
     "type":"View",
     "selectedBox":1,
-    "selecteID":3,
+    "selecteID":8,
     "props":{"width":750,"sceneColor":"#000000","height":720},
     "nodeParent":-1,
     "label":"View",
@@ -12,20 +12,6 @@
     "hasChild":true,
     "compId":1,
     "child":[
-        {
-            "x":15,
-            "type":"Image",
-            "props":{"y":0,"x":0,"skin":"res/baccarat/bg-02.png"},
-            "nodeParent":1,
-            "label":"Image",
-            "isDirectory":false,
-            "isAniNode":true,
-            "hasChild":false,
-            "compId":8,
-            "child":[
-                ],
-            "$LOCKED":true
-        },
         {
             "x":15,
             "type":"Image",
@@ -159,6 +145,71 @@
             "isAniNode":true,
             "hasChild":false,
             "compId":7,
+            "child":[
+                ]
+        },
+        {
+            "x":15,
+            "type":"Sprite",
+            "props":{"y":398,"x":394,"width":321,"var":"coinzone_0","height":99},
+            "nodeParent":1,
+            "label":"Sprite(coinzone_0)",
+            "isDirectory":false,
+            "isAniNode":true,
+            "hasChild":false,
+            "compId":17,
+            "child":[
+                ]
+        },
+        {
+            "x":15,
+            "type":"Sprite",
+            "props":{"y":396,"x":44,"width":321,"var":"coinzone_1","height":99},
+            "nodeParent":1,
+            "label":"Sprite(coinzone_1)",
+            "isDirectory":false,
+            "isAniNode":true,
+            "hasChild":false,
+            "compId":18,
+            "child":[
+                ]
+        },
+        {
+            "x":15,
+            "type":"Sprite",
+            "props":{"y":240,"x":258,"width":226,"var":"coinzone_2","height":133},
+            "nodeParent":1,
+            "label":"Sprite(coinzone_2)",
+            "isDirectory":false,
+            "isAniNode":true,
+            "hasChild":false,
+            "compId":19,
+            "child":[
+                ]
+        },
+        {
+            "x":15,
+            "type":"Sprite",
+            "props":{"y":227,"x":523,"width":171,"var":"coinzone_3","height":97},
+            "nodeParent":1,
+            "label":"Sprite(coinzone_3)",
+            "isDirectory":false,
+            "isAniNode":true,
+            "hasChild":false,
+            "compId":20,
+            "child":[
+                ]
+        },
+        {
+            "x":15,
+            "type":"Sprite",
+            "props":{"y":229,"x":56,"width":171,"var":"coinzone_4","height":97},
+            "nodeParent":1,
+            "label":"Sprite(coinzone_4)",
+            "isDirectory":false,
+            "isAniNode":true,
+            "hasChild":false,
+            "compId":21,
             "child":[
                 ]
         }],

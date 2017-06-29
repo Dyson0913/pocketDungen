@@ -112,10 +112,13 @@ function BetZone()
 		coin.graphics.drawTexture(t, 0, 0);
 		coin.scaleX = 0.5
 		coin.scaleY = 0.5
-		self["betzone_"+zone_idx].addChild(coin);
-		var width = self["betzone_"+zone_idx].width
-		var heigh = self["betzone_"+zone_idx].height
-		coin.pos(Math.random()*width, Math.random()*heigh);
+		self["coinzone_"+zone_idx].addChild(coin);		
+		var width = self["coinzone_"+zone_idx].width - (t.width *0.5)
+		var heigh = self["coinzone_"+zone_idx].height - (t.height *0.5)		
+		var x = _model.getRandomArbitrary(0,width)
+		var y = _model.getRandomArbitrary(0,heigh)
+
+		coin.pos(x,y);		
 
 		var data  = self._unfirm_coin[zone_idx]
 		self._unfirm_coin[zone_idx].push(coin)

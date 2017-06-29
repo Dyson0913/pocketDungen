@@ -34,6 +34,11 @@ var betzoneUI=(function(_super){
 		    this.betzone_2=null;
 		    this.betzone_3=null;
 		    this.betzone_4=null;
+		    this.coinzone_0=null;
+		    this.coinzone_1=null;
+		    this.coinzone_2=null;
+		    this.coinzone_3=null;
+		    this.coinzone_4=null;
 
 			betzoneUI.__super.call(this);
 		}
@@ -45,7 +50,7 @@ var betzoneUI=(function(_super){
 			laya.ui.Component.prototype.createChildren.call(this);
 			this.createView(betzoneUI.uiView);
 		}
-		betzoneUI.uiView={"type":"View","props":{"width":750,"height":720},"child":[{"type":"Image","props":{"y":0,"x":0,"skin":"res/baccarat/bg-02.png"}},{"type":"Image","props":{"y":317,"x":380,"var":"zoneEffect_0","skin":"res/baccarat/t02.png"}},{"type":"Image","props":{"y":317,"x":26,"var":"zoneEffect_1","skin":"res/baccarat/t01.png"}},{"type":"Image","props":{"y":226,"x":231,"var":"zoneEffect_2","skin":"res/baccarat/t04.png"}},{"type":"Image","props":{"y":160,"x":493,"var":"zoneEffect_3","skin":"res/baccarat/t05.png"}},{"type":"Image","props":{"y":155,"x":23,"var":"zoneEffect_4","skin":"res/baccarat/t03.png"}},{"type":"Sprite","props":{"y":406,"x":386,"width":351,"var":"betzone_0","skewY":-10,"height":168}},{"type":"Sprite","props":{"y":343,"x":29,"width":361,"var":"betzone_1","skewY":10,"height":167}},{"type":"Sprite","props":{"y":240,"x":257,"width":238,"var":"betzone_2","height":143}},{"type":"Sprite","props":{"y":232,"x":497,"width":205,"var":"betzone_3","skewY":-15,"skewX":12,"height":146}},{"type":"Sprite","props":{"y":178,"x":55,"width":204,"var":"betzone_4","skewY":15,"skewX":-10,"height":144}}]};
+		betzoneUI.uiView={"type":"View","props":{"width":750,"height":720},"child":[{"type":"Image","props":{"y":317,"x":380,"var":"zoneEffect_0","skin":"res/baccarat/t02.png"}},{"type":"Image","props":{"y":317,"x":26,"var":"zoneEffect_1","skin":"res/baccarat/t01.png"}},{"type":"Image","props":{"y":226,"x":231,"var":"zoneEffect_2","skin":"res/baccarat/t04.png"}},{"type":"Image","props":{"y":160,"x":493,"var":"zoneEffect_3","skin":"res/baccarat/t05.png"}},{"type":"Image","props":{"y":155,"x":23,"var":"zoneEffect_4","skin":"res/baccarat/t03.png"}},{"type":"Sprite","props":{"y":406,"x":386,"width":351,"var":"betzone_0","skewY":-10,"height":168}},{"type":"Sprite","props":{"y":343,"x":29,"width":361,"var":"betzone_1","skewY":10,"height":167}},{"type":"Sprite","props":{"y":240,"x":257,"width":238,"var":"betzone_2","height":143}},{"type":"Sprite","props":{"y":232,"x":497,"width":205,"var":"betzone_3","skewY":-15,"skewX":12,"height":146}},{"type":"Sprite","props":{"y":178,"x":55,"width":204,"var":"betzone_4","skewY":15,"skewX":-10,"height":144}},{"type":"Sprite","props":{"y":398,"x":394,"width":321,"var":"coinzone_0","height":99}},{"type":"Sprite","props":{"y":396,"x":44,"width":321,"var":"coinzone_1","height":99}},{"type":"Sprite","props":{"y":240,"x":258,"width":226,"var":"coinzone_2","height":133}},{"type":"Sprite","props":{"y":227,"x":523,"width":171,"var":"coinzone_3","height":97}},{"type":"Sprite","props":{"y":229,"x":56,"width":171,"var":"coinzone_4","height":97}}]};
 		return betzoneUI;
 	})(View);
 var coinSelectUI=(function(_super){
