@@ -240,6 +240,11 @@ model.prototype.eventHandle = function (name,data)
             
         break;
         case "settle":
+
+            _model.pushValue("sttleState",jsondata.winstate)
+            _model.pushValue("sttlepoint",jsondata.settlePoint)
+            _model.pushValue("sttlepaytable",jsondata.settle)
+
             _model.gameStateUpdate.dispatch(name);
             _model.settleInfo.dispatch(jsondata.winstate,jsondata.settlePoint, jsondata.settle)
             

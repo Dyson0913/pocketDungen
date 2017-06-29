@@ -2,7 +2,7 @@
     "x":0,
     "type":"View",
     "selectedBox":1,
-    "selecteID":8,
+    "selecteID":3,
     "props":{"width":750,"sceneColor":"#000000","height":720},
     "nodeParent":-1,
     "label":"View",
@@ -10,32 +10,100 @@
     "isDirectory":true,
     "isAniNode":true,
     "hasChild":true,
-    "frames":[
-        {
-            "type":1,
-            "props":{"width":1280,"sceneColor":"#000000","height":720},
-            "frame":0,
-            "__InPool":false
-        }],
     "compId":1,
     "child":[
         {
             "x":15,
+            "type":"Image",
+            "props":{"y":0,"x":0,"skin":"res/baccarat/bg-02.png"},
+            "nodeParent":1,
+            "label":"Image",
+            "isDirectory":false,
+            "isAniNode":true,
+            "hasChild":false,
+            "compId":8,
+            "child":[
+                ],
+            "$LOCKED":true
+        },
+        {
+            "x":15,
+            "type":"Image",
+            "props":{"y":317,"x":380,"var":"zoneEffect_0","skin":"res/baccarat/t02.png"},
+            "nodeParent":1,
+            "label":"Image(zoneEffect_0)",
+            "isDirectory":false,
+            "isAniNode":true,
+            "hasChild":false,
+            "compId":11,
+            "child":[
+                ],
+            "$HIDDEN":false
+        },
+        {
+            "x":15,
+            "type":"Image",
+            "props":{"y":317,"x":26,"var":"zoneEffect_1","skin":"res/baccarat/t01.png"},
+            "nodeParent":1,
+            "label":"Image(zoneEffect_1)",
+            "isDirectory":false,
+            "isAniNode":true,
+            "hasChild":false,
+            "compId":13,
+            "child":[
+                ],
+            "$HIDDEN":false
+        },
+        {
+            "x":15,
+            "type":"Image",
+            "props":{"y":226,"x":231,"var":"zoneEffect_2","skin":"res/baccarat/t04.png"},
+            "nodeParent":1,
+            "label":"Image(zoneEffect_2)",
+            "isDirectory":false,
+            "isAniNode":true,
+            "hasChild":false,
+            "compId":14,
+            "child":[
+                ],
+            "$HIDDEN":false
+        },
+        {
+            "x":15,
+            "type":"Image",
+            "props":{"y":160,"x":493,"var":"zoneEffect_3","skin":"res/baccarat/t05.png"},
+            "nodeParent":1,
+            "label":"Image(zoneEffect_3)",
+            "isDirectory":false,
+            "isAniNode":true,
+            "hasChild":false,
+            "compId":15,
+            "child":[
+                ]
+        },
+        {
+            "x":15,
+            "type":"Image",
+            "props":{"y":155,"x":23,"var":"zoneEffect_4","skin":"res/baccarat/t03.png"},
+            "nodeParent":1,
+            "label":"Image(zoneEffect_4)",
+            "isDirectory":false,
+            "isAniNode":true,
+            "hasChild":false,
+            "compId":16,
+            "child":[
+                ]
+        },
+        {
+            "x":15,
             "type":"Sprite",
-            "props":{"y":380,"x":437,"width":275,"var":"betzone_0","height":190},
+            "props":{"y":406,"x":386,"width":351,"var":"betzone_0","skewY":-10,"height":168},
             "nodeParent":1,
             "label":"Sprite(betzone_0)",
             "isOpen":true,
             "isDirectory":false,
             "isAniNode":true,
             "hasChild":false,
-            "frames":[
-                {
-                    "type":1,
-                    "props":{},
-                    "frame":0,
-                    "__InPool":false
-                }],
             "compId":3,
             "child":[
                 ]
@@ -43,20 +111,13 @@
         {
             "x":15,
             "type":"Sprite",
-            "props":{"y":380,"x":109,"width":219,"var":"betzone_1","height":190},
+            "props":{"y":343,"x":29,"width":361,"var":"betzone_1","skewY":10,"height":167},
             "nodeParent":1,
             "label":"Sprite(betzone_1)",
             "isOpen":true,
             "isDirectory":false,
             "isAniNode":true,
             "hasChild":false,
-            "frames":[
-                {
-                    "type":1,
-                    "props":{},
-                    "frame":0,
-                    "__InPool":false
-                }],
             "compId":4,
             "child":[
                 ]
@@ -64,20 +125,13 @@
         {
             "x":15,
             "type":"Sprite",
-            "props":{"y":241,"x":294,"width":171,"var":"betzone_2","height":150},
+            "props":{"y":240,"x":257,"width":238,"var":"betzone_2","height":143},
             "nodeParent":1,
             "label":"Sprite(betzone_2)",
             "isOpen":true,
             "isDirectory":false,
             "isAniNode":true,
             "hasChild":false,
-            "frames":[
-                {
-                    "type":1,
-                    "props":{},
-                    "frame":0,
-                    "__InPool":false
-                }],
             "compId":5,
             "child":[
                 ]
@@ -85,19 +139,12 @@
         {
             "x":15,
             "type":"Sprite",
-            "props":{"y":211,"x":549,"width":150,"var":"betzone_3","height":141},
+            "props":{"y":232,"x":497,"width":205,"var":"betzone_3","skewY":-15,"skewX":12,"height":146},
             "nodeParent":1,
             "label":"Sprite(betzone_3)",
             "isDirectory":false,
             "isAniNode":true,
             "hasChild":false,
-            "frames":[
-                {
-                    "type":1,
-                    "props":{},
-                    "frame":0,
-                    "__InPool":false
-                }],
             "compId":6,
             "child":[
                 ]
@@ -105,19 +152,12 @@
         {
             "x":15,
             "type":"Sprite",
-            "props":{"y":203,"x":55,"width":150,"var":"betzone_4","height":141},
+            "props":{"y":178,"x":55,"width":204,"var":"betzone_4","skewY":15,"skewX":-10,"height":144},
             "nodeParent":1,
             "label":"Sprite(betzone_4)",
             "isDirectory":false,
             "isAniNode":true,
             "hasChild":false,
-            "frames":[
-                {
-                    "type":1,
-                    "props":{},
-                    "frame":0,
-                    "__InPool":false
-                }],
             "compId":7,
             "child":[
                 ]

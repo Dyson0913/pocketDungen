@@ -13,6 +13,7 @@ function BetZone()
 	_model.betCancel.add(oncancelbet);	
 	_model.betok.add(onbetok);
 	_model.betTimeout.add(onstopbet);
+	_model.settleInfo.add(onsettleInfo);	
 	
 	(function()
 	{
@@ -23,12 +24,15 @@ function BetZone()
 		{
 			self._coinarr.push([])
 			self._unfirm_coin.push([])
+			self["zoneEffect_"+i].visible = false
 		}
 		
 		_model.pushValue("comfirm_betlist",self._coinarr)
 		_model.pushValue("unfirm_coin",self._unfirm_coin)
 
 		self.visible = false;
+
+		
 	})();
 
 	function onState(state)
@@ -55,6 +59,7 @@ function BetZone()
 		{
 			self.visible = false;
 			roundClear()
+			zone_reset()
 		}
 			
 	}
@@ -70,10 +75,31 @@ function BetZone()
 
 	function onbetzone(idx)
 	{		
+		self["zoneEffect_"+idx].visible = true
+
 		coin_add(idx,_model.getValue("select_coin_idx"))
 		_model.betBtnApear.dispatch(true);
 
 		_model.playerSound("res/sound/coinPlace.mp3")
+		_tween.to(self,{},100,Laya.Ease.linearNone,new Handler(this,zone_reset) )
+	}
+
+	function zone_reset()
+	{		
+		for(i =0;i< self._betzone.length;i++)
+		{
+			self["zoneEffect_"+i].visible = false
+		}
+	}
+	
+	function onsettleInfo(winstate,settlePoint,p)
+	{        
+       var paytable =_model.getValue("sttlepaytable")
+
+		for(i =0;i< self._betzone.length;i++)
+		{
+			if( paytable[i] !=0 ) self["zoneEffect_"+i].visible = true
+		}
 	}
 
 	function coin_add(zone_idx,select_coin_idx)
@@ -81,9 +107,11 @@ function BetZone()
 		var res = _model.getValue("selectRes")[select_coin_idx]
 		
 		var t = Laya.loader.getRes(res);
-		var coin = new Sprite
+		var coin = new Sprite		
 		coin.name = _model.getValue("coinValue")[select_coin_idx]
 		coin.graphics.drawTexture(t, 0, 0);
+		coin.scaleX = 0.5
+		coin.scaleY = 0.5
 		self["betzone_"+zone_idx].addChild(coin);
 		var width = self["betzone_"+zone_idx].width
 		var heigh = self["betzone_"+zone_idx].height

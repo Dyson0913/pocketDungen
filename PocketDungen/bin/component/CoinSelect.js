@@ -28,7 +28,7 @@ function CoinSelect()
 		self.coin_light.visible = false
 		_model.pushValue("select_coin_idx",0)
 
-		self._coinRes = ["res/Coin/coin_10_s.png","res/Coin/coin_50_s.png","res/Coin/coin_100_s.png","res/Coin/coin_500_s.png","res/Coin/coin_1k_s.png","res/Coin/coin_5k_s.png"]		
+		self._coinRes = ["res/Coin/coin_10.png","res/Coin/coin_50.png","res/Coin/coin_100.png","res/Coin/coin_500.png","res/Coin/coin_1k.png","res/Coin/coin_5k.png"]		
 		_model.pushValue("selectRes",self._coinRes)
 
 		self._coinValue = [10,50,100,500,1000,5000]		
