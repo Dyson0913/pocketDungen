@@ -2,7 +2,7 @@
 var Event = Laya.Event;
 var Handler = Laya.Handler;
 
-var _model = model.getInstance();
+var _model;
 
 var color = ["s","h","d","c"]
 
@@ -14,6 +14,8 @@ function Poker()
 	var _val //poker idx in 52
 	var _color 
 	var _point //poker point
+
+	_model = model.getInstance();
 	_model.gameStateUpdate.add(onState);
 	_model.pokerShow.add(onPoker);
 

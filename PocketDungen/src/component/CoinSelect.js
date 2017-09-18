@@ -2,14 +2,14 @@
 var Event = Laya.Event;
 var Handler = Laya.Handler;
 
-var _model = model.getInstance();
+var _model;
 
 function CoinSelect()
 {
 	var self = this
 	CoinSelect.super(this);
 	
-	
+	_model = model.getInstance();
 
 	_model.gameStateUpdate.add(onState);
 	

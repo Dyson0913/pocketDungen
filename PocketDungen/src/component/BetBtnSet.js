@@ -2,7 +2,7 @@
 var Event = Laya.Event;
 var Handler = Laya.Handler;
 
-var _model = model.getInstance();
+var _model;
 
 var _coinarr;
 var _coinRes;
@@ -15,6 +15,7 @@ function BetBtnSet()
 	this.cancelBtn.on(Event.CLICK, this, betorcancel,[0]);
 	this.comfirmBtn.on(Event.CLICK, this, betorcancel,[1]);
 
+	_model = model.getInstance();
 	_model.gameStateUpdate.add(onState);
 	_model.betBtnApear.add(onAppear);
 	_model.betTimeout.add(onbet);

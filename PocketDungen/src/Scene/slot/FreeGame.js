@@ -7,7 +7,7 @@ var _ease = Laya.Ease;
 
 var SoundManager = Laya.SoundManager;
 
-var _model = model.getInstance();
+var _model;
 
 function FreeGame()
 {   
@@ -17,7 +17,7 @@ function FreeGame()
     (function()
 	{
 		//建構式
-		
+		_model = model.getInstance();	
 
 	})();
 

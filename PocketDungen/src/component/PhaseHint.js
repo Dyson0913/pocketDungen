@@ -3,13 +3,14 @@ var Event = Laya.Event;
 var Handler = Laya.Handler;
 //var _tween = Laya.Tween;
 
-var _model = model.getInstance();
+var _model;
 
 function PhaseHint()
 {
 	var self = this
 	PhaseHint.super(this);
 	
+	_model = model.getInstance();
 	_model.gameStateUpdate.add(onState);
 	_model.betResult.add(onBetresult);
 	

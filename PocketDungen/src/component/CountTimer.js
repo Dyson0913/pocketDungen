@@ -4,7 +4,7 @@ var Handler = Laya.Handler;
 
 var _sec;
 
-var _model = model.getInstance();
+var _model;
 
 
 
@@ -13,6 +13,7 @@ function CountTimer()
 	var self = this
 	CountTimer.super(this);
 	
+	_model = model.getInstance();
 	_model.gameStateUpdate.add(onState);
 	_model.countDown.add(oncountDown);
 

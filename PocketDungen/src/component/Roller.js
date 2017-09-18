@@ -16,7 +16,7 @@ var _heigh = 140
 
 var _movedis = 30
 var _speed = 10
-var _model = model.getInstance();
+var _model;
 
 
 function mod(n)
@@ -30,7 +30,8 @@ function Roller()
 	var self = this
 	Roller.super(this);
 	var _stop = false;
-
+	_model = model.getInstance();
+	
 	(function()
 	{
 		//建構式

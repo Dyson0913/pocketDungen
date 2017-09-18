@@ -2,14 +2,15 @@
 var Event = Laya.Event;
 var Handler = Laya.Handler;
 
-var _model = model.getInstance();
+var _model;
 
 
 function Settle()
 {
 	var self = this
 	Settle.super(this);
-	
+
+	_model = model.getInstance();	
 	_model.gameStateUpdate.add(onState);
 	_model.settleInfo.add(onsettleInfo);
 

@@ -2,13 +2,14 @@
 var Event = Laya.Event;
 var Handler = Laya.Handler;
 
-var _model = model.getInstance();
+var _model;
 
 function BetZone()
 {
 	var self = this
 	BetZone.super(this);
 	
+	_model = model.getInstance();
 	_model.gameStateUpdate.add(onState);
 	_model.betCancel.add(oncancelbet);	
 	_model.betok.add(onbetok);

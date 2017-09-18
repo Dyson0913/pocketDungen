@@ -3,12 +3,13 @@ var Event = Laya.Event;
 var Handler = Laya.Handler;
 
 var Sprite  = Laya.Sprite;
-var _model = model.getInstance();
+var _model;
 
 function roadBoard()
 {
 	var self = this
 	roadBoard.super(this);	
+	_model = model.getInstance();	
 	
 	_model.gameStateUpdate.add(onState);
 

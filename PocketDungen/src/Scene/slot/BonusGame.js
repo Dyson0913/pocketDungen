@@ -5,7 +5,7 @@ var Event = Laya.Event;
 var _tween = Laya.Tween;
 var _ease = Laya.Ease;
 
-var _model = model.getInstance();
+var _model;
 
 function BonusGame()
 {   
@@ -15,7 +15,7 @@ function BonusGame()
     (function()
 	{
 		//建構式
-		
+		_model = model.getInstance();
 
 	})();
 

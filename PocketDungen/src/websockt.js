@@ -1,4 +1,5 @@
 
+
 var _model;
 
 var self;
@@ -79,4 +80,4 @@ socket.prototype.sendMessage = function (msg)
 socket.prototype.socketclose = function(msg)
 {
     trace('Websocket onclose: ' + msg);
-}
+};
